@@ -2530,22 +2530,22 @@
   {
     "id": "store.sql_channel.check_open_channel_permissions.app_error",
     #"translation": "We couldn't check the permissions"
-    "translation": "我們無法檢查權限"
+    "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.check_permissions.app_error",
     #"translation": "We couldn't check the permissions"
-    "translation": "我們無法檢查權限"
+    "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.check_permissions_by_name.app_error",
     #"translation": "We couldn't check the permissions"
-    "translation": "我們無法檢查權限"
+    "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.delete.channel.app_error",
     #"translation": "We couldn't delete the channel"
-    "translation": "我們無法刪除頻道"
+    "translation": "無法刪除頻道"
   },
   {
     "id": "store.sql_channel.extra_updated.app_error",
@@ -2554,27 +2554,27 @@
   {
     "id": "store.sql_channel.get.existing.app_error",
     #"translation": "We couldn't find the existing channel"
-    "translation": "我們無法找到現有的頻道"
+    "translation": "無法找到現有的頻道"
   },
   {
     "id": "store.sql_channel.get.find.app_error",
     #"translation": "We encountered an error finding the channel"
-    "translation": "我們在尋找這個頻道時發生錯誤"
+    "translation": "在尋找這個頻道時發生錯誤"
   },
   {
     "id": "store.sql_channel.get_by_name.existing.app_error",
     #"translation": "We couldn't find the existing channel"
-    "translation": "我們無法找到現有的頻道"
+    "translation": "無法找到現有的頻道"
   },
   {
     "id": "store.sql_channel.get_channel_counts.get.app_error",
     #"translation": "We couldn't get the channel counts"
-    "translation": "我們無法取得頻道數"
+    "translation": "無法取得頻道數"
   },
   {
     "id": "store.sql_channel.get_channels.get.app_error",
     #"translation": "We couldn't get the channels"
-    "translation": "我們無法取得這些頻道"
+    "translation": "無法取得這些頻道"
   },
   {
     "id": "store.sql_channel.get_channels.not_found.app_error",
@@ -2584,32 +2584,32 @@
   {
     "id": "store.sql_channel.get_extra_members.app_error",
     #"translation": "We couldn't get the extra info for channel members"
-    "translation": "我們無法取得頻道成員的更多資訊"
+    "translation": "無法取得頻道成員的更多資訊"
   },
   {
     "id": "store.sql_channel.get_for_export.app_error",
     #"translation": "We couldn't get all the channels"
-    "translation": "我們無法取得所有的頻道"
+    "translation": "無法取得所有的頻道"
   },
   {
     "id": "store.sql_channel.get_member.app_error",
     #"translation": "We couldn't get the channel member"
-    "translation": "我們無法取得頻道的成員"
+    "translation": "無法取得頻道的成員"
   },
   {
     "id": "store.sql_channel.get_member_count.app_error",
     #"translation": "We couldn't get the channel member count"
-    "translation": "我們無法取得頻道成員數"
+    "translation": "無法取得頻道成員數"
   },
   {
     "id": "store.sql_channel.get_members.app_error",
     #"translation": "We couldn't get the channel members"
-    "translation": "我們無法取得頻道成員"
+    "translation": "無法取得頻道成員"
   },
   {
     "id": "store.sql_channel.get_more_channels.get.app_error",
     #"translation": "We couldn't get the channels"
-    "translation": "我們無法取得這些頻道"
+    "translation": "無法取得這些頻道"
   },
   {
     "id": "store.sql_channel.increment_mention_count.app_error",
@@ -2618,17 +2618,17 @@
   {
     "id": "store.sql_channel.permanent_delete_by_team.app_error",
     #"translation": "We couldn't delete the channels"
-    "translation": "我們無法刪除這些頻道"
+    "translation": "無法刪除這些頻道"
   },
   {
     "id": "store.sql_channel.permanent_delete_members_by_user.app_error",
     #"translation": "We couldn't remove the channel member"
-    "translation": "我們無法移除這個頻道成員"
+    "translation": "無法移除這個頻道成員"
   },
   {
     "id": "store.sql_channel.remove_member.app_error",
     #"translation": "We couldn't remove the channel member"
-    "translation": "我們無法移除這個頻道成員"
+    "translation": "無法移除這個頻道成員"
   },
   {
     "id": "store.sql_channel.save.commit_transaction.app_error",
@@ -3240,27 +3240,27 @@
   },
   {
     "id": "store.sql_webhooks.get_incoming.app_error",
-    "translation": "無法取得這個 webhooks"
+    "translation": "無法取得這個 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_channel.app_error",
-    "translation": "無法取得這個 webhooks"
+    "translation": "無法取得這個 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_user.app_error",
-    "translation": "無法取得這個 webhooks"
+    "translation": "無法取得這個 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing.app_error",
-    "translation": "無法取得這個 webhooks"
+    "translation": "無法取得這個 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_channel.app_error",
-    "translation": "無法取得這個 webhooks"
+    "translation": "無法取得這個 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_team.app_error",
-    "translation": "無法取得這個 webhooks"
+    "translation": "無法取得這個 webhook"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_incoming_by_user.app_error",
@@ -3272,7 +3272,7 @@
   },
   {
     "id": "store.sql_webhooks.save_incoming.app_error",
-    "translation": "我們無法儲存 IncomingWebhook"
+    "translation": "無法儲存 IncomingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_incoming.existing.app_error",
@@ -3280,7 +3280,7 @@
   },
   {
     "id": "store.sql_webhooks.save_outgoing.app_error",
-    "translation": "我們無法儲存 OutgoingWebhook"
+    "translation": "無法儲存 OutgoingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_outgoing.override.app_error",
@@ -3288,7 +3288,7 @@
   },
   {
     "id": "store.sql_webhooks.update_outgoing.app_error",
-    "translation": "我們無法更新 webhook"
+    "translation": "無法更新 webhook"
   },
   {
     "id": "utils.config.load_config.decoding.panic",
