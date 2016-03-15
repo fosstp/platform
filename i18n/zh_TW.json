@@ -3093,15 +3093,15 @@
   },
   {
     "id": "store.sql_user.save.username_exists.app_error",
-    "translation": "An account with that username already exists."
+    "translation": "有帳號已經使用這個使用者名稱."
   },
   {
     "id": "store.sql_user.update.app_error",
-    "translation": "We couldn't update the account"
+    "translation": "無法更新這個帳號"
   },
   {
     "id": "store.sql_user.update.email_taken.app_error",
-    "translation": "This email is already taken. Please choose another."
+    "translation": "這個電子郵件已經被使用. 請選擇其他的."
   },
   {
     "id": "store.sql_user.update.find.app_error",
@@ -3109,15 +3109,15 @@
   },
   {
     "id": "store.sql_user.update.finding.app_error",
-    "translation": "We encountered an error finding the account"
+    "translation": "尋找帳號時發生錯誤"
   },
   {
     "id": "store.sql_user.update.updating.app_error",
-    "translation": "We encountered an error updating the account"
+    "translation": "更新帳號時發生錯誤"
   },
   {
     "id": "store.sql_user.update.username_taken.app_error",
-    "translation": "This username is already taken. Please choose another."
+    "translation": "這個使用者名稱已被使用. 請選擇其他的."
   },
   {
     "id": "store.sql_user.update_auth_data.app_error",
@@ -3141,7 +3141,7 @@
   },
   {
     "id": "store.sql_user.update_password.app_error",
-    "translation": "We couldn't update the user password"
+    "translation": "無法更新使用者密碼"
   },
   {
     "id": "store.sql_user.verify_email.app_error",
@@ -3149,71 +3149,71 @@
   },
   {
     "id": "store.sql_webhooks.analytics_incoming_count.app_error",
-    "translation": "We couldn't count the incoming webhooks"
+    "translation": "無法計算這個 incoming webhooks"
   },
   {
     "id": "store.sql_webhooks.analytics_outgoing_count.app_error",
-    "translation": "We couldn't count the outgoing webhooks"
+    "translation": "無法計算這個 outgoing webhooks"
   },
   {
     "id": "store.sql_webhooks.delete_incoming.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除這個 webhook"
   },
   {
     "id": "store.sql_webhooks.delete_outgoing.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除這個 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming.app_error",
-    "translation": "We couldn't get the webhook"
+    "translation": "無法取得這個 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_channel.app_error",
-    "translation": "We couldn't get the webhooks"
+    "translation": "無法取得這個 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_user.app_error",
-    "translation": "We couldn't get the webhook"
+    "translation": "無法取得這個 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_outgoing.app_error",
-    "translation": "We couldn't get the webhook"
+    "translation": "無法取得這個 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_channel.app_error",
-    "translation": "We couldn't get the webhooks"
+    "translation": "無法取得這個 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_team.app_error",
-    "translation": "We couldn't get the webhooks"
+    "translation": "無法取得這個 webhooks"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_incoming_by_user.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除這個 webhook"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_outgoing_by_user.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除這個 webhook"
   },
   {
     "id": "store.sql_webhooks.save_incoming.app_error",
-    "translation": "We couldn't save the IncomingWebhook"
+    "translation": "我們無法儲存 IncomingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_incoming.existing.app_error",
-    "translation": "You cannot overwrite an existing IncomingWebhook"
+    "translation": "無法覆蓋一個已存在的 IncomingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_outgoing.app_error",
-    "translation": "We couldn't save the OutgoingWebhook"
+    "translation": "我們無法儲存 OutgoingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_outgoing.override.app_error",
-    "translation": "You cannot overwrite an existing OutgoingWebhook"
+    "translation": "無法複蓋一個已存在的 OutgoingWebhook"
   },
   {
     "id": "store.sql_webhooks.update_outgoing.app_error",
-    "translation": "We couldn't update the webhook"
+    "translation": "我們無法更新 webhook"
   },
   {
     "id": "utils.config.load_config.decoding.panic",
@@ -3233,7 +3233,7 @@
   },
   {
     "id": "utils.config.save_config.saving.app_error",
-    "translation": "An error occurred while saving the file to {{.Filename}}"
+    "translation": "儲存檔案到 {{.Filename}} 時發生錯誤"
   },
   {
     "id": "utils.i18n.loaded",
@@ -3269,23 +3269,23 @@
   },
   {
     "id": "utils.mail.connect_smtp.open.app_error",
-    "translation": "Failed to open connection"
+    "translation": "無法開啟連線"
   },
   {
     "id": "utils.mail.connect_smtp.open_tls.app_error",
-    "translation": "Failed to open TLS connection"
+    "translation": "TLS 連線時發生錯誤"
   },
   {
     "id": "utils.mail.new_client.auth.app_error",
-    "translation": "Failed to authenticate on SMTP server"
+    "translation": "SMTP 伺服器驗證失敗"
   },
   {
     "id": "utils.mail.new_client.open.error",
-    "translation": "Failed to open a connection to SMTP server %v"
+    "translation": "SMTP 伺服器 %v 開啟連線時發生錯"
   },
   {
     "id": "utils.mail.send_mail.close.app_error",
-    "translation": "Failed to close connection to SMTP server"
+    "translation": "SMTP 伺服器關閉連線時發生錯誤"
   },
   {
     "id": "utils.mail.send_mail.from_address.app_error",
@@ -3301,11 +3301,11 @@
   },
   {
     "id": "utils.mail.send_mail.sending.debug",
-    "translation": "sending mail to %v with subject of '%v'"
+    "translation": "發送電子郵件到 %v 標題為 '%v'"
   },
   {
     "id": "utils.mail.send_mail.to_address.app_error",
-    "translation": "Failed to add to email address"
+    "translation": "新增電子郵件地址發生錯誤"
   },
   {
     "id": "utils.mail.test.configured.error",
@@ -3317,7 +3317,7 @@
   },
   {
     "id": "web.authorize_oauth.disabled.app_error",
-    "translation": "The system admin has turned off OAuth service providing."
+    "translation": "系統管理員關閉了 OAUTH 的服務."
   },
   {
     "id": "web.authorize_oauth.missing.app_error",
@@ -3329,7 +3329,7 @@
   },
   {
     "id": "web.check_browser_compatibility.app_error",
-    "translation": "Your current browser is not supported, please upgrade to one of the following browsers: Google Chrome 21 or higher, Internet Explorer 11 or higher, FireFox 14 or higher, Safari 9 or higher"
+    "translation": "無法支援您目前的瀏覽器, 請升級到下列任一瀏覽器: Google Chrome 21 以上版本 , Internet Explorer 11 以上版本, FireFox 14 以上版本, Safari 9 以上版本"
   },
   {
     "id": "web.claim_account.team.error",
@@ -3341,7 +3341,7 @@
   },
   {
     "id": "web.claim_account.user.error",
-    "translation": "Couldn't find user teamid=%v, email=%v, err=%v"
+    "translation": "無法找到使用者 teamid=%v, email=%v, err=%v"
   },
   {
     "id": "web.create_dir.error",
@@ -3373,15 +3373,15 @@
   },
   {
     "id": "web.footer.help",
-    "translation": "Help"
+    "translation": "求助"
   },
   {
     "id": "web.footer.privacy",
-    "translation": "Privacy"
+    "translation": "隱私"
   },
   {
     "id": "web.footer.terms",
-    "translation": "Terms"
+    "translation": "條款"
   },
   {
     "id": "web.get_access_token.bad_client_id.app_error",
@@ -3429,7 +3429,7 @@
   },
   {
     "id": "web.get_access_token.missing_code.app_error",
-    "translation": "invalid_request: Missing code"
+    "translation": "無效的請求: 錯誤的代碼"
   },
   {
     "id": "web.get_access_token.redirect_uri.app_error",
@@ -3445,7 +3445,7 @@
   },
   {
     "id": "web.incoming_webhook.channel.app_error",
-    "translation": "Couldn't find the channel"
+    "translation": "找不到頻道"
   },
   {
     "id": "web.incoming_webhook.disabled.app_error",
@@ -3453,7 +3453,7 @@
   },
   {
     "id": "web.incoming_webhook.invalid.app_error",
-    "translation": "Invalid webhook"
+    "translation": "無效的 webhook"
   },
   {
     "id": "web.incoming_webhook.parse.app_error",
@@ -3469,7 +3469,7 @@
   },
   {
     "id": "web.incoming_webhook.user.app_error",
-    "translation": "Couldn't find the user"
+    "translation": "無法找到使用者"
   },
   {
     "id": "web.init.debug",
@@ -3477,11 +3477,11 @@
   },
   {
     "id": "web.login.error",
-    "translation": "Couldn't find team name=%v, err=%v"
+    "translation": "無法找到團隊名稱=%v, 錯誤=%v"
   },
   {
     "id": "web.login.login_title",
-    "translation": "Login"
+    "translation": "登入"
   },
   {
     "id": "web.login_with_oauth.invalid_team.app_error",
@@ -3505,11 +3505,11 @@
   },
   {
     "id": "web.reset_password.expired_link.app_error",
-    "translation": "The password reset link has expired"
+    "translation": "密碼重設連結已過期"
   },
   {
     "id": "web.reset_password.invalid_link.app_error",
-    "translation": "The reset link does not appear to be valid"
+    "translation": "不合法的密碼重設連結"
   },
   {
     "id": "web.root.home_title",
