@@ -3281,11 +3281,11 @@
   },
   {
     "id": "utils.mail.new_client.open.error",
-    "translation": "SMTP 伺服器 %v 開啟連線時發生錯"
+    "translation": "開啟對 SMTP 伺服器 %v 的連線時發生錯誤"
   },
   {
     "id": "utils.mail.send_mail.close.app_error",
-    "translation": "SMTP 伺服器關閉連線時發生錯誤"
+    "translation": "關閉對 SMTP 伺服器的連線時發生錯誤"
   },
   {
     "id": "utils.mail.send_mail.from_address.app_error",
@@ -3317,7 +3317,7 @@
   },
   {
     "id": "web.authorize_oauth.disabled.app_error",
-    "translation": "系統管理員關閉了 OAUTH 的服務."
+    "translation": "系統管理員關閉了 OAuth service providing."
   },
   {
     "id": "web.authorize_oauth.missing.app_error",
@@ -3477,7 +3477,7 @@
   },
   {
     "id": "web.login.error",
-    "translation": "無法找到團隊名稱=%v, 錯誤=%v"
+    "translation": "無法找到團隊 name=%v, err=%v"
   },
   {
     "id": "web.login.login_title",
