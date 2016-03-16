@@ -2559,7 +2559,7 @@
   {
     "id": "store.sql_channel.get.find.app_error",
     #"translation": "We encountered an error finding the channel"
-    "translation": "在尋找這個頻道時發生錯誤"
+    "translation": "在尋找頻道時發生錯誤"
   },
   {
     "id": "store.sql_channel.get_by_name.existing.app_error",
@@ -2623,12 +2623,12 @@
   {
     "id": "store.sql_channel.permanent_delete_members_by_user.app_error",
     #"translation": "We couldn't remove the channel member"
-    "translation": "無法移除這個頻道成員"
+    "translation": "無法移除頻道成員"
   },
   {
     "id": "store.sql_channel.remove_member.app_error",
     #"translation": "We couldn't remove the channel member"
-    "translation": "無法移除這個頻道成員"
+    "translation": "無法移除頻道成員"
   },
   {
     "id": "store.sql_channel.save.commit_transaction.app_error",
@@ -3192,7 +3192,7 @@
   },
   {
     "id": "store.sql_user.update.username_taken.app_error",
-    "translation": "這個使用者名稱已被使用. 請選擇其他的."
+    "translation": "使用者名稱已被使用. 請選擇其他的."
   },
   {
     "id": "store.sql_user.update_auth_data.app_error",
@@ -3224,51 +3224,51 @@
   },
   {
     "id": "store.sql_webhooks.analytics_incoming_count.app_error",
-    "translation": "無法計算這個 incoming webhooks"
+    "translation": "無法計算 incoming webhooks"
   },
   {
     "id": "store.sql_webhooks.analytics_outgoing_count.app_error",
-    "translation": "無法計算這個 outgoing webhooks"
+    "translation": "無法計算 outgoing webhooks"
   },
   {
     "id": "store.sql_webhooks.delete_incoming.app_error",
-    "translation": "無法刪除這個 webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.delete_outgoing.app_error",
-    "translation": "無法刪除這個 webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming.app_error",
-    "translation": "無法取得這個 webhook"
+    "translation": "無法取得 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_channel.app_error",
-    "translation": "無法取得這個 webhook"
+    "translation": "無法取得 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_user.app_error",
-    "translation": "無法取得這個 webhook"
+    "translation": "無法取得 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing.app_error",
-    "translation": "無法取得這個 webhook"
+    "translation": "無法取得 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_channel.app_error",
-    "translation": "無法取得這個 webhook"
+    "translation": "無法取得 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_team.app_error",
-    "translation": "無法取得這個 webhook"
+    "translation": "無法取得 webhooks"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_incoming_by_user.app_error",
-    "translation": "無法刪除這個 webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_outgoing_by_user.app_error",
-    "translation": "無法刪除這個 webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.save_incoming.app_error",
@@ -3504,7 +3504,7 @@
   },
   {
     "id": "web.get_access_token.missing_code.app_error",
-    "translation": "無效的請求: 錯誤的代碼"
+    "translation": "無效的請求: 遺漏代碼"
   },
   {
     "id": "web.get_access_token.redirect_uri.app_error",
