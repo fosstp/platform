@@ -1577,12 +1577,12 @@
   {
     "id": "api.user.upload_profile_user.decode.app_error",
     #"translation": "Could not decode profile image"
-    "translation": "無法解析個人檔案影像"
+    "translation": "無法解碼個人檔案影像"
   },
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
     #"translation": "Could not decode profile image config."
-     "translation": "無法解析個人檔案設定"
+     "translation": "無法解碼個人檔案設定"
   },
   {
     "id": "api.user.upload_profile_user.encode.app_error",
@@ -1601,15 +1601,18 @@
   },
   {
     "id": "api.user.upload_profile_user.parse.app_error",
-    "translation": "Could not parse multipart form"
+    #"translation": "Could not parse multipart form"
+    "translation": "無法解析部分表單"
   },
   {
     "id": "api.user.upload_profile_user.storage.app_error",
-    "translation": "Unable to upload file. Image storage is not configured."
+    #"translation": "Unable to upload file. Image storage is not configured."
+    "translation": "無法上傳檔案.尚未設定影像儲存位置"
   },
   {
     "id": "api.user.upload_profile_user.too_large.app_error",
-    "translation": "Unable to upload profile image. File is too large."
+    #"translation": "Unable to upload profile image. File is too large."
+     "translation": "無法上傳檔案.檔案過大"
   },
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
