@@ -2041,7 +2041,8 @@
   },
   {
     "id": "model.incoming_hook.channel_id.app_error",
-    "translation": "Invalid channel id"
+    #"translation": "Invalid channel id"
+    "translation": "無效的 channel id"
   },
   {
     "id": "model.incoming_hook.create_at.app_error",
@@ -2049,11 +2050,13 @@
   },
   {
     "id": "model.incoming_hook.id.app_error",
-    "translation": "Invalid Id"
+    #"translation": "Invalid Id"
+    "translation": "無效的 Id"
   },
   {
     "id": "model.incoming_hook.team_id.app_error",
-    "translation": "Invalid team id"
+    #"translation": "Invalid team id"
+    "translation": "無效的 team id"
   },
   {
     "id": "model.incoming_hook.update_at.app_error",
@@ -2061,19 +2064,23 @@
   },
   {
     "id": "model.incoming_hook.user_id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+    "translation": "無效的 user id"
   },
   {
     "id": "model.oauth.is_valid.app_id.app_error",
-    "translation": "Invalid app id"
+    #"translation": "Invalid app id"
+    "translation": "無效的 app id"
   },
   {
     "id": "model.oauth.is_valid.callback.app_error",
-    "translation": "Invalid callback urls"
+    #"translation": "Invalid callback urls"
+    "translation": "無效的 callback urls"
   },
   {
     "id": "model.oauth.is_valid.client_secret.app_error",
-    "translation": "Invalid client secret"
+    #"translation": "Invalid client secret"
+    "translation": "無效的 client secret"
   },
   {
     "id": "model.oauth.is_valid.create_at.app_error",
@@ -2081,19 +2088,23 @@
   },
   {
     "id": "model.oauth.is_valid.creator_id.app_error",
+    #"translation": "無效的 creator id"
     "translation": "Invalid creator id"
   },
   {
     "id": "model.oauth.is_valid.description.app_error",
-    "translation": "Invalid description"
+    #"translation": "Invalid description"
+    "translation": "無效的 description"
   },
   {
     "id": "model.oauth.is_valid.homepage.app_error",
-    "translation": "Invalid homepage"
+    #"translation": "Invalid homepage"
+    "translation": "無效的 homepage"
   },
   {
     "id": "model.oauth.is_valid.name.app_error",
-    "translation": "Invalid name"
+    #"translation": "Invalid name"
+    "translation": "無效的 name"
   },
   {
     "id": "model.oauth.is_valid.update_at.app_error",
@@ -2101,11 +2112,13 @@
   },
   {
     "id": "model.outgoing_hook.is_valid.callback.app_error",
-    "translation": "Invalid callback urls"
+    #"translation": "Invalid callback urls"
+    "translation": "無效的 callback urls"
   },
   {
     "id": "model.outgoing_hook.is_valid.channel_id.app_error",
-    "translation": "Invalid channel id"
+    #"translation": "Invalid channel id"
+    "translation": "無效的 channel id"
   },
   {
     "id": "model.outgoing_hook.is_valid.create_at.app_error",
@@ -2113,15 +2126,18 @@
   },
   {
     "id": "model.outgoing_hook.is_valid.id.app_error",
-    "translation": "Invalid Id"
+    #"translation": "Invalid Id"
+    "translation": "無效的 Id"
   },
   {
     "id": "model.outgoing_hook.is_valid.team_id.app_error",
-    "translation": "Invalid team id"
+    #"translation": "Invalid team id"
+    "translation": "無效的 team id"
   },
   {
     "id": "model.outgoing_hook.is_valid.token.app_error",
-    "translation": "Invalid token"
+    #"translation": "Invalid token"
+    "translation": "無效的 token"
   },
   {
     "id": "model.outgoing_hook.is_valid.update_at.app_error",
@@ -2129,19 +2145,23 @@
   },
   {
     "id": "model.outgoing_hook.is_valid.url.app_error",
-    "translation": "Invalid callback URLs. Each must be a valid URL and start with http:// or https://"
+    #"translation": "Invalid callback URLs. Each must be a valid URL and start with http:// or https://"
+    "translation": "無效的 callback URLs. 每一個都必須是有效的 URL 並以 http:// or https:// 開頭"
   },
   {
     "id": "model.outgoing_hook.is_valid.user_id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+    "translation": "無效的 user id"
   },
   {
     "id": "model.outgoing_hook.is_valid.words.app_error",
-    "translation": "Invalid trigger words"
+    #"translation": "Invalid trigger words"
+    "translation": "無效的 trigger words"
   },
   {
     "id": "model.post.is_valid.channel_id.app_error",
-    "translation": "Invalid channel id"
+    #"translation": "Invalid channel id"
+    "translation": "無效的 channel id"
   },
   {
     "id": "model.post.is_valid.create_at.app_error",
@@ -2149,35 +2169,43 @@
   },
   {
     "id": "model.post.is_valid.filenames.app_error",
-    "translation": "Invalid filenames"
+    #"translation": "Invalid filenames"
+    "translation": "無效的 filenames"
   },
   {
     "id": "model.post.is_valid.hashtags.app_error",
-    "translation": "Invalid hashtags"
+    #"translation": "Invalid hashtags"
+    "translation": "無效的 hashtags"
   },
   {
     "id": "model.post.is_valid.id.app_error",
-    "translation": "Invalid Id"
+    #"translation": "Invalid Id"
+    "translation": "無效的 Id"
   },
   {
     "id": "model.post.is_valid.msg.app_error",
-    "translation": "Invalid message"
+    #"translation": "Invalid message"
+    "translation": "無效的 message"
   },
   {
     "id": "model.post.is_valid.original_id.app_error",
-    "translation": "Invalid original id"
+    #"translation": "Invalid original id"
+    "translation": "無效的 original id"
   },
   {
     "id": "model.post.is_valid.parent_id.app_error",
-    "translation": "Invalid parent id"
+    #"translation": "Invalid parent id"
+    "translation": "無效的 parent id"
   },
   {
     "id": "model.post.is_valid.props.app_error",
-    "translation": "Invalid props"
+    #"translation": "Invalid props"
+    "translation": "無效的 props"
   },
   {
     "id": "model.post.is_valid.root_id.app_error",
-    "translation": "Invalid root id"
+    #"translation": "Invalid root id"
+    "translation": "無效的 root id"
   },
   {
     "id": "model.post.is_valid.root_parent.app_error",
@@ -2185,6 +2213,7 @@
   },
   {
     "id": "model.post.is_valid.type.app_error",
+    #"translation": "無效的 type"
     "translation": "Invalid type"
   },
   {
@@ -2193,31 +2222,38 @@
   },
   {
     "id": "model.post.is_valid.user_id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+    "translation": "無效的 user id"
   },
   {
     "id": "model.preference.is_valid.category.app_error",
-    "translation": "Invalid category"
+    #"translation": "Invalid category"
+    "translation": "無效的 category"
   },
   {
     "id": "model.preference.is_valid.id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+    "translation": "無效的 user id"
   },
   {
     "id": "model.preference.is_valid.name.app_error",
-    "translation": "Invalid name"
+    #"translation": "Invalid name"
+    "translation": "無效的 name"
   },
   {
     "id": "model.preference.is_valid.value.app_error",
-    "translation": "Value is too long"
+    #"translation": "Value is too long"
+    "translation": "Value 太長"
   },
   {
     "id": "model.team.is_valid.characters.app_error",
-    "translation": "Name must be 4 or more lowercase alphanumeric characters"
+    #"translation": "Name must be 4 or more lowercase alphanumeric characters"
+    "translation": "名稱必須是 4 個以上的小寫英數字元"
   },
   {
     "id": "model.team.is_valid.company.app_error",
-    "translation": "Invalid company name"
+    #"translation": "Invalid company name"
+    "translation": "無效的公司名稱"
   },
   {
     "id": "model.team.is_valid.create_at.app_error",
@@ -2229,23 +2265,28 @@
   },
   {
     "id": "model.team.is_valid.email.app_error",
-    "translation": "Invalid email"
+    #"translation": "Invalid email"
+    "translation": "無效的 email"
   },
   {
     "id": "model.team.is_valid.id.app_error",
-    "translation": "Invalid Id"
+    #"translation": "Invalid Id"
+    "translation": "無效的 Id"
   },
   {
     "id": "model.team.is_valid.name.app_error",
-    "translation": "Invalid name"
+    #"translation": "Invalid name"
+    "translation": "無效的名稱"
   },
   {
     "id": "model.team.is_valid.reserved.app_error",
-    "translation": "This URL is unavailable. Please try another."
+    #"translation": "This URL is unavailable. Please try another."
+    "translation": "這個 URL 不存在. 請嘗試其他的."
   },
   {
     "id": "model.team.is_valid.type.app_error",
-    "translation": "Invalid type"
+    #"translation": "Invalid type"
+    "translation": "無效的 type"
   },
   {
     "id": "model.team.is_valid.update_at.app_error",
@@ -2253,11 +2294,13 @@
   },
   {
     "id": "model.team.is_valid.url.app_error",
-    "translation": "Invalid URL Identifier"
+    #"translation": "Invalid URL Identifier"
+    "translation": "無效的 URL 識別碼"
   },
   {
     "id": "model.user.is_valid.auth_data.app_error",
-    "translation": "Invalid auth data"
+    #"translation": "Invalid auth data"
+    "translation": "無效的驗證資料"
   },
   {
     "id": "model.user.is_valid.auth_data_pwd.app_error",
@@ -2273,35 +2316,43 @@
   },
   {
     "id": "model.user.is_valid.email.app_error",
-    "translation": "Invalid email"
+    #"translation": "Invalid email"
+    "translation": "無效的 email"
   },
   {
     "id": "model.user.is_valid.first_name.app_error",
-    "translation": "Invalid first name"
+    #"translation": "Invalid first name"
+    "translation": "無效的 名字"
   },
   {
     "id": "model.user.is_valid.id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+    "translation": "無效的 user id"
   },
   {
     "id": "model.user.is_valid.last_name.app_error",
-    "translation": "Invalid last name"
+    #"translation": "Invalid last name"
+    "translation": "無效的 姓"
   },
   {
     "id": "model.user.is_valid.nickname.app_error",
-    "translation": "Invalid nickname"
+    #"translation": "Invalid nickname"
+    "translation": "無效的暱稱"
   },
   {
     "id": "model.user.is_valid.pwd.app_error",
-    "translation": "Invalid password"
+    #"translation": "Invalid password"
+    "translation": "無效的密碼"
   },
   {
     "id": "model.user.is_valid.team_id.app_error",
-    "translation": "Invalid team id"
+    #"translation": "Invalid team id"
+    "translation": "無效的 團隊 id"
   },
   {
     "id": "model.user.is_valid.theme.app_error",
-    "translation": "Invalid theme"
+    #"translation": "Invalid theme"
+    "translation": "無效的佈景主題"
   },
   {
     "id": "model.user.is_valid.update_at.app_error",
@@ -2309,7 +2360,8 @@
   },
   {
     "id": "model.user.is_valid.username.app_error",
-    "translation": "Invalid username"
+    #"translation": "Invalid username"
+    "translation": "無效的 username"
   },
   {
     "id": "model.utils.decode_json.app_error",
@@ -2353,19 +2405,23 @@
   },
   {
     "id": "store.sql.create_column.critical",
-    "translation": "Failed to create column %v"
+    #"translation": "Failed to create column %v"
+    "translation": "無法建立 column %v"
   },
   {
     "id": "store.sql.create_column_missing_driver.critical",
-    "translation": "Failed to create column because of missing driver"
+    #"translation": "Failed to create column because of missing driver"
+    "translation": "無法建立 column 因為遺失了 driver"
   },
   {
     "id": "store.sql.create_index.critical",
-    "translation": "Failed to create index %v"
+    #"translation": "Failed to create index %v"
+    "translation": "無法建立索引 %v"
   },
   {
     "id": "store.sql.create_index_missing_driver.critical",
-    "translation": "Failed to create index because of missing driver"
+    #"translation": "Failed to create index because of missing driver"
+    "translation": "無法建立索引 因為遺失了 driver"
   },
   {
     "id": "store.sql.creating_tables.critical",
@@ -2473,19 +2529,23 @@
   },
   {
     "id": "store.sql_channel.check_open_channel_permissions.app_error",
-    "translation": "We couldn't check the permissions"
+    #"translation": "We couldn't check the permissions"
+    "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.check_permissions.app_error",
-    "translation": "We couldn't check the permissions"
+    #"translation": "We couldn't check the permissions"
+    "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.check_permissions_by_name.app_error",
-    "translation": "We couldn't check the permissions"
+    #"translation": "We couldn't check the permissions"
+    "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.delete.channel.app_error",
-    "translation": "We couldn't delete the channel"
+    #"translation": "We couldn't delete the channel"
+    "translation": "無法刪除頻道"
   },
   {
     "id": "store.sql_channel.extra_updated.app_error",
@@ -2493,51 +2553,63 @@
   },
   {
     "id": "store.sql_channel.get.existing.app_error",
-    "translation": "We couldn't find the existing channel"
+    #"translation": "We couldn't find the existing channel"
+    "translation": "無法找到現有的頻道"
   },
   {
     "id": "store.sql_channel.get.find.app_error",
-    "translation": "We encountered an error finding the channel"
+    #"translation": "We encountered an error finding the channel"
+    "translation": "在尋找頻道時發生錯誤"
   },
   {
     "id": "store.sql_channel.get_by_name.existing.app_error",
-    "translation": "We couldn't find the existing channel"
+    #"translation": "We couldn't find the existing channel"
+    "translation": "無法找到現有的頻道"
   },
   {
     "id": "store.sql_channel.get_channel_counts.get.app_error",
-    "translation": "We couldn't get the channel counts"
+    #"translation": "We couldn't get the channel counts"
+    "translation": "無法取得頻道數"
   },
   {
     "id": "store.sql_channel.get_channels.get.app_error",
-    "translation": "We couldn't get the channels"
+    #"translation": "We couldn't get the channels"
+    "translation": "無法取得這些頻道"
   },
   {
     "id": "store.sql_channel.get_channels.not_found.app_error",
-    "translation": "No channels were found"
+    #"translation": "No channels were found"
+    "translation": "找不到頻道"
   },
   {
     "id": "store.sql_channel.get_extra_members.app_error",
-    "translation": "We couldn't get the extra info for channel members"
+    #"translation": "We couldn't get the extra info for channel members"
+    "translation": "無法取得頻道成員的更多資訊"
   },
   {
     "id": "store.sql_channel.get_for_export.app_error",
-    "translation": "We couldn't get all the channels"
+    #"translation": "We couldn't get all the channels"
+    "translation": "無法取得所有的頻道"
   },
   {
     "id": "store.sql_channel.get_member.app_error",
-    "translation": "We couldn't get the channel member"
+    #"translation": "We couldn't get the channel member"
+    "translation": "無法取得頻道的成員"
   },
   {
     "id": "store.sql_channel.get_member_count.app_error",
-    "translation": "We couldn't get the channel member count"
+    #"translation": "We couldn't get the channel member count"
+    "translation": "無法取得頻道成員數"
   },
   {
     "id": "store.sql_channel.get_members.app_error",
-    "translation": "We couldn't get the channel members"
+    #"translation": "We couldn't get the channel members"
+    "translation": "無法取得頻道成員"
   },
   {
     "id": "store.sql_channel.get_more_channels.get.app_error",
-    "translation": "We couldn't get the channels"
+    #"translation": "We couldn't get the channels"
+    "translation": "無法取得這些頻道"
   },
   {
     "id": "store.sql_channel.increment_mention_count.app_error",
@@ -2545,15 +2617,18 @@
   },
   {
     "id": "store.sql_channel.permanent_delete_by_team.app_error",
-    "translation": "We couldn't delete the channels"
+    #"translation": "We couldn't delete the channels"
+    "translation": "無法刪除這些頻道"
   },
   {
     "id": "store.sql_channel.permanent_delete_members_by_user.app_error",
-    "translation": "We couldn't remove the channel member"
+    #"translation": "We couldn't remove the channel member"
+    "translation": "無法移除頻道成員"
   },
   {
     "id": "store.sql_channel.remove_member.app_error",
-    "translation": "We couldn't remove the channel member"
+    #"translation": "We couldn't remove the channel member"
+    "translation": "無法移除頻道成員"
   },
   {
     "id": "store.sql_channel.save.commit_transaction.app_error",
@@ -3093,15 +3168,15 @@
   },
   {
     "id": "store.sql_user.save.username_exists.app_error",
-    "translation": "An account with that username already exists."
+    "translation": "有帳號已經使用這個使用者名稱."
   },
   {
     "id": "store.sql_user.update.app_error",
-    "translation": "We couldn't update the account"
+    "translation": "無法更新這個帳號"
   },
   {
     "id": "store.sql_user.update.email_taken.app_error",
-    "translation": "This email is already taken. Please choose another."
+    "translation": "這個電子郵件已經被使用. 請選擇其他的."
   },
   {
     "id": "store.sql_user.update.find.app_error",
@@ -3109,15 +3184,15 @@
   },
   {
     "id": "store.sql_user.update.finding.app_error",
-    "translation": "We encountered an error finding the account"
+    "translation": "尋找帳號時發生錯誤"
   },
   {
     "id": "store.sql_user.update.updating.app_error",
-    "translation": "We encountered an error updating the account"
+    "translation": "更新帳號時發生錯誤"
   },
   {
     "id": "store.sql_user.update.username_taken.app_error",
-    "translation": "This username is already taken. Please choose another."
+    "translation": "使用者名稱已被使用. 請選擇其他的."
   },
   {
     "id": "store.sql_user.update_auth_data.app_error",
@@ -3141,7 +3216,7 @@
   },
   {
     "id": "store.sql_user.update_password.app_error",
-    "translation": "We couldn't update the user password"
+    "translation": "無法更新使用者密碼"
   },
   {
     "id": "store.sql_user.verify_email.app_error",
@@ -3149,71 +3224,71 @@
   },
   {
     "id": "store.sql_webhooks.analytics_incoming_count.app_error",
-    "translation": "We couldn't count the incoming webhooks"
+    "translation": "無法計算 incoming webhooks"
   },
   {
     "id": "store.sql_webhooks.analytics_outgoing_count.app_error",
-    "translation": "We couldn't count the outgoing webhooks"
+    "translation": "無法計算 outgoing webhooks"
   },
   {
     "id": "store.sql_webhooks.delete_incoming.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.delete_outgoing.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming.app_error",
-    "translation": "We couldn't get the webhook"
+    "translation": "無法取得 webhook"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_channel.app_error",
-    "translation": "We couldn't get the webhooks"
+    "translation": "無法取得 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_incoming_by_user.app_error",
-    "translation": "We couldn't get the webhook"
+    "translation": "無法取得 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing.app_error",
-    "translation": "We couldn't get the webhook"
+    "translation": "無法取得 webhook"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_channel.app_error",
-    "translation": "We couldn't get the webhooks"
+    "translation": "無法取得 webhooks"
   },
   {
     "id": "store.sql_webhooks.get_outgoing_by_team.app_error",
-    "translation": "We couldn't get the webhooks"
+    "translation": "無法取得 webhooks"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_incoming_by_user.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.permanent_delete_outgoing_by_user.app_error",
-    "translation": "We couldn't delete the webhook"
+    "translation": "無法刪除 webhook"
   },
   {
     "id": "store.sql_webhooks.save_incoming.app_error",
-    "translation": "We couldn't save the IncomingWebhook"
+    "translation": "無法儲存 IncomingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_incoming.existing.app_error",
-    "translation": "You cannot overwrite an existing IncomingWebhook"
+    "translation": "無法覆蓋一個已存在的 IncomingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_outgoing.app_error",
-    "translation": "We couldn't save the OutgoingWebhook"
+    "translation": "無法儲存 OutgoingWebhook"
   },
   {
     "id": "store.sql_webhooks.save_outgoing.override.app_error",
-    "translation": "You cannot overwrite an existing OutgoingWebhook"
+    "translation": "無法複蓋一個已存在的 OutgoingWebhook"
   },
   {
     "id": "store.sql_webhooks.update_outgoing.app_error",
-    "translation": "We couldn't update the webhook"
+    "translation": "無法更新 webhook"
   },
   {
     "id": "utils.config.load_config.decoding.panic",
@@ -3233,7 +3308,7 @@
   },
   {
     "id": "utils.config.save_config.saving.app_error",
-    "translation": "An error occurred while saving the file to {{.Filename}}"
+    "translation": "儲存檔案到 {{.Filename}} 時發生錯誤"
   },
   {
     "id": "utils.i18n.loaded",
@@ -3269,23 +3344,23 @@
   },
   {
     "id": "utils.mail.connect_smtp.open.app_error",
-    "translation": "Failed to open connection"
+    "translation": "無法開啟連線"
   },
   {
     "id": "utils.mail.connect_smtp.open_tls.app_error",
-    "translation": "Failed to open TLS connection"
+    "translation": "TLS 連線時發生錯誤"
   },
   {
     "id": "utils.mail.new_client.auth.app_error",
-    "translation": "Failed to authenticate on SMTP server"
+    "translation": "SMTP 伺服器驗證失敗"
   },
   {
     "id": "utils.mail.new_client.open.error",
-    "translation": "Failed to open a connection to SMTP server %v"
+    "translation": "開啟對 SMTP 伺服器 %v 的連線時發生錯誤"
   },
   {
     "id": "utils.mail.send_mail.close.app_error",
-    "translation": "Failed to close connection to SMTP server"
+    "translation": "關閉對 SMTP 伺服器的連線時發生錯誤"
   },
   {
     "id": "utils.mail.send_mail.from_address.app_error",
@@ -3301,11 +3376,11 @@
   },
   {
     "id": "utils.mail.send_mail.sending.debug",
-    "translation": "sending mail to %v with subject of '%v'"
+    "translation": "發送電子郵件到 %v 標題為 '%v'"
   },
   {
     "id": "utils.mail.send_mail.to_address.app_error",
-    "translation": "Failed to add to email address"
+    "translation": "新增電子郵件地址發生錯誤"
   },
   {
     "id": "utils.mail.test.configured.error",
@@ -3317,7 +3392,7 @@
   },
   {
     "id": "web.authorize_oauth.disabled.app_error",
-    "translation": "The system admin has turned off OAuth service providing."
+    "translation": "系統管理員關閉了 OAuth service providing."
   },
   {
     "id": "web.authorize_oauth.missing.app_error",
@@ -3329,7 +3404,7 @@
   },
   {
     "id": "web.check_browser_compatibility.app_error",
-    "translation": "Your current browser is not supported, please upgrade to one of the following browsers: Google Chrome 21 or higher, Internet Explorer 11 or higher, FireFox 14 or higher, Safari 9 or higher"
+    "translation": "無法支援您目前的瀏覽器, 請升級到下列任一瀏覽器: Google Chrome 21 以上版本 , Internet Explorer 11 以上版本, FireFox 14 以上版本, Safari 9 以上版本"
   },
   {
     "id": "web.claim_account.team.error",
@@ -3341,7 +3416,7 @@
   },
   {
     "id": "web.claim_account.user.error",
-    "translation": "Couldn't find user teamid=%v, email=%v, err=%v"
+    "translation": "無法找到使用者 teamid=%v, email=%v, err=%v"
   },
   {
     "id": "web.create_dir.error",
@@ -3373,15 +3448,15 @@
   },
   {
     "id": "web.footer.help",
-    "translation": "Help"
+    "translation": "求助"
   },
   {
     "id": "web.footer.privacy",
-    "translation": "Privacy"
+    "translation": "隱私"
   },
   {
     "id": "web.footer.terms",
-    "translation": "Terms"
+    "translation": "條款"
   },
   {
     "id": "web.get_access_token.bad_client_id.app_error",
@@ -3429,7 +3504,7 @@
   },
   {
     "id": "web.get_access_token.missing_code.app_error",
-    "translation": "invalid_request: Missing code"
+    "translation": "無效的請求: 遺漏代碼"
   },
   {
     "id": "web.get_access_token.redirect_uri.app_error",
@@ -3445,7 +3520,7 @@
   },
   {
     "id": "web.incoming_webhook.channel.app_error",
-    "translation": "Couldn't find the channel"
+    "translation": "找不到頻道"
   },
   {
     "id": "web.incoming_webhook.disabled.app_error",
@@ -3453,7 +3528,7 @@
   },
   {
     "id": "web.incoming_webhook.invalid.app_error",
-    "translation": "Invalid webhook"
+    "translation": "無效的 webhook"
   },
   {
     "id": "web.incoming_webhook.parse.app_error",
@@ -3469,7 +3544,7 @@
   },
   {
     "id": "web.incoming_webhook.user.app_error",
-    "translation": "Couldn't find the user"
+    "translation": "無法找到使用者"
   },
   {
     "id": "web.init.debug",
@@ -3477,11 +3552,11 @@
   },
   {
     "id": "web.login.error",
-    "translation": "Couldn't find team name=%v, err=%v"
+    "translation": "無法找到團隊 name=%v, err=%v"
   },
   {
     "id": "web.login.login_title",
-    "translation": "Login"
+    "translation": "登入"
   },
   {
     "id": "web.login_with_oauth.invalid_team.app_error",
@@ -3505,11 +3580,11 @@
   },
   {
     "id": "web.reset_password.expired_link.app_error",
-    "translation": "The password reset link has expired"
+    "translation": "密碼重設連結已過期"
   },
   {
     "id": "web.reset_password.invalid_link.app_error",
-    "translation": "The reset link does not appear to be valid"
+    "translation": "不合法的密碼重設連結"
   },
   {
     "id": "web.root.home_title",
