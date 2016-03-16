@@ -1571,27 +1571,33 @@
   },
   {
     "id": "api.user.upload_profile_user.array.app_error",
-    "translation": "Empty array under 'image' in request"
+    #"translation": "Empty array under 'image' in request"
+    "translation": "要求的'image'陣列為空"
   },
   {
     "id": "api.user.upload_profile_user.decode.app_error",
-    "translation": "Could not decode profile image"
+    #"translation": "Could not decode profile image"
+    "translation": "無法解析個人檔案影像"
   },
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
-    "translation": "Could not decode profile image config."
+    #"translation": "Could not decode profile image config."
+     "translation": "無法解析個人檔案設定"
   },
   {
     "id": "api.user.upload_profile_user.encode.app_error",
-    "translation": "Could not encode profile image"
+    #"translation": "Could not encode profile image"
+     "translation": "無法將個人檔案影像編碼"
   },
   {
     "id": "api.user.upload_profile_user.no_file.app_error",
-    "translation": "No file under 'image' in request"
+    #"translation": "No file under 'image' in request"
+     "translation": "要求的'image'檔案不存在"
   },
   {
     "id": "api.user.upload_profile_user.open.app_error",
-    "translation": "Could not open image file"
+    #"translation": "Could not open image file"
+     "translation": "無法開啟影像檔案"
   },
   {
     "id": "api.user.upload_profile_user.parse.app_error",
