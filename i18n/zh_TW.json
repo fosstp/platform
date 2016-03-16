@@ -1561,11 +1561,13 @@
   },
   {
     "id": "api.user.update_roles.system_admin_mod.app_error",
-    "translation": "The system admin role can only by modified by another system admin"
+    #"translation": "The system admin role can only by modified by another system admin"
+      "translation": "僅有系統管理員才能修改另一位系統管理員的角色"
   },
   {
     "id": "api.user.update_roles.system_admin_set.app_error",
-    "translation": "The system admin role can only be set by another system admin"
+    #"translation": "The system admin role can only be set by another system admin"
+	"translation": "僅有系統管理員才能設定另一位系統管理員的角色"
   },
   {
     "id": "api.user.upload_profile_user.array.app_error",
