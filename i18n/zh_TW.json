@@ -1857,207 +1857,258 @@
   },
   {
     "id": "mattermost.send_bulletin.info",
-    "translation": "Sending security bulletin for %v to %v"
+    #"translation": "Sending security bulletin for %v to %v"
+	"translation": "正在傳送 %v 至 %v 的安全性公告"
   },
   {
     "id": "mattermost.system_admins.error",
-    "translation": "Failed to get system admins for security update information from Mattermost."
+    #"translation": "Failed to get system admins for security update information from Mattermost."
+	"translation": "使用系統管理員抓取 Mattermost 上的安全性更新資訊失敗"
   },
   {
     "id": "mattermost.working_dir",
-    "translation": "Current working directory is %v"
+    #"translation": "Current working directory is %v"
+	"translation": "目前的工作目錄為 %v"
   },
   {
     "id": "model.access.is_valid.access_token.app_error",
-    "translation": "Invalid access token"
+    #"translation": "Invalid access token"
+	"translation": "無效的存取 token "
   },
   {
     "id": "model.access.is_valid.auth_code.app_error",
-    "translation": "Invalid auth code"
+    #"translation": "Invalid auth code"
+	"translation": "無效的驗證碼"
   },
   {
     "id": "model.access.is_valid.redirect_uri.app_error",
-    "translation": "Invalid redirect uri"
+    #"translation": "Invalid redirect uri"
+	"translation": "無效的重新導向網址"
   },
   {
     "id": "model.access.is_valid.refresh_token.app_error",
-    "translation": "Invalid refresh token"
+    #"translation": "Invalid refresh token"
+	"translation": "無效的重新整理 token"
   },
   {
     "id": "model.authorize.is_valid.auth_code.app_error",
-    "translation": "Invalid authorization code"
+    #"translation": "Invalid authorization code"
+	"translation": "無效的授權碼"
   },
   {
     "id": "model.authorize.is_valid.client_id.app_error",
-    "translation": "Invalid client id"
+    #"translation": "Invalid client id"
+	"translation": "無效的用戶 id"
   },
   {
     "id": "model.authorize.is_valid.create_at.app_error",
-    "translation": "Create at must be a valid time"
+    #"translation": "Create at must be a valid time"
+	"translation": "必須建立在一個有效的時間上"
   },
   {
     "id": "model.authorize.is_valid.expires.app_error",
-    "translation": "Expires in must be set"
+    #"translation": "Expires in must be set"
+	"translation": "必須設定到期時間"
   },
   {
     "id": "model.authorize.is_valid.redirect_uri.app_error",
-    "translation": "Invalid redirect uri"
+    #"translation": "Invalid redirect uri"
+	"translation": "無效的重新導向網址"
   },
   {
     "id": "model.authorize.is_valid.scope.app_error",
-    "translation": "Invalid scope"
+    #"translation": "Invalid scope"
+	"translation": "無效的範圍"
   },
   {
     "id": "model.authorize.is_valid.state.app_error",
-    "translation": "Invalid state"
+    #"translation": "Invalid state"
+	"translation": "無效的狀態"
   },
   {
     "id": "model.authorize.is_valid.user_id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+	"translation": "無效的使用者 id"
   },
   {
     "id": "model.channel.is_valid.2_or_more.app_error",
-    "translation": "Name must be 2 or more lowercase alphanumeric characters"
+    #"translation": "Name must be 2 or more lowercase alphanumeric characters"
+	"translation": "名稱必須包含2個以上的小寫字母"
   },
   {
     "id": "model.channel.is_valid.create_at.app_error",
-    "translation": "Create at must be a valid time"
+    #"translation": "Create at must be a valid time"
+	"translation": "必須建立在一個有效的時間上"
   },
   {
     "id": "model.channel.is_valid.creator_id.app_error",
-    "translation": "Invalid creator id"
+    #"translation": "Invalid creator id"
+	"translation": "無效的創造者 id"
   },
   {
     "id": "model.channel.is_valid.display_name.app_error",
-    "translation": "Invalid display name"
+    #"translation": "Invalid display name"
+	"translation": "無效的顯示名稱"
   },
   {
     "id": "model.channel.is_valid.header.app_error",
-    "translation": "Invalid header"
+    #"translation": "Invalid header"
+	"translation": "無效標題"
   },
   {
     "id": "model.channel.is_valid.id.app_error",
-    "translation": "Invalid Id"
+    #"translation": "Invalid Id"
+	"translation": "無效的 Id"
   },
   {
     "id": "model.channel.is_valid.name.app_error",
-    "translation": "Invalid name"
+    #"translation": "Invalid name"
+	"translation": "無效的名稱"
   },
   {
     "id": "model.channel.is_valid.purpose.app_error",
-    "translation": "Invalid purpose"
+    #"translation": "Invalid purpose"
+	"translation": "無效的目的"
   },
   {
     "id": "model.channel.is_valid.type.app_error",
-    "translation": "Invalid type"
+    #"translation": "Invalid type"
+	"translation": "無效的樣式"
   },
   {
     "id": "model.channel.is_valid.update_at.app_error",
-    "translation": "Update at must be a valid time"
+    #"translation": "Update at must be a valid time"
+	"translation": "必須在一個有效的時間上更新"
   },
   {
     "id": "model.channel_member.is_valid.channel_id.app_error",
-    "translation": "Invalid channel id"
+    #"translation": "Invalid channel id"
+	"translation": "無效的頻道 id"
   },
   {
     "id": "model.channel_member.is_valid.notify_level.app_error",
-    "translation": "Invalid notify level"
+    #"translation": "Invalid notify level"
+	"translation": "無效的通知等級"
   },
   {
     "id": "model.channel_member.is_valid.role.app_error",
-    "translation": "Invalid role"
+    #"translation": "Invalid role"
+	"translation": "無效的角色"
   },
   {
     "id": "model.channel_member.is_valid.unread_level.app_error",
-    "translation": "Invalid mark unread level"
+    #"translation": "Invalid mark unread level"
+	"translation": "無效的未讀標記等級"
   },
   {
     "id": "model.channel_member.is_valid.user_id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+	"translation": "無效的使用者 id"
   },
   {
     "id": "model.client.connecting.app_error",
-    "translation": "We encountered an error while connecting to the server"
+    #"translation": "We encountered an error while connecting to the server"
+	"translation": "連接伺服器時發生錯誤"
   },
   {
     "id": "model.client.login.app_error",
-    "translation": "Authentication tokens didn't match"
+    #"translation": "Authentication tokens didn't match"
+	"translation": "授權 tokens 不符合"
   },
   {
     "id": "model.command.is_valid.create_at.app_error",
-    "translation": "Create at must be a valid time"
+    #"translation": "Create at must be a valid time"
+	"translation": "必須建立在一個有效的時間上"
   },
   {
     "id": "model.command.is_valid.id.app_error",
-    "translation": "Invalid Id"
+    #"translation": "Invalid Id"
+	"translation": "無效的 Id"
   },
   {
     "id": "model.command.is_valid.method.app_error",
-    "translation": "Invalid Method"
+    #"translation": "Invalid Method"
+	"translation": "無效的方法"
   },
   {
     "id": "model.command.is_valid.team_id.app_error",
-    "translation": "Invalid team id"
+    #"translation": "Invalid team id"
+	"translation": "無效的群組 id"
   },
   {
     "id": "model.command.is_valid.token.app_error",
-    "translation": "Invalid token"
+    #"translation": "Invalid token"
+	"translation": "無效的 token"
   },
   {
     "id": "model.command.is_valid.trigger.app_error",
-    "translation": "Invalid trigger"
+    #"translation": "Invalid trigger"
+	"translation": "無效的觸發指令"
   },
   {
     "id": "model.command.is_valid.update_at.app_error",
-    "translation": "Update at must be a valid time"
+    #"translation": "Update at must be a valid time"
+	"translation": "必須在一個有效的時間上更新"
   },
   {
     "id": "model.command.is_valid.url.app_error",
-    "translation": "Invalid url"
+    #"translation": "Invalid url"
+	"translation": "無效的網址"
   },
   {
     "id": "model.command.is_valid.url_http.app_error",
-    "translation": "Invalid URL. Must be a valid URL and start with http:// or https://"
+    #"translation": "Invalid URL. Must be a valid URL and start with http:// or https://"
+	"translation": "無效的網址. 必須使用以 http:// 或 https:// 開投的有效網址"
   },
   {
     "id": "model.command.is_valid.user_id.app_error",
-    "translation": "Invalid user id"
+    #"translation": "Invalid user id"
+	"translation": "無效的使用者 id"
   },
   {
     "id": "model.config.is_valid.email_reset_salt.app_error",
-    "translation": "Invalid password reset salt for email settings.  Must be 32 chars or more."
+    #"translation": "Invalid password reset salt for email settings.  Must be 32 chars or more."
+	"translation": "無效的電子郵件密碼重設金鑰.必須在32個字元以上"
   },
   {
     "id": "model.config.is_valid.email_salt.app_error",
-    "translation": "Invalid invite salt for email settings.  Must be 32 chars or more."
+    #"translation": "Invalid invite salt for email settings.  Must be 32 chars or more."
+	"translation": "無效的電子郵件邀請金鑰.必須在32個字元以上"
   },
   {
     "id": "model.config.is_valid.email_security.app_error",
-    "translation": "Invalid connection security for email settings.  Must be '', 'TLS', or 'STARTTLS'"
+    #"translation": "Invalid connection security for email settings.  Must be '', 'TLS', or 'STARTTLS'"
+	"translation": "無效的電子郵件連線安全性設定. 必須為 '', 'TLS', 或 'STARTTLS'"
   },
   {
     "id": "model.config.is_valid.encrypt_sql.app_error",
-    "translation": "Invalid at rest encrypt key for SQL settings.  Must be 32 chars or more."
+    #"translation": "Invalid at rest encrypt key for SQL settings.  Must be 32 chars or more."
+	"translation": "無效的 SQL 加密金鑰.必須在32個字元以上"
   },
   {
     "id": "model.config.is_valid.file_driver.app_error",
-    "translation": "Invalid driver name for file settings.  Must be 'local' or 'amazons3'"
+    #"translation": "Invalid driver name for file settings.  Must be 'local' or 'amazons3'"
+	"translation": "無效的檔案驅動名稱. 必須為 'local' 或 'amazons3'"
   },
   {
     "id": "model.config.is_valid.file_preview_height.app_error",
-    "translation": "Invalid preview height for file settings.  Must be a zero or positive number."
+    #"translation": "Invalid preview height for file settings.  Must be a zero or positive number."
+	"translation": "無效的檔案預覽高度.  必須為0或者正數."
   },
   {
     "id": "model.config.is_valid.file_preview_width.app_error",
-    "translation": "Invalid preview width for file settings.  Must be a positive number."
+    #"translation": "Invalid preview width for file settings.  Must be a positive number."
+	"translation": "無效的檔案預覽寬度.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_height.app_error",
-    "translation": "Invalid profile height for file settings.  Must be a positive number."
+    #"translation": "Invalid profile height for file settings.  Must be a positive number."
+	"translation": "無效的檔案側寫高度.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_width.app_error",
-    "translation": "Invalid profile width for file settings.  Must be a positive number."
+    #"translation": "Invalid profile width for file settings.  Must be a positive number."
+	"translation": "無效的檔案側寫寬度.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_salt.app_error",
