@@ -1508,27 +1508,27 @@
   {
     "id": "api.user.send_password_reset.sso.app_error",
     #"translation": "Cannot reset password for SSO accounts"
-	"translation": "無法重設SSO帳號的密碼"
+	"translation": "無法重設 SSO 帳號的密碼"
   },
   {
     "id": "api.user.send_sign_in_change_email_and_forget.error",
     #"translation": "Failed to send update password email successfully err=%v"
-	"translation": "傳送更新密碼電子郵件失敗  錯誤=%v"
+	"translation": "傳送更新密碼電子郵件失敗  錯誤 =%v"
   },
   {
     "id": "api.user.send_verify_email_and_forget.failed.error",
     #"translation": "Failed to send verification email successfully err=%v"
-	"translation": "傳送認證電子郵件失敗 錯誤=%v"
+	"translation": "傳送認證電子郵件失敗 錯誤 =%v"
   },
   {
     "id": "api.user.send_welcome_email_and_forget.failed.error",
     #"translation": "Failed to send welcome email successfully err=%v"
-	"translation": "傳送歡迎郵件失敗 錯誤=%v"
+	"translation": "傳送歡迎郵件失敗 錯誤 =%v"
   },
   {
     "id": "api.user.switch_to_email.context.app_error",
     #"translation": "Update password failed because context user_id did not match provided user's id"
-	"translation": "更新密碼失敗,目前使用者id與您提供的使用者id不符"
+	"translation": "更新密碼失敗,目前使用者id與您提供的使用者 id 不符"
   },
   {
     "id": "api.user.update_active.permissions.app_error",
@@ -1537,7 +1537,7 @@
   {
     "id": "api.user.update_password.context.app_error",
     #"translation": "Update password failed because context user_id did not match props user_id"
-	"translation": "更新密碼失敗,目前使用者id與props使用者id不符"
+	"translation": "更新密碼失敗,目前使用者 id 與 props 使用者 id 不符"
   },
   {
     "id": "api.user.update_password.failed.app_error",
@@ -1547,7 +1547,7 @@
   {
     "id": "api.user.update_password.incorrect.app_error",
     #"translation": "The \"Current Password\" you entered is incorrect. Please check that Caps Lock is off and try again."
-	"translation": "您輸入的密碼 \"Current Password\" 不正確. 請確認您鍵盤上的Caps Lock是否鎖定為大寫"
+	"translation": "您 \"目前輸入的密碼\" 不正確. 請檢查 Caps Lock 是關的並再試一次."
   },
   {
     "id": "api.user.update_password.menu",
@@ -1557,7 +1557,7 @@
   {
     "id": "api.user.update_password.oauth.app_error",
     #"translation": "Update password failed because the user is logged in through an OAuth service"
-	"translation": "更新密碼失敗.使用者已透過Oauth服務登入"
+	"translation": "更新密碼失敗.使用者已透過 OAuth 服務登入"
   },
   {
     "id": "api.user.update_password.valid_account.app_error",
@@ -1586,12 +1586,12 @@
   {
     "id": "api.user.upload_profile_user.array.app_error",
     #"translation": "Empty array under 'image' in request"
-    "translation": "要求的'image'陣列為空"
+    "translation": "要求的 'image' 陣列為空"
   },
   {
     "id": "api.user.upload_profile_user.decode.app_error",
     #"translation": "Could not decode profile image"
-    "translation": "無法解碼個人檔案影像"
+    "translation": "無法解碼個人檔案圖片"
   },
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
@@ -1601,12 +1601,12 @@
   {
     "id": "api.user.upload_profile_user.encode.app_error",
     #"translation": "Could not encode profile image"
-     "translation": "無法將個人檔案影像編碼"
+     "translation": "無法將個人檔案圖片編碼"
   },
   {
     "id": "api.user.upload_profile_user.no_file.app_error",
     #"translation": "No file under 'image' in request"
-     "translation": "要求的'image'檔案不存在"
+     "translation": "要求的 'image' 檔案不存在"
   },
   {
     "id": "api.user.upload_profile_user.open.app_error",
@@ -1616,12 +1616,12 @@
   {
     "id": "api.user.upload_profile_user.parse.app_error",
     #"translation": "Could not parse multipart form"
-    "translation": "無法解析部分表單"
+    "translation": "無法解析 multipart form"
   },
   {
     "id": "api.user.upload_profile_user.storage.app_error",
     #"translation": "Unable to upload file. Image storage is not configured."
-    "translation": "無法上傳檔案.尚未設定影像儲存位置"
+    "translation": "無法上傳檔案.尚未設定圖片儲存位置"
   },
   {
     "id": "api.user.upload_profile_user.too_large.app_error",
@@ -1631,12 +1631,12 @@
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
     #"translation": "Couldn't upload profile image"
-	"translation": "無法上傳個人檔案影像"
+	"translation": "無法上傳個人檔案圖片"
   },
   {
     "id": "api.web_conn.new_web_conn.last_activity.error",
     #"translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
-	"translation": "無法更新最後活動時間, 使用者id=%v and session_id=%v, 錯誤=%v"
+	"translation": "無法更新 user_id=%v, session_id=%v 的 LastActivityAt, err=%v"
   },
   {
     "id": "api.web_conn.new_web_conn.last_ping.error",
@@ -1646,7 +1646,7 @@
   {
     "id": "api.web_hub.start.stopping.debug",
     #"translation": "stopping %v connections"
-	"translation": "停止 %v 的連線"
+	"translation": "正在停止 %v 的連線"
   },
   {
     "id": "api.web_socket.connect.error",
@@ -1666,73 +1666,73 @@
   {
     "id": "api.web_team_hun.start.debug",
     #"translation": "team hub stopping for teamId=%v"
-	"translation": "群組id=%v 停用 "
+	"translation": "正在停止團隊群組 teamId=%v"
   },
   {
     "id": "api.webhook.create_incoming.disabled.app_errror",
     #"translation": "Incoming webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳入"
+	"translation": "Incoming webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.create_outgoing.disabled.app_error",
     #"translation": "Outgoing webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳出"
+	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.create_outgoing.triggers.app_error",
     #"translation": "Either trigger_words or channel_id must be set"
-	"translation": "必須設定觸發詞或者頻道id"
+	"translation": "必須設定觸發詞或者頻道 id"
   },
   {
     "id": "api.webhook.delete_incoming.disabled.app_errror",
     #"translation": "Incoming webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳入"
+	"translation": "Incoming webhooks 已被系統管理員停用"
   },
   
   {
     "id": "api.webhook.delete_incoming.permissions.app_errror",
     #"translation": "Inappropriate permissions to delete incoming webhook"
-	"translation": "權限不正確,無法刪除webhook傳入"
+	"translation": "權限不正確,無法刪除 Incoming webhooks"
   },
   {
     "id": "api.webhook.delete_outgoing.disabled.app_error",
     #"translation": "Outgoing webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳出"
+	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.delete_outgoing.permissions.app_error",
     #"translation": "Inappropriate permissions to delete outcoming webhook"
-	"translation": "權限不正確,無法刪除webhook傳出"
+	"translation": "權限不正確,無法刪除 outcoming webhooks"
   },
   {
     "id": "api.webhook.get_incoming.disabled.app_error",
     #"translation": "Incoming webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳入"
+	"translation": "Incoming webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.get_outgoing.disabled.app_error",
     #"translation": "Outgoing webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳出"
+	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.init.debug",
     #"translation": "Initializing webhook api routes"
-	"translation": "初始化webhook api 路由"
+	"translation": "初始化 webhook api routes"
   },
   {
     "id": "api.webhook.regen_outgoing_token.disabled.app_error",
     #"translation": "Outgoing webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳出"
+	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.regen_outgoing_token.permissions.app_error",
     #"translation": "Inappropriate permissions to regenerate outcoming webhook token"
-	"translation": "權限不正確,無法重新產生webhook傳出標記"
+	"translation": "權限不正確,無法重新產生 outcoming webhook token"
   },
   {
     "id": "ent.ldap.do_login.bind_admin_user.app_error",
     #"translation": "Unable to bind to LDAP server. Check BindUsername and BindPassword."
-	"translation": "無法綁定LDAP伺服器，請檢查綁定使用者帳號與綁定密碼"
+	"translation": "無法綁定 LDAP 伺服器，請檢查綁定使用者帳號與綁定密碼"
   },
   {
     "id": "ent.ldap.do_login.invalid_password.app_error",
@@ -1742,38 +1742,38 @@
   {
     "id": "ent.ldap.do_login.licence_disable.app_error",
     #"translation": "LDAP functionality disabled by current license. Please contact your system administrator about upgrading your enterprise license."
-	"translation": "目前的授權無法使用LDAP.請聯繫系統管理員升級為企業授權"
+	"translation": "目前的授權無法使用 LDAP 功能.請聯繫系統管理員升級為企業授權"
   },
   {
     "id": "ent.ldap.do_login.matched_to_many_users.app_error",
     #"translation": "Username given matches multiple users"
-	"translation": "提供的LDAP使用者名稱比對出多個使用者"
+	"translation": "提供的 LDAP 使用者名稱比對到多重使用者"
   },
   {
     "id": "ent.ldap.do_login.search_ldap_server.app_error",
     #"translation": "Failed to search LDAP server"
-	"translation": "搜尋LDAP伺服器失敗"
+	"translation": "搜尋 LDAP 伺服器失敗"
   },
   {
     "id": "ent.ldap.do_login.unable_to_connect.app_error",
     #"translation": "Unable to connect to LDAP server"
-	"translation": "無法連線到LDAP伺服器"
+	"translation": "無法連線到 LDAP 伺服器"
 
   },
   {
     "id": "ent.ldap.do_login.unable_to_create_user.app_error",
     #"translation": "Credentials valid but unable to create user."
-	"translation": "LDAP認證有效,但無法建立使用者"
+	"translation": " LDAP 認證有效,但無法建立使用者"
   },
   {
     "id": "ent.ldap.do_login.user_not_registered.app_error",
     #"translation": "User not registered on LDAP server"
-	"translation": "使用者尚未註冊LDAP伺服器"
+	"translation": "使用者尚未註冊 LDAP 伺服器"
   },
   {
     "id": "manaultesting.get_channel_id.no_found.debug",
     #"translation": "Could not find channel: %v, %v possibilites searched"
-	"translation": "找不到: %v頻道, 已搜尋%v 的可能性"
+	"translation": "找不到: %v 頻道, 已搜尋 %v 的可能性"
   },
   {
     "id": "manaultesting.get_channel_id.unable.debug",
@@ -1798,7 +1798,7 @@
   {
     "id": "manaultesting.manual_test.uid.debug",
     #"translation": "No uid in url"
-	"translation": "網址中找不到uid"
+	"translation": "網址中找不到 uid"
   },
   {
     "id": "manaultesting.test_autolink.info",
@@ -1838,7 +1838,7 @@
   {
     "id": "mattermost.security_bulletin.error",
     #"translation": "Failed to get security bulletin details"
-	"translation": "抓取得安全性公告詳情失敗"
+	"translation": "抓取安全性公告詳情失敗"
   },
   {
     "id": "mattermost.security_bulletin_read.error",
@@ -1848,12 +1848,12 @@
   {
     "id": "mattermost.security_checks.debug",
     #"translation": "Checking for security update from Mattermost"
-	"translation": "正在檢查來自Mattermost的安全性更新"
+	"translation": "正在檢查來自 Mattermost 的安全性更新"
   },
   {
     "id": "mattermost.security_info.error",
     #"translation": "Failed to get security update information from Mattermost."
-	"translation": "從Mattermost抓取安全性更新資訊失敗"
+	"translation": "從 Mattermost 抓取安全性更新資訊失敗"
   },
   {
     "id": "mattermost.send_bulletin.info",
@@ -2058,7 +2058,7 @@
   {
     "id": "model.command.is_valid.url_http.app_error",
     #"translation": "Invalid URL. Must be a valid URL and start with http:// or https://"
-	"translation": "無效的網址. 必須使用以 http:// 或 https:// 開投的有效網址"
+	"translation": "無效的網址. 必須使用以 http:// 或 https:// 開頭的有效網址"
   },
   {
     "id": "model.command.is_valid.user_id.app_error",
@@ -2068,99 +2068,113 @@
   {
     "id": "model.config.is_valid.email_reset_salt.app_error",
     #"translation": "Invalid password reset salt for email settings.  Must be 32 chars or more."
-	"translation": "無效的電子郵件密碼重設金鑰.必須在32個字元以上"
+	"translation": "電子郵件設定中的密碼重設salt無效.必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.email_salt.app_error",
     #"translation": "Invalid invite salt for email settings.  Must be 32 chars or more."
-	"translation": "無效的電子郵件邀請金鑰.必須在32個字元以上"
+	"translation": "電子郵件設定中的邀請salt無效.必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.email_security.app_error",
     #"translation": "Invalid connection security for email settings.  Must be '', 'TLS', or 'STARTTLS'"
-	"translation": "無效的電子郵件連線安全性設定. 必須為 '', 'TLS', 或 'STARTTLS'"
+	"translation": "電子郵件設定中的連線安全性設定無效. 必須為 '', 'TLS', 或 'STARTTLS'"
   },
   {
     "id": "model.config.is_valid.encrypt_sql.app_error",
     #"translation": "Invalid at rest encrypt key for SQL settings.  Must be 32 chars or more."
-	"translation": "無效的 SQL 加密金鑰.必須在32個字元以上"
+	"translation": " SQL 設定中的加密金鑰無效.必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.file_driver.app_error",
     #"translation": "Invalid driver name for file settings.  Must be 'local' or 'amazons3'"
-	"translation": "無效的檔案驅動名稱. 必須為 'local' 或 'amazons3'"
+	"translation": "檔案設定中的驅動名稱無效. 必須為 'local' 或 'amazons3'"
   },
   {
     "id": "model.config.is_valid.file_preview_height.app_error",
     #"translation": "Invalid preview height for file settings.  Must be a zero or positive number."
-	"translation": "無效的檔案預覽高度.  必須為0或者正數."
+	"translation": "檔案設定中的預覽高度無效.  必須為0或者正數."
   },
   {
     "id": "model.config.is_valid.file_preview_width.app_error",
     #"translation": "Invalid preview width for file settings.  Must be a positive number."
-	"translation": "無效的檔案預覽寬度.  必須為正數."
+	"translation": "檔案設定中的覽寬度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_height.app_error",
     #"translation": "Invalid profile height for file settings.  Must be a positive number."
-	"translation": "無效的檔案側寫高度.  必須為正數."
+	"translation": "檔案設定中的個人檔案高度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_width.app_error",
     #"translation": "Invalid profile width for file settings.  Must be a positive number."
-	"translation": "無效的檔案側寫寬度.  必須為正數."
+	"translation": "檔案設定中的個人檔案寬度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_salt.app_error",
-    "translation": "Invalid public link salt for file settings.  Must be 32 chars or more."
+    #"translation": "Invalid public link salt for file settings.  Must be 32 chars or more."
+	"translation": "檔案設定中的公開連結 salt 無效.  必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.file_thumb_height.app_error",
-    "translation": "Invalid thumbnail height for file settings.  Must be a positive number."
+    #"translation": "Invalid thumbnail height for file settings.  Must be a positive number."
+	"translation": "檔案設定中縮圖高度無效.必須為正數."
   },
   {
     "id": "model.config.is_valid.file_thumb_width.app_error",
-    "translation": "Invalid thumbnail width for file settings.  Must be a positive number."
+    #"translation": "Invalid thumbnail width for file settings.  Must be a positive number."
+	"translation": "檔案設定中的縮圖寬度無效.必須為正數."
   },
   {
     "id": "model.config.is_valid.listen_address.app_error",
-    "translation": "Invalid listen address for service settings Must be set."
+    #"translation": "Invalid listen address for service settings Must be set."
+	"translation": "服務設定中的 listen address 無效,此項目必須設定."
   },
   {
     "id": "model.config.is_valid.login_attempts.app_error",
-    "translation": "Invalid maximum login attempts for service settings.  Must be a positive number."
+    #"translation": "Invalid maximum login attempts for service settings.  Must be a positive number."
+	"translation": "服務設定中的最高登入嘗試次數無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.max_users.app_error",
-    "translation": "Invalid maximum users per team for team settings.  Must be a positive number."
+    #"translation": "Invalid maximum users per team for team settings.  Must be a positive number."
+	"translation": "群組設定中的單一群組最高使用者數無效. 必須為正數."
   },
   {
     "id": "model.config.is_valid.rate_mem.app_error",
-    "translation": "Invalid memory store size for rate limit settings.  Must be a positive number"
+    #"translation": "Invalid memory store size for rate limit settings.  Must be a positive number"
+	"translation": "頻率限制設定中的記憶體儲存大小無效. 必須為正數."
   },
   {
     "id": "model.config.is_valid.rate_sec.app_error",
-    "translation": "Invalid per sec for rate limit settings.  Must be a positive number"
+    #"translation": "Invalid per sec for rate limit settings.  Must be a positive number"
+	"translation": "頻率限制設定中的每秒設定無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.sql_data_src.app_error",
-    "translation": "Invalid data source for SQL settings.  Must be set."
+    #"translation": "Invalid data source for SQL settings.  Must be set."
+	"translation": " SQL 設定中的資料來源無效.  此項目必須設定."
+
   },
   {
     "id": "model.config.is_valid.sql_driver.app_error",
-    "translation": "Invalid driver name for SQL settings.  Must be 'mysql' or 'postgres'"
+    #"translation": "Invalid driver name for SQL settings.  Must be 'mysql' or 'postgres'"
+	"translation": " SQL 設定中的驅動名稱無效.  必須為 'mysql' 或 'postgres'"
   },
   {
     "id": "model.config.is_valid.sql_idle.app_error",
-    "translation": "Invalid maximum idle connection for SQL settings.  Must be a positive number."
+    #"translation": "Invalid maximum idle connection for SQL settings.  Must be a positive number."
+	"translation": " SQL 設定中的最高閒置連線數無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.sql_max_conn.app_error",
-    "translation": "Invalid maximum open connection for SQL settings.  Must be a positive number."
+    #"translation": "Invalid maximum open connection for SQL settings.  Must be a positive number."
+	"translation": " SQL 設定中的最高開啟連線數無效.  必須為正數."
   },
   {
     "id": "model.file_info.get.gif.app_error",
-    "translation": "Could not decode gif."
+    #"translation": "Could not decode gif."
+	"translation": "無法將 gif 解碼."
   },
   {
     "id": "model.incoming_hook.channel_id.app_error",
