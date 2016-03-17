@@ -1508,27 +1508,27 @@
   {
     "id": "api.user.send_password_reset.sso.app_error",
     #"translation": "Cannot reset password for SSO accounts"
-	"translation": "無法重設SSO帳號的密碼"
+	"translation": "無法重設 SSO 帳號的密碼"
   },
   {
     "id": "api.user.send_sign_in_change_email_and_forget.error",
     #"translation": "Failed to send update password email successfully err=%v"
-	"translation": "傳送更新密碼電子郵件失敗  錯誤=%v"
+	"translation": "傳送更新密碼電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.send_verify_email_and_forget.failed.error",
     #"translation": "Failed to send verification email successfully err=%v"
-	"translation": "傳送認證電子郵件失敗 錯誤=%v"
+	"translation": "傳送認證電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.send_welcome_email_and_forget.failed.error",
     #"translation": "Failed to send welcome email successfully err=%v"
-	"translation": "傳送歡迎郵件失敗 錯誤=%v"
+	"translation": "傳送歡迎電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.switch_to_email.context.app_error",
     #"translation": "Update password failed because context user_id did not match provided user's id"
-	"translation": "更新密碼失敗,目前使用者id與您提供的使用者id不符"
+	"translation": "更新密碼失敗, 目前使用者 id 與您提供的使用者 id 不符"
   },
   {
     "id": "api.user.update_active.permissions.app_error",
@@ -1537,7 +1537,7 @@
   {
     "id": "api.user.update_password.context.app_error",
     #"translation": "Update password failed because context user_id did not match props user_id"
-	"translation": "更新密碼失敗,目前使用者id與props使用者id不符"
+	"translation": "更新密碼失敗, 目前使用者 id 與 props 使用者 id 不符"
   },
   {
     "id": "api.user.update_password.failed.app_error",
@@ -1547,7 +1547,7 @@
   {
     "id": "api.user.update_password.incorrect.app_error",
     #"translation": "The \"Current Password\" you entered is incorrect. Please check that Caps Lock is off and try again."
-	"translation": "您輸入的密碼 \"Current Password\" 不正確. 請確認您鍵盤上的Caps Lock是否鎖定為大寫"
+	"translation": "您 \"目前輸入的密碼\" 不正確. 請檢查 Caps Lock 是關的並再試一次."
   },
   {
     "id": "api.user.update_password.menu",
@@ -1557,12 +1557,12 @@
   {
     "id": "api.user.update_password.oauth.app_error",
     #"translation": "Update password failed because the user is logged in through an OAuth service"
-	"translation": "更新密碼失敗.使用者已透過Oauth服務登入"
+	"translation": "更新密碼失敗. 使用者已透過 OAuth 服務登入"
   },
   {
     "id": "api.user.update_password.valid_account.app_error",
     #"translation": "Update password failed because we couldn't find a valid account"
-	"translation": "更新密碼失敗.無法找到有校的帳號"
+	"translation": "更新密碼失敗, 無法找到有效的帳號"
   },
   {
     "id": "api.user.update_roles.one_admin.app_error",
@@ -1586,67 +1586,67 @@
   {
     "id": "api.user.upload_profile_user.array.app_error",
     #"translation": "Empty array under 'image' in request"
-    "translation": "要求的'image'陣列為空"
+    "translation": "要求的 'image' 陣列為空"
   },
   {
     "id": "api.user.upload_profile_user.decode.app_error",
     #"translation": "Could not decode profile image"
-    "translation": "無法解碼個人檔案影像"
+    "translation": "無法解碼個人檔案圖片"
   },
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
     #"translation": "Could not decode profile image config."
-     "translation": "無法解碼個人檔案設定"
+     "translation": "無法解碼個人檔案圖片設定"
   },
   {
     "id": "api.user.upload_profile_user.encode.app_error",
     #"translation": "Could not encode profile image"
-     "translation": "無法將個人檔案影像編碼"
+     "translation": "無法編碼個人檔案圖片"
   },
   {
     "id": "api.user.upload_profile_user.no_file.app_error",
     #"translation": "No file under 'image' in request"
-     "translation": "要求的'image'檔案不存在"
+     "translation": "要求的 'image' 檔案不存在"
   },
   {
     "id": "api.user.upload_profile_user.open.app_error",
     #"translation": "Could not open image file"
-     "translation": "無法開啟影像檔案"
+     "translation": "無法開啟圖片檔案"
   },
   {
     "id": "api.user.upload_profile_user.parse.app_error",
     #"translation": "Could not parse multipart form"
-    "translation": "無法解析部分表單"
+    "translation": "無法解析 multipart form"
   },
   {
     "id": "api.user.upload_profile_user.storage.app_error",
     #"translation": "Unable to upload file. Image storage is not configured."
-    "translation": "無法上傳檔案.尚未設定影像儲存位置"
+    "translation": "無法上傳檔案. 尚未設定圖片儲存位置."
   },
   {
     "id": "api.user.upload_profile_user.too_large.app_error",
     #"translation": "Unable to upload profile image. File is too large."
-     "translation": "無法上傳檔案.檔案過大"
+     "translation": "無法上傳個人檔案圖片. 檔案過大."
   },
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
     #"translation": "Couldn't upload profile image"
-	"translation": "無法上傳個人檔案影像"
+	"translation": "無法上傳個人檔案圖片"
   },
   {
     "id": "api.web_conn.new_web_conn.last_activity.error",
     #"translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
-	"translation": "無法更新最後活動時間, 使用者id=%v and session_id=%v, 錯誤=%v"
+	"translation": "無法更新 user_id=%v, session_id=%v 的 LastActivityAt, err=%v"
   },
   {
     "id": "api.web_conn.new_web_conn.last_ping.error",
     #"translation": "Failed to update LastPingAt for user_id=%v, err=%v"
-	"translation": "無法更新最後傳訊時間,使用者id=%v, 錯誤=%v"
+	"translation": "無法更新最後傳訊時間, user_id=%v, err=%v"
   },
   {
     "id": "api.web_hub.start.stopping.debug",
     #"translation": "stopping %v connections"
-	"translation": "停止 %v 的連線"
+	"translation": "正在停止 %v 的連線"
   },
   {
     "id": "api.web_socket.connect.error",
@@ -1661,22 +1661,22 @@
   {
     "id": "api.web_socket.init.debug",
     #"translation": "Initializing web socket api routes"
-	"translation": "初始化 web socket api 路由"
+	"translation": "正在初始化 web socket api 路徑"
   },
   {
     "id": "api.web_team_hun.start.debug",
     #"translation": "team hub stopping for teamId=%v"
-	"translation": "群組id=%v 停用 "
+	"translation": "正在停止團隊群組 teamId=%v"
   },
   {
     "id": "api.webhook.create_incoming.disabled.app_errror",
     #"translation": "Incoming webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳入"
+	"translation": "Incoming webhooks 已被系統管理員停用."
   },
   {
     "id": "api.webhook.create_outgoing.disabled.app_error",
     #"translation": "Outgoing webhooks have been disabled by the system admin."
-	"translation": "系統管理員已經停用webhook傳出"
+	"translation": "Outgoing webhooks 已被系統管理員停用."
   },
   {
     "id": "api.webhook.create_outgoing.triggers.app_error",
