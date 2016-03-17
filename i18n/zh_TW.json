@@ -1497,31 +1497,38 @@
   },
   {
     "id": "api.user.send_password_reset.find.app_error",
-    "translation": "We couldn’t find an account with that address."
+    #"translation": "We couldn’t find an account with that address."
+	"translation": "無法找到該電子郵件地址相對應的帳號"
   },
   {
     "id": "api.user.send_password_reset.send.app_error",
-    "translation": "Failed to send password reset email successfully"
+    #"translation": "Failed to send password reset email successfully"
+	"translation": "傳送密碼重設電子郵件失敗"
   },
   {
     "id": "api.user.send_password_reset.sso.app_error",
-    "translation": "Cannot reset password for SSO accounts"
+    #"translation": "Cannot reset password for SSO accounts"
+	"translation": "無法重設SSO帳號的密碼"
   },
   {
     "id": "api.user.send_sign_in_change_email_and_forget.error",
-    "translation": "Failed to send update password email successfully err=%v"
+    #"translation": "Failed to send update password email successfully err=%v"
+	"translation": "傳送更新密碼電子郵件失敗  錯誤=%v"
   },
   {
     "id": "api.user.send_verify_email_and_forget.failed.error",
-    "translation": "Failed to send verification email successfully err=%v"
+    #"translation": "Failed to send verification email successfully err=%v"
+	"translation": "傳送認證電子郵件失敗 錯誤=%v"
   },
   {
     "id": "api.user.send_welcome_email_and_forget.failed.error",
-    "translation": "Failed to send welcome email successfully err=%v"
+    #"translation": "Failed to send welcome email successfully err=%v"
+	"translation": "傳送歡迎郵件失敗 錯誤=%v"
   },
   {
     "id": "api.user.switch_to_email.context.app_error",
-    "translation": "Update password failed because context user_id did not match provided user's id"
+    #"translation": "Update password failed because context user_id did not match provided user's id"
+	"translation": "更新密碼失敗,目前使用者id與您提供的使用者id不符"
   },
   {
     "id": "api.user.update_active.permissions.app_error",
@@ -1529,31 +1536,38 @@
   },
   {
     "id": "api.user.update_password.context.app_error",
-    "translation": "Update password failed because context user_id did not match props user_id"
+    #"translation": "Update password failed because context user_id did not match props user_id"
+	"translation": "更新密碼失敗,目前使用者id與props使用者id不符"
   },
   {
     "id": "api.user.update_password.failed.app_error",
-    "translation": "Update password failed"
+    #"translation": "Update password failed"
+	"translation": "更新密碼失敗"
   },
   {
     "id": "api.user.update_password.incorrect.app_error",
-    "translation": "The \"Current Password\" you entered is incorrect. Please check that Caps Lock is off and try again."
+    #"translation": "The \"Current Password\" you entered is incorrect. Please check that Caps Lock is off and try again."
+	"translation": "您輸入的密碼 \"Current Password\" 不正確. 請確認您鍵盤上的Caps Lock是否鎖定為大寫"
   },
   {
     "id": "api.user.update_password.menu",
-    "translation": "using the settings menu"
+    #"translation": "using the settings menu"
+	"translation": "使用設定選單"
   },
   {
     "id": "api.user.update_password.oauth.app_error",
-    "translation": "Update password failed because the user is logged in through an OAuth service"
+    #"translation": "Update password failed because the user is logged in through an OAuth service"
+	"translation": "更新密碼失敗.使用者已透過Oauth服務登入"
   },
   {
     "id": "api.user.update_password.valid_account.app_error",
-    "translation": "Update password failed because we couldn't find a valid account"
+    #"translation": "Update password failed because we couldn't find a valid account"
+	"translation": "更新密碼失敗.無法找到有校的帳號"
   },
   {
     "id": "api.user.update_roles.one_admin.app_error",
-    "translation": "There must be at least one active admin"
+    #"translation": "There must be at least one active admin"
+	"translation": "至少要有一個啟用的管理員"
   },
   {
     "id": "api.user.update_roles.permissions.app_error",
@@ -1616,183 +1630,230 @@
   },
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
-    "translation": "Couldn't upload profile image"
+    #"translation": "Couldn't upload profile image"
+	"translation": "無法上傳個人檔案影像"
   },
   {
     "id": "api.web_conn.new_web_conn.last_activity.error",
-    "translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
+    #"translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
+	"translation": "無法更新最後活動時間, 使用者id=%v and session_id=%v, 錯誤=%v"
   },
   {
     "id": "api.web_conn.new_web_conn.last_ping.error",
-    "translation": "Failed to update LastPingAt for user_id=%v, err=%v"
+    #"translation": "Failed to update LastPingAt for user_id=%v, err=%v"
+	"translation": "無法更新最後傳訊時間,使用者id=%v, 錯誤=%v"
   },
   {
     "id": "api.web_hub.start.stopping.debug",
-    "translation": "stopping %v connections"
+    #"translation": "stopping %v connections"
+	"translation": "停止 %v 的連線"
   },
   {
     "id": "api.web_socket.connect.error",
-    "translation": "websocket connect err: %v"
+    #"translation": "websocket connect err: %v"
+	"translation": "websocket 連接錯誤: %v"
   },
   {
     "id": "api.web_socket.connect.upgrade.app_error",
-    "translation": "Failed to upgrade websocket connection"
+    #"translation": "Failed to upgrade websocket connection"
+	"translation": "更新 websocket 連線失敗"
   },
   {
     "id": "api.web_socket.init.debug",
-    "translation": "Initializing web socket api routes"
+    #"translation": "Initializing web socket api routes"
+	"translation": "初始化 web socket api 路由"
   },
   {
     "id": "api.web_team_hun.start.debug",
-    "translation": "team hub stopping for teamId=%v"
+    #"translation": "team hub stopping for teamId=%v"
+	"translation": "群組id=%v 停用 "
   },
   {
     "id": "api.webhook.create_incoming.disabled.app_errror",
-    "translation": "Incoming webhooks have been disabled by the system admin."
+    #"translation": "Incoming webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳入"
   },
   {
     "id": "api.webhook.create_outgoing.disabled.app_error",
-    "translation": "Outgoing webhooks have been disabled by the system admin."
+    #"translation": "Outgoing webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳出"
   },
   {
     "id": "api.webhook.create_outgoing.triggers.app_error",
-    "translation": "Either trigger_words or channel_id must be set"
+    #"translation": "Either trigger_words or channel_id must be set"
+	"translation": "必須設定觸發詞或者頻道id"
   },
   {
     "id": "api.webhook.delete_incoming.disabled.app_errror",
-    "translation": "Incoming webhooks have been disabled by the system admin."
+    #"translation": "Incoming webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳入"
   },
+  
   {
     "id": "api.webhook.delete_incoming.permissions.app_errror",
-    "translation": "Inappropriate permissions to delete incoming webhook"
+    #"translation": "Inappropriate permissions to delete incoming webhook"
+	"translation": "權限不正確,無法刪除webhook傳入"
   },
   {
     "id": "api.webhook.delete_outgoing.disabled.app_error",
-    "translation": "Outgoing webhooks have been disabled by the system admin."
+    #"translation": "Outgoing webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳出"
   },
   {
     "id": "api.webhook.delete_outgoing.permissions.app_error",
-    "translation": "Inappropriate permissions to delete outcoming webhook"
+    #"translation": "Inappropriate permissions to delete outcoming webhook"
+	"translation": "權限不正確,無法刪除webhook傳出"
   },
   {
     "id": "api.webhook.get_incoming.disabled.app_error",
-    "translation": "Incoming webhooks have been disabled by the system admin."
+    #"translation": "Incoming webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳入"
   },
   {
     "id": "api.webhook.get_outgoing.disabled.app_error",
-    "translation": "Outgoing webhooks have been disabled by the system admin."
+    #"translation": "Outgoing webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳出"
   },
   {
     "id": "api.webhook.init.debug",
-    "translation": "Initializing webhook api routes"
+    #"translation": "Initializing webhook api routes"
+	"translation": "初始化webhook api 路由"
   },
   {
     "id": "api.webhook.regen_outgoing_token.disabled.app_error",
-    "translation": "Outgoing webhooks have been disabled by the system admin."
+    #"translation": "Outgoing webhooks have been disabled by the system admin."
+	"translation": "系統管理員已經停用webhook傳出"
   },
   {
     "id": "api.webhook.regen_outgoing_token.permissions.app_error",
-    "translation": "Inappropriate permissions to regenerate outcoming webhook token"
+    #"translation": "Inappropriate permissions to regenerate outcoming webhook token"
+	"translation": "權限不正確,無法重新產生webhook傳出標記"
   },
   {
     "id": "ent.ldap.do_login.bind_admin_user.app_error",
-    "translation": "Unable to bind to LDAP server. Check BindUsername and BindPassword."
+    #"translation": "Unable to bind to LDAP server. Check BindUsername and BindPassword."
+	"translation": "無法綁定LDAP伺服器，請檢查綁定使用者帳號與綁定密碼"
   },
   {
     "id": "ent.ldap.do_login.invalid_password.app_error",
-    "translation": "Invalid Password"
+    #"translation": "Invalid Password"
+	"translation": "無效的密碼"
   },
   {
     "id": "ent.ldap.do_login.licence_disable.app_error",
-    "translation": "LDAP functionality disabled by current license. Please contact your system administrator about upgrading your enterprise license."
+    #"translation": "LDAP functionality disabled by current license. Please contact your system administrator about upgrading your enterprise license."
+	"translation": "目前的授權無法使用LDAP.請聯繫系統管理員升級為企業授權"
   },
   {
     "id": "ent.ldap.do_login.matched_to_many_users.app_error",
-    "translation": "Username given matches multiple users"
+    #"translation": "Username given matches multiple users"
+	"translation": "提供的LDAP使用者名稱比對出多個使用者"
   },
   {
     "id": "ent.ldap.do_login.search_ldap_server.app_error",
-    "translation": "Failed to search LDAP server"
+    #"translation": "Failed to search LDAP server"
+	"translation": "搜尋LDAP伺服器失敗"
   },
   {
     "id": "ent.ldap.do_login.unable_to_connect.app_error",
-    "translation": "Unable to connect to LDAP server"
+    #"translation": "Unable to connect to LDAP server"
+	"translation": "無法連線到LDAP伺服器"
+
   },
   {
     "id": "ent.ldap.do_login.unable_to_create_user.app_error",
-    "translation": "Credentials valid but unable to create user."
+    #"translation": "Credentials valid but unable to create user."
+	"translation": "LDAP認證有效,但無法建立使用者"
   },
   {
     "id": "ent.ldap.do_login.user_not_registered.app_error",
-    "translation": "User not registered on LDAP server"
+    #"translation": "User not registered on LDAP server"
+	"translation": "使用者尚未註冊LDAP伺服器"
   },
   {
     "id": "manaultesting.get_channel_id.no_found.debug",
-    "translation": "Could not find channel: %v, %v possibilites searched"
+    #"translation": "Could not find channel: %v, %v possibilites searched"
+	"translation": "找不到: %v頻道, 已搜尋%v 的可能性"
   },
   {
     "id": "manaultesting.get_channel_id.unable.debug",
-    "translation": "Unable to get channels"
+    #"translation": "Unable to get channels"
+	"translation": "無法取得頻道"
   },
   {
     "id": "manaultesting.manual_test.create.info",
-    "translation": "Creating user and team"
+    #"translation": "Creating user and team"
+	"translation": "建立使用者與群組"
   },
   {
     "id": "manaultesting.manual_test.parse.app_error",
-    "translation": "Unable to parse URL"
+    #"translation": "Unable to parse URL"
+	"translation": "無法解析網址"
   },
   {
     "id": "manaultesting.manual_test.setup.info",
-    "translation": "Setting up for manual test..."
+    #"translation": "Setting up for manual test..."
+	"translation": "正在進行手冊測試的設定..."
   },
   {
     "id": "manaultesting.manual_test.uid.debug",
-    "translation": "No uid in url"
+    #"translation": "No uid in url"
+	"translation": "網址中找不到uid"
   },
   {
     "id": "manaultesting.test_autolink.info",
-    "translation": "Manual Auto Link Test"
+    #"translation": "Manual Auto Link Test"
+	"translation": "手冊自動連結測試"
   },
   {
     "id": "manaultesting.test_autolink.unable.app_error",
-    "translation": "Unable to get channels"
+    #"translation": "Unable to get channels"
+	"translation": "無法取得頻道"
   },
   {
     "id": "mattermost.bulletin.subject",
-    "translation": "Mattermost Security Bulletin"
+    #"translation": "Mattermost Security Bulletin"
+	"translation": "Mattermost 安全性公告"
   },
   {
     "id": "mattermost.config_file",
-    "translation": "Loaded config file from %v"
+    #"translation": "Loaded config file from %v"
+	"translation": "從 %v 讀取設定檔"
   },
   {
     "id": "mattermost.current_version",
-    "translation": "Current version is %v (%v/%v/%v)"
+    #"translation": "Current version is %v (%v/%v/%v)"
+	"translation": "目前的版本為 %v (%v/%v/%v)"
   },
   {
     "id": "mattermost.entreprise_enabled",
-    "translation": "Enterprise Enabled: %v"
+    #"translation": "Enterprise Enabled: %v"
+	"translation": "企業版啟用: %v"
   },
   {
     "id": "mattermost.load_license.find.warn",
-    "translation": "Unable to find active license"
+    #"translation": "Unable to find active license"
+	"translation": "找不到啟用授權"
   },
   {
     "id": "mattermost.security_bulletin.error",
-    "translation": "Failed to get security bulletin details"
+    #"translation": "Failed to get security bulletin details"
+	"translation": "抓取得安全性公告詳情失敗"
   },
   {
     "id": "mattermost.security_bulletin_read.error",
-    "translation": "Failed to read security bulletin details"
+    #"translation": "Failed to read security bulletin details"
+	"translation": "讀取安全性公告詳情失敗"
   },
   {
     "id": "mattermost.security_checks.debug",
-    "translation": "Checking for security update from Mattermost"
+    #"translation": "Checking for security update from Mattermost"
+	"translation": "正在檢查來自Mattermost的安全性更新"
   },
   {
     "id": "mattermost.security_info.error",
-    "translation": "Failed to get security update information from Mattermost."
+    #"translation": "Failed to get security update information from Mattermost."
+	"translation": "從Mattermost抓取安全性更新資訊失敗"
   },
   {
     "id": "mattermost.send_bulletin.info",
