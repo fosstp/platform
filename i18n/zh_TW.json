@@ -1733,7 +1733,7 @@
   {
     "id": "ent.ldap.do_login.bind_admin_user.app_error",
     #"translation": "Unable to bind to LDAP server. Check BindUsername and BindPassword."
-	"translation": "無法綁定 LDAP 伺服器，請檢查綁定使用者帳號與綁定密碼"
+	"translation": "無法綁定 LDAP 伺服器,請檢查綁定使用者帳號與綁定密碼"
   },
   {
     "id": "ent.ldap.do_login.invalid_password.app_error",
