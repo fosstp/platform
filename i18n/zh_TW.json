@@ -57,7 +57,7 @@
   },
   {
     "id": "api.admin.test_email.body",
-    "translation": "<br/><br/><br/>看起來您的 Mattermost email 設定正確！"
+    "translation": "<br/><br/><br/>看起來您的 Mattermost email 設定正確!"
   },
   {
     "id": "api.admin.test_email.subject",
@@ -73,7 +73,7 @@
   },
   {
     "id": "api.api.render.error",
-    "translation": "樣板 %v 產生失敗 錯誤=%v"
+    "translation": "樣板 %v 產生失敗 err=%v"
   },
   {
     "id": "api.channel.add_member.added",
@@ -125,7 +125,7 @@
   },
   {
     "id": "api.channel.delete_channel.archived",
-    "translation": "%v 已封存頻道。"
+    "translation": "%v 已封存頻道."
   },
   {
     "id": "api.channel.delete_channel.cannot.app_error",
@@ -145,11 +145,11 @@
   },
   {
     "id": "api.channel.delete_channel.incoming_webhook.error",
-    "translation": "刪除 incoming webhook 發生錯誤，id=%v"
+    "translation": "刪除 incoming webhook 發生錯誤, id=%v"
   },
   {
     "id": "api.channel.delete_channel.outgoing_webhook.error",
-    "translation": "刪除 outgoing webhook 發生錯誤，id=%v"
+    "translation": "刪除 outgoing webhook 發生錯誤, id=%v"
   },
   {
     "id": "api.channel.delete_channel.permissions.app_error",
@@ -169,7 +169,7 @@
   },
   {
     "id": "api.channel.get_channels.error",
-    "translation": "取得使用者 id=%v 資訊發生錯誤，強制登出"
+    "translation": "取得使用者 id=%v 資訊發生錯誤, 強制登出"
   },
   {
     "id": "api.channel.init.debug",
@@ -181,7 +181,7 @@
   },
   {
     "id": "api.channel.join_channel.post_and_forget",
-    "translation": "%v 已加入頻道。"
+    "translation": "%v 已加入頻道."
   },
   {
     "id": "api.channel.leave.default.app_error",
@@ -193,7 +193,7 @@
   },
   {
     "id": "api.channel.leave.left",
-    "translation": "%v 已離開頻道。"
+    "translation": "%v 已離開頻道."
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.join_leave.error",
@@ -201,7 +201,7 @@
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.removed",
-    "translation": "%s 已移除了頻道標題 (原為： %s)"
+    "translation": "%s 已移除了頻道標題 (原為: %s)"
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.retrieve_user.error",
@@ -209,11 +209,11 @@
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.updated_from",
-    "translation": "%s 將原頻道標題 %s 改為：%s"
+    "translation": "%s 將原頻道標題 %s 改為: %s"
   },
   {
     "id": "api.channel.post_update_channel_header_message_and_forget.updated_to",
-    "translation": "%s 已更新頻道標題為：%s"
+    "translation": "%s 已更新頻道標題為: %s"
   },
   {
     "id": "api.channel.post_user_add_remove_message_and_forget.error",
@@ -225,7 +225,7 @@
   },
   {
     "id": "api.channel.remove_member.unable.app_error",
-    "translation": "無法刪除使用者。"
+    "translation": "無法刪除使用者."
   },
   {
     "id": "api.channel.remove_user_from_channel.deleted.app_error",
@@ -321,7 +321,7 @@
   },
   {
     "id": "api.command_join.fail.app_error",
-    "translation": "加入頻道時發生錯誤。"
+    "translation": "加入頻道時發生錯誤."
   },
   {
     "id": "api.command_join.hint",
@@ -329,7 +329,7 @@
   },
   {
     "id": "api.command_join.list.app_error",
-    "translation": "列表頻道時發生錯誤。"
+    "translation": "列表頻道時發生錯誤."
   },
   {
     "id": "api.command_join.missing.app_error",
@@ -341,7 +341,7 @@
   },
   {
     "id": "api.command_join.success",
-    "translation": "已加入頻道。"
+    "translation": "已加入頻道."
   },
   {
     "id": "api.command_logout.desc",
@@ -381,7 +381,7 @@
   },
   {
     "id": "api.context.404.app_error",
-    "translation": "抱歉，我們無法找到頁面。"
+    "translation": "抱歉, 我們無法找到頁面."
   },
   {
     "id": "api.context.invalid_param.app_error",
@@ -1514,22 +1514,23 @@
   {
     "id": "api.user.send_sign_in_change_email_and_forget.error",
     #"translation": "Failed to send update password email successfully err=%v"
-	"translation": "傳送更新密碼電子郵件失敗  錯誤 =%v"
+	"translation": "傳送更新密碼電子郵件失敗 err=%v"
+
   },
   {
     "id": "api.user.send_verify_email_and_forget.failed.error",
     #"translation": "Failed to send verification email successfully err=%v"
-	"translation": "傳送認證電子郵件失敗 錯誤 =%v"
+	"translation": "傳送認證電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.send_welcome_email_and_forget.failed.error",
     #"translation": "Failed to send welcome email successfully err=%v"
-	"translation": "傳送歡迎郵件失敗 錯誤 =%v"
+	"translation": "傳送歡迎電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.switch_to_email.context.app_error",
     #"translation": "Update password failed because context user_id did not match provided user's id"
-	"translation": "更新密碼失敗,目前使用者id與您提供的使用者 id 不符"
+	"translation": "更新密碼失敗, 目前使用者 id 與您提供的使用者 id 不符"
   },
   {
     "id": "api.user.update_active.permissions.app_error",
@@ -1538,7 +1539,7 @@
   {
     "id": "api.user.update_password.context.app_error",
     #"translation": "Update password failed because context user_id did not match props user_id"
-	"translation": "更新密碼失敗,目前使用者 id 與 props 使用者 id 不符"
+	"translation": "更新密碼失敗, 目前使用者 id 與 props 使用者 id 不符"
   },
   {
     "id": "api.user.update_password.failed.app_error",
@@ -1558,12 +1559,12 @@
   {
     "id": "api.user.update_password.oauth.app_error",
     #"translation": "Update password failed because the user is logged in through an OAuth service"
-	"translation": "更新密碼失敗.使用者已透過 OAuth 服務登入"
+	"translation": "更新密碼失敗. 使用者已透過 OAuth 服務登入"
   },
   {
     "id": "api.user.update_password.valid_account.app_error",
     #"translation": "Update password failed because we couldn't find a valid account"
-	"translation": "更新密碼失敗.無法找到有校的帳號"
+	"translation": "更新密碼失敗, 無法找到有效的帳號"
   },
   {
     "id": "api.user.update_roles.one_admin.app_error",
@@ -1597,12 +1598,13 @@
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
     #"translation": "Could not decode profile image config."
-     "translation": "無法解碼個人檔案設定"
+     "translation": "無法解碼個人檔案圖片設定"
   },
   {
     "id": "api.user.upload_profile_user.encode.app_error",
     #"translation": "Could not encode profile image"
-     "translation": "無法將個人檔案圖片編碼"
+     "translation": "無法編碼個人檔案圖片"
+
   },
   {
     "id": "api.user.upload_profile_user.no_file.app_error",
@@ -1612,7 +1614,7 @@
   {
     "id": "api.user.upload_profile_user.open.app_error",
     #"translation": "Could not open image file"
-     "translation": "無法開啟影像檔案"
+     "translation": "無法開啟圖片檔案"
   },
   {
     "id": "api.user.upload_profile_user.parse.app_error",
@@ -1622,12 +1624,12 @@
   {
     "id": "api.user.upload_profile_user.storage.app_error",
     #"translation": "Unable to upload file. Image storage is not configured."
-    "translation": "無法上傳檔案.尚未設定圖片儲存位置"
+    "translation": "無法上傳檔案. 尚未設定圖片儲存位置."
   },
   {
     "id": "api.user.upload_profile_user.too_large.app_error",
     #"translation": "Unable to upload profile image. File is too large."
-     "translation": "無法上傳檔案.檔案過大"
+     "translation": "無法上傳個人檔案圖片. 檔案過大."
   },
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
@@ -1642,7 +1644,7 @@
   {
     "id": "api.web_conn.new_web_conn.last_ping.error",
     #"translation": "Failed to update LastPingAt for user_id=%v, err=%v"
-	"translation": "無法更新最後傳訊時間,使用者id=%v, 錯誤=%v"
+	"translation": "無法更新最後傳訊時間, user_id=%v, err=%v"
   },
   {
     "id": "api.web_hub.start.stopping.debug",
@@ -1662,7 +1664,7 @@
   {
     "id": "api.web_socket.init.debug",
     #"translation": "Initializing web socket api routes"
-	"translation": "初始化 web socket api 路由"
+	"translation": "正在初始化 web socket api 路徑"
   },
   {
     "id": "api.web_team_hun.start.debug",
@@ -1672,12 +1674,12 @@
   {
     "id": "api.webhook.create_incoming.disabled.app_errror",
     #"translation": "Incoming webhooks have been disabled by the system admin."
-	"translation": "Incoming webhooks 已被系統管理員停用"
+	"translation": "Incoming webhooks 已被系統管理員停用."
   },
   {
     "id": "api.webhook.create_outgoing.disabled.app_error",
     #"translation": "Outgoing webhooks have been disabled by the system admin."
-	"translation": "Outgoing webhooks 已被系統管理員停用"
+	"translation": "Outgoing webhooks 已被系統管理員停用."
   },
   {
     "id": "api.webhook.create_outgoing.triggers.app_error",
@@ -1733,7 +1735,7 @@
   {
     "id": "ent.ldap.do_login.bind_admin_user.app_error",
     #"translation": "Unable to bind to LDAP server. Check BindUsername and BindPassword."
-	"translation": "無法綁定 LDAP 伺服器,請檢查綁定使用者帳號與綁定密碼"
+	"translation": "無法綁定LDAP伺服器, 請檢查綁定使用者帳號與綁定密碼"
   },
   {
     "id": "ent.ldap.do_login.invalid_password.app_error",
