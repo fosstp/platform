@@ -5,32 +5,39 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const htmlExtract = new ExtractTextPlugin('html', 'root.html');
 
-module.exports = {
+const NPM_TARGET = process.env.npm_lifecycle_event; //eslint-disable-line no-process-env
+
+var DEV = false;
+if (NPM_TARGET === 'run') {
+    DEV = true;
+}
+
+var config = {
     entry: ['babel-polyfill', './root.jsx', 'root.html'],
     output: {
         path: 'dist',
         publicPath: '/static/',
         filename: 'bundle.js'
     },
-    devtool: 'source-map',
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
+                loader: 'babel',
                 exclude: /(node_modules|non_npm_dependencies)/,
                 query: {
-                    presets: ['react', 'es2015', 'stage-0'],
-                    plugins: ['transform-runtime']
+                    presets: ['react', 'es2015-webpack', 'stage-0'],
+                    plugins: ['transform-runtime'],
+                    cacheDirectory: DEV
                 }
             },
             {
                 test: /\.json$/,
-                loader: 'json-loader'
+                loader: 'json'
             },
             {
                 test: /(node_modules|non_npm_dependencies)\/.+\.(js|jsx)$/,
-                loader: 'imports-loader',
+                loader: 'imports',
                 query: {
                     $: 'jquery',
                     jQuery: 'jquery'
@@ -45,8 +52,8 @@ module.exports = {
                 loaders: ['style', 'css']
             },
             {
-                test: /\.(png|eot|tiff|svg|woff2|woff|ttf|gif)$/,
-                loader: 'file-loader',
+                test: /\.(png|eot|tiff|svg|woff2|woff|ttf|gif|mp3)$/,
+                loader: 'file',
                 query: {
                     name: 'files/[hash].[ext]'
                 }
@@ -67,7 +74,11 @@ module.exports = {
         htmlExtract,
         new CopyWebpackPlugin([
             {from: 'images/emoji', to: 'emoji'}
-        ])
+        ]),
+        new webpack.LoaderOptionsPlugin({
+            minimize: !DEV,
+            debug: false
+        })
     ],
     resolve: {
         alias: {
@@ -80,3 +91,36 @@ module.exports = {
         ]
     }
 };
+
+// Development mode configuration
+if (DEV) {
+    config.devtool = 'eval-cheap-module-source-map';
+}
+
+// Production mode configuration
+if (!DEV) {
+    config.devtool = 'source-map';
+    config.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            'screw-ie8': true,
+            mangle: {
+                toplevel: false
+            },
+            compress: {
+                warnings: false
+            },
+            comments: false
+        })
+    );
+    config.plugins.push(
+        new webpack.optimize.AggressiveMergingPlugin()
+    );
+    config.plugins.push(
+        new webpack.optimize.OccurrenceOrderPlugin(true)
+    );
+    config.plugins.push(
+        new webpack.optimize.DedupePlugin()
+    );
+}
+
+module.exports = config;

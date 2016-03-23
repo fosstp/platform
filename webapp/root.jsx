@@ -3,11 +3,11 @@
 
 import $ from 'jquery';
 
-import 'sass/styles.scss';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'jasny-bootstrap/dist/css/jasny-bootstrap.css';
 import 'bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css';
 import 'google-fonts/google-fonts.css';
+import 'sass/styles.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -109,11 +109,30 @@ function preRenderSetup(callwhendone) {
          }
     );
 
-    addLocaleData(enLocaleData);
-    addLocaleData(esLocaleData);
-    addLocaleData(ptLocaleData);
+    function afterIntl() {
+        addLocaleData(enLocaleData);
+        addLocaleData(esLocaleData);
+        addLocaleData(ptLocaleData);
 
-    $.when(d1, d2).done(callwhendone);
+        $.when(d1, d2).done(callwhendone);
+    }
+
+    if (global.Intl) {
+        afterIntl();
+    } else {
+        require.ensure([
+            'intl',
+            'intl/locale-data/jsonp/en.js',
+            'intl/locale-data/jsonp/es.js',
+            'intl/locale-data/jsonp/pt.js'
+        ], (require) => {
+            require('intl');
+            require('intl/locale-data/jsonp/en.js');
+            require('intl/locale-data/jsonp/es.js');
+            require('intl/locale-data/jsonp/pt.js');
+            afterIntl();
+        });
+    }
 }
 
 function preLoggedIn(nextState, replace, callback) {
