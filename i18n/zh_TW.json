@@ -979,12 +979,12 @@
   {
     "id": "api.team.create_team.email_disabled.app_error",
     #"translation": "Team sign-up with email is disabled."
-	"translation": "使用電子郵件註冊群組已經停用."
+	"translation": "使用電子郵件註冊團隊已經停用."
   },
   {
     "id": "api.team.create_team_from_signup.email_disabled.app_error",
     #"translation": "Team sign-up with email is disabled."
-	"translation": "使用電子郵件註冊群組已經停用."
+	"translation": "使用電子郵件註冊團隊已經停用."
   },
   {
     "id": "api.team.create_team_from_signup.expired_link.app_error",
@@ -1003,17 +1003,17 @@
   {
     "id": "api.team.email_teams.sending.error",
     #"translation": "An error occurred while sending an email in emailTeams err=%v"
-	"translation": "於電子郵件群組中寄送一封電子郵件時發生錯誤 err=%v"
+	"translation": "在 emailTeams 中寄送一封電子郵件時發生錯誤 err=%v"
   },
   {
     "id": "api.team.export_team.admin.app_error",
     #"translation": "Only a team admin can export data."
-	"translation": "僅有群組管理員能匯出資料."
+	"translation": "僅有團隊管理員能匯出資料."
   },
   {
     "id": "api.team.import_team.admin.app_error",
     #"translation": "Only a team admin can import data."
-	"translation": "僅有群組管理員能匯入資料."
+	"translation": "僅有團隊管理員能匯入資料."
   },
   {
     "id": "api.team.import_team.array.app_error",
@@ -1058,7 +1058,7 @@
   {
     "id": "api.team.invite_members.already.app_error",
     #"translation": "This person is already on your team"
-	"translation": "此人已在您的群組中"
+	"translation": "此人已在您的團隊中"
   },
   {
     "id": "api.team.invite_members.member",
@@ -1083,7 +1083,7 @@
   {
     "id": "api.team.is_team_creation_allowed.disabled.app_error",
     #"translation": "Team creation has been disabled. Please ask your systems administrator for details."
-	"translation": "建立群組已被停用. 請洽詢系統管理員了解詳情."
+	"translation": "建立團隊已被停用. 請洽詢系統管理員了解詳情."
   },
   {
     "id": "api.team.is_team_creation_allowed.domain.app_error",
@@ -1093,17 +1093,17 @@
   {
     "id": "api.team.permanent_delete_team.attempting.warn",
     #"translation": "Attempting to permanently delete team %v id=%v"
-	"translation": "正在嘗試永久刪除群組 %v id=%v"
+	"translation": "正在嘗試永久刪除團隊 %v id=%v"
   },
   {
     "id": "api.team.permanent_delete_team.deleted.warn",
     #"translation": "Permanently deleted team %v id=%v"
-	"translation": "永久刪除群組 %v id=%v
+	"translation": "永久刪除團隊 %v id=%v
   },
   {
     "id": "api.team.signup_team.email_disabled.app_error",
     #"translation": "Team sign-up with email is disabled."
-	"translation": "使用電子郵件註冊群組已經停用."
+	"translation": "使用電子郵件註冊團隊已經停用."
   },
   {
     "id": "api.team.update_team.permissions.app_error",
@@ -1167,37 +1167,37 @@
   {
     "id": "api.templates.find_teams_body.found",
     #"translation": "Your request to find teams associated with your email found the following:"
-	"translation": "尋找到與您的電子信箱有關聯的群組如下列:"
+	"translation": "尋找到與您的電子信箱有關聯的團隊如下列:"
   },
   {
     "id": "api.templates.find_teams_body.not_found",
     #"translation": "We could not find any teams for the given email."
-	"translation": "無法經由提供的電子郵件尋找到任何群組."
+	"translation": "無法經由提供的電子郵件尋找到任何團隊."
   },
   {
     "id": "api.templates.find_teams_body.title",
     #"translation": "Finding teams"
-	"translation": "尋找群組"
+	"translation": "尋找團隊"
   },
   {
     "id": "api.templates.find_teams_subject",
     #"translation": "Your {{ .SiteName }} Teams"
-	"translation": "您的 {{ .SiteName }} 群組"
+	"translation": "您的 {{ .SiteName }} 團隊"
   },
   {
     "id": "api.templates.invite_body.button",
     #"translation": "Join Team"
-	"translation": "加入群組"
+	"translation": "加入團隊"
   },
   {
     "id": "api.templates.invite_body.extra_info",
     #"translation": "Mattermost lets you share messages and files from your PC or phone, with instant search and archiving. After you’ve joined <strong>{{.TeamDisplayName}}</strong>, you can sign-in to your new team and access these features anytime from the web address:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
-	"translation": "Mattermost 能讓您透過個人電腦與手機分享訊息與檔案,包括快速搜尋以及歸檔功能.當您加入 <strong>{{.TeamDisplayName}}</strong> 後,您能夠透過下列網址隨時登入到您的新群組來使用這些功能:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
+	"translation": "Mattermost 能讓您透過個人電腦與手機分享訊息與檔案,包括快速搜尋以及歸檔功能.當您加入 <strong>{{.TeamDisplayName}}</strong> 後,您能夠透過下列網址隨時登入到您的新團隊來使用這些功能:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
   },
   {
     "id": "api.templates.invite_body.info",
     #"translation": "The team {{.SenderStatus}} <strong>{{.SenderName}}</strong>, has invited you to join <strong>{{.TeamDisplayName}}</strong>."
-	"translation": "群組 {{.SenderStatus}} <strong>{{.SenderName}}</strong>, 已經邀請您加入 <strong>{{.TeamDisplayName}}</strong>."
+	"translation": "團隊 {{.SenderStatus}} <strong>{{.SenderName}}</strong>, 已經邀請您加入 <strong>{{.TeamDisplayName}}</strong>."
   },
   {
     "id": "api.templates.invite_body.title",
@@ -1207,7 +1207,7 @@
   {
     "id": "api.templates.invite_subject",
     #"translation": "{{ .SenderName }} invited you to join {{ .TeamDisplayName }} Team on {{.SiteName}}"
-	"translation": "{{ .SenderName }} 邀請您加入  {{.SiteName}} 上的 {{ .TeamDisplayName }} 群組"
+	"translation": "{{ .SenderName }} 邀請您加入  {{.SiteName}} 上的 {{ .TeamDisplayName }} 團隊"
   },
   {
     "id": "api.templates.password_change_body.info",
@@ -1272,7 +1272,7 @@
   {
     "id": "api.templates.signup_team_body.button",
     #"translation": "Set up your team"
-	"translation": "設定您的群組"
+	"translation": "設定您的團隊"
   },
   {
     "id": "api.templates.signup_team_body.info",
@@ -1282,12 +1282,12 @@
   {
     "id": "api.templates.signup_team_body.title",
     #"translation": "Thanks for creating a team!"
-	"translation": "感謝您建立了一個群組!"
+	"translation": "感謝您建立了一個團隊!"
   },
   {
     "id": "api.templates.signup_team_subject",
     #"translation": "{{ .SiteName }} Team Setup"
-	"translation": "{{ .SiteName }} 群組設定"
+	"translation": "{{ .SiteName }} 團隊設定"
   },
   {
     "id": "api.templates.singin_change_email.body.info",
@@ -1312,7 +1312,7 @@
   {
     "id": "api.templates.verify_body.title",
     #"translation": "You've joined the {{ .TeamDisplayName }} team"
-	"translation": "您已經加入 {{ .TeamDisplayName }} 群組"
+	"translation": "您已經加入 {{ .TeamDisplayName }} 團隊"
   },
   {
     "id": "api.templates.verify_subject",
@@ -1332,7 +1332,7 @@
   {
     "id": "api.templates.welcome_body.info2",
     #"translation": "You can sign-in to your new team from the web address:"
-	"translation": "您可以透過這個網址登入您的新群組:"
+	"translation": "您可以透過這個網址登入您的新團隊:"
   },
   {
     "id": "api.templates.welcome_body.info3",
@@ -1342,7 +1342,7 @@
   {
     "id": "api.templates.welcome_body.title",
     #"translation": "You've joined the {{ .TeamDisplayName }} team"
-	"translation": "您已經加入 {{ .TeamDisplayName }} 群組"
+	"translation": "您已經加入 {{ .TeamDisplayName }} 團隊"
   },
   {
     "id": "api.templates.welcome_subject",
@@ -1372,7 +1372,7 @@
   {
     "id": "api.user.authorize_oauth_user.invalid_state_team.app_error",
     #"translation": "Invalid state; missing team name"
-	"translation": "無效的狀態; 遺失群組名稱"
+	"translation": "無效的狀態; 遺失團隊名稱"
   },
   {
     "id": "api.user.authorize_oauth_user.missing.app_error",
@@ -1422,12 +1422,12 @@
   {
     "id": "api.user.create_oauth_user.already_attached.app_error",
     #"translation": "Team {{.DisplayName}} already has a user with the email address attached to your {{.Service}} account"
-	"translation": " 在 {{.DisplayName}} 群組中,您的 {{.Service}} 帳號電子郵件地址已被一位使用者使用了"
+	"translation": " 在 {{.DisplayName}} 團隊中,您的 {{.Service}} 帳號電子郵件地址已被一位使用者使用了"
   },
   {
     "id": "api.user.create_oauth_user.already_used.app_error",
     #"translation": "This {{.Service}} account has already been used to sign up for team {{.DisplayName}}"
-	"translation": "這個 {{.Service}} 帳號已被用 {{.DisplayName}} 群組註冊過了"
+	"translation": "這個 {{.Service}} 帳號已被用 {{.DisplayName}} 團隊註冊過了"
   },
   {
     "id": "api.user.create_oauth_user.create.app_error",
@@ -1525,7 +1525,7 @@
   {
     "id": "api.user.login.not_provided.app_error",
     #"translation": "Either user id or team name and user email must be provided"
-	"translation": "必須提供使用者 id ,群組名稱以及使用者電子郵件"
+	"translation": "必須提供使用者 id ,團隊名稱以及使用者電子郵件"
   },
   {
     "id": "api.user.login.not_verified.app_error",
@@ -1610,7 +1610,7 @@
   {
     "id": "api.user.reset_password.wrong_team.app_error",
     #"translation": "Trying to reset password for user on wrong team."
-	"translation": "正在嘗試將錯誤群組中的使用者重設密碼."
+	"translation": "正在嘗試將錯誤團隊中的使用者重設密碼."
   },
   {
     "id": "api.user.send_email_change_email_and_forget.error",
@@ -1917,7 +1917,7 @@
   {
     "id": "manaultesting.manual_test.create.info",
     #"translation": "Creating user and team"
-	"translation": "建立使用者與群組"
+	"translation": "建立使用者與團隊"
   },
   {
     "id": "manaultesting.manual_test.parse.app_error",
@@ -2167,7 +2167,7 @@
   {
     "id": "model.command.is_valid.team_id.app_error",
     #"translation": "Invalid team id"
-	"translation": "無效的群組 id"
+	"translation": "無效的團隊 id"
   },
   {
     "id": "model.command.is_valid.token.app_error",
@@ -2272,7 +2272,7 @@
   {
     "id": "model.config.is_valid.max_users.app_error",
     #"translation": "Invalid maximum users per team for team settings.  Must be a positive number."
-	"translation": "群組設定中的單一群組最高使用者數無效. 必須為正數."
+	"translation": "團隊設定中的單一團隊最高使用者數無效. 必須為正數."
   },
   {
     "id": "model.config.is_valid.rate_mem.app_error",
