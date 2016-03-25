@@ -83,6 +83,8 @@ export default {
 
         SHOW_SEARCH: null,
 
+        USER_TYPING: null,
+
         TOGGLE_IMPORT_THEME_MODAL: null,
         TOGGLE_INVITE_MEMBER_MODAL: null,
         TOGGLE_DELETE_POST_MODAL: null,
@@ -183,6 +185,7 @@ export default {
     OFFTOPIC_CHANNEL: 'off-topic',
     GITLAB_SERVICE: 'gitlab',
     GOOGLE_SERVICE: 'google',
+    LDAP_SERVICE: 'ldap',
     EMAIL_SERVICE: 'email',
     SIGNIN_CHANGE: 'signin_change',
     SIGNIN_VERIFIED: 'verified',
@@ -603,5 +606,6 @@ export default {
     MIN_PASSWORD_LENGTH: 5,
     MAX_PASSWORD_LENGTH: 50,
     TIME_SINCE_UPDATE_INTERVAL: 30000,
-    MIN_HASHTAG_LINK_LENGTH: 3
+    MIN_HASHTAG_LINK_LENGTH: 3,
+    EMOJI_PATH: '/static/emoji'
 };

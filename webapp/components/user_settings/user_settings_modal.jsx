@@ -9,7 +9,6 @@ import SettingsSidebar from '../settings_sidebar.jsx';
 
 import UserStore from 'stores/user_store.jsx';
 import * as Utils from 'utils/utils.jsx';
-import Constants from 'utils/constants.jsx';
 
 import {Modal} from 'react-bootstrap';
 
@@ -64,7 +63,6 @@ class UserSettingsModal extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleShow = this.handleShow.bind(this);
         this.handleHide = this.handleHide.bind(this);
         this.handleHidden = this.handleHidden.bind(this);
         this.handleCollapse = this.handleCollapse.bind(this);
@@ -95,24 +93,13 @@ class UserSettingsModal extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.show) {
-            this.handleShow();
-        }
         UserStore.addChangeListener(this.onUserChanged);
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.show && !prevProps.show) {
-            this.handleShow();
-        }
+    componentDidUpdate() {
         UserStore.removeChangeListener(this.onUserChanged);
-    }
-
-    handleShow() {
-        if ($(window).width() > 768) {
-            $(ReactDOM.findDOMNode(this.refs.modalBody)).css('max-height', $(window).height() - 200);
-        } else {
-            $(ReactDOM.findDOMNode(this.refs.modalBody)).css('max-height', $(window).height() - 50);
+        if (!Utils.isMobile()) {
+            $('.settings-modal .modal-body').perfectScrollbar();
         }
     }
 
@@ -125,7 +112,6 @@ class UserSettingsModal extends React.Component {
             return;
         }
 
-        this.resetTheme();
         this.deactivateTab();
         this.props.onModalDismissed();
         return;
@@ -222,25 +208,17 @@ class UserSettingsModal extends React.Component {
                 active_section: ''
             });
         }
+
+        if (!Utils.isMobile()) {
+            $('.settings-modal .modal-body').scrollTop(0).perfectScrollbar('update');
+        }
     }
 
     updateSection(section, skipConfirm) {
         if (!skipConfirm && this.requireConfirm) {
             this.showConfirmModal(() => this.updateSection(section, true));
         } else {
-            if (this.state.active_section === 'theme' && section !== 'theme') {
-                this.resetTheme();
-            }
             this.setState({active_section: section});
-        }
-    }
-
-    resetTheme() {
-        const user = UserStore.getCurrentUser();
-        if (user.theme_props == null) {
-            Utils.applyTheme(Constants.THEMES.default);
-        } else {
-            Utils.applyTheme(user.theme_props);
         }
     }
 

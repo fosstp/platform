@@ -19,11 +19,11 @@ import ChannelStore from 'stores/channel_store.jsx';
 import PostStore from 'stores/post_store.jsx';
 import UserStore from 'stores/user_store.jsx';
 import PreferenceStore from 'stores/preference_store.jsx';
-import SocketStore from 'stores/socket_store.jsx';
 
 import Constants from 'utils/constants.jsx';
 
 import {intlShape, injectIntl, defineMessages, FormattedHTMLMessage} from 'react-intl';
+import {browserHistory} from 'react-router';
 
 const Preferences = Constants.Preferences;
 const TutorialSteps = Constants.TutorialSteps;
@@ -137,7 +137,7 @@ class CreatePost extends React.Component {
                     this.setState({messageText: '', submitting: false, postError: null, previews: [], serverError: null});
 
                     if (data.goto_location && data.goto_location.length > 0) {
-                        window.location.href = data.goto_location;
+                        browserHistory.push(data.goto_location);
                     }
                 },
                 (err) => {
@@ -213,11 +213,7 @@ class CreatePost extends React.Component {
             }
         }
 
-        const t = Date.now();
-        if ((t - this.lastTime) > Constants.UPDATE_TYPING_MS) {
-            SocketStore.sendMessage({channel_id: this.state.channelId, action: 'typing', props: {parent_id: ''}, state: {}});
-            this.lastTime = t;
-        }
+        GlobalActions.emitLocalUserTypingEvent(this.state.channelId, '');
     }
     handleUserInput(messageText) {
         this.setState({messageText});
