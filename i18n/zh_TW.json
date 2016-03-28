@@ -953,38 +953,31 @@
   },
   {
     "id": "api.slackimport.slack_import.note1",
-    #"translation": "- Some posts may not have been imported because they where not supported by this importer.\r\n"
-	"translation": "- 由於匯入功能尚未支援,部分 posts 可能無法匯入.\r\n"
+    "translation": "- 由於匯入功能尚未支援, 部分訊息可能無法匯入.\r\n"
   },
   {
     "id": "api.slackimport.slack_import.note2",
-    #"translation": "- Slack bot posts are currently not supported.\r\n"
-	"translation": "- 目前尚未支援 Slack bot posts .\r\n"
+    "translation": "- 目前尚未支援 Slack bot 張貼訊息.\r\n"
   },
   {
     "id": "api.slackimport.slack_import.notes",
-    #"translation": "\r\n Notes \r\n"
-	"translation": "\r\n Notes \r\n"
+    "translation": "\r\n 附註 \r\n"
   },
   {
     "id": "api.slackimport.slack_import.open.app_error",
-    #"translation": "Unable to open: {{.Filename}}"
-	"translation": "無法開啟: {{.Filename}}"
+    "translation": "無法開啟: {{.Filename}}"
   },
   {
     "id": "api.slackimport.slack_import.zip.app_error",
-    #"translation": "Unable to open zip file"
-	"translation": "無法開啟 zip 檔案"
+    "translation": "無法開啟 zip 檔案"
   },
   {
     "id": "api.team.create_team.email_disabled.app_error",
-    #"translation": "Team sign-up with email is disabled."
-	"translation": "使用電子郵件註冊團隊已經停用."
+    "translation": "使用電子郵件註冊團隊已經停用."
   },
   {
     "id": "api.team.create_team_from_signup.email_disabled.app_error",
-    #"translation": "Team sign-up with email is disabled."
-	"translation": "使用電子郵件註冊團隊已經停用."
+    "translation": "使用電子郵件註冊團隊已經停用."
   },
   {
     "id": "api.team.create_team_from_signup.expired_link.app_error",
@@ -992,118 +985,95 @@
   },
   {
     "id": "api.team.create_team_from_signup.invalid_link.app_error",
-    #"translation": "The signup link does not appear to be valid"
-	"translation": "註冊連結無效"
+    "translation": "註冊連結無效"
   },
   {
     "id": "api.team.create_team_from_signup.unavailable.app_error",
-    #"translation": "This URL is unavailable. Please try another."
-	"translation": "這個網址無法使用. 請嘗試另一個."
+    "translation": "這個網址無法使用. 請嘗試另一個."
   },
   {
     "id": "api.team.email_teams.sending.error",
-    #"translation": "An error occurred while sending an email in emailTeams err=%v"
-	"translation": "在 emailTeams 中寄送一封電子郵件時發生錯誤 err=%v"
+    "translation": "在 emailTeams 中寄送一封電子郵件時發生錯誤 err=%v"
   },
   {
     "id": "api.team.export_team.admin.app_error",
-    #"translation": "Only a team admin can export data."
-	"translation": "僅有團隊管理員能匯出資料."
+    "translation": "僅有團隊管理員能匯出資料."
   },
   {
     "id": "api.team.import_team.admin.app_error",
-    #"translation": "Only a team admin can import data."
-	"translation": "僅有團隊管理員能匯入資料."
+    "translation": "僅有團隊管理員能匯入資料."
   },
   {
     "id": "api.team.import_team.array.app_error",
-    #"translation": "Empty array under 'file' in request"
-	"translation": "要求的 '檔案' 陣列為空"
+    "translation": "上傳時欄位 'file' 陣列為空"
   },
   {
     "id": "api.team.import_team.integer.app_error",
-    #"translation": "Filesize not an integer"
-	"translation": "檔案大小不是一個整數"
+    "translation": "Filesize 不是一個整數"
   },
   {
     "id": "api.team.import_team.no_file.app_error",
-    #"translation": "No file under 'file' in request"
-	"translation": "在要求的'檔案'中沒有檔案"
+    "translation": "在上傳時 'file' 欄位沒有指定上傳檔案"
   },
   {
     "id": "api.team.import_team.open.app_error",
-    #"translation": "Could not open file"
-	"translation": "無法開啟檔案"
+    "translation": "無法開啟檔案"
   },
   {
     "id": "api.team.import_team.parse.app_error",
-    #"translation": "Could not parse multipart form"
-	"translation": "無法解析 multipart form"
+    "translation": "無法解析 multipart form"
   },
   {
     "id": "api.team.import_team.unavailable.app_error",
-    #"translation": "Filesize unavilable"
-	"translation": "不可用的檔案大小"
+    "translation": "無法取得 Filesize"
   },
   {
     "id": "api.team.init.debug",
-    #"translation": "Initializing team api routes"
-	"translation": "正在初始化 team api routes"
+    "translation": "正在初始化 team api 路徑"
   },
   {
     "id": "api.team.invite_members.admin",
-    #"translation": "administrator"
-	"translation": "管理員"
+    "translation": "管理員"
   },
   {
     "id": "api.team.invite_members.already.app_error",
-    #"translation": "This person is already on your team"
-	"translation": "此人已在您的團隊中"
+    "translation": "此人已在您的團隊中"
   },
   {
     "id": "api.team.invite_members.member",
-    #"translation": "member"
-	"translation": "成員"
+    "translation": "成員"
   },
   {
     "id": "api.team.invite_members.no_one.app_error",
-    #"translation": "No one to invite."
-	"translation": "無人可邀請."
+    "translation": "無人可邀請."
   },
   {
     "id": "api.team.invite_members.send.error",
-    #"translation": "Failed to send invite email successfully err=%v"
-	"translation": "傳送邀請電子郵件失敗 err=%v"
+    "translation": "傳送邀請電子郵件失敗 err=%v"
   },
   {
     "id": "api.team.invite_members.sending.info",
-    #"#translation": "sending invitation to %v %v"
-	"translation": "正在向 %v %v 寄送邀請"
+    "translation": "正在向 %v %v 寄送邀請"
   },
   {
     "id": "api.team.is_team_creation_allowed.disabled.app_error",
-    #"translation": "Team creation has been disabled. Please ask your systems administrator for details."
-	"translation": "建立團隊已被停用. 請洽詢系統管理員了解詳情."
+    "translation": "建立團隊已被停用. 請洽詢系統管理員了解詳情."
   },
   {
     "id": "api.team.is_team_creation_allowed.domain.app_error",
-    #"translation": "Email must be from a specific domain (e.g. @example.com). Please ask your systems administrator for details."
-	"translation": "電子郵件地址必須來自一個具體的網域 (例如 @example.com).請洽詢系統管理員了解詳情."
+    "translation": "電子郵件地址必須來自一個指定的網域 (例如 @example.com). 請洽詢系統管理員了解詳情."
   },
   {
     "id": "api.team.permanent_delete_team.attempting.warn",
-    #"translation": "Attempting to permanently delete team %v id=%v"
-	"translation": "正在嘗試永久刪除團隊 %v id=%v"
+    "translation": "正在嘗試永久刪除團隊 %v id=%v"
   },
   {
     "id": "api.team.permanent_delete_team.deleted.warn",
-    #"translation": "Permanently deleted team %v id=%v"
-	"translation": "永久刪除團隊 %v id=%v
+    "translation": "已永久刪除團隊 %v id=%v"
   },
   {
     "id": "api.team.signup_team.email_disabled.app_error",
-    #"translation": "Team sign-up with email is disabled."
-	"translation": "使用電子郵件註冊團隊已經停用."
+    "translation": "使用電子郵件註冊團隊已經停用."
   },
   {
     "id": "api.team.update_team.permissions.app_error",
@@ -1111,368 +1081,295 @@
   },
   {
     "id": "api.templates.email_change_body.info",
-    #"translation": "You email address for {{.TeamDisplayName}} has been changed to {{.NewEmail}}.<br>If you did not make this change, please contact the system administrator."
-	"translation": "您在 {{.TeamDisplayName}} 上的電子郵件地址已經變更為 {{.NewEmail}}.<br>如果這不是您所變更的,請聯繫系統管理員."
+    "translation": "您在 {{.TeamDisplayName}} 上的電子郵件地址已經變更為 {{.NewEmail}}.<br>如果這不是您所變更的, 請聯繫系統管理員."
   },
   {
     "id": "api.templates.email_change_body.title",
-    #"translation": "You updated your email"
-	"translation": "您已經變更您的電子郵件"
+    "translation": "您已經變更您的電子郵件"
   },
   {
     "id": "api.templates.email_change_subject",
-    #"translation": "Your email address has changed for {{.TeamDisplayName}}"
-	"translation": "您在 {{.TeamDisplayName}} 上的電子郵件地址已經變更"
+    "translation": "您在 {{.TeamDisplayName}} 上的電子郵件地址已經變更"
   },
   {
     "id": "api.templates.email_change_verify_body.button",
-    #"translation": "Verify Email"
-	"translation": "驗證電子郵件"
+    "translation": "正在驗證電子郵件"
   },
   {
     "id": "api.templates.email_change_verify_body.info",
-    #"translation": "To finish updating your email address for {{.TeamDisplayName}}, please click the link below to confirm this is the right address."
-	"translation": "要完成變更 {{.TeamDisplayName}} 上的電子郵件地址,請點選下方的連結以確認地址正確."
+    "translation": "若要完成變更 {{.TeamDisplayName}} 上的電子郵件地址, 請點選下方的連結以確認地址正確."
   },
   {
     "id": "api.templates.email_change_verify_body.title",
-    #"translation": "You updated your email"
-	"translation": "您已經變更您的電子郵件"
+    "translation": "您已經變更您的電子郵件"
   },
   {
     "id": "api.templates.email_change_verify_subject",
-    #"translation": "Verify new email address for {{.TeamDisplayName}}"
-	"translation": "驗證在 {{.TeamDisplayName}} 上的新電子郵件地址"
+    "translation": "驗證在 {{.TeamDisplayName}} 上的新電子郵件地址"
   },
   {
     "id": "api.templates.email_footer",
-    #"translation": "To change your notification preferences, log in to your team site and go to Account Settings > Notifications."
-	"translation": "要更改您的提示偏好設定, 請登入您的團隊網站並且至 帳號設定 > 提示."
+    "translation": "要更改您的通知偏好設定, 請登入您的團隊網站並且至 帳號設定 > 通知."
   },
   {
     "id": "api.templates.email_info",
-    #"translation": "Any questions at all, mail us any time: <a href='mailto:{{.FeedbackEmail}}' style='text-decoration: none; color:#2389D7;'>{{.FeedbackEmail}}</a>.<br>Best wishes,<br>The {{.SiteName}} Team<br>"
-	"translation": "不論有任何問題,請隨時寫信給我們: <a href='mailto:{{.FeedbackEmail}}' style='text-decoration: none; color:#2389D7;'>{{.FeedbackEmail}}</a>.<br>祝您萬事如意,<br> {{.SiteName}} 團隊<br>"
+    "translation": "不論有任何問題, 請隨時寫信給我們: <a href='mailto:{{.FeedbackEmail}}' style='text-decoration: none; color:#2389D7;'>{{.FeedbackEmail}}</a>.<br>祝您萬事如意,<br> {{.SiteName}} 團隊<br>"
   },
   {
     "id": "api.templates.error.link",
-    #"translation": "Go back to Mattermost"
-	"translation": "回到 Mattermost"
+    "translation": "回到 Mattermost"
   },
   {
     "id": "api.templates.error.title",
-    #"translation": "{{ .SiteName }} needs your help:"
-	"translation": "{{ .SiteName }} 需要您的協助:"
+    "translation": "{{ .SiteName }} 需要您的協助:"
   },
   {
     "id": "api.templates.find_teams_body.found",
-    #"translation": "Your request to find teams associated with your email found the following:"
-	"translation": "尋找到與您的電子信箱有關聯的團隊如下列:"
+    "translation": "尋找到與您的電子信箱有關聯的團隊如下列:"
   },
   {
     "id": "api.templates.find_teams_body.not_found",
-    #"translation": "We could not find any teams for the given email."
-	"translation": "無法經由提供的電子郵件尋找到任何團隊."
+    "translation": "無法經由提供的電子郵件尋找到任何團隊."
   },
   {
     "id": "api.templates.find_teams_body.title",
-    #"translation": "Finding teams"
-	"translation": "尋找團隊"
+    "translation": "正在尋找團隊"
   },
   {
     "id": "api.templates.find_teams_subject",
-    #"translation": "Your {{ .SiteName }} Teams"
-	"translation": "您的 {{ .SiteName }} 團隊"
+    "translation": "您的 {{ .SiteName }} 團隊"
   },
   {
     "id": "api.templates.invite_body.button",
-    #"translation": "Join Team"
-	"translation": "加入團隊"
+    "translation": "加入團隊"
   },
   {
     "id": "api.templates.invite_body.extra_info",
-    #"translation": "Mattermost lets you share messages and files from your PC or phone, with instant search and archiving. After you’ve joined <strong>{{.TeamDisplayName}}</strong>, you can sign-in to your new team and access these features anytime from the web address:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
-	"translation": "Mattermost 能讓您透過個人電腦與手機分享訊息與檔案,包括快速搜尋以及歸檔功能.當您加入 <strong>{{.TeamDisplayName}}</strong> 後,您能夠透過下列網址隨時登入到您的新團隊來使用這些功能:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
+    "translation": "Mattermost 能讓您透過個人電腦與手機分享訊息與檔案, 包括快速搜尋以及封存功能. 當您加入 <strong>{{.TeamDisplayName}}</strong> 後, 您能夠透過下列網址隨時登入到您的新團隊來使用這些功能:<br/><br/><a href='{{.TeamURL}}'>{{.TeamURL}}</a>"
   },
   {
     "id": "api.templates.invite_body.info",
-    #"translation": "The team {{.SenderStatus}} <strong>{{.SenderName}}</strong>, has invited you to join <strong>{{.TeamDisplayName}}</strong>."
-	"translation": "團隊 {{.SenderStatus}} <strong>{{.SenderName}}</strong>, 已經邀請您加入 <strong>{{.TeamDisplayName}}</strong>."
+    "translation": "團隊 {{.SenderStatus}} <strong>{{.SenderName}}</strong>, 已經邀請您加入 <strong>{{.TeamDisplayName}}</strong>."
   },
   {
     "id": "api.templates.invite_body.title",
-    #"translation": "You've been invited"
-	"translation": "您已經被邀請"
+    "translation": "您已經被邀請"
   },
   {
     "id": "api.templates.invite_subject",
-    #"translation": "{{ .SenderName }} invited you to join {{ .TeamDisplayName }} Team on {{.SiteName}}"
-	"translation": "{{ .SenderName }} 邀請您加入  {{.SiteName}} 上的 {{ .TeamDisplayName }} 團隊"
+    "translation": "{{ .SenderName }} 已經邀請您加入 {{.SiteName}} 上的 {{ .TeamDisplayName }} 團隊"
   },
   {
     "id": "api.templates.password_change_body.info",
-    #"translation": "Your password has been updated for {{.TeamDisplayName}} on {{ .TeamURL }} by {{.Method}}.<br>If this change wasn't initiated by you, please contact your system administrator."
-	"translation": "您在 {{ .TeamURL }} 上的 {{.TeamDisplayName}} 密碼已經由  {{.Method}} 變更.<br>如果這不是您所變更的,請聯繫系統管理員."
+    "translation": "您在 {{ .TeamURL }} 上的 {{.TeamDisplayName}} 密碼已經由  {{.Method}} 更新.<br>如果這不是您所變更的, 請聯繫系統管理員."
   },
   {
     "id": "api.templates.password_change_body.title",
-    #"translation": "Your password has been updated"
-	"translation": "您的密碼已被變更"
+    "translation": "您的密碼已被更新"
   },
   {
     "id": "api.templates.password_change_subject",
-    #"translation": "Your password has been updated for {{.TeamDisplayName}} on {{ .SiteName }}"
-	"translation": "您在 {{ .SiteName }} 上的 {{.TeamDisplayName}} 密碼已經變更 {{.TeamDisplayName}} on {{ .SiteName }}"
+    "translation": "您在 {{ .SiteName }} 上的 {{.TeamDisplayName}} 密碼已經更新"
   },
   {
     "id": "api.templates.post_body.button",
-    #"translation": "Go To Channel"
-	"translation": "前往頻道"
+    "translation": "前往頻道"
   },
   {
     "id": "api.templates.post_body.info",
-    #"translation": "CHANNEL: {{.ChannelName}}<br>{{.SenderName}} - {{.Hour}}:{{.Minute}} {{.TimeZone}}, {{.Month}} {{.Day}}"
-	"translation": "頻道: {{.ChannelName}}<br>{{.SenderName}} - {{.Hour}}:{{.Minute}} {{.TimeZone}}, {{.Month}} {{.Day}}"
+    "translation": "頻道: {{.ChannelName}}<br>{{.SenderName}} - {{.Hour}}:{{.Minute}} {{.TimeZone}}, {{.Month}} {{.Day}}"
   },
   {
     "id": "api.templates.post_subject",
-    #"translation": "{{.SubjectText}} on {{.TeamDisplayName}} at {{.Month}} {{.Day}}, {{.Year}}"
-	"translation": " {{.TeamDisplayName}} 上的 {{.SubjectText}} 於 {{.Month}} {{.Day}}, {{.Year}}"
+    "translation": "於 {{.Month}} {{.Day}}, {{.Year}} {{.TeamDisplayName}} 上的 {{.SubjectText}}"
   },
   {
     "id": "api.templates.reset_body.button",
-    #"translation": "Reset Password"
-	"translation": "重設密碼"
+    "translation": "重設密碼"
   },
   {
     "id": "api.templates.reset_body.info",
-    #"translation": "To change your password, click \"Reset Password\" below.<br>If you did not mean to reset your password, please ignore this email and your password will remain the same. The password reset link expires in 24 hours."
-	"translation": "要更改您的密碼, 點選下方的 \"重設密碼\" .<br>如果您不是要重設密碼, 請不要理會這封郵件,您的密碼依然維持不變. 密碼重設的連結將在24小時之後過期."
+    "translation": "要更改您的密碼, 點選下方的 \"重設密碼\".<br>如果您不是要重設密碼, 請不要理會這封郵件, 您的密碼依然維持不變. 密碼重設的連結將在 24 小時之後過期."
   },
   {
     "id": "api.templates.reset_body.title",
-    #"translation": "You requested a password reset"
-	"translation": "您已提出了一個密碼重設的要求"
+    "translation": "您已提出了一個密碼重設的要求"
   },
   {
     "id": "api.templates.reset_subject",
-    #"translation": "Reset your password"
-	"translation": "重新設定您的密碼"
+    "translation": "重新設定您的密碼"
   },
   {
     "id": "api.templates.signin_change_email.body.method_email",
-    #"translation": "email and password"
-	"translation": "電子郵件與密碼"
+    "translation": "電子郵件與密碼"
   },
   {
     "id": "api.templates.signin_change_email.body.title",
-    #"translation": "You updated your sign-in method"
-	"translation": "您已經變更了您的登入方式"
+    "translation": "您已經變更了您的登入方式"
   },
   {
     "id": "api.templates.signup_team_body.button",
-    #"translation": "Set up your team"
-	"translation": "設定您的團隊"
+    "translation": "設定您的團隊"
   },
   {
     "id": "api.templates.signup_team_body.info",
-    #"translation": "{{ .SiteName }} is one place for all your team communication, searchable and available anywhere.<br>You'll get more out of {{ .SiteName }} when your team is in constant communication--let's get them on board."
-	"translation": "{{ .SiteName }} 是一個讓您所有團隊隨時隨地都能溝通、搜尋與取用的地方, 隨時可以.<br>當您的團隊持續不斷的溝通時,善用 {{ .SiteName }} 能讓您獲益良多.--讓我們呼朋引伴吧"
+    "translation": "{{ .SiteName }} 是一個讓您所有團隊隨時隨地都能溝通、搜尋與取用的地方.<br>當您的團隊持續不斷的溝通時, 善用 {{ .SiteName }} 能讓您獲益良多--讓我們呼朋引伴吧."
   },
   {
     "id": "api.templates.signup_team_body.title",
-    #"translation": "Thanks for creating a team!"
-	"translation": "感謝您建立了一個團隊!"
+    "translation": "感謝您建立了一個團隊!"
   },
   {
     "id": "api.templates.signup_team_subject",
-    #"translation": "{{ .SiteName }} Team Setup"
-	"translation": "{{ .SiteName }} 團隊設定"
+    "translation": "{{ .SiteName }} 團隊設定"
   },
   {
     "id": "api.templates.singin_change_email.body.info",
-    #"translation": "You updated your sign-in method for {{.TeamDisplayName}} on {{ .TeamURL }} to {{.Method}}.<br>If this change wasn't initiated by you, please contact your system administrator."
-	"translation": "您已經變更了 {{ .TeamURL }} 上 {{.TeamDisplayName}} 的登入方式為   {{.Method}}.<br>如果這項變更不是您做的,請聯繫系統管理員."
+    "translation": "您已經變更了 {{ .TeamURL }} 上 {{.TeamDisplayName}} 的登入方式為 {{.Method}}.<br>如果這項變更不是您做的, 請聯繫系統管理員."
   },
   {
     "id": "api.templates.singin_change_email.subject",
-    #"translation": "You updated your sign-in method for {{.TeamDisplayName}} on {{ .SiteName }}"
-	"translation": "您已經變更了 {{ .SiteName }} 上 {{.TeamDisplayName}} 的登入方式"
+    "translation": "您已經變更了 {{ .SiteName }} 上 {{.TeamDisplayName}} 的登入方式"
   },
   {
     "id": "api.templates.verify_body.button",
-    #"translation": "Verify Email"
-	"translation": "電子郵件認證"
+    "translation": "驗證電子郵件"
   },
   {
     "id": "api.templates.verify_body.info",
-    #"translation": "Please verify your email address by clicking below."
-	"translation": "請點選下方按鈕來驗證您的電子郵件地址."
+    "translation": "請點選下方連結來驗證您的電子郵件地址."
   },
   {
     "id": "api.templates.verify_body.title",
-    #"translation": "You've joined the {{ .TeamDisplayName }} team"
-	"translation": "您已經加入 {{ .TeamDisplayName }} 團隊"
+    "translation": "您已經加入 {{ .TeamDisplayName }} 團隊"
   },
   {
     "id": "api.templates.verify_subject",
-    #"translation": "[{{ .TeamDisplayName }} {{ .SiteName }}] Email Verification"
-	"translation": "[{{ .TeamDisplayName }} {{ .SiteName }}] 電子郵件認證"
+    "translation": "[{{ .TeamDisplayName }} {{ .SiteName }}] 電子郵件驗證"
   },
   {
     "id": "api.templates.welcome_body.button",
-    #"translation": "Verify Email"
-	"translation": "電子郵件認證"
+    "translation": "驗證電子郵件"
   },
   {
     "id": "api.templates.welcome_body.info",
-    #"translation": "Please verify your email address by clicking below."
-	"translation": "請點選下方按鈕來驗證您的電子郵件地址."
+    "translation": "請點選下方連結來驗證您的電子郵件地址."
   },
   {
     "id": "api.templates.welcome_body.info2",
-    #"translation": "You can sign-in to your new team from the web address:"
-	"translation": "您可以透過這個網址登入您的新團隊:"
+    "translation": "您可以透過這個網址登入您的新團隊:"
   },
   {
     "id": "api.templates.welcome_body.info3",
-    #"translation": "Mattermost lets you share messages and files from your PC or phone, with instant search and archiving."
-	"translation": "Mattermost 能讓您透過個人電腦與手機分享訊息與檔案,包括快速搜尋以及歸檔功能."
+    "translation": "Mattermost 能讓您透過個人電腦與手機分享訊息與檔案, 包括快速搜尋以及封存功能."
   },
   {
     "id": "api.templates.welcome_body.title",
-    #"translation": "You've joined the {{ .TeamDisplayName }} team"
-	"translation": "您已經加入 {{ .TeamDisplayName }} 團隊"
+    "translation": "您已經加入 {{ .TeamDisplayName }} 團隊"
   },
   {
     "id": "api.templates.welcome_subject",
-    #"translation": "You joined {{ .TeamDisplayName }}"
-	"translation": "您已經加入 {{ .TeamDisplayName }}"
+    "translation": "您已經加入 {{ .TeamDisplayName }}"
   },
   {
     "id": "api.user.add_direct_channels_and_forget.failed.error",
-    #"translation": "Failed to add direct channel preferences for user user_id=%s, team_id=%s, err=%v"
-	"translation": "使用者無法新增直接頻道偏好設定 user_id=%s, team_id=%s, err=%v"
+    "translation": "使用者無法新增直接頻道偏好設定 user_id=%s, team_id=%s, err=%v"
   },
   {
     "id": "api.user.authorize_oauth_user.bad_response.app_error",
-    #"translation": "Bad response from token request"
-	"translation": "來自token 要求的不當回應"
+    "translation": "錯誤的 token 要求回應"
   },
   {
     "id": "api.user.authorize_oauth_user.bad_token.app_error",
-    #"translation": "Bad token type"
-	"translation": "不當的 token 類型"
+    "translation": "錯誤的 token 類型"
   },
   {
     "id": "api.user.authorize_oauth_user.invalid_state.app_error",
-    #"translation": "Invalid state"
-	"translation": "無效的狀態"
+    "translation": "無效的狀態"
   },
   {
     "id": "api.user.authorize_oauth_user.invalid_state_team.app_error",
-    #"translation": "Invalid state; missing team name"
-	"translation": "無效的狀態; 遺失團隊名稱"
+    "translation": "無效的狀態;遺失團隊名稱"
   },
   {
     "id": "api.user.authorize_oauth_user.missing.app_error",
-    #"translation": "Missing access token"
-	"translation": "遺失存取 token"
+    "translation": "缺少 access token"
   },
   {
     "id": "api.user.authorize_oauth_user.service.app_error",
-    #"translation": "Token request to {{.Service}} failed"
-	"translation": " {{.Service}} Token 要求失敗"
+    "translation": " {{.Service}} Token 要求失敗"
   },
   {
     "id": "api.user.authorize_oauth_user.token_failed.app_error",
-    #"translation": "Token request failed"
-	"translation": "Token 要求失敗"
+    "translation": "Token 要求失敗"
   },
   {
     "id": "api.user.authorize_oauth_user.unsupported.app_error",
-    #"translation": "Unsupported OAuth service provider"
-	"translation": "不支援的 OAuth service provider"
+    "translation": "不支援的 OAuth service provider"
   },
   {
     "id": "api.user.check_user_login_attempts.too_many.app_error",
-    #"translation": "Your account is locked because of too many failed password attempts. Please reset your password."
-	"translation": "您的帳號已經因為嘗試太多次的錯誤密碼而鎖定. 請重設您的密碼."
+    "translation": "您的帳號已經因為嘗試太多次的錯誤密碼而鎖定. 請重設您的密碼."
   },
   {
     "id": "api.user.check_user_password.invalid.app_error",
-    #"translation": "Login failed because of invalid password"
-	"translation": "登入失敗,密碼無效"
+    "translation": "登入失敗, 密碼無效"
   },
   {
     "id": "api.user.complete_switch_with_oauth.blank_email.app_error",
-    #"translation": "Blank email"
-	"translation": "空白的電子郵件"
+    "translation": "空白的電子郵件"
   },
   {
     "id": "api.user.complete_switch_with_oauth.parse.app_error",
-    #"translation": "Could not parse auth data out of {{.Service}} user object"
-	"translation": "無法解析 {{.Service}} 使用者物件的認證資料"
+    "translation": "無法解析 {{.Service}} 使用者物件的認證資料"
   },
   {
     "id": "api.user.complete_switch_with_oauth.unavailable.app_error",
-    #"translation": "{{.Service}} oauth not available on this server"
-	"translation": "無法取得此伺服器上的 {{.Service}} oauth "
+    "translation": "無法取得此伺服器上的 {{.Service}} oauth"
   },
   {
     "id": "api.user.create_oauth_user.already_attached.app_error",
-    #"translation": "Team {{.DisplayName}} already has a user with the email address attached to your {{.Service}} account"
-	"translation": " 在 {{.DisplayName}} 團隊中,您的 {{.Service}} 帳號電子郵件地址已被一位使用者使用了"
+    "translation": " 在 {{.DisplayName}} 團隊中, 您的 {{.Service}} 帳號電子郵件地址已被一位使用者使用了"
   },
   {
     "id": "api.user.create_oauth_user.already_used.app_error",
-    #"translation": "This {{.Service}} account has already been used to sign up for team {{.DisplayName}}"
-	"translation": "這個 {{.Service}} 帳號已被用 {{.DisplayName}} 團隊註冊過了"
+    "translation": "這個 {{.Service}} 帳號已被用於 {{.DisplayName}} 團隊註冊過了"
   },
   {
     "id": "api.user.create_oauth_user.create.app_error",
-    #"translation": "Could not create user out of {{.Service}} user object"
-	"translation": " 缺少 {{.Service}} 使用者物件, 無法建立使用者"
+    "translation": "無法建立用於 {{.Service}} 的使用者物件"
   },
   {
     "id": "api.user.create_oauth_user.not_available.app_error",
-    #"translation": "{{.Service}} oauth not avlailable on this server"
-	"translation": "無法取得此伺服器上的 {{.Service}} oauth "
+    "translation": "無法取得此伺服器上的 {{.Service}} oauth"
   },
   {
     "id": "api.user.create_profile_image.default_font.app_error",
-    #"translation": "Could not create default profile image font"
-	"translation": "無法建立使用者預設個人檔案圖片字型"
+    "translation": "無法建立使用者預設個人檔案圖片字型"
   },
   {
     "id": "api.user.create_profile_image.encode.app_error",
-    #"translation": "Could not encode default profile image"
-	"translation": "無法編碼預設個人檔案圖片"
+    "translation": "無法編碼預設個人檔案圖片"
   },
   {
     "id": "api.user.create_profile_image.initial.app_error",
-    #"translation": "Could not add user initial to default profile picture"
-	"translation": "無法讓初始化使用者到預設的個人檔案照片"
+    "translation": "無法初始化使用者預設的個人檔案照片"
   },
   {
     "id": "api.user.create_user.accepted_domain.app_error",
-    #"translation": "The email you provided does not belong to an accepted domain. Please contact your administrator or sign up with a different email."
-	"translation": "您提供的電子郵件不屬於一個可接受的網域一個可接受的網域. 請聯繫系統管理員或使用另一個不同的電子郵件註冊."
+    "translation": "您提供的電子郵件不屬於一個可接受的網域. 請聯繫系統管理員或使用另一個不同的電子郵件註冊."
   },
   {
     "id": "api.user.create_user.joining.error",
-    #"translation": "Encountered an issue joining default channels user_id=%s, team_id=%s, err=%v"
-	"translation": "加入預設頻道時發生問題 user_id=%s, team_id=%s, err=%v"
+    "translation": "加入預設頻道時發生問題 user_id=%s, team_id=%s, err=%v"
   },
   {
     "id": "api.user.create_user.save.error",
-    #"translation": "Couldn't save the user err=%v"
-	"translation": "無法儲存使用者 err=%v"
+    "translation": "無法儲存使用者 err=%v"
   },
   {
     "id": "api.user.create_user.signup_email_disabled.app_error",
-    #"translation": "User sign-up with email is disabled."
-	"translation": "使用電子郵件登入功能已停用."
+    "translation": "使用電子郵件登入功能已停用."
   },
   {
     "id": "api.user.create_user.signup_link_expired.app_error",
@@ -1480,8 +1377,7 @@
   },
   {
     "id": "api.user.create_user.signup_link_invalid.app_error",
-    #"translation": "The signup link does not appear to be valid"
-	"translation": "註冊連結無效"
+    "translation": "註冊連結無效"
   },
   {
     "id": "api.user.create_user.team_name.app_error",
@@ -1489,33 +1385,27 @@
   },
   {
     "id": "api.user.create_user.tutorial.error",
-    #"translation": "Encountered error saving tutorial preference, err=%v"
-	"translation": "儲存引導偏好設定時發生錯誤, err=%v"
+    "translation": "儲存引導偏好設定時發生錯誤, err=%v"
   },
   {
     "id": "api.user.create_user.verified.error",
-    #"translation": "Failed to set email verified err=%v"
-	"translation": "無法設定電子郵件認證 err=%v"
+    "translation": "無法設定電子郵件驗證 err=%v"
   },
   {
     "id": "api.user.get_authorization_code.unsupported.app_error",
-    #"translation": "Unsupported OAuth service provider"
-	"translation": "不支援的 OAuth service provider"
+    "translation": "不支援的 OAuth service provider"
   },
   {
     "id": "api.user.get_me.getting.error",
-    #"translation": "Error in getting users profile for id=%v forcing logout"
-	"translation": "無法取得 id=%v 使用者的個人檔案,正在強制登出"
+    "translation": "無法取得 id=%v 使用者的個人檔案, 正在強制登出"
   },
   {
     "id": "api.user.init.debug",
-    #"translation": "Initializing user api routes"
-	"translation": "正在初始化 user api routes"
+    "translation": "正在初始化 user api 路徑"
   },
   {
     "id": "api.user.login.blank_pwd.app_error",
-    #"translation": "Password field must not be blank"
-	"translation": "密碼欄位不得空白"
+    "translation": "密碼欄位不得空白"
   },
   {
     "id": "api.user.login.inactive.app_error",
@@ -1615,7 +1505,7 @@
   {
     "id": "api.user.send_email_change_email_and_forget.error",
     #"translation": "Failed to send email change notification email successfully err=%v"
-	"translation": "更改提示電子郵件傳送失敗 err=%v"
+	"translation": "更改通知電子郵件傳送失敗 err=%v"
   },
   {
     "id": "api.user.send_email_change_verify_email_and_forget.error",
@@ -2335,22 +2225,18 @@
   },
   {
     "id": "model.incoming_hook.user_id.app_error",
-    #"translation": "Invalid user id"
     "translation": "無效的 user id"
   },
   {
     "id": "model.oauth.is_valid.app_id.app_error",
-    #"translation": "Invalid app id"
     "translation": "無效的 app id"
   },
   {
     "id": "model.oauth.is_valid.callback.app_error",
-    #"translation": "Invalid callback urls"
-    "translation": "無效的 callback urls"
+    "translation": "無效的 callback 位址"
   },
   {
     "id": "model.oauth.is_valid.client_secret.app_error",
-    #"translation": "Invalid client secret"
     "translation": "無效的 client secret"
   },
   {
@@ -2359,55 +2245,46 @@
   },
   {
     "id": "model.oauth.is_valid.creator_id.app_error",
-    #"translation": "無效的 creator id"
-    "translation": "Invalid creator id"
+    "translation": "無效的 creator id"
   },
   {
     "id": "model.oauth.is_valid.description.app_error",
-    #"translation": "Invalid description"
-    "translation": "無效的 description"
+    "translation": "無效的敘述"
   },
   {
     "id": "model.oauth.is_valid.homepage.app_error",
-    #"translation": "Invalid homepage"
-    "translation": "無效的 homepage"
+    "translation": "無效的首頁位址"
   },
   {
     "id": "model.oauth.is_valid.name.app_error",
-    #"translation": "Invalid name"
-    "translation": "無效的 name"
+    "translation": "無效的名稱"
   },
   {
     "id": "model.oauth.is_valid.update_at.app_error",
-    "translation": "Update at must be a valid time"
+    "translation": "Update at 必須是合法的時間"
   },
   {
     "id": "model.outgoing_hook.is_valid.callback.app_error",
-    #"translation": "Invalid callback urls"
-    "translation": "無效的 callback urls"
+    "translation": "無效的 callback 位址"
   },
   {
     "id": "model.outgoing_hook.is_valid.channel_id.app_error",
-    #"translation": "Invalid channel id"
     "translation": "無效的 channel id"
   },
   {
     "id": "model.outgoing_hook.is_valid.create_at.app_error",
-    "translation": "Create at must be a valid time"
+    "translation": "Create at 必須是合法的時間"
   },
   {
     "id": "model.outgoing_hook.is_valid.id.app_error",
-    #"translation": "Invalid Id"
     "translation": "無效的 Id"
   },
   {
     "id": "model.outgoing_hook.is_valid.team_id.app_error",
-    #"translation": "Invalid team id"
     "translation": "無效的 team id"
   },
   {
     "id": "model.outgoing_hook.is_valid.token.app_error",
-    #"translation": "Invalid token"
     "translation": "無效的 token"
   },
   {
@@ -2421,17 +2298,14 @@
   },
   {
     "id": "model.outgoing_hook.is_valid.user_id.app_error",
-    #"translation": "Invalid user id"
     "translation": "無效的 user id"
   },
   {
     "id": "model.outgoing_hook.is_valid.words.app_error",
-    #"translation": "Invalid trigger words"
-    "translation": "無效的 trigger words"
+    "translation": "無效的觸發關鍵字"
   },
   {
     "id": "model.post.is_valid.channel_id.app_error",
-    #"translation": "Invalid channel id"
     "translation": "無效的 channel id"
   },
   {
@@ -2440,42 +2314,34 @@
   },
   {
     "id": "model.post.is_valid.filenames.app_error",
-    #"translation": "Invalid filenames"
     "translation": "無效的 filenames"
   },
   {
     "id": "model.post.is_valid.hashtags.app_error",
-    #"translation": "Invalid hashtags"
     "translation": "無效的 hashtags"
   },
   {
     "id": "model.post.is_valid.id.app_error",
-    #"translation": "Invalid Id"
     "translation": "無效的 Id"
   },
   {
     "id": "model.post.is_valid.msg.app_error",
-    #"translation": "Invalid message"
     "translation": "無效的 message"
   },
   {
     "id": "model.post.is_valid.original_id.app_error",
-    #"translation": "Invalid original id"
     "translation": "無效的 original id"
   },
   {
     "id": "model.post.is_valid.parent_id.app_error",
-    #"translation": "Invalid parent id"
     "translation": "無效的 parent id"
   },
   {
     "id": "model.post.is_valid.props.app_error",
-    #"translation": "Invalid props"
     "translation": "無效的 props"
   },
   {
     "id": "model.post.is_valid.root_id.app_error",
-    #"translation": "Invalid root id"
     "translation": "無效的 root id"
   },
   {
@@ -2484,7 +2350,6 @@
   },
   {
     "id": "model.post.is_valid.type.app_error",
-    #"translation": "無效的 type"
     "translation": "Invalid type"
   },
   {
@@ -2493,37 +2358,30 @@
   },
   {
     "id": "model.post.is_valid.user_id.app_error",
-    #"translation": "Invalid user id"
     "translation": "無效的 user id"
   },
   {
     "id": "model.preference.is_valid.category.app_error",
-    #"translation": "Invalid category"
     "translation": "無效的 category"
   },
   {
     "id": "model.preference.is_valid.id.app_error",
-    #"translation": "Invalid user id"
     "translation": "無效的 user id"
   },
   {
     "id": "model.preference.is_valid.name.app_error",
-    #"translation": "Invalid name"
     "translation": "無效的 name"
   },
   {
     "id": "model.preference.is_valid.value.app_error",
-    #"translation": "Value is too long"
     "translation": "Value 太長"
   },
   {
     "id": "model.team.is_valid.characters.app_error",
-    #"translation": "Name must be 4 or more lowercase alphanumeric characters"
     "translation": "名稱必須是 4 個以上的小寫英數字元"
   },
   {
     "id": "model.team.is_valid.company.app_error",
-    #"translation": "Invalid company name"
     "translation": "無效的公司名稱"
   },
   {
@@ -2536,28 +2394,23 @@
   },
   {
     "id": "model.team.is_valid.email.app_error",
-    #"translation": "Invalid email"
     "translation": "無效的 email"
   },
   {
     "id": "model.team.is_valid.id.app_error",
-    #"translation": "Invalid Id"
     "translation": "無效的 Id"
   },
   {
     "id": "model.team.is_valid.name.app_error",
-    #"translation": "Invalid name"
     "translation": "無效的名稱"
   },
   {
     "id": "model.team.is_valid.reserved.app_error",
-    #"translation": "This URL is unavailable. Please try another."
     "translation": "這個 URL 不存在. 請嘗試其他的."
   },
   {
     "id": "model.team.is_valid.type.app_error",
-    #"translation": "Invalid type"
-    "translation": "無效的 type"
+    "translation": "無效的類型"
   },
   {
     "id": "model.team.is_valid.update_at.app_error",
@@ -2565,12 +2418,10 @@
   },
   {
     "id": "model.team.is_valid.url.app_error",
-    #"translation": "Invalid URL Identifier"
     "translation": "無效的 URL 識別碼"
   },
   {
     "id": "model.user.is_valid.auth_data.app_error",
-    #"translation": "Invalid auth data"
     "translation": "無效的驗證資料"
   },
   {
@@ -2587,42 +2438,34 @@
   },
   {
     "id": "model.user.is_valid.email.app_error",
-    #"translation": "Invalid email"
-    "translation": "無效的 email"
+    "translation": "無效的電子郵件信箱"
   },
   {
     "id": "model.user.is_valid.first_name.app_error",
-    #"translation": "Invalid first name"
-    "translation": "無效的 名字"
+    "translation": "無效的名"
   },
   {
     "id": "model.user.is_valid.id.app_error",
-    #"translation": "Invalid user id"
-    "translation": "無效的 user id"
+    "translation": "無效的使用者 id"
   },
   {
     "id": "model.user.is_valid.last_name.app_error",
-    #"translation": "Invalid last name"
-    "translation": "無效的 姓"
+    "translation": "無效的姓"
   },
   {
     "id": "model.user.is_valid.nickname.app_error",
-    #"translation": "Invalid nickname"
     "translation": "無效的暱稱"
   },
   {
     "id": "model.user.is_valid.pwd.app_error",
-    #"translation": "Invalid password"
     "translation": "無效的密碼"
   },
   {
     "id": "model.user.is_valid.team_id.app_error",
-    #"translation": "Invalid team id"
-    "translation": "無效的 團隊 id"
+    "translation": "無效的團隊 id"
   },
   {
     "id": "model.user.is_valid.theme.app_error",
-    #"translation": "Invalid theme"
     "translation": "無效的佈景主題"
   },
   {
@@ -2631,8 +2474,7 @@
   },
   {
     "id": "model.user.is_valid.username.app_error",
-    #"translation": "Invalid username"
-    "translation": "無效的 username"
+    "translation": "無效的使用者名稱"
   },
   {
     "id": "model.utils.decode_json.app_error",
@@ -2676,8 +2518,7 @@
   },
   {
     "id": "store.sql.create_column.critical",
-    #"translation": "Failed to create column %v"
-    "translation": "無法建立 column %v"
+    "translation": "無法建立欄位 %v"
   },
   {
     "id": "store.sql.create_column_missing_driver.critical",
@@ -2686,7 +2527,6 @@
   },
   {
     "id": "store.sql.create_index.critical",
-    #"translation": "Failed to create index %v"
     "translation": "無法建立索引 %v"
   },
   {
