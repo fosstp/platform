@@ -241,71 +241,88 @@
   },
   {
     "id": "api.channel.update_channel.tried.app_error",
-    "translation": "Tried to perform an invalid update of the default channel {{.Channel}}"
+    #"translation": "Tried to perform an invalid update of the default channel {{.Channel}}"
+    "translation": "已對預設頻道 {{.Channel}} 嘗試執行不合法的更新"
   },
   {
     "id": "api.command.admin_only.app_error",
-    "translation": "Integrations have been limited to admins only."
+    #"translation": "Integrations have been limited to admins only."
+    "translation": "只有管理員可以使用整合設定."
   },
   {
     "id": "api.command.delete.app_error",
-    "translation": "Inappropriate permissions to delete command"
+    #"translation": "Inappropriate permissions to delete command"
+    "translation": "沒有適當的權限可以執行刪除"
   },
   {
     "id": "api.command.disabled.app_error",
-    "translation": "Commands have been disabled by the system admin."
+    #"translation": "Commands have been disabled by the system admin."
+    "translation": "命令已被系統管理員停用."
   },
   {
     "id": "api.command.execute_command.debug",
-    "translation": "Executing cmd=%v userId=%v"
+    #"translation": "Executing cmd=%v userId=%v"
+    "translation": "正在執行 cmd=%v userId=%v"
   },
   {
     "id": "api.command.execute_command.failed.app_error",
-    "translation": "Command with a trigger of '{{.Trigger}}' failed"
+    #"translation": "Command with a trigger of '{{.Trigger}}' failed"
+    "translation": "附帶觸發器 '{{.Trigger}}' 的命令執行失敗"
   },
   {
     "id": "api.command.execute_command.failed_empty.app_error",
-    "translation": "Command with a trigger of '{{.Trigger}}' returned an empty response"
+    #"translation": "Command with a trigger of '{{.Trigger}}' returned an empty response"
+    "translation": "附帶觸發器 '{{.Trigger}}' 的命令回傳了空回應"
   },
   {
     "id": "api.command.execute_command.failed_resp.app_error",
-    "translation": "Command with a trigger of '{{.Trigger}}' returned response {{.Status}}"
+    #"translation": "Command with a trigger of '{{.Trigger}}' returned response {{.Status}}"
+    "translation": "附帶觸發器 '{{.Trigger}}' 的命令回傳了 {{.Status}} 回應"
   },
   {
     "id": "api.command.execute_command.not_found.app_error",
-    "translation": "Command with a trigger of '{{.Trigger}}' not found"
+    #"translation": "Command with a trigger of '{{.Trigger}}' not found"
+    "translation": "找不到附帶觸發器 '{{.Trigger}}' 的命令"
   },
   {
     "id": "api.command.execute_command.save.app_error",
-    "translation": "An error while saving the command response to the channel"
+    #"translation": "An error while saving the command response to the channel"
+    "translation": "儲存命令回傳值至頻道時有一個錯誤"
   },
   {
     "id": "api.command.execute_command.start.app_error",
-    "translation": "No command trigger found"
+    #"translation": "No command trigger found"
+    "translation": "找不到附帶觸發器的命令"
   },
   {
     "id": "api.command.init.debug",
     "translation": "Initializing command api routes"
+    "translation": "正在初始化命令 api 路徑"
   },
   {
     "id": "api.command.regen.app_error",
-    "translation": "Inappropriate permissions to regenerate command token"
+    #"translation": "Inappropriate permissions to regenerate command token"
+    "translation": "沒有適當的權限可重新產生命令 token"
   },
   {
     "id": "api.command_echo.create.app_error",
-    "translation": "Unable to create /echo post, err=%v"
+    #"translation": "Unable to create /echo post, err=%v"
+    "translation": "無法建立 /顯示訊息, err=%v"
   },
   {
     "id": "api.command_echo.delay.app_error",
-    "translation": "Delays must be under 10000 seconds"
+    #"translation": "Delays must be under 10000 seconds"
+    "translation": "延遲必須在 10000 秒以下"
   },
   {
     "id": "api.command_echo.desc",
-    "translation": "Echo back text from your account"
+    #"translation": "Echo back text from your account"
+    "translation": "從您的帳號回響文字"
   },
   {
     "id": "api.command_echo.high_volume.app_error",
-    "translation": "High volume of echo request, cannot process request"
+    #"translation": "High volume of echo request, cannot process request"
+    "translation": "過高的回響要求, 無法處理"
   },
   {
     "id": "api.command_echo.hint",
@@ -313,11 +330,13 @@
   },
   {
     "id": "api.command_echo.name",
-    "translation": "echo"
+    #"translation": "echo"
+    "translation": "回響"
   },
   {
     "id": "api.command_join.desc",
-    "translation": "Join the open channel"
+    #"translation": "Join the open channel"
+    "translation": "加入公開頻道"
   },
   {
     "id": "api.command_join.fail.app_error",
@@ -377,7 +396,8 @@
   },
   {
     "id": "api.command_shrug.name",
-    "translation": "shrug"
+    #"translation": "shrug"
+    "translation": "聳肩"
   },
   {
     "id": "api.context.404.app_error",
@@ -389,19 +409,23 @@
   },
   {
     "id": "api.context.invalid_team_url.debug",
-    "translation": "TeamURL accessed when not valid. Team URL should not be used in api functions or those that are team independent"
+    #"translation": "TeamURL accessed when not valid. Team URL should not be used in api functions or those that are team independent"
+    "translation": "TeamURL 存取失敗. 團隊網址不應於非特定團隊用途的 api 函式或是設定中被使用"
   },
   {
     "id": "api.context.invalid_token.error",
-    "translation": "Invalid session token=%v, err=%v"
+    #"translation": "Invalid session token=%v, err=%v"
+    "translation": "不合法的 session token=%v, err=%v"
   },
   {
     "id": "api.context.last_activity_at.error",
-    "translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
+    #"translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
+    "translation": "更新 user_id=%v 與 session_id=%v 的 LastActivityAt 失敗, err=%v"
   },
   {
     "id": "api.context.log.error",
-    "translation": "%v:%v code=%v rid=%v uid=%v ip=%v %v [details: %v]"
+    #"translation": "%v:%v code=%v rid=%v uid=%v ip=%v %v [details: %v]"
+    "translation": "%v:%v code=%v rid=%v uid=%v ip=%v %v [細節: %v]"
   },
   {
     "id": "api.context.permissions.app_error",
@@ -409,7 +433,8 @@
   },
   {
     "id": "api.context.session_expired.app_error",
-    "translation": "Invalid or expired session, please login again."
+    #"translation": "Invalid or expired session, please login again."
+    "translation": "非法或逾期的 session, 請重新登入."
   },
   {
     "id": "api.context.system_permissions.app_error",
@@ -417,11 +442,13 @@
   },
   {
     "id": "api.context.token_provided.app_error",
-    "translation": "Session is not OAuth but token was provided in the query string"
+    #"translation": "Session is not OAuth but token was provided in the query string"
+    "translation": "Session 不是 OAuth 協定用, 但 token 卻於 query string 中出現了"
   },
   {
     "id": "api.context.unknown.app_error",
-    "translation": "An unknown error has occurred. Please contact support."
+    #"translation": "An unknown error has occurred. Please contact support."
+    "translation": "未知的錯誤發生. 請聯繫支援單位."
   },
   {
     "id": "api.export.json.app_error",
@@ -441,31 +468,38 @@
   },
   {
     "id": "api.export.options.create.app_error",
-    "translation": "Unable to create options file"
+    #"translation": "Unable to create options file"
+    "translation": "無法建立設定檔"
   },
   {
     "id": "api.export.options.write.app_error",
-    "translation": "Unable to write to options file"
+    #"translation": "Unable to write to options file"
+    "translation": "無法寫入設定檔"
   },
   {
     "id": "api.export.read_dir.app_error",
-    "translation": "Unable to read directory"
+    #"translation": "Unable to read directory"
+    "translation": "無法讀取目錄"
   },
   {
     "id": "api.export.s3.app_error",
-    "translation": "S3 is not supported for local storage export."
+    #"translation": "S3 is not supported for local storage export."
+    "translation": "本地儲存匯出不支援 S3"
   },
   {
     "id": "api.export.write_file.app_error",
-    "translation": "Unable to write to export file"
+    #"translation": "Unable to write to export file"
+    "translation": "無法寫入匯出檔案"
   },
   {
     "id": "api.file.file_upload.exceeds",
-    "translation": "File exceeds max image size."
+    #"translation": "File exceeds max image size."
+    "translation": "檔案已達最大影像大小上限."
   },
   {
     "id": "api.file.get_export.retrieve.app_error",
-    "translation": "Unable to retrieve exported file. Please re-export"
+    #"translation": "Unable to retrieve exported file. Please re-export"
+    "translation": "無法取得匯出檔案. 請重新匯出"
   },
   {
     "id": "api.file.get_export.team_admin.app_error",
