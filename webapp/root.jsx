@@ -2,6 +2,7 @@
 // See License.txt for license information.
 
 import $ from 'jquery';
+require('perfect-scrollbar/jquery')($);
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'jasny-bootstrap/dist/css/jasny-bootstrap.css';
@@ -24,18 +25,17 @@ import Sidebar from 'components/sidebar.jsx';
 import * as AsyncClient from 'utils/async_client.jsx';
 import PreferenceStore from 'stores/preference_store.jsx';
 import ChannelStore from 'stores/channel_store.jsx';
-import SocketStore from 'stores/socket_store.jsx';
 import ErrorStore from 'stores/error_store.jsx';
 import BrowserStore from 'stores/browser_store.jsx';
 import SignupTeam from 'components/signup_team.jsx';
 import * as Client from 'utils/client.jsx';
+import * as Websockets from 'action_creators/websocket_actions.jsx';
 import * as GlobalActions from 'action_creators/global_actions.jsx';
 import SignupTeamConfirm from 'components/signup_team_confirm.jsx';
 import SignupUserComplete from 'components/signup_user_complete.jsx';
 import ShouldVerifyEmail from 'components/should_verify_email.jsx';
 import DoVerifyEmail from 'components/do_verify_email.jsx';
 import AdminConsole from 'components/admin_console/admin_controller.jsx';
-import ClaimAccount from 'components/claim/claim_account.jsx';
 
 import SignupTeamComplete from 'components/signup_team_complete/components/signup_team_complete.jsx';
 import WelcomePage from 'components/signup_team_complete/components/team_signup_welcome_page.jsx';
@@ -46,10 +46,13 @@ import UsernamePage from 'components/signup_team_complete/components/team_signup
 import PasswordPage from 'components/signup_team_complete/components/team_signup_password_page.jsx';
 import FinishedPage from 'components/signup_team_complete/components/team_signup_finished.jsx';
 
-import {addLocaleData} from 'react-intl';
-import enLocaleData from 'react-intl/locale-data/en';
-import esLocaleData from 'react-intl/locale-data/es';
-import ptLocaleData from 'react-intl/locale-data/pt';
+import Claim from 'components/claim/claim.jsx';
+import EmailToOAuth from 'components/claim/components/email_to_oauth.jsx';
+import OAuthToEmail from 'components/claim/components/oauth_to_email.jsx';
+import LDAPToEmail from 'components/claim/components/ldap_to_email.jsx';
+import EmailToLDAP from 'components/claim/components/email_to_ldap.jsx';
+
+import * as I18n from 'i18n/i18n.jsx';
 
 // This is for anything that needs to be done for ALL react components.
 // This runs before we start to render anything.
@@ -101,48 +104,29 @@ function preRenderSetup(callwhendone) {
         // Do Nothing
     };
 
+    // Make sure the websockets close
     $(window).on('beforeunload',
          () => {
-             if (window.SocketStore) {
-                 SocketStore.close();
-             }
+             Websockets.close();
          }
     );
 
     function afterIntl() {
-        addLocaleData(enLocaleData);
-        addLocaleData(esLocaleData);
-        addLocaleData(ptLocaleData);
-
+        I18n.doAddLocaleData();
         $.when(d1, d2).done(callwhendone);
     }
 
     if (global.Intl) {
         afterIntl();
     } else {
-        require.ensure([
-            'intl',
-            'intl/locale-data/jsonp/en.js',
-            'intl/locale-data/jsonp/es.js',
-            'intl/locale-data/jsonp/pt.js'
-        ], (require) => {
-            require('intl');
-            require('intl/locale-data/jsonp/en.js');
-            require('intl/locale-data/jsonp/es.js');
-            require('intl/locale-data/jsonp/pt.js');
-            afterIntl();
-        });
+        I18n.safarifix(afterIntl);
     }
 }
 
 function preLoggedIn(nextState, replace, callback) {
     const d1 = Client.getAllPreferences(
         (data) => {
-            if (!data) {
-                return;
-            }
-
-            PreferenceStore.setPreferences(data);
+            PreferenceStore.setPreferencesFromServer(data);
         },
         (err) => {
             AsyncClient.dispatchError(err, 'getAllPreferences');
@@ -198,6 +182,7 @@ function onLoggedOut(nextState) {
             BrowserStore.signalLogout();
             BrowserStore.clear();
             ErrorStore.clearLastError();
+            PreferenceStore.clear();
         },
         () => {
             browserHistory.push('/' + teamName + '/login');
@@ -312,10 +297,6 @@ function renderRootComponent() {
                             component={Login}
                         />
                         <Route
-                            path='claim'
-                            component={ClaimAccount}
-                        />
-                        <Route
                             path='reset_password'
                             component={PasswordResetSendLink}
                         />
@@ -323,6 +304,27 @@ function renderRootComponent() {
                             path='reset_password_complete'
                             component={PasswordResetForm}
                         />
+                        <Route
+                            path='claim'
+                            component={Claim}
+                        >
+                            <Route
+                                path='oauth_to_email'
+                                component={OAuthToEmail}
+                            />
+                            <Route
+                                path='email_to_oauth'
+                                component={EmailToOAuth}
+                            />
+                            <Route
+                                path='email_to_ldap'
+                                component={EmailToLDAP}
+                            />
+                            <Route
+                                path='ldap_to_email'
+                                component={LDAPToEmail}
+                            />
+                        </Route>
                     </Route>
                 </Route>
             </Route>

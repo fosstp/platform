@@ -29,6 +29,7 @@ import {Tooltip, OverlayTrigger} from 'react-bootstrap';
 import loadingGif from 'images/load.gif';
 
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 import favicon from 'images/favicon/favicon-16x16.png';
 import redFavicon from 'images/favicon/redfavicon-16x16.png';
@@ -93,12 +94,12 @@ export default class Sidebar extends React.Component {
         const preferences = PreferenceStore.getCategory(Constants.Preferences.CATEGORY_DIRECT_CHANNEL_SHOW);
 
         const directChannels = [];
-        for (const preference of preferences) {
-            if (preference.value !== 'true') {
+        for (const [name, value] of preferences) {
+            if (value !== 'true') {
                 continue;
             }
 
-            const teammateId = preference.name;
+            const teammateId = name;
 
             let directChannel = channels.find(Utils.isDirectChannelForUser.bind(null, teammateId));
 
@@ -163,6 +164,9 @@ export default class Sidebar extends React.Component {
     componentDidUpdate() {
         this.updateTitle();
         this.updateUnreadIndicators();
+        if (!Utils.isMobile()) {
+            $('.sidebar--left .nav-pills__container').perfectScrollbar();
+        }
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
@@ -239,11 +243,10 @@ export default class Sidebar extends React.Component {
         if (!this.isLeaving.get(channel.id)) {
             this.isLeaving.set(channel.id, true);
 
-            const preference = PreferenceStore.setPreference(Constants.Preferences.CATEGORY_DIRECT_CHANNEL_SHOW, channel.teammate_id, 'false');
-
-            // bypass AsyncClient since we've already saved the updated preferences
-            Client.savePreferences(
-                [preference],
+            AsyncClient.savePreference(
+                Constants.Preferences.CATEGORY_DIRECT_CHANNEL_SHOW,
+                channel.teammate_id,
+                'false',
                 () => {
                     this.isLeaving.set(channel.id, false);
                 },
@@ -405,7 +408,6 @@ export default class Sidebar extends React.Component {
 
         // set up click handler to switch channels (or create a new channel for non-existant ones)
         var handleClick = null;
-        var href = '#';
 
         if (!channel.fake) {
             handleClick = function clickHandler(e) {
@@ -438,7 +440,7 @@ export default class Sidebar extends React.Component {
                             },
                             () => {
                                 this.setState({loadingDMChannel: -1});
-                                window.location.href = '/' + this.state.currentTeam.name;
+                                browserHistory('/' + this.state.currentTeam.name);
                             }
                         );
                     }
@@ -487,7 +489,7 @@ export default class Sidebar extends React.Component {
             >
                 <a
                     className={rowClass}
-                    href={href}
+                    href={'#'}
                     onClick={handleClick}
                 >
                     {icon}

@@ -17,6 +17,7 @@ import * as client from './client.jsx';
 import Autolinker from 'autolinker';
 
 import React from 'react';
+import {browserHistory} from 'react-router';
 import {FormattedTime} from 'react-intl';
 
 import icon50 from 'images/icon50x50.png';
@@ -170,7 +171,7 @@ export function notifyMe(title, body, channel) {
                         if (channel) {
                             switchChannel(channel);
                         } else {
-                            window.location.href = TeamStore.getCurrentTeamUrl() + '/channels/town-square';
+                            browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/town-square');
                         }
                     };
                     setTimeout(() => {
@@ -314,7 +315,13 @@ export function getTimestamp() {
 
 // extracts links not styled by Markdown
 export function extractLinks(text) {
-    const links = [];
+    text; // eslint-disable-line no-unused-expressions
+    Autolinker; // eslint-disable-line no-unused-expressions
+
+    // skip this operation because autolinker is having issues
+    return [];
+
+    /*const links = [];
     let inText = text;
 
     // strip out code blocks
@@ -348,7 +355,7 @@ export function extractLinks(text) {
         }
     );
 
-    return links;
+    return links;*/
 }
 
 export function escapeRegExp(string) {
@@ -681,7 +688,7 @@ export function applyTheme(theme) {
     }
 
     if (theme.centerChannelBg) {
-        changeCss('.app__content, .markdown__table, .markdown__table tbody tr, .suggestion-list__content, .modal .modal-content, .modal .modal-back', 'background:' + theme.centerChannelBg, 1);
+        changeCss('.app__content, .markdown__table, .markdown__table tbody tr, .suggestion-list__content, .modal .modal-content', 'background:' + theme.centerChannelBg, 1);
         changeCss('#post-list .post-list-holder-by-time', 'background:' + theme.centerChannelBg, 1);
         changeCss('#post-create', 'background:' + theme.centerChannelBg, 1);
         changeCss('.date-separator .separator__text, .new-separator .separator__text', 'background:' + theme.centerChannelBg, 1);
@@ -1297,7 +1304,7 @@ export function openDirectChannelToUser(user, successCb, errorCb) {
                 }
             },
             () => {
-                window.location.href = TeamStore.getCurrentTeamUrl() + '/channels/' + channelName;
+                browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/' + channelName);
                 if ($.isFunction(errorCb)) {
                     errorCb();
                 }
