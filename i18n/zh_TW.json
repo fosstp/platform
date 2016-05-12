@@ -503,247 +503,308 @@
   },
   {
     "id": "api.file.get_export.team_admin.app_error",
-    "translation": "Only a team admin can retrieve exported data."
+    #"translation": "Only a team admin can retrieve exported data."
+    "translation": "只有團隊管理者可以取得匯出的資料."
   },
   {
     "id": "api.file.get_file.not_found.app_error",
-    "translation": "Could not find file."
+    #"translation": "Could not find file."
+    "translation": "找不到檔案."
   },
   {
     "id": "api.file.get_file.public_invalid.app_error",
-    "translation": "The public link does not appear to be valid"
+    #"translation": "The public link does not appear to be valid"
+    "translation": "此公開連結不合法"
   },
   {
     "id": "api.file.get_public_link.disabled.app_error",
-    "translation": "Public links have been disabled"
+    #"translation": "Public links have been disabled"
+    "translation": "公開連結已被停用"
   },
   {
     "id": "api.file.handle_images_forget.decode.error",
-    "translation": "Unable to decode image channelId=%v userId=%v filename=%v err=%v"
+    #"translation": "Unable to decode image channelId=%v userId=%v filename=%v err=%v"
+    "translation": "無法解碼影像 channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.encode_jpeg.error",
-    "translation": "Unable to encode image as jpeg channelId=%v userId=%v filename=%v err=%v"
+    #"translation": "Unable to encode image as jpeg channelId=%v userId=%v filename=%v err=%v"
+    "translation": "無法編碼影像為 jpeg channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.encode_preview.error",
-    "translation": "Unable to encode image as preview jpg channelId=%v userId=%v filename=%v err=%v"
+    #"translation": "Unable to encode image as preview jpg channelId=%v userId=%v filename=%v err=%v"
+    "translation": "無法編碼影像為預覽 jpg channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.upload_preview.error",
-    "translation": "Unable to upload preview channelId=%v userId=%v filename=%v err=%v"
+    #"translation": "Unable to upload preview channelId=%v userId=%v filename=%v err=%v"
+    "translation": "無法上傳預覽 channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.upload_thumb.error",
-    "translation": "Unable to upload thumbnail channelId=%v userId=%v filename=%v err=%v"
+    #"translation": "Unable to upload thumbnail channelId=%v userId=%v filename=%v err=%v"
+    "translation": "無法上傳縮圖 channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.init.debug",
-    "translation": "Initializing file api routes"
+    #"translation": "Initializing file api routes"
+    "translation": "正在初始化檔案 api 路徑"
   },
   {
     "id": "api.file.open_file_write_stream.configured.app_error",
-    "translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
+    #"translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
+    "translation": "檔案儲存沒有正確設定. 請設定為 S3 或是本地儲存."
   },
   {
     "id": "api.file.open_file_write_stream.creating_dir.app_error",
-    "translation": "Encountered an error creating the directory for the new file"
+    #"translation": "Encountered an error creating the directory for the new file"
+    "translation": "建立新檔案的目錄時發生錯誤"
   },
   {
     "id": "api.file.open_file_write_stream.local_server.app_error",
-    "translation": "Encountered an error writing to local server storage"
+    #"translation": "Encountered an error writing to local server storage"
+    "translation": "寫入本地儲存時發生錯誤"
   },
   {
     "id": "api.file.open_file_write_stream.s3.app_error",
-    "translation": "S3 is not supported."
+    #"translation": "S3 is not supported."
+    "translation": "不支援 S3."
   },
   {
     "id": "api.file.read_file.configured.app_error",
-    "translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
+    #"translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
+    "translation": "檔案儲存沒有正確設定. 請設定為 S3 或是本地儲存."
   },
   {
     "id": "api.file.read_file.get.app_error",
-    "translation": "Unable to get file from S3"
+    #"translation": "Unable to get file from S3"
+    "translation": "無法從 S3 取得檔案"
   },
   {
     "id": "api.file.read_file.reading_local.app_error",
-    "translation": "Encountered an error reading from local server storage"
+    #"translation": "Encountered an error reading from local server storage"
+    "translation": "從本地儲存讀取時發生錯誤"
   },
   {
     "id": "api.file.upload_file.image.app_error",
-    "translation": "Unable to upload image file."
+    #"translation": "Unable to upload image file."
+    "translation": "無法上傳影像檔案."
   },
   {
     "id": "api.file.upload_file.large_image.app_error",
-    "translation": "Unable to upload image file. File is too large."
+    #"translation": "Unable to upload image file. File is too large."
+    "translation": "無法上傳影像檔案. 檔案太大."
   },
   {
     "id": "api.file.upload_file.storage.app_error",
-    "translation": "Unable to upload file. Image storage is not configured."
+    #"translation": "Unable to upload file. Image storage is not configured."
+    "translation": "無法上傳檔案. 影像儲存尚未設定."
   },
   {
     "id": "api.file.upload_file.too_large.app_error",
-    "translation": "Unable to upload file. File is too large."
+    #"translation": "Unable to upload file. File is too large."
+    "translation": "無法上傳檔案. 檔案太大."
   },
   {
     "id": "api.file.write_file.configured.app_error",
-    "translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
+    #"translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
+    "translation": "檔案儲存沒有正確設定. 請設定為 S3 或是本地儲存."
   },
   {
     "id": "api.file.write_file.s3.app_error",
-    "translation": "Encountered an error writing to S3"
+    #"translation": "Encountered an error writing to S3"
+    "translation": "寫入 S3 時發生錯誤"
   },
   {
     "id": "api.file.write_file_locally.create_dir.app_error",
-    "translation": "Encountered an error creating the directory for the new file"
+    #"translation": "Encountered an error creating the directory for the new file"
+    "translation": "建立新檔案的目錄時發生錯誤"
   },
   {
     "id": "api.file.write_file_locally.writing.app_error",
-    "translation": "Encountered an error writing to local server storage"
+    #"translation": "Encountered an error writing to local server storage"
+    "translation": "寫入本地儲存時發生錯誤"
   },
   {
     "id": "api.import.import_post.saving.debug",
-    "translation": "Error saving post. user=%v, message=%v"
+    #"translation": "Error saving post. user=%v, message=%v"
+    "translation": "儲存訊息時發生錯誤. user=%v, message=%v"
   },
   {
     "id": "api.import.import_user.joining_default.error",
-    "translation": "Encountered an issue joining default channels user_id=%s, team_id=%s, err=%v"
+    #"translation": "Encountered an issue joining default channels user_id=%s, team_id=%s, err=%v"
+    "translation": "加入預設頻道時事件發生 user_id=%s, team_id=%s, err=%v"
   },
   {
     "id": "api.import.import_user.saving.error",
-    "translation": "Error saving user. err=%v"
+    #"translation": "Error saving user. err=%v"
+    "translation": "儲存使用者時發生錯誤. err=%v"
   },
   {
     "id": "api.import.import_user.set_email.error",
-    "translation": "Failed to set email verified err=%v"
+    #"translation": "Failed to set email verified err=%v"
+    "translation": "設定 email 驗證錯誤 err=%v"
   },
   {
     "id": "api.license.add_license.array.app_error",
-    "translation": "Empty array under 'license' in request"
+    #"translation": "Empty array under 'license' in request"
+    "translation": "request 中 license 欄位為空陣列"
   },
   {
     "id": "api.license.add_license.expired.app_error",
-    "translation": "License is either expired or has not yet started."
+    #"translation": "License is either expired or has not yet started."
+    "translation": "授權不是已過期就是還沒啟用."
   },
   {
     "id": "api.license.add_license.invalid.app_error",
-    "translation": "Invalid license file."
+    #"translation": "Invalid license file."
+    "translation": "錯誤的授權檔案."
   },
   {
     "id": "api.license.add_license.invalid_count.app_error",
-    "translation": "Unable to count total unique users."
+    #"translation": "Unable to count total unique users."
+    "translation": "無法計算使用者總人數."
   },
   {
     "id": "api.license.add_license.no_file.app_error",
-    "translation": "No file under 'license' in request"
+    #"translation": "No file under 'license' in request"
+    "translation": "request 中 license 欄位沒有上傳檔案"
   },
   {
     "id": "api.license.add_license.open.app_error",
-    "translation": "Could not open license file"
+    #"translation": "Could not open license file"
+    "translation": "無法開啟授權檔案"
   },
   {
     "id": "api.license.add_license.save.app_error",
-    "translation": "License did not save properly."
+    #"translation": "License did not save properly."
+    "translation": "授權無法正確儲存."
   },
   {
     "id": "api.license.add_license.save_active.app_error",
-    "translation": "Active license ID did not save properly."
+    #"translation": "Active license ID did not save properly."
+    "translation": "啟用授權 ID 無法正確儲存."
   },
   {
     "id": "api.license.add_license.unique_users.app_error",
-    "translation": "This license only supports {{.Users}} users, when your system has {{.Count}} unique users. Unique users are counted distinctly by email address. You can see total user count under Site Reports -> View Statistics."
+    #"translation": "This license only supports {{.Users}} users, when your system has {{.Count}} unique users. Unique users are counted distinctly by email address. You can see total user count under Site Reports -> View Statistics."
+    "translation": "此授權只支援 {{.Users}} 位使用者, 而您的系統有 {{.Count}} 位使用者. 使用者人數是根據 email 位址計算. 您可從 Site Reports -> View Statistics 看到使用者總數量."
   },
   {
     "id": "api.license.init.debug",
-    "translation": "Initializing license api routes"
+    #"translation": "Initializing license api routes"
+    "translation": "正在初始化授權 api 路徑"
   },
   {
     "id": "api.license.remove_license.remove.app_error",
-    "translation": "License did not remove properly."
+    #"translation": "License did not remove properly."
+    "translation": "授權沒有正確的移除."
   },
   {
     "id": "api.oauth.allow_oauth.bad_client.app_error",
-    "translation": "invalid_request: Bad client_id"
+    #"translation": "invalid_request: Bad client_id"
+    "translation": "invalid_request: 錯誤的 client_id"
   },
   {
     "id": "api.oauth.allow_oauth.bad_redirect.app_error",
-    "translation": "invalid_request: Missing or bad redirect_uri"
+    #"translation": "invalid_request: Missing or bad redirect_uri"
+    "translation": "invalid_request: 遺漏或錯誤的 redirect_uri"
   },
   {
     "id": "api.oauth.allow_oauth.bad_response.app_error",
-    "translation": "invalid_request: Bad response_type"
+    #"translation": "invalid_request: Bad response_type"
+    "translation": "invalid_request: 錯誤的 response_type"
   },
   {
     "id": "api.oauth.allow_oauth.database.app_error",
-    "translation": "server_error: Error accessing the database"
+    #"translation": "server_error: Error accessing the database"
+    "translation": "server_error: 存取資料庫時發生錯誤"
   },
   {
     "id": "api.oauth.allow_oauth.redirect_callback.app_error",
-    "translation": "invalid_request: Supplied redirect_uri did not match registered callback_url"
+    #"translation": "invalid_request: Supplied redirect_uri did not match registered callback_url"
+    "translation": "invalid_request: 提供的 redirect_uri 沒有配對已註冊的 callback_url"
   },
   {
     "id": "api.oauth.allow_oauth.turn_off.app_error",
-    "translation": "The system admin has turned off OAuth service providing."
+    #"translation": "The system admin has turned off OAuth service providing."
+    "translation": "系統管理員已關閉 OAuth service providing."
   },
   {
     "id": "api.oauth.get_auth_data.find.error",
-    "translation": "Couldn't find auth code for code=%s"
+    #"translation": "Couldn't find auth code for code=%s"
+    "translation": "找不到 code=%s 的 auth code"
   },
   {
     "id": "api.oauth.init.debug",
-    "translation": "Initializing oauth api routes"
+    #"translation": "Initializing oauth api routes"
+    "translation": "正在初始化 oauth api 路徑"
   },
   {
     "id": "api.oauth.register_oauth_app.turn_off.app_error",
-    "translation": "The system admin has turned off OAuth service providing."
+    #"translation": "The system admin has turned off OAuth service providing."
+    "translation": "系統管理員已關閉 OAuth service providing."
   },
   {
     "id": "api.oauth.revoke_access_token.del_code.app_error",
-    "translation": "Error deleting authorization code from DB"
+    #"translation": "Error deleting authorization code from DB"
+    "translation": "從資料庫刪除 authorization code 時發生錯誤"
   },
   {
     "id": "api.oauth.revoke_access_token.del_session.app_error",
-    "translation": "Error deleting session from DB"
+    #"translation": "Error deleting session from DB"
+    "translation": "從資料庫刪除 session 時發生錯誤"
   },
   {
     "id": "api.oauth.revoke_access_token.del_token.app_error",
-    "translation": "Error deleting access token from DB"
+    #"translation": "Error deleting access token from DB"
+    "translation": "從資料庫刪除 access token 時發生錯誤"
   },
   {
     "id": "api.oauth.revoke_access_token.get.app_error",
-    "translation": "Error getting access token from DB before deletion"
+    #"translation": "Error getting access token from DB before deletion"
+    "translation": "刪除前從資料庫取得 access token 時發生錯誤"
   },
   {
     "id": "api.post.check_for_out_of_channel_mentions.message.multiple",
-    "translation": "{{.Usernames}} and {{.LastUsername}} were mentioned, but they do not belong to this channel."
+    #"translation": "{{.Usernames}} and {{.LastUsername}} were mentioned, but they do not belong to this channel."
+    "translation": "{{.Usernames}} 與 {{.LastUsername}} 已被提及, 但他們並未加入此頻道."
   },
   {
     "id": "api.post.check_for_out_of_channel_mentions.message.one",
-    "translation": "{{.Username}} was mentioned, but does not belong to this channel."
+    #"translation": "{{.Username}} was mentioned, but does not belong to this channel."
+    "translation": "{{.Username}} 已被提及, 但並未加入此頻道."
   },
   {
     "id": "api.post.create_post.bad_filename.error",
-    "translation": "Bad filename discarded, filename=%v"
+    #"translation": "Bad filename discarded, filename=%v"
+    "translation": "非法的檔名已被丟棄, filename=%v"
   },
   {
     "id": "api.post.create_post.channel_root_id.app_error",
-    "translation": "Invalid ChannelId for RootId parameter"
+    #"translation": "Invalid ChannelId for RootId parameter"
+    "translation": "RootId 參數的 ChannelId 非法"
   },
   {
     "id": "api.post.create_post.last_viewed.error",
-    "translation": "Encountered error updating last viewed, channel_id=%s, user_id=%s, err=%v"
+    #"translation": "Encountered error updating last viewed, channel_id=%s, user_id=%s, err=%v"
+    "translation": "更新最新的訊息檢視發生錯誤, channel_id=%s, user_id=%s, err=%v"
   },
   {
     "id": "api.post.create_post.parent_id.app_error",
-    "translation": "Invalid ParentId parameter"
+    #"translation": "Invalid ParentId parameter"
+    "translation": "非法的 ParentId 參數"
   },
   {
     "id": "api.post.create_post.root_id.app_error",
-    "translation": "Invalid RootId parameter"
+    #"translation": "Invalid RootId parameter"
+    "translation": "非法的 RootId 參數"
   },
   {
     "id": "api.post.create_webhook_post.creating.app_error",
-    "translation": "Error creating post"
+    #"translation": "Error creating post"
+    "translation": "建立訊息時發生錯誤"
   },
   {
     "id": "api.post.delete_post.permissions.app_error",
@@ -751,7 +812,8 @@
   },
   {
     "id": "api.post.get_out_of_channel_mentions.regex.error",
-    "translation": "Failed to compile @mention regex user_id=%v, err=%v"
+    #"translation": "Failed to compile @mention regex user_id=%v, err=%v"
+    "translation": "無法編譯 @mention 正規表示式 user_id=%v, err=%v"
   },
   {
     "id": "api.post.get_post.permissions.app_error",
@@ -3537,7 +3599,7 @@
   },
   {
     "id": "web.authorize_oauth.disabled.app_error",
-    "translation": "系統管理員關閉了 OAuth service providing."
+    "translation": "系統管理員已關閉 OAuth service providing."
   },
   {
     "id": "web.authorize_oauth.missing.app_error",
