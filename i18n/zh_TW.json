@@ -2651,12 +2651,12 @@
   {
     "id": "store.sql.alter_column_type.critical",
     #"translation": "Failed to alter column type %v"
-    "translation": "更動欄位類型失敗 %v"
+    "translation": "更動欄位類型 %v 失敗"
   },
   {
     "id": "store.sql.check_index.critical",
     #"translation": "Failed to check index %v"
-    "translation": "檢查索引失敗 %v"
+    "translation": "檢查索引 %v 失敗"
   },
   {
     "id": "store.sql.closing.info",
@@ -2666,27 +2666,32 @@
   {
     "id": "store.sql.column_exists.critical",
     #"translation": "Failed to check if column exists %v"
-    "translation": "如果欄位存在則檢查失敗 %v"
+    "translation": "檢查欄位是否存在失敗 %v"
   },
   {
     "id": "store.sql.column_exists_missing_driver.critical",
-    "translation": "Failed to check if column exists because of missing driver"
+    #"translation": "Failed to check if column exists because of missing driver"
+    "translation": "檢查欄位是否存在失敗 因為找不到驅動"
   },
   {
     "id": "store.sql.convert_encrypt_string_map",
-    "translation": "FromDb: Unable to convert EncryptStringMap to *string"
+    #"translation": "FromDb: Unable to convert EncryptStringMap to *string"
+    "translation": "FromDb: 無法將 EncryptStringMap 轉換為 *string"
   },
   {
     "id": "store.sql.convert_string_array",
-    "translation": "FromDb: Unable to convert StringArray to *string"
+    #"translation": "FromDb: Unable to convert StringArray to *string"
+    "translation": "FromDb: 無法將 StringArray 轉換為 *string"
   },
   {
     "id": "store.sql.convert_string_interface",
-    "translation": "FromDb: Unable to convert StringInterface to *string"
+    #"translation": "FromDb: Unable to convert StringInterface to *string"
+    "translation": "FromDb: 無法將 StringInterface 轉換為 *string"
   },
   {
     "id": "store.sql.convert_string_map",
-    "translation": "FromDb: Unable to convert StringMap to *string"
+    #"translation": "FromDb: Unable to convert StringMap to *string"
+    "translation": "FromDb: 無法將 StringMap 轉換為 *string"
   },
   {
     "id": "store.sql.create_column.critical",
@@ -2704,111 +2709,137 @@
   {
     "id": "store.sql.create_index_missing_driver.critical",
     #"translation": "Failed to create index because of missing driver"
-    "translation": "無法建立索引 因為遺失了 driver"
+    "translation": "無法建立索引 因為找不到驅動"
   },
   {
     "id": "store.sql.creating_tables.critical",
-    "translation": "Error creating database tables: %v"
+    #"translation": "Error creating database tables: %v"
+    "translation": "建立資料表失敗: %v"
   },
   {
     "id": "store.sql.dialect_driver.critical",
-    "translation": "Failed to create dialect specific driver"
+    #"translation": "Failed to create dialect specific driver"
+    "translation": "建立對應的驅動模組失敗"
   },
   {
     "id": "store.sql.dialect_driver.panic",
-    "translation": "Failed to create dialect specific driver %v"
+    #"translation": "Failed to create dialect specific driver %v"
+    "translation": "建立對應的驅動模組 %v 失敗"
   },
   {
     "id": "store.sql.drop_column.critical",
-    "translation": "Failed to drop column %v"
+    #"translation": "Failed to drop column %v"
+    "translation": "刪除欄位 %v 失敗"
   },
   {
     "id": "store.sql.incorrect_mac",
-    "translation": "Incorrect MAC for the given ciphertext"
+    #"translation": "Incorrect MAC for the given ciphertext"
+    "translation": "不正確的 ciphertext MAC"
   },
   {
     "id": "store.sql.maxlength_column.critical",
-    "translation": "Failed to get max length of column %v"
+    #"translation": "Failed to get max length of column %v"
+    "translation": "取得欄位 %v 最大長度失敗 "
   },
   {
     "id": "store.sql.open_conn.critical",
-    "translation": "Failed to open sql connection to err:%v"
+    #"translation": "Failed to open sql connection to err:%v"
+    "translation": "開啟 sql 連線失敗 err:%v"
   },
   {
     "id": "store.sql.open_conn.panic",
-    "translation": "Failed to open sql connection %v"
+    #"translation": "Failed to open sql connection %v"
+    "translation": "開啟 sql 連線失敗 %v"
   },
   {
     "id": "store.sql.ping.critical",
-    "translation": "Failed to ping db err:%v"
+    #"translation": "Failed to ping db err:%v"
+    "translation": "探測資料庫失敗 err:%v"
   },
   {
     "id": "store.sql.pinging.info",
-    "translation": "Pinging sql %v database"
+    #"translation": "Pinging sql %v database"
+    "translation": "正在探測 sql %v 資料庫"
   },
   {
     "id": "store.sql.remove_index.critical",
-    "translation": "Failed to remove index %v"
+    #"translation": "Failed to remove index %v"
+    "translation": "移除索引 %v 失敗"
   },
   {
     "id": "store.sql.rename_column.critical",
-    "translation": "Failed to rename column %v"
+    #"translation": "Failed to rename column %v"
+    "translation": "更改欄位 %v 失敗"
   },
   {
     "id": "store.sql.schema_out_of_date.warn",
-    "translation": "The database schema version of %v appears to be out of date"
+    #"translation": "The database schema version of %v appears to be out of date"
+    "translation": "%v 的資料庫 schema 版本似乎過期了"
   },
   {
     "id": "store.sql.schema_set.info",
-    "translation": "The database schema has been set to version %v"
+    #"translation": "The database schema has been set to version %v"
+    "translation": "資料庫 schema 已被設定為版本 %v"
   },
   {
     "id": "store.sql.schema_upgrade_attempt.warn",
-    "translation": "Attempting to upgrade the database schema version to %v"
+    #"translation": "Attempting to upgrade the database schema version to %v"
+    "translation": "正在嘗試將資料庫 schema 版本升級至 %v"
   },
   {
     "id": "store.sql.schema_version.critical",
-    "translation": "The database schema version of %v cannot be upgraded.  You must not skip a version."
+    #"translation": "The database schema version of %v cannot be upgraded.  You must not skip a version."
+    "translation": "%v 的資料庫 schema 版本無法升級. 您不能略過版本."
   },
   {
     "id": "store.sql.short_ciphertext",
-    "translation": "short ciphertext"
+    #"translation": "short ciphertext"
+    "translation": "短的 ciphertext"
   },
   {
     "id": "store.sql.table_column_type.critical",
-    "translation": "Failed to get data type for column %s from table %s: %v"
+    #"translation": "Failed to get data type for column %s from table %s: %v"
+    "translation": "取得欄位 %s 資料類型來自資料表 %s 失敗: %v"
   },
   {
     "id": "store.sql.table_exists.critical",
-    "translation": "Failed to check if table exists %v"
+    #"translation": "Failed to check if table exists %v"
+    "translation": "檢查資料表是否存在失敗%v"
   },
   {
     "id": "store.sql.too_short_ciphertext",
-    "translation": "ciphertext too short"
+    #"translation": "ciphertext too short"
+    "translation": "ciphertext 太短"
   },
   {
     "id": "store.sql.upgraded.warn",
-    "translation": "The database schema has been upgraded to version %v"
+    #"translation": "The database schema has been upgraded to version %v"
+    "translation": "資料庫 schema 已被升級至版本 %v"
   },
   {
     "id": "store.sql_audit.get.finding.app_error",
-    "translation": "We encountered an error finding the audits"
+    #"translation": "We encountered an error finding the audits"
+    "translation": "尋找稽核紀錄時遇到錯誤"
   },
   {
     "id": "store.sql_audit.get.limit.app_error",
-    "translation": "Limit exceeded for paging"
+    #"translation": "Limit exceeded for paging"
+    "translation": "分頁達到限制"
   },
   {
     "id": "store.sql_audit.permanent_delete_by_user.app_error",
-    "translation": "We encountered an error deleting the audits"
+    #"translation": "We encountered an error deleting the audits"
+    "translation": "刪除稽核紀錄時遇到錯誤"
   },
   {
     "id": "store.sql_audit.save.saving.app_error",
-    "translation": "We encountered an error saving the audit"
+    #"translation": "We encountered an error saving the audit"
+    "translation": "儲存稽核紀錄時遇到錯誤"
   },
   {
     "id": "store.sql_channel.analytics_type_count.app_error",
-    "translation": "We couldn't get channel type counts"
+    #"translation": "We couldn't get channel type counts"
+    "translation": "無法取得頻道類別計數"
   },
   {
     "id": "store.sql_channel.check_open_channel_permissions.app_error",
@@ -2832,7 +2863,8 @@
   },
   {
     "id": "store.sql_channel.extra_updated.app_error",
-    "translation": "Problem updating members last updated time"
+    #"translation": "Problem updating members last updated time"
+    "translation": "更新使用者最後更新時間遇到問題"
   },
   {
     "id": "store.sql_channel.get.existing.app_error",
@@ -2896,7 +2928,8 @@
   },
   {
     "id": "store.sql_channel.increment_mention_count.app_error",
-    "translation": "We couldn't increment the mention count"
+    #"translation": "We couldn't increment the mention count"
+    "translation": "無法遞增提及計數"
   },
   {
     "id": "store.sql_channel.permanent_delete_by_team.app_error",
@@ -2915,7 +2948,8 @@
   },
   {
     "id": "store.sql_channel.save.commit_transaction.app_error",
-    "translation": "Unable to commit transaction"
+    #"translation": "Unable to commit transaction"
+    "translation": "無法 commit translation"
   },
   {
     "id": "store.sql_channel.save.direct_channel.app_error",
