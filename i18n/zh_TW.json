@@ -1497,15 +1497,15 @@
   },
   {
     "id": "api.user.create_profile_image.default_font.app_error",
-    "translation": "無法建立使用者預設個人檔案圖片字型"
+    "translation": "無法建立使用者預設個人資訊圖片字型"
   },
   {
     "id": "api.user.create_profile_image.encode.app_error",
-    "translation": "無法編碼預設個人檔案圖片"
+    "translation": "無法編碼預設個人資訊圖片"
   },
   {
     "id": "api.user.create_profile_image.initial.app_error",
-    "translation": "無法初始化使用者預設的個人檔案照片"
+    "translation": "無法初始化使用者預設的個人資訊照片"
   },
   {
     "id": "api.user.create_user.accepted_domain.app_error",
@@ -1766,17 +1766,17 @@
   {
     "id": "api.user.upload_profile_user.decode.app_error",
     #"translation": "Could not decode profile image"
-    "translation": "無法解碼個人檔案圖片"
+    "translation": "無法解碼個人資訊圖片"
   },
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
     #"translation": "Could not decode profile image config."
-     "translation": "無法解碼個人檔案圖片設定"
+     "translation": "無法解碼個人資訊圖片設定"
   },
   {
     "id": "api.user.upload_profile_user.encode.app_error",
     #"translation": "Could not encode profile image"
-     "translation": "無法編碼個人檔案圖片"
+     "translation": "無法編碼個人資訊圖片"
 
   },
   {
@@ -1802,12 +1802,12 @@
   {
     "id": "api.user.upload_profile_user.too_large.app_error",
     #"translation": "Unable to upload profile image. File is too large."
-     "translation": "無法上傳個人檔案圖片. 檔案過大."
+     "translation": "無法上傳個人資訊圖片. 檔案過大."
   },
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
     #"translation": "Couldn't upload profile image"
-	"translation": "無法上傳個人檔案圖片"
+	"translation": "無法上傳個人資訊圖片"
   },
   {
     "id": "api.web_conn.new_web_conn.last_activity.error",
@@ -2279,12 +2279,12 @@
   {
     "id": "model.config.is_valid.file_profile_height.app_error",
     #"translation": "Invalid profile height for file settings.  Must be a positive number."
-	"translation": "檔案設定中的個人檔案高度無效.  必須為正數."
+	"translation": "檔案設定中的個人資訊高度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_width.app_error",
     #"translation": "Invalid profile width for file settings.  Must be a positive number."
-	"translation": "檔案設定中的個人檔案寬度無效.  必須為正數."
+	"translation": "檔案設定中的個人資訊 寬度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_salt.app_error",
@@ -2839,7 +2839,7 @@
   {
     "id": "store.sql_channel.analytics_type_count.app_error",
     #"translation": "We couldn't get channel type counts"
-    "translation": "無法取得頻道類別計數"
+    "translation": "無法取得頻道類別數量"
   },
   {
     "id": "store.sql_channel.check_open_channel_permissions.app_error",
@@ -2949,7 +2949,7 @@
   {
     "id": "store.sql_channel.save.commit_transaction.app_error",
     #"translation": "Unable to commit transaction"
-    "translation": "無法 commit translation"
+    "translation": "無法提交交易"
   },
   {
     "id": "store.sql_channel.save.direct_channel.app_error",
@@ -2959,12 +2959,12 @@
   {
     "id": "store.sql_channel.save.open_transaction.app_error",
     #"translation": "Unable to open transaction"
-    "translation": "無法開啟 translation"
+    "translation": "無法開啟交易"
   },
   {
     "id": "store.sql_channel.save_channel.current_count.app_error",
     #"translation": "Failed to get current channel count"
-    "translation": "取得目前的頻道計數失敗"
+    "translation": "取得目前的頻道數量失敗"
   },
   {
     "id": "store.sql_channel.save_channel.existing.app_error",
@@ -2999,7 +2999,7 @@
   {
     "id": "store.sql_channel.save_direct_channel.commit.app_error",
     #"translation": "Unable to commit transaction"
-    "translation": "無法 commit transaction"
+    "translation": "無法提交交易"
   },
   {
     "id": "store.sql_channel.save_direct_channel.not_direct.app_error",
@@ -3009,12 +3009,12 @@
   {
     "id": "store.sql_channel.save_direct_channel.open_transaction.app_error",
     #"translation": "Unable to open transaction"
-    "translation": "無法開啟 transaction"
+    "translation": "無法開啟交易"
   },
   {
     "id": "store.sql_channel.save_member.commit_transaction.app_error",
     #"translation": "Unable to commit transaction"
-    "translation": "無法 commit transaction"
+    "translation": "無法提交交易"
   },
   {
     "id": "store.sql_channel.save_member.exists.app_error",
@@ -3024,7 +3024,7 @@
   {
     "id": "store.sql_channel.save_member.open_transaction.app_error",
     #"translation": "Unable to open transaction"
-    "translation": "無法開啟 translation"
+    "translation": "無法開啟交易"
   },
   {
     "id": "store.sql_channel.save_member.save.app_error",
@@ -3178,267 +3178,333 @@
   },
   {
     "id": "store.sql_oauth.save_auth_data.app_error",
-    "translation": "We couldn't save the authorization code."
+    #"translation": "We couldn't save the authorization code."
+    "translation": "無法儲存 authorization code."
   },
   {
     "id": "store.sql_oauth.update_app.find.app_error",
-    "translation": "We couldn't find the existing app to update"
+    #"translation": "We couldn't find the existing app to update"
+    "translation": "無法找到已存在的 app 以更新"
   },
   {
     "id": "store.sql_oauth.update_app.finding.app_error",
-    "translation": "We encountered an error finding the app"
+    #"translation": "We encountered an error finding the app"
+    "translation": "尋找 app 時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.update_app.update.app_error",
-    "translation": "We couldn't update the app"
+    #"translation": "We couldn't update the app"
+    "translation": "無法更新 app"
   },
   {
     "id": "store.sql_oauth.update_app.updating.app_error",
-    "translation": "We encountered an error updating the app"
+    #"translation": "We encountered an error updating the app"
+    "translation": "更新 app 時遇到錯誤"
   },
   {
     "id": "store.sql_post.analytics_posts_count.app_error",
-    "translation": "We couldn't get post counts"
+    #"translation": "We couldn't get post counts"
+    "translation": "無法取得訊息數量"
   },
   {
     "id": "store.sql_post.analytics_posts_count_by_day.app_error",
-    "translation": "We couldn't get post counts by day"
+    #"translation": "We couldn't get post counts by day"
+    "translation": "無法取得以日期為依據的訊息計數"
   },
   {
     "id": "store.sql_post.analytics_user_counts_posts_by_day.app_error",
-    "translation": "We couldn't get user counts with posts"
+    #"translation": "We couldn't get user counts with posts"
+    "translation": "無法取得訊息的使用者數量"
   },
   {
     "id": "store.sql_post.delete.app_error",
-    "translation": "We couldn't delete the post"
+    #"translation": "We couldn't delete the post"
+    "translation": "無法刪除訊息"
   },
   {
     "id": "store.sql_post.get.app_error",
-    "translation": "We couldn't get the post"
+    #"translation": "We couldn't get the post"
+    "translation": "無法取得訊息"
   },
   {
     "id": "store.sql_post.get_for_export.app_error",
-    "translation": "We couldn't get the posts for the channel"
+    #"translation": "We couldn't get the posts for the channel"
+    "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.get_parents_posts.app_error",
-    "translation": "We couldn't get the parent post for the channel"
+    #"translation": "We couldn't get the parent post for the channel"
+    "translation": "無法取得該頻道的上層訊息"
   },
   {
     "id": "store.sql_post.get_posts.app_error",
-    "translation": "Limit exceeded for paging"
+    #"translation": "Limit exceeded for paging"
+    "translation": "分頁已達限制"
   },
   {
     "id": "store.sql_post.get_posts_around.get.app_error",
-    "translation": "We couldn't get the posts for the channel"
+    #"translation": "We couldn't get the posts for the channel"
+    "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.get_posts_around.get_parent.app_error",
-    "translation": "We couldn't get the parent posts for the channel"
+    #"translation": "We couldn't get the parent posts for the channel"
+    "translation": "無法取得該頻道的上層訊息"
   },
   {
     "id": "store.sql_post.get_posts_since.app_error",
-    "translation": "We couldn't get the posts for the channel"
+    #"translation": "We couldn't get the posts for the channel"
+    "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.get_root_posts.app_error",
-    "translation": "We couldn't get the posts for the channel"
+    #"translation": "We couldn't get the posts for the channel"
+    "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.permanent_delete.app_error",
-    "translation": "We couldn't delete the post"
+    #"translation": "We couldn't delete the post"
+    "translation": "無法刪除訊息"
   },
   {
     "id": "store.sql_post.permanent_delete_all_comments_by_user.app_error",
-    "translation": "We couldn't delete the comments for user"
+    #"translation": "We couldn't delete the comments for user"
+    "translation": "無法刪除使用者的回應"
   },
   {
     "id": "store.sql_post.permanent_delete_by_user.app_error",
-    "translation": "We couldn't select the posts to delete for the user"
+    #"translation": "We couldn't select the posts to delete for the user"
+    "translation": "無法選擇該使用者的訊息以刪除"
   },
   {
     "id": "store.sql_post.permanent_delete_by_user.too_many.app_error",
-    "translation": "We couldn't select the posts to delete for the user (too many), please re-run"
+    #"translation": "We couldn't select the posts to delete for the user (too many), please re-run"
+    "translation": "無法選擇該使用者的訊息以刪除 (數量太多), 請重新執行"
   },
   {
     "id": "store.sql_post.save.app_error",
-    "translation": "We couldn't save the Post"
+    #"translation": "We couldn't save the Post"
+    "translation": "無法儲存訊息"
   },
   {
     "id": "store.sql_post.save.existing.app_error",
-    "translation": "You cannot update an existing Post"
+    #"translation": "You cannot update an existing Post"
+    "translation": "無法更新已存在的訊息"
   },
   {
     "id": "store.sql_post.search.app_error",
-    "translation": "We encountered an error while searching for posts"
+    #"translation": "We encountered an error while searching for posts"
+    "translation": "尋找訊息時遇到錯誤"
   },
   {
     "id": "store.sql_post.update.app_error",
-    "translation": "We couldn't update the Post"
+    #"translation": "We couldn't update the Post"
+    "translation": "無法更新訊息"
   },
   {
     "id": "store.sql_preference.delete_unused_features.debug",
-    "translation": "Deleting any unused pre-release features"
+    #"translation": "Deleting any unused pre-release features"
+    "translation": "正在刪除所有的 pre-release 功能"
   },
   {
     "id": "store.sql_preference.get.app_error",
-    "translation": "We encountered an error while finding preferences"
+    #"translation": "We encountered an error while finding preferences"
+    "translation": "尋找偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.get_all.app_error",
-    "translation": "We encountered an error while finding preferences"
+    #"translation": "We encountered an error while finding preferences"
+    "translation": "尋找偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.get_category.app_error",
-    "translation": "We encountered an error while finding preferences"
+    #"translation": "We encountered an error while finding preferences"
+    "translation": "尋找偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.insert.exists.app_error",
-    "translation": "A preference with that user id, category, and name already exists"
+    #"translation": "A preference with that user id, category, and name already exists"
+    "translation": "包含該 user id, category, 以及 name 的偏好設定已存在"
   },
   {
     "id": "store.sql_preference.insert.save.app_error",
-    "translation": "We couldn't save the preference"
+    #"translation": "We couldn't save the preference"
+    "translation": "無法儲存偏好設定"
   },
   {
     "id": "store.sql_preference.is_feature_enabled.app_error",
-    "translation": "We encountered an error while finding a pre release feature preference"
+    #"translation": "We encountered an error while finding a pre release feature preference"
+    "translation": "尋找 pre release 的偏好設定功能時遇到錯誤"
   },
   {
     "id": "store.sql_preference.permanent_delete_by_user.app_error",
-    "translation": "We encountered an error while deleteing preferences"
+    #"translation": "We encountered an error while deleteing preferences"
+    "translation": "刪除偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.save.commit_transaction.app_error",
-    "translation": "Unable to commit transaction to save preferences"
+    #"translation": "Unable to commit transaction to save preferences"
+    "translation": "無法提交交易去儲存偏好設定"
   },
   {
     "id": "store.sql_preference.save.missing_driver.app_error",
-    "translation": "We encountered an error while updating preferences"
+    #"translation": "We encountered an error while updating preferences"
+    "translation": "更新偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.save.open_transaction.app_error",
-    "translation": "Unable to open transaction to save preferences"
+    #"translation": "Unable to open transaction to save preferences"
+    "translation": "無法開啟交易去儲存偏好設定"
   },
   {
     "id": "store.sql_preference.save.rollback_transaction.app_error",
-    "translation": "Unable to rollback transaction to save preferences"
+    #"translation": "Unable to rollback transaction to save preferences"
+    "translation": "無法撤銷交易去儲存偏好設定"
   },
   {
     "id": "store.sql_preference.save.updating.app_error",
-    "translation": "We encountered an error while updating preferences"
+    #"translation": "We encountered an error while updating preferences"
+    "translation": "更新偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.update.app_error",
-    "translation": "We couldn't update the preference"
+    #"translation": "We couldn't update the preference"
+    "translation": "無法更新偏好設定"
   },
   {
     "id": "store.sql_session.cleanup_expired_sessions.app_error",
-    "translation": "We encountered an error while deleting expired user sessions"
+    #"translation": "We encountered an error while deleting expired user sessions"
+    "translation": "刪除過期的使用者 sessions 時遇到錯誤"
   },
   {
     "id": "store.sql_session.get.app_error",
-    "translation": "We encountered an error finding the session"
+    #"translation": "We encountered an error finding the session"
+    "translation": "尋找 session 時遇到錯誤"
   },
   {
     "id": "store.sql_session.get_sessions.app_error",
-    "translation": "We encountered an error while finding user sessions"
+    #"translation": "We encountered an error while finding user sessions"
+    "translation": "尋找使用者 sessions 時遇到錯誤"
   },
   {
     "id": "store.sql_session.get_sessions.error",
-    "translation": "Failed to cleanup sessions in getSessions err=%v"
+    #"translation": "Failed to cleanup sessions in getSessions err=%v"
+    "translation": "於 getSessions 清除 sessions 失敗 err=%v"
   },
   {
     "id": "store.sql_session.permanent_delete_sessions_by_user.app_error",
-    "translation": "We couldn't remove all the sessions for the user"
+    #"translation": "We couldn't remove all the sessions for the user"
+    "translation": "無法移除使用者所有的 sessions"
   },
   {
     "id": "store.sql_session.remove.app_error",
-    "translation": "We couldn't remove the session"
+    #"translation": "We couldn't remove the session"
+    "translation": "無法移除 session"
   },
   {
     "id": "store.sql_session.remove_all_sessions_for_team.app_error",
-    "translation": "We couldn't remove all the sessions for the team"
+    #"translation": "We couldn't remove all the sessions for the team"
+    "translation": "無法移除團隊所有的 sessions"
   },
   {
     "id": "store.sql_session.save.app_error",
-    "translation": "We couldn't save the session"
+    #"translation": "We couldn't save the session"
+    "translation": "無法儲存 session"
   },
   {
     "id": "store.sql_session.save.cleanup.error",
-    "translation": "Failed to cleanup sessions in Save err=%v"
+    #"translation": "Failed to cleanup sessions in Save err=%v"
+    "translation": "儲存過程中清理 sessions 失敗 err=%v"
   },
   {
     "id": "store.sql_session.save.existing.app_error",
-    "translation": "Cannot update existing session"
+    #"translation": "Cannot update existing session"
+    "translation": "無法更新已存在的 session"
   },
   {
     "id": "store.sql_session.update_device_id.app_error",
-    "translation": "We couldn't update the device id"
+    #"translation": "We couldn't update the device id"
+    "translation": "無法更新設備 id"
   },
   {
     "id": "store.sql_session.update_last_activity.app_error",
-    "translation": "We couldn't update the last_activity_at"
+    #"translation": "We couldn't update the last_activity_at"
+    "translation": "無法更新 last_activity_at"
   },
   {
     "id": "store.sql_session.update_roles.app_error",
-    "translation": "We couldn't update the roles"
+    #"translation": "We couldn't update the roles"
+    "translation": "無法更新角色"
   },
   {
     "id": "store.sql_system.get.app_error",
-    "translation": "We encountered an error finding the system properties"
+    #"translation": "We encountered an error finding the system properties"
+    "translation": "尋找系統參數時遇到錯誤"
   },
   {
     "id": "store.sql_system.save.app_error",
-    "translation": "We encountered an error saving the system property"
+    #"translation": "We encountered an error saving the system property"
+    "translation": "儲存系統參數時遇到錯誤"
   },
   {
     "id": "store.sql_system.update.app_error",
-    "translation": "We encountered an error updating the system property"
+    #"translation": "We encountered an error updating the system property"
+    "translation": "更新系統參數時遇到錯誤"
   },
   {
     "id": "store.sql_team.get.find.app_error",
-    "translation": "We couldn't find the existing team"
+    #"translation": "We couldn't find the existing team"
+    "translation": "找不到已存在的團隊"
   },
   {
     "id": "store.sql_team.get.finding.app_error",
-    "translation": "We encountered an error finding the team"
+    #"translation": "We encountered an error finding the team"
+    "translation": "尋找團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.get_all.app_error",
-    "translation": "We could not get all teams"
+    #"translation": "We could not get all teams"
+    "translation": "無法取得全部的團隊"
   },
   {
     "id": "store.sql_team.get_all_team_listing.app_error",
-    "translation": "We could not get all teams"
+    #"translation": "We could not get all teams"
+    "translation": "無法取得全部的團隊"
   },
   {
     "id": "store.sql_team.get_by_invite_id.find.app_error",
-    "translation": "We couldn't find the existing team"
+    #"translation": "We couldn't find the existing team"
+    "translation": "無法找到已存在的團隊"
   },
   {
     "id": "store.sql_team.get_by_invite_id.finding.app_error",
-    "translation": "We couldn't find the existing team"
+    #"translation": "We couldn't find the existing team"
+    "translation": "無法找到已存在的團隊"
   },
   {
     "id": "store.sql_team.get_by_name.app_error",
-    "translation": "We couldn't find the existing team"
+    #"translation": "We couldn't find the existing team"
+    "translation": "無法找到已存在的團隊"
   },
   {
     "id": "store.sql_team.get_teams_for_email.app_error",
-    "translation": "We encountered a problem when looking up teams"
+    #"translation": "We encountered a problem when looking up teams"
+    "translation": "查詢團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.permanent_delete.app_error",
-    "translation": "We couldn't delete the existing team"
+    #"translation": "We couldn't delete the existing team"
+    "translation": "無法刪除已存在的團隊"
   },
   {
     "id": "store.sql_team.save.app_error",
-    "translation": "We couldn't save the team"
+    #"translation": "We couldn't save the team"
+    "translation": "無法儲存團隊"
   },
   {
     "id": "store.sql_team.save.domain_exists.app_error",
-    "translation": "A team with that domain already exists"
+    #"translation": "A team with that domain already exists"
+    "translation": "該網域的團隊已存在"
   },
   {
     "id": "store.sql_team.save.existing.app_error",
@@ -3447,51 +3513,63 @@
   },
   {
     "id": "store.sql_team.update.app_error",
-    "translation": "We couldn't update the team"
+    #"translation": "We couldn't update the team"
+    "translation": "無法更新團隊"
   },
   {
     "id": "store.sql_team.update.find.app_error",
-    "translation": "We couldn't find the existing team to update"
+    #"translation": "We couldn't find the existing team to update"
+    "translation": "無法找到已存在的團隊來更新"
   },
   {
     "id": "store.sql_team.update.finding.app_error",
-    "translation": "We encountered an error finding the team"
+    #"translation": "We encountered an error finding the team"
+    "translation": "尋找團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.update.updating.app_error",
-    "translation": "We encountered an error updating the team"
+    #"translation": "We encountered an error updating the team"
+    "translation": "更新團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.update_display_name.app_error",
-    "translation": "We couldn't update the team name"
+    #"translation": "We couldn't update the team name"
+    "translation": "無法更新團隊名稱"
   },
   {
     "id": "store.sql_user.analytics_unique_user_count.app_error",
-    "translation": "We couldn't get the unique user count"
+    #"translation": "We couldn't get the unique user count"
+    "translation": "無法取得不重複的帳戶數量"
   },
   {
     "id": "store.sql_user.get.app_error",
-    "translation": "We encountered an error finding the account"
+    #"translation": "We encountered an error finding the account"
+    "translation": "尋找帳號時遇到錯誤"
   },
   {
     "id": "store.sql_user.get_by_auth.app_error",
-    "translation": "We couldn't find an existing account matching your authentication type for this team. This team may require an invite from the team owner to join."
+    #"translation": "We couldn't find an existing account matching your authentication type for this team. This team may require an invite from the team owner to join."
+    "translation": "於此團隊中找不到對應您的認證類型帳戶. 此團隊需要團隊擁有者的邀請才能加入."
   },
   {
     "id": "store.sql_user.get_by_username.app_error",
-    "translation": "We couldn't find an existing account matching your username for this team. This team may require an invite from the team owner to join."
+    #"translation": "We couldn't find an existing account matching your username for this team. This team may require an invite from the team owner to join."
+    "translation": "於此團隊中找不到對應您的使用者名稱帳戶. 此團隊需要團隊擁有者的邀請才能加入."
   },
   {
     "id": "store.sql_user.get_for_export.app_error",
-    "translation": "We encountered an error while finding user profiles"
+    #"translation": "We encountered an error while finding user profiles"
+    "translation": "尋找使用者"
   },
   {
     "id": "store.sql_user.get_profiles.app_error",
-    "translation": "We encountered an error while finding user profiles"
+    #"translation": "We encountered an error while finding user profiles"
+    "translation": "尋找使用者資訊時遇到錯誤"
   },
   {
     "id": "store.sql_user.get_sysadmin_profiles.app_error",
-    "translation": "We encountered an error while finding user profiles"
+    #"translation": "We encountered an error while finding user profiles"
+    "translation": "尋找使用者資訊時遇到錯誤"
   },
   {
     "id": "store.sql_user.get_total_active_users_count.app_error",
