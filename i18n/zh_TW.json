@@ -285,7 +285,6 @@
   },
   {
     "id": "api.command.init.debug",
-    "translation": "Initializing command api routes"
     "translation": "正在初始化命令 api 路徑"
   },
   {
