@@ -1,6 +1,7 @@
 // Copyright (c) 2015 Mattermost, Inc. All Rights Reserved.
 // See License.txt for license information.
 
+import $ from 'jquery';
 import SettingItemMin from '../setting_item_min.jsx';
 import SettingItemMax from '../setting_item_max.jsx';
 import SettingPicture from '../setting_picture.jsx';
@@ -8,12 +9,12 @@ import SettingPicture from '../setting_picture.jsx';
 import UserStore from 'stores/user_store.jsx';
 import ErrorStore from 'stores/error_store.jsx';
 
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 import Constants from 'utils/constants.jsx';
 import * as AsyncClient from 'utils/async_client.jsx';
 import * as Utils from 'utils/utils.jsx';
 
-import {intlShape, injectIntl, defineMessages, FormattedMessage, FormattedDate} from 'react-intl';
+import {intlShape, injectIntl, defineMessages, FormattedMessage, FormattedHTMLMessage, FormattedDate} from 'react-intl';
 
 const holders = defineMessages({
     usernameReserved: {
@@ -22,7 +23,7 @@ const holders = defineMessages({
     },
     usernameRestrictions: {
         id: 'user.settings.general.usernameRestrictions',
-        defaultMessage: "Username must begin with a letter, and contain between {min} to {max} lowercase characters made up of numbers, letters, and the symbols '.', '-' and '_'."
+        defaultMessage: "Username must begin with a letter, and contain between {min} to {max} lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'."
     },
     validEmail: {
         id: 'user.settings.general.validEmail',
@@ -35,18 +36,6 @@ const holders = defineMessages({
     checkEmail: {
         id: 'user.settings.general.checkEmail',
         defaultMessage: 'Check your email at {email} to verify the address.'
-    },
-    newAddress: {
-        id: 'user.settings.general.newAddress',
-        defaultMessage: 'New Address: {email}<br />Check your email to verify the above address.'
-    },
-    checkEmailNoAddress: {
-        id: 'user.settings.general.checkEmailNoAddress',
-        defaultMessage: 'Check your email to verify your new address'
-    },
-    loginGitlab: {
-        id: 'user.settings.general.loginGitlab',
-        defaultMessage: 'Log in done through GitLab'
     },
     validImage: {
         id: 'user.settings.general.validImage',
@@ -71,10 +60,6 @@ const holders = defineMessages({
     username: {
         id: 'user.settings.general.username',
         defaultMessage: 'Username'
-    },
-    email: {
-        id: 'user.settings.general.email',
-        defaultMessage: 'Email'
     },
     profilePicture: {
         id: 'user.settings.general.profilePicture',
@@ -175,6 +160,11 @@ class UserSettingsGeneralTab extends React.Component {
         const email = this.state.email.trim().toLowerCase();
         const confirmEmail = this.state.confirmEmail.trim().toLowerCase();
 
+        if (user.email === email) {
+            this.updateSection('');
+            return;
+        }
+
         const {formatMessage} = this.props.intl;
         if (email === '' || !Utils.isEmail(email)) {
             this.setState({emailError: formatMessage(holders.validEmail), clientError: '', serverError: ''});
@@ -183,11 +173,6 @@ class UserSettingsGeneralTab extends React.Component {
 
         if (email !== confirmEmail) {
             this.setState({emailError: formatMessage(holders.emailMatch), clientError: '', serverError: ''});
-            return;
-        }
-
-        if (user.email === email) {
-            this.updateSection('');
             return;
         }
 
@@ -240,15 +225,13 @@ class UserSettingsGeneralTab extends React.Component {
             return;
         }
 
-        var formData = new FormData();
-        formData.append('image', picture, picture.name);
         this.setState({loadingPicture: true});
 
-        Client.uploadProfileImage(formData,
+        Client.uploadProfileImage(picture,
             () => {
+                this.updateSection('');
                 this.submitActive = false;
                 AsyncClient.getMe();
-                window.location.reload();
             },
             (err) => {
                 var state = this.setupInitialState(this.props);
@@ -286,6 +269,7 @@ class UserSettingsGeneralTab extends React.Component {
         }
     }
     updateSection(section) {
+        $('.settings-modal .modal-body').scrollTop(0).perfectScrollbar('update');
         const emailChangeInProgress = this.state.emailChangeInProgress;
         this.setState(Object.assign({}, this.setupInitialState(this.props), {emailChangeInProgress, clientError: '', serverError: '', emailError: ''}));
         this.submitActive = false;
@@ -297,270 +281,14 @@ class UserSettingsGeneralTab extends React.Component {
         return {username: user.username, firstName: user.first_name, lastName: user.last_name, nickname: user.nickname,
                         email: user.email, confirmEmail: '', picture: null, loadingPicture: false, emailChangeInProgress: false};
     }
-    render() {
-        const user = this.props.user;
-        const {formatMessage, formatHTMLMessage} = this.props.intl;
-
-        let clientError = null;
-        if (this.state.clientError) {
-            clientError = this.state.clientError;
-        }
-        let serverError = null;
-        if (this.state.serverError) {
-            serverError = this.state.serverError;
-        }
-        let emailError = null;
-        if (this.state.emailError) {
-            emailError = this.state.emailError;
-        }
-
-        let nameSection;
-        const inputs = [];
-
-        if (this.props.activeSection === 'name') {
-            inputs.push(
-                <div
-                    key='firstNameSetting'
-                    className='form-group'
-                >
-                    <label className='col-sm-5 control-label'>
-                        <FormattedMessage
-                            id='user.settings.general.firstName'
-                            defaultMessage='First Name'
-                        />
-                    </label>
-                    <div className='col-sm-7'>
-                        <input
-                            className='form-control'
-                            type='text'
-                            onChange={this.updateFirstName}
-                            value={this.state.firstName}
-                        />
-                    </div>
-                </div>
-            );
-
-            inputs.push(
-                <div
-                    key='lastNameSetting'
-                    className='form-group'
-                >
-                    <label className='col-sm-5 control-label'>
-                        <FormattedMessage
-                            id='user.settings.general.lastName'
-                            defaultMessage='Last Name'
-                        />
-                    </label>
-                    <div className='col-sm-7'>
-                        <input
-                            className='form-control'
-                            type='text'
-                            onChange={this.updateLastName}
-                            value={this.state.lastName}
-                        />
-                    </div>
-                </div>
-            );
-
-            function notifClick(e) {
-                e.preventDefault();
-                this.updateSection('');
-                this.props.updateTab('notifications');
-            }
-
-            const notifLink = (
-                <a
-                    href='#'
-                    onClick={notifClick.bind(this)}
-                >
-                    <FormattedMessage
-                        id='user.settings.general.notificationsLink'
-                        defaultMessage='Notifications'
-                    />
-                </a>
-            );
-
-            const extraInfo = (
-                <span>
-                    <FormattedMessage
-                        id='user.settings.general.notificationsExtra'
-                        defaultMessage='By default, you will receive mention notifications when someone types your first name. Go to {notify} settings to change this default.'
-                        values={{
-                            notify: (notifLink)
-                        }}
-                    />
-                </span>
-            );
-
-            nameSection = (
-                <SettingItemMax
-                    title={formatMessage(holders.fullName)}
-                    inputs={inputs}
-                    submit={this.submitName}
-                    server_error={serverError}
-                    client_error={clientError}
-                    updateSection={(e) => {
-                        this.updateSection('');
-                        e.preventDefault();
-                    }}
-                    extraInfo={extraInfo}
-                />
-            );
-        } else {
-            let fullName = '';
-
-            if (user.first_name && user.last_name) {
-                fullName = user.first_name + ' ' + user.last_name;
-            } else if (user.first_name) {
-                fullName = user.first_name;
-            } else if (user.last_name) {
-                fullName = user.last_name;
-            }
-
-            nameSection = (
-                <SettingItemMin
-                    title={formatMessage(holders.fullName)}
-                    describe={fullName}
-                    updateSection={() => {
-                        this.updateSection('name');
-                    }}
-                />
-            );
-        }
-
-        let nicknameSection;
-        if (this.props.activeSection === 'nickname') {
-            let nicknameLabel = (
-                <FormattedMessage
-                    id='user.settings.general.nickname'
-                    defaultMessage='Nickname'
-                />
-            );
-            if (Utils.isMobile()) {
-                nicknameLabel = '';
-            }
-
-            inputs.push(
-                <div
-                    key='nicknameSetting'
-                    className='form-group'
-                >
-                    <label className='col-sm-5 control-label'>{nicknameLabel}</label>
-                    <div className='col-sm-7'>
-                        <input
-                            className='form-control'
-                            type='text'
-                            onChange={this.updateNickname}
-                            value={this.state.nickname}
-                        />
-                    </div>
-                </div>
-            );
-
-            const extraInfo = (
-                <span>
-                    <FormattedMessage
-                        id='user.settings.general.nicknameExtra'
-                        defaultMessage='Use Nickname for a name you might be called that is different from your first name and username. This is most often used when two or more people have similar sounding names and usernames.'
-                    />
-                </span>
-            );
-
-            nicknameSection = (
-                <SettingItemMax
-                    title={formatMessage(holders.nickname)}
-                    inputs={inputs}
-                    submit={this.submitNickname}
-                    server_error={serverError}
-                    client_error={clientError}
-                    updateSection={(e) => {
-                        this.updateSection('');
-                        e.preventDefault();
-                    }}
-                    extraInfo={extraInfo}
-                />
-            );
-        } else {
-            nicknameSection = (
-                <SettingItemMin
-                    title={formatMessage(holders.nickname)}
-                    describe={UserStore.getCurrentUser().nickname}
-                    updateSection={() => {
-                        this.updateSection('nickname');
-                    }}
-                />
-            );
-        }
-
-        let usernameSection;
-        if (this.props.activeSection === 'username') {
-            let usernameLabel = (
-                <FormattedMessage
-                    id='user.settings.general.username'
-                    defaultMessage='Username'
-                />
-            );
-            if (Utils.isMobile()) {
-                usernameLabel = '';
-            }
-
-            inputs.push(
-                <div
-                    key='usernameSetting'
-                    className='form-group'
-                >
-                    <label className='col-sm-5 control-label'>{usernameLabel}</label>
-                    <div className='col-sm-7'>
-                        <input
-                            maxLength={Constants.MAX_USERNAME_LENGTH}
-                            className='form-control'
-                            type='text'
-                            onChange={this.updateUsername}
-                            value={this.state.username}
-                        />
-                    </div>
-                </div>
-            );
-
-            const extraInfo = (
-                <span>
-                    <FormattedMessage
-                        id='user.settings.general.usernameInfo'
-                        defaultMessage='Pick something easy for teammates to recognize and recall.'
-                    />
-                </span>
-            );
-
-            usernameSection = (
-                <SettingItemMax
-                    title={formatMessage(holders.username)}
-                    inputs={inputs}
-                    submit={this.submitUsername}
-                    server_error={serverError}
-                    client_error={clientError}
-                    updateSection={(e) => {
-                        this.updateSection('');
-                        e.preventDefault();
-                    }}
-                    extraInfo={extraInfo}
-                />
-            );
-        } else {
-            usernameSection = (
-                <SettingItemMin
-                    title={formatMessage(holders.username)}
-                    describe={UserStore.getCurrentUser().username}
-                    updateSection={() => {
-                        this.updateSection('username');
-                    }}
-                />
-            );
-        }
-
+    createEmailSection() {
         let emailSection;
+
         if (this.props.activeSection === 'email') {
             const emailEnabled = global.window.mm_config.SendEmailNotifications === 'true';
             const emailVerificationEnabled = global.window.mm_config.RequireEmailVerification === 'true';
+            const inputs = [];
+
             let helpText = (
                 <FormattedMessage
                     id='user.settings.general.emailHelp1'
@@ -654,8 +382,29 @@ class UserSettingsGeneralTab extends React.Component {
                     >
                         <div className='setting-list__hint'>
                             <FormattedMessage
-                                id='user.settings.general.emailCantUpdate'
-                                defaultMessage='Log in occurs through GitLab. Email cannot be updated.'
+                                id='user.settings.general.emailGitlabCantUpdate'
+                                defaultMessage='Login occurs through GitLab. Email cannot be updated. Email address used for notifications is {email}.'
+                                values={{
+                                    email: this.state.email
+                                }}
+                            />
+                        </div>
+                        {helpText}
+                    </div>
+                );
+            } else if (this.props.user.auth_service === Constants.LDAP_SERVICE) {
+                inputs.push(
+                    <div
+                        key='oauthEmailInfo'
+                        className='form-group'
+                    >
+                        <div className='setting-list__hint'>
+                            <FormattedMessage
+                                id='user.settings.general.emailLdapCantUpdate'
+                                defaultMessage='Login occurs through LDAP. Email cannot be updated. Email address used for notifications is {email}.'
+                                values={{
+                                    email: this.state.email
+                                }}
                             />
                         </div>
                         {helpText}
@@ -665,11 +414,16 @@ class UserSettingsGeneralTab extends React.Component {
 
             emailSection = (
                 <SettingItemMax
-                    title='Email'
+                    title={
+                        <FormattedMessage
+                            id='user.settings.general.email'
+                            defaultMessage='Email'
+                        />
+                    }
                     inputs={inputs}
                     submit={submit}
-                    server_error={serverError}
-                    client_error={emailError}
+                    server_error={this.state.serverError}
+                    client_error={this.state.emailError}
                     updateSection={(e) => {
                         this.updateSection('');
                         e.preventDefault();
@@ -682,20 +436,56 @@ class UserSettingsGeneralTab extends React.Component {
                 if (this.state.emailChangeInProgress) {
                     const newEmail = UserStore.getCurrentUser().email;
                     if (newEmail) {
-                        describe = formatHTMLMessage(holders.newAddress, {email: newEmail});
+                        describe = (
+                            <FormattedHTMLMessage
+                                id='user.settings.general.newAddress'
+                                defaultMessage='New Address: {email}<br />Check your email to verify the above address.'
+                                values={{
+                                    email: newEmail
+                                }}
+                            />
+                        );
                     } else {
-                        describe = formatMessage(holders.checkEmailNoAddress);
+                        describe = (
+                            <FormattedMessage
+                                id='user.settings.general.checkEmailNoAddress'
+                                defaultMessage='Check your email to verify your new address'
+                            />
+                        );
                     }
                 } else {
                     describe = UserStore.getCurrentUser().email;
                 }
             } else if (this.props.user.auth_service === Constants.GITLAB_SERVICE) {
-                describe = formatMessage(holders.loginGitlab);
+                describe = (
+                    <FormattedMessage
+                        id='user.settings.general.loginGitlab'
+                        defaultMessage='Login done through GitLab ({email})'
+                        values={{
+                            email: this.state.email
+                        }}
+                    />
+                );
+            } else if (this.props.user.auth_service === Constants.LDAP_SERVICE) {
+                describe = (
+                    <FormattedMessage
+                        id='user.settings.general.loginLdap'
+                        defaultMessage='Login done through LDAP ({email})'
+                        values={{
+                            email: this.state.email
+                        }}
+                    />
+                );
             }
 
             emailSection = (
                 <SettingItemMin
-                    title={formatMessage(holders.email)}
+                    title={
+                        <FormattedMessage
+                            id='user.settings.general.email'
+                            defaultMessage='Email'
+                        />
+                    }
                     describe={describe}
                     updateSection={() => {
                         this.updateSection('email');
@@ -704,13 +494,337 @@ class UserSettingsGeneralTab extends React.Component {
             );
         }
 
+        return emailSection;
+    }
+    render() {
+        const user = this.props.user;
+        const {formatMessage} = this.props.intl;
+
+        let clientError = null;
+        if (this.state.clientError) {
+            clientError = this.state.clientError;
+        }
+        let serverError = null;
+        if (this.state.serverError) {
+            serverError = this.state.serverError;
+        }
+
+        let nameSection;
+        const inputs = [];
+
+        if (this.props.activeSection === 'name') {
+            let extraInfo;
+            let submit = null;
+            if (this.props.user.auth_service === '') {
+                inputs.push(
+                    <div
+                        key='firstNameSetting'
+                        className='form-group'
+                    >
+                        <label className='col-sm-5 control-label'>
+                            <FormattedMessage
+                                id='user.settings.general.firstName'
+                                defaultMessage='First Name'
+                            />
+                        </label>
+                        <div className='col-sm-7'>
+                            <input
+                                className='form-control'
+                                type='text'
+                                onChange={this.updateFirstName}
+                                value={this.state.firstName}
+                            />
+                        </div>
+                    </div>
+                );
+
+                inputs.push(
+                    <div
+                        key='lastNameSetting'
+                        className='form-group'
+                    >
+                        <label className='col-sm-5 control-label'>
+                            <FormattedMessage
+                                id='user.settings.general.lastName'
+                                defaultMessage='Last Name'
+                            />
+                        </label>
+                        <div className='col-sm-7'>
+                            <input
+                                className='form-control'
+                                type='text'
+                                onChange={this.updateLastName}
+                                value={this.state.lastName}
+                            />
+                        </div>
+                    </div>
+                );
+
+                function notifClick(e) {
+                    e.preventDefault();
+                    this.updateSection('');
+                    this.props.updateTab('notifications');
+                }
+
+                const notifLink = (
+                    <a
+                        href='#'
+                        onClick={notifClick.bind(this)}
+                    >
+                        <FormattedMessage
+                            id='user.settings.general.notificationsLink'
+                            defaultMessage='Notifications'
+                        />
+                    </a>
+                );
+
+                extraInfo = (
+                    <span>
+                        <FormattedMessage
+                            id='user.settings.general.notificationsExtra'
+                            defaultMessage='By default, you will receive mention notifications when someone types your first name. Go to {notify} settings to change this default.'
+                            values={{
+                                notify: (notifLink)
+                            }}
+                        />
+                    </span>
+                );
+
+                submit = this.submitName;
+            } else {
+                extraInfo = (
+                    <span>
+                        <FormattedMessage
+                            id='user.settings.general.field_handled_externally'
+                            defaultMessage='This field is handled through your login provider. If you want to change it, you need to do so though your login provider.'
+                        />
+                    </span>
+                );
+            }
+
+            nameSection = (
+                <SettingItemMax
+                    title={formatMessage(holders.fullName)}
+                    inputs={inputs}
+                    submit={submit}
+                    server_error={serverError}
+                    client_error={clientError}
+                    updateSection={(e) => {
+                        this.updateSection('');
+                        e.preventDefault();
+                    }}
+                    extraInfo={extraInfo}
+                />
+            );
+        } else {
+            let describe = '';
+
+            if (user.first_name && user.last_name) {
+                describe = user.first_name + ' ' + user.last_name;
+            } else if (user.first_name) {
+                describe = user.first_name;
+            } else if (user.last_name) {
+                describe = user.last_name;
+            } else {
+                describe = (
+                    <FormattedMessage
+                        id='user.settings.general.emptyName'
+                        defaultMessage="Click 'Edit' to add your full name"
+                    />
+                );
+            }
+
+            nameSection = (
+                <SettingItemMin
+                    title={formatMessage(holders.fullName)}
+                    describe={describe}
+                    updateSection={() => {
+                        this.updateSection('name');
+                    }}
+                />
+            );
+        }
+
+        let nicknameSection;
+        if (this.props.activeSection === 'nickname') {
+            let extraInfo;
+            let submit = null;
+            if (this.props.user.auth_service === 'ldap' && global.window.mm_config.NicknameAttributeSet) {
+                extraInfo = (
+                    <span>
+                        <FormattedMessage
+                            id='user.settings.general.field_handled_externally'
+                            defaultMessage='This field is handled through your login provider. If you want to change it, you need to do so though your login provider.'
+                        />
+                    </span>
+                );
+            } else {
+                let nicknameLabel = (
+                    <FormattedMessage
+                        id='user.settings.general.nickname'
+                        defaultMessage='Nickname'
+                    />
+                );
+                if (Utils.isMobile()) {
+                    nicknameLabel = '';
+                }
+
+                inputs.push(
+                    <div
+                        key='nicknameSetting'
+                        className='form-group'
+                    >
+                        <label className='col-sm-5 control-label'>{nicknameLabel}</label>
+                        <div className='col-sm-7'>
+                            <input
+                                className='form-control'
+                                type='text'
+                                onChange={this.updateNickname}
+                                value={this.state.nickname}
+                            />
+                        </div>
+                    </div>
+                );
+
+                extraInfo = (
+                    <span>
+                        <FormattedMessage
+                            id='user.settings.general.nicknameExtra'
+                            defaultMessage='Use Nickname for a name you might be called that is different from your first name and username. This is most often used when two or more people have similar sounding names and usernames.'
+                        />
+                    </span>
+                );
+
+                submit = this.submitNickname;
+            }
+
+            nicknameSection = (
+                <SettingItemMax
+                    title={formatMessage(holders.nickname)}
+                    inputs={inputs}
+                    submit={submit}
+                    server_error={serverError}
+                    client_error={clientError}
+                    updateSection={(e) => {
+                        this.updateSection('');
+                        e.preventDefault();
+                    }}
+                    extraInfo={extraInfo}
+                />
+            );
+        } else {
+            let describe = '';
+            if (user.nickname) {
+                describe = user.nickname;
+            } else {
+                describe = (
+                    <FormattedMessage
+                        id='user.settings.general.emptyNickname'
+                        defaultMessage="Click 'Edit' to add a nickname"
+                    />
+                );
+            }
+
+            nicknameSection = (
+                <SettingItemMin
+                    title={formatMessage(holders.nickname)}
+                    describe={describe}
+                    updateSection={() => {
+                        this.updateSection('nickname');
+                    }}
+                />
+            );
+        }
+
+        let usernameSection;
+        if (this.props.activeSection === 'username') {
+            let extraInfo;
+            let submit = null;
+            if (this.props.user.auth_service === '') {
+                let usernameLabel = (
+                    <FormattedMessage
+                        id='user.settings.general.username'
+                        defaultMessage='Username'
+                    />
+                );
+                if (Utils.isMobile()) {
+                    usernameLabel = '';
+                }
+
+                inputs.push(
+                    <div
+                        key='usernameSetting'
+                        className='form-group'
+                    >
+                        <label className='col-sm-5 control-label'>{usernameLabel}</label>
+                        <div className='col-sm-7'>
+                            <input
+                                maxLength={Constants.MAX_USERNAME_LENGTH}
+                                className='form-control'
+                                type='text'
+                                onChange={this.updateUsername}
+                                value={this.state.username}
+                            />
+                        </div>
+                    </div>
+                );
+
+                extraInfo = (
+                    <span>
+                        <FormattedMessage
+                            id='user.settings.general.usernameInfo'
+                            defaultMessage='Pick something easy for teammates to recognize and recall.'
+                        />
+                    </span>
+                );
+
+                submit = this.submitUsername;
+            } else {
+                extraInfo = (
+                    <span>
+                        <FormattedMessage
+                            id='user.settings.general.field_handled_externally'
+                            defaultMessage='This field is handled through your login provider. If you want to change it, you need to do so though your login provider.'
+                        />
+                    </span>
+                );
+            }
+
+            usernameSection = (
+                <SettingItemMax
+                    title={formatMessage(holders.username)}
+                    inputs={inputs}
+                    submit={submit}
+                    server_error={serverError}
+                    client_error={clientError}
+                    updateSection={(e) => {
+                        this.updateSection('');
+                        e.preventDefault();
+                    }}
+                    extraInfo={extraInfo}
+                />
+            );
+        } else {
+            usernameSection = (
+                <SettingItemMin
+                    title={formatMessage(holders.username)}
+                    describe={UserStore.getCurrentUser().username}
+                    updateSection={() => {
+                        this.updateSection('username');
+                    }}
+                />
+            );
+        }
+
+        const emailSection = this.createEmailSection();
+
         let pictureSection;
         if (this.props.activeSection === 'picture') {
             pictureSection = (
                 <SettingPicture
                     title={formatMessage(holders.profilePicture)}
                     submit={this.submitPicture}
-                    src={'/api/v1/users/' + user.id + '/image?time=' + user.last_picture_update}
+                    src={Client.getUsersRoute() + '/' + user.id + '/image?time=' + user.last_picture_update}
                     server_error={serverError}
                     client_error={clientError}
                     updateSection={(e) => {

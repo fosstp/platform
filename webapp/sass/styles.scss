@@ -1,15 +1,16 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import 'compass/utilities';
+@import 'compass/css3';
 
-@import "compass/utilities";
-@import "compass/css3";
+// Dependancies
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~jasny-bootstrap/dist/css/jasny-bootstrap.css';
+@import '~perfect-scrollbar/dist/css/perfect-scrollbar.css';
+@import '~font-awesome/css/font-awesome.css';
+@import '~bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css';
 
 // styles.scss
-@import 'vendors/module';
 @import 'utils/module';
 @import 'base/module';
 @import 'routes/module';

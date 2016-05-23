@@ -17,6 +17,14 @@
 }
 
 @media screen and (max-width: 1440px) {
+    .inner-wrap {
+        &.move--left {
+            .help__format-text {
+                display: none;
+            }
+        }
+    }
+
     .date-separator,
     .new-separator {
         &.hovered--comment {
@@ -25,6 +33,12 @@
                 background: none !important;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1258px) {
+    .backstage-content {
+        margin: 46px 46px 46px 150px;
     }
 }
 

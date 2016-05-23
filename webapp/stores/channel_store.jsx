@@ -95,7 +95,12 @@ class ChannelStoreClass extends EventEmitter {
         this.removeListener(LEAVE_EVENT, callback);
     }
     findFirstBy(field, value) {
-        var channels = this.getChannels();
+        return this.doFindFirst(field, value, this.getChannels());
+    }
+    findFirstMoreBy(field, value) {
+        return this.doFindFirst(field, value, this.getMoreChannels());
+    }
+    doFindFirst(field, value, channels) {
         for (var i = 0; i < channels.length; i++) {
             if (channels[i][field] === value) {
                 return channels[i];
@@ -112,6 +117,9 @@ class ChannelStoreClass extends EventEmitter {
     }
     getByName(name) {
         return this.findFirstBy('name', name);
+    }
+    getMoreByName(name) {
+        return this.findFirstMoreBy('name', name);
     }
     getAll() {
         return this.getChannels();
@@ -280,6 +288,14 @@ class ChannelStoreClass extends EventEmitter {
     getUnreadCounts() {
         return this.unreadCounts;
     }
+
+    leaveChannel(id) {
+        Reflect.deleteProperty(this.channelMembers, id);
+        const element = this.channels.indexOf(id);
+        if (element > -1) {
+            this.channels.splice(element, 1);
+        }
+    }
 }
 
 var ChannelStore = new ChannelStoreClass();
@@ -341,6 +357,7 @@ ChannelStore.dispatchToken = AppDispatcher.register((payload) => {
         break;
 
     case ActionTypes.LEAVE_CHANNEL:
+        ChannelStore.leaveChannel(action.id);
         ChannelStore.emitLeave(action.id);
         break;
 

@@ -4,22 +4,67 @@
 import TeamMembersModal from './team_members_modal.jsx';
 import ToggleModalButton from './toggle_modal_button.jsx';
 import UserSettingsModal from './user_settings/user_settings_modal.jsx';
+import AboutBuildModal from './about_build_modal.jsx';
+
 import UserStore from 'stores/user_store.jsx';
+import TeamStore from 'stores/team_store.jsx';
+import PreferenceStore from 'stores/preference_store.jsx';
+
 import * as GlobalActions from 'action_creators/global_actions.jsx';
 import * as Utils from 'utils/utils.jsx';
+import Constants from 'utils/constants.jsx';
+
+const Preferences = Constants.Preferences;
+const TutorialSteps = Constants.TutorialSteps;
 
 import {FormattedMessage} from 'react-intl';
 import {Link} from 'react-router';
+import {createMenuTip} from 'components/tutorial/tutorial_tip.jsx';
 
 import React from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 export default class SidebarRightMenu extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            showUserSettingsModal: false
-        };
+        this.onPreferenceChange = this.onPreferenceChange.bind(this);
+        this.handleAboutModal = this.handleAboutModal.bind(this);
+        this.aboutModalDismissed = this.aboutModalDismissed.bind(this);
+
+        const state = this.getStateFromStores();
+        state.showUserSettingsModal = false;
+        state.showAboutModal = false;
+
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+
+        this.state = state;
+    }
+
+    handleAboutModal() {
+        this.setState({showAboutModal: true});
+    }
+
+    aboutModalDismissed() {
+        this.setState({showAboutModal: false});
+    }
+
+    componentDidMount() {
+        PreferenceStore.addChangeListener(this.onPreferenceChange);
+    }
+
+    componentWillUnmount() {
+        PreferenceStore.removeChangeListener(this.onPreferenceChange);
+    }
+
+    getStateFromStores() {
+        const tutorialStep = PreferenceStore.getInt(Preferences.TUTORIAL_STEP, UserStore.getCurrentId(), 999);
+
+        return {showTutorialTip: tutorialStep === TutorialSteps.MENU_POPOVER && Utils.isMobile()};
+    }
+
+    onPreferenceChange() {
+        this.setState(this.getStateFromStores());
     }
 
     render() {
@@ -33,8 +78,8 @@ export default class SidebarRightMenu extends React.Component {
         var isSystemAdmin = false;
 
         if (currentUser != null) {
-            isAdmin = Utils.isAdmin(currentUser.roles);
-            isSystemAdmin = Utils.isSystemAdmin(currentUser.roles);
+            isAdmin = TeamStore.isTeamAdminForCurrentTeam() || UserStore.isSystemAdminForCurrentUser();
+            isSystemAdmin = UserStore.isSystemAdminForCurrentUser();
 
             inviteLink = (
                 <li>
@@ -42,7 +87,7 @@ export default class SidebarRightMenu extends React.Component {
                         href='#'
                         onClick={GlobalActions.showInviteMemberModal}
                     >
-                        <i className='fa fa-user'></i>
+                        <i className='fa fa-user-plus'></i>
                         <FormattedMessage
                             id='sidebar_right_menu.inviteNew'
                             defaultMessage='Invite New Member'
@@ -129,6 +174,7 @@ export default class SidebarRightMenu extends React.Component {
                 <li>
                     <Link
                         target='_blank'
+                        rel='noopener noreferrer'
                         to={global.window.mm_config.HelpLink}
                     >
                         <i className='fa fa-question'></i>
@@ -147,6 +193,7 @@ export default class SidebarRightMenu extends React.Component {
                 <li>
                     <Link
                         target='_blank'
+                        rel='noopener noreferrer'
                         to={global.window.mm_config.ReportAProblemLink}
                     >
                         <i className='fa fa-phone'></i>
@@ -158,6 +205,12 @@ export default class SidebarRightMenu extends React.Component {
                 </li>
             );
         }
+
+        let tutorialTip = null;
+        if (this.state.showTutorialTip) {
+            tutorialTip = createMenuTip((e) => e.preventDefault(), true);
+        }
+
         return (
             <div
                 className='sidebar--menu'
@@ -173,6 +226,7 @@ export default class SidebarRightMenu extends React.Component {
                 </div>
 
                 <div className='nav-pills__container'>
+                    {tutorialTip}
                     <ul className='nav nav-pills nav-stacked'>
                         <li>
                             <a
@@ -192,22 +246,51 @@ export default class SidebarRightMenu extends React.Component {
                         {manageLink}
                         {consoleLink}
                         <li>
-                            <Link to={Utils.getTeamURLFromAddressBar() + '/logout'}>
+                            <Link to='/select_team'>
+                                <i className='fa fa-exchange'></i>
+                                <FormattedMessage
+                                    id='sidebar_right_menu.switch_team'
+                                    defaultMessage='Switch Team'
+                                />
+                            </Link>
+                        </li>
+                        <li className='divider'></li>
+                        <li>
+                            <a
+                                href='#'
+                                onClick={GlobalActions.emitUserLoggedOutEvent}
+                            >
                                 <i className='fa fa-sign-out'></i>
                                 <FormattedMessage
                                     id='sidebar_right_menu.logout'
                                     defaultMessage='Logout'
                                 />
-                            </Link>
+                            </a>
                         </li>
                         <li className='divider'></li>
                         {helpLink}
                         {reportLink}
+                        <li>
+                            <a
+                                href='#'
+                                onClick={this.handleAboutModal}
+                            >
+                                <i className='fa fa-info'></i>
+                                <FormattedMessage
+                                    id='navbar_dropdown.about'
+                                    defaultMessage='About Mattermost'
+                                />
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <UserSettingsModal
                     show={this.state.showUserSettingsModal}
                     onModalDismissed={() => this.setState({showUserSettingsModal: false})}
+                />
+                <AboutBuildModal
+                    show={this.state.showAboutModal}
+                    onModalDismissed={this.aboutModalDismissed}
                 />
             </div>
         );

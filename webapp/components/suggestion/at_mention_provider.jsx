@@ -4,6 +4,7 @@
 import SuggestionStore from 'stores/suggestion_store.jsx';
 import UserStore from 'stores/user_store.jsx';
 import * as Utils from 'utils/utils.jsx';
+import Client from 'utils/web_client.jsx';
 
 import {FormattedMessage} from 'react-intl';
 
@@ -42,7 +43,7 @@ class AtMentionSuggestion extends React.Component {
             icon = (
                 <img
                     className='mention__image'
-                    src={'/api/v1/users/' + item.id + '/image?time=' + item.update_at}
+                    src={Client.getUsersRoute() + '/' + item.id + '/image?time=' + item.update_at}
                 />
             );
         }
@@ -100,13 +101,11 @@ export default class AtMentionProvider {
                 }
             }
 
-            // add dummy users to represent the @all and @channel special mentions
-            if ('all'.startsWith(usernamePrefix)) {
-                filtered.push({username: 'all'});
-            }
-
-            if ('channel'.startsWith(usernamePrefix)) {
-                filtered.push({username: 'channel'});
+            if (!pretext.startsWith('/msg')) {
+                // add dummy users to represent the @channel special mention when not using the /msg command
+                if ('channel'.startsWith(usernamePrefix)) {
+                    filtered.push({username: 'channel'});
+                }
             }
 
             filtered = filtered.sort((a, b) => a.username.localeCompare(b.username));

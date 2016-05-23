@@ -4,10 +4,11 @@
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import * as utils from 'utils/utils.jsx';
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 import Constants from 'utils/constants.jsx';
 
 import {intlShape, injectIntl, defineMessages} from 'react-intl';
+import {Tooltip, OverlayTrigger} from 'react-bootstrap';
 
 const holders = defineMessages({
     download: {
@@ -100,7 +101,7 @@ class FileAttachment extends React.Component {
     getFileInfoFromName(name) {
         var fileInfo = utils.splitFileLocation(name);
 
-        fileInfo.path = utils.getWindowLocationOrigin() + '/api/v1/files/get' + fileInfo.path;
+        fileInfo.path = utils.getWindowLocationOrigin() + Client.getFilesRoute() + '/get' + fileInfo.path;
 
         return fileInfo;
     }
@@ -130,7 +131,7 @@ class FileAttachment extends React.Component {
         var filename = this.props.filename;
 
         var fileInfo = utils.splitFileLocation(filename);
-        var fileUrl = utils.getFileUrl(filename, true);
+        var fileUrl = utils.getFileUrl(filename);
         var type = utils.getFileType(fileInfo.ext);
 
         var thumbnail;
@@ -149,12 +150,12 @@ class FileAttachment extends React.Component {
         if (this.state.fileSize < 0) {
             Client.getFileInfo(
                 filename,
-                function success(data) {
+                (data) => {
                     if (this.canSetState) {
                         this.setState({fileSize: parseInt(data.size, 10)});
                     }
-                }.bind(this),
-                function error() {
+                },
+                () => {
                     // Do nothing
                 }
             );
@@ -169,35 +170,64 @@ class FileAttachment extends React.Component {
         } else {
             trimmedFilename = filenameString;
         }
+        var filenameOverlay = (
+            <OverlayTrigger
+                delayShow={1000}
+                placement='top'
+                overlay={<Tooltip id='file-name__tooltip'>{this.props.intl.formatMessage(holders.download) + ' "' + filenameString + '"'}</Tooltip>}
+            >
+                <a
+                    href={fileUrl}
+                    download={filenameString}
+                    className='post-image__name'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    {trimmedFilename}
+                </a>
+            </OverlayTrigger>
+        );
+
+        if (this.props.compactDisplay) {
+            filenameOverlay = (
+                <OverlayTrigger
+                    delayShow={1000}
+                    placement='top'
+                    overlay={<Tooltip id='file-name__tooltip'>{filenameString}</Tooltip>}
+                >
+                    <a
+                        href='#'
+                        onClick={() => this.props.handleImageClick(this.props.index)}
+                        className='post-image__name'
+                        rel='noopener noreferrer'
+                    >
+                        <i className='glyphicon glyphicon-paperclip'/>{trimmedFilename}
+                    </a>
+                </OverlayTrigger>
+            );
+        }
 
         return (
             <div
                 className='post-image__column'
                 key={filename}
             >
-                <a className='post-image__thumbnail'
+                <a
+                    className='post-image__thumbnail'
                     href='#'
                     onClick={() => this.props.handleImageClick(this.props.index)}
                 >
                     {thumbnail}
                 </a>
                 <div className='post-image__details'>
-                    <a
-                        href={fileUrl}
-                        download={filenameString}
-                        data-toggle='tooltip'
-                        title={this.props.intl.formatMessage(holders.download) + ' \"' + filenameString + '\"'}
-                        className='post-image__name'
-                        target='_blank'
-                    >
-                        {trimmedFilename}
-                    </a>
+                    {filenameOverlay}
                     <div>
                         <a
                             href={fileUrl}
                             download={filenameString}
                             className='post-image__download'
                             target='_blank'
+                            rel='noopener noreferrer'
                         >
                             <span
                                 className='fa fa-download'
@@ -222,7 +252,9 @@ FileAttachment.propTypes = {
     index: React.PropTypes.number.isRequired,
 
     // handler for when the thumbnail is clicked passed the index above
-    handleImageClick: React.PropTypes.func
+    handleImageClick: React.PropTypes.func,
+
+    compactDisplay: React.PropTypes.bool
 };
 
 export default injectIntl(FileAttachment);

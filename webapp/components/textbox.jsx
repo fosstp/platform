@@ -130,8 +130,8 @@ export default class Textbox extends React.Component {
 
         const helpText = (
             <div
-                style={{visibility: hasText ? 'visible' : 'hidden', opacity: hasText ? '0.5' : '0'}}
-                className='help_format_text'
+                style={{visibility: hasText ? 'visible' : 'hidden', opacity: hasText ? '0.3' : '0'}}
+                className='help__format-text'
             >
                 <b>
                     <FormattedMessage
@@ -187,8 +187,6 @@ export default class Textbox extends React.Component {
                     className={`form-control custom-textarea ${this.state.connection}`}
                     type='textarea'
                     spellCheck='true'
-                    autoComplete='off'
-                    autoCorrect='off'
                     maxLength={Constants.MAX_POST_LEN}
                     placeholder={this.props.createMessage}
                     value={this.props.messageText}
@@ -208,11 +206,12 @@ export default class Textbox extends React.Component {
                     dangerouslySetInnerHTML={{__html: this.state.preview ? TextFormatting.formatText(this.props.messageText) : ''}}
                 >
                 </div>
-                {helpText}
                 <div className='help__text'>
+                    {helpText}
                     {previewLink}
                     <a
                         target='_blank'
+                        rel='noopener noreferrer'
                         href='http://docs.mattermost.com/help/getting-started/messaging-basics.html'
                         className='textbox-help-link'
                     >

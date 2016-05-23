@@ -3,7 +3,7 @@
 
 import ReactDOM from 'react-dom';
 import * as Utils from 'utils/utils.jsx';
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 import * as AsyncClient from 'utils/async_client.jsx';
 import Constants from 'utils/constants.jsx';
 
@@ -166,7 +166,6 @@ export default class RenameChannelModal extends React.Component {
             channel,
             () => {
                 AsyncClient.getChannel(channel.id);
-                Utils.updateAddressBar(channel.name);
 
                 this.handleHide();
             },

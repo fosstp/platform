@@ -19,22 +19,25 @@ import (
 	"github.com/mssola/user_agent"
 )
 
-func InitAdmin(r *mux.Router) {
+func InitAdmin() {
 	l4g.Debug(utils.T("api.admin.init.debug"))
 
-	sr := r.PathPrefix("/admin").Subrouter()
-	sr.Handle("/logs", ApiUserRequired(getLogs)).Methods("GET")
-	sr.Handle("/audits", ApiUserRequired(getAllAudits)).Methods("GET")
-	sr.Handle("/config", ApiUserRequired(getConfig)).Methods("GET")
-	sr.Handle("/save_config", ApiUserRequired(saveConfig)).Methods("POST")
-	sr.Handle("/test_email", ApiUserRequired(testEmail)).Methods("POST")
-	sr.Handle("/client_props", ApiAppHandler(getClientConfig)).Methods("GET")
-	sr.Handle("/log_client", ApiAppHandler(logClient)).Methods("POST")
-	sr.Handle("/analytics/{id:[A-Za-z0-9]+}/{name:[A-Za-z0-9_]+}", ApiUserRequired(getAnalytics)).Methods("GET")
-	sr.Handle("/analytics/{name:[A-Za-z0-9_]+}", ApiUserRequired(getAnalytics)).Methods("GET")
-	sr.Handle("/save_compliance_report", ApiUserRequired(saveComplianceReport)).Methods("POST")
-	sr.Handle("/compliance_reports", ApiUserRequired(getComplianceReports)).Methods("GET")
-	sr.Handle("/download_compliance_report/{id:[A-Za-z0-9]+}", ApiUserRequired(downloadComplianceReport)).Methods("GET")
+	BaseRoutes.Admin.Handle("/logs", ApiUserRequired(getLogs)).Methods("GET")
+	BaseRoutes.Admin.Handle("/audits", ApiUserRequired(getAllAudits)).Methods("GET")
+	BaseRoutes.Admin.Handle("/config", ApiUserRequired(getConfig)).Methods("GET")
+	BaseRoutes.Admin.Handle("/save_config", ApiUserRequired(saveConfig)).Methods("POST")
+	BaseRoutes.Admin.Handle("/test_email", ApiUserRequired(testEmail)).Methods("POST")
+	BaseRoutes.Admin.Handle("/client_props", ApiAppHandler(getClientConfig)).Methods("GET")
+	BaseRoutes.Admin.Handle("/log_client", ApiAppHandler(logClient)).Methods("POST")
+	BaseRoutes.Admin.Handle("/analytics/{id:[A-Za-z0-9]+}/{name:[A-Za-z0-9_]+}", ApiUserRequired(getAnalytics)).Methods("GET")
+	BaseRoutes.Admin.Handle("/analytics/{name:[A-Za-z0-9_]+}", ApiUserRequired(getAnalytics)).Methods("GET")
+	BaseRoutes.Admin.Handle("/save_compliance_report", ApiUserRequired(saveComplianceReport)).Methods("POST")
+	BaseRoutes.Admin.Handle("/compliance_reports", ApiUserRequired(getComplianceReports)).Methods("GET")
+	BaseRoutes.Admin.Handle("/download_compliance_report/{id:[A-Za-z0-9]+}", ApiUserRequiredTrustRequester(downloadComplianceReport)).Methods("GET")
+	BaseRoutes.Admin.Handle("/upload_brand_image", ApiAdminSystemRequired(uploadBrandImage)).Methods("POST")
+	BaseRoutes.Admin.Handle("/get_brand_image", ApiAppHandlerTrustRequester(getBrandImage)).Methods("GET")
+	BaseRoutes.Admin.Handle("/reset_mfa", ApiAdminSystemRequired(adminResetMfa)).Methods("POST")
+	BaseRoutes.Admin.Handle("/reset_password", ApiAdminSystemRequired(adminResetPassword)).Methods("POST")
 }
 
 func getLogs(c *Context, w http.ResponseWriter, r *http.Request) {
@@ -124,10 +127,11 @@ func getConfig(c *Context, w http.ResponseWriter, r *http.Request) {
 
 	json := utils.Cfg.ToJson()
 	cfg := model.ConfigFromJson(strings.NewReader(json))
-	json = cfg.ToJson()
+
+	cfg.Sanitize()
 
 	w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate")
-	w.Write([]byte(json))
+	w.Write([]byte(cfg.ToJson()))
 }
 
 func saveConfig(c *Context, w http.ResponseWriter, r *http.Request) {
@@ -142,8 +146,14 @@ func saveConfig(c *Context, w http.ResponseWriter, r *http.Request) {
 	}
 
 	cfg.SetDefaults()
+	utils.Desanitize(cfg)
 
 	if err := cfg.IsValid(); err != nil {
+		c.Err = err
+		return
+	}
+
+	if err := utils.ValidateLdapFilter(cfg); err != nil {
 		c.Err = err
 		return
 	}
@@ -152,8 +162,10 @@ func saveConfig(c *Context, w http.ResponseWriter, r *http.Request) {
 
 	utils.SaveConfig(utils.CfgFileName, cfg)
 	utils.LoadConfig(utils.CfgFileName)
-	json := utils.Cfg.ToJson()
-	w.Write([]byte(json))
+
+	rdata := map[string]string{}
+	rdata["status"] = "OK"
+	w.Write([]byte(model.MapToJson(rdata)))
 }
 
 func testEmail(c *Context, w http.ResponseWriter, r *http.Request) {
@@ -367,7 +379,7 @@ func getAnalytics(c *Context, w http.ResponseWriter, r *http.Request) {
 		iHookChan := Srv.Store.Webhook().AnalyticsIncomingCount(teamId)
 		oHookChan := Srv.Store.Webhook().AnalyticsOutgoingCount(teamId)
 		commandChan := Srv.Store.Command().AnalyticsCommandCount(teamId)
-		sessionChan := Srv.Store.Session().AnalyticsSessionCount(teamId)
+		sessionChan := Srv.Store.Session().AnalyticsSessionCount()
 
 		if r := <-fileChan; r.Err != nil {
 			c.Err = r.Err
@@ -416,4 +428,126 @@ func getAnalytics(c *Context, w http.ResponseWriter, r *http.Request) {
 		c.SetInvalidParam("getAnalytics", "name")
 	}
 
+}
+
+func uploadBrandImage(c *Context, w http.ResponseWriter, r *http.Request) {
+	if len(utils.Cfg.FileSettings.DriverName) == 0 {
+		c.Err = model.NewLocAppError("uploadBrandImage", "api.admin.upload_brand_image.storage.app_error", nil, "")
+		c.Err.StatusCode = http.StatusNotImplemented
+		return
+	}
+
+	if r.ContentLength > model.MAX_FILE_SIZE {
+		c.Err = model.NewLocAppError("uploadBrandImage", "api.admin.upload_brand_image.too_large.app_error", nil, "")
+		c.Err.StatusCode = http.StatusRequestEntityTooLarge
+		return
+	}
+
+	if err := r.ParseMultipartForm(model.MAX_FILE_SIZE); err != nil {
+		c.Err = model.NewLocAppError("uploadBrandImage", "api.admin.upload_brand_image.parse.app_error", nil, "")
+		return
+	}
+
+	m := r.MultipartForm
+
+	imageArray, ok := m.File["image"]
+	if !ok {
+		c.Err = model.NewLocAppError("uploadBrandImage", "api.admin.upload_brand_image.no_file.app_error", nil, "")
+		c.Err.StatusCode = http.StatusBadRequest
+		return
+	}
+
+	if len(imageArray) <= 0 {
+		c.Err = model.NewLocAppError("uploadBrandImage", "api.admin.upload_brand_image.array.app_error", nil, "")
+		c.Err.StatusCode = http.StatusBadRequest
+		return
+	}
+
+	brandInterface := einterfaces.GetBrandInterface()
+	if brandInterface == nil {
+		c.Err = model.NewLocAppError("uploadBrandImage", "api.admin.upload_brand_image.not_available.app_error", nil, "")
+		c.Err.StatusCode = http.StatusNotImplemented
+		return
+	}
+
+	if err := brandInterface.SaveBrandImage(imageArray[0]); err != nil {
+		c.Err = err
+		return
+	}
+
+	c.LogAudit("")
+
+	rdata := map[string]string{}
+	rdata["status"] = "OK"
+	w.Write([]byte(model.MapToJson(rdata)))
+}
+
+func getBrandImage(c *Context, w http.ResponseWriter, r *http.Request) {
+	if len(utils.Cfg.FileSettings.DriverName) == 0 {
+		c.Err = model.NewLocAppError("getBrandImage", "api.admin.get_brand_image.storage.app_error", nil, "")
+		c.Err.StatusCode = http.StatusNotImplemented
+		return
+	}
+
+	brandInterface := einterfaces.GetBrandInterface()
+	if brandInterface == nil {
+		c.Err = model.NewLocAppError("getBrandImage", "api.admin.get_brand_image.not_available.app_error", nil, "")
+		c.Err.StatusCode = http.StatusNotImplemented
+		return
+	}
+
+	if img, err := brandInterface.GetBrandImage(); err != nil {
+		w.Write(nil)
+	} else {
+		w.Header().Set("Content-Type", "image/png")
+		w.Write(img)
+	}
+}
+
+func adminResetMfa(c *Context, w http.ResponseWriter, r *http.Request) {
+	props := model.MapFromJson(r.Body)
+
+	userId := props["user_id"]
+	if len(userId) != 26 {
+		c.SetInvalidParam("adminResetMfa", "user_id")
+		return
+	}
+
+	if err := DeactivateMfa(userId); err != nil {
+		c.Err = err
+		return
+	}
+
+	c.LogAudit("")
+
+	rdata := map[string]string{}
+	rdata["status"] = "ok"
+	w.Write([]byte(model.MapToJson(rdata)))
+}
+
+func adminResetPassword(c *Context, w http.ResponseWriter, r *http.Request) {
+	props := model.MapFromJson(r.Body)
+
+	userId := props["user_id"]
+	if len(userId) != 26 {
+		c.SetInvalidParam("adminResetPassword", "user_id")
+		return
+	}
+
+	newPassword := props["new_password"]
+	if len(newPassword) < model.MIN_PASSWORD_LENGTH {
+		c.SetInvalidParam("adminResetPassword", "new_password")
+		return
+	}
+
+	if err := ResetPassword(c, userId, newPassword); err != nil {
+		c.Err = err
+		return
+	}
+
+	c.LogAudit("")
+
+	rdata := map[string]string{}
+	rdata["status"] = "ok"
+	w.Write([]byte(model.MapToJson(rdata)))
 }

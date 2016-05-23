@@ -2,14 +2,25 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const htmlExtract = new ExtractTextPlugin('html', 'root.html');
 
 const NPM_TARGET = process.env.npm_lifecycle_event; //eslint-disable-line no-process-env
 
 var DEV = false;
-if (NPM_TARGET === 'run') {
+var FULLMAP = false;
+var TEST = false;
+if (NPM_TARGET === 'run' || NPM_TARGET === 'run-fullmap') {
     DEV = true;
+    if (NPM_TARGET === 'run-fullmap') {
+        FULLMAP = true;
+    }
+}
+
+if (NPM_TARGET === 'test') {
+    DEV = false;
+    TEST = true;
 }
 
 var config = {
@@ -25,6 +36,15 @@ var config = {
                 test: /\.jsx?$/,
                 loader: 'babel',
                 exclude: /(node_modules|non_npm_dependencies)/,
+                query: {
+                    presets: ['react', 'es2015-webpack', 'stage-0'],
+                    plugins: ['transform-runtime'],
+                    cacheDirectory: DEV
+                }
+            },
+            {
+                test: /node_modules\/mattermost\/client\.jsx?$/,
+                loader: 'babel',
                 query: {
                     presets: ['react', 'es2015-webpack', 'stage-0'],
                     plugins: ['transform-runtime'],
@@ -52,7 +72,7 @@ var config = {
                 loaders: ['style', 'css']
             },
             {
-                test: /\.(png|eot|tiff|svg|woff2|woff|ttf|gif|mp3)$/,
+                test: /\.(png|eot|tiff|svg|woff2|woff|ttf|gif|mp3|jpg)$/,
                 loader: 'file',
                 query: {
                     name: 'files/[hash].[ext]'
@@ -73,16 +93,24 @@ var config = {
         }),
         htmlExtract,
         new CopyWebpackPlugin([
-            {from: 'images/emoji', to: 'emoji'}
+            {from: 'images/emoji', to: 'emoji'},
+            {from: 'images/logo-email.png', to: 'images'},
+            {from: 'images/circles.png', to: 'images'}
         ]),
         new webpack.LoaderOptionsPlugin({
             minimize: !DEV,
             debug: false
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify('production')
+            }
         })
     ],
     resolve: {
         alias: {
-            jquery: 'jquery/dist/jquery'
+            jquery: 'jquery/dist/jquery',
+            superagent: 'node_modules/superagent/lib/client'
         },
         modules: [
             'node_modules',
@@ -94,7 +122,11 @@ var config = {
 
 // Development mode configuration
 if (DEV) {
-    config.devtool = 'eval-cheap-module-source-map';
+    if (FULLMAP) {
+        config.devtool = 'source-map';
+    } else {
+        config.devtool = 'eval-cheap-module-source-map';
+    }
 }
 
 // Production mode configuration
@@ -121,6 +153,11 @@ if (!DEV) {
     config.plugins.push(
         new webpack.optimize.DedupePlugin()
     );
+}
+
+// Test mode configuration
+if (TEST) {
+    config.externals = [nodeExternals()];
 }
 
 module.exports = config;

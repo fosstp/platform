@@ -2,34 +2,30 @@
 // See License.txt for license information.
 
 import $ from 'jquery';
-import UserStore from 'stores/user_store.jsx';
 import UserProfile from './user_profile.jsx';
-import * as GlobalActions from 'action_creators/global_actions.jsx';
-import * as TextFormatting from 'utils/text_formatting.jsx';
 
+import UserStore from 'stores/user_store.jsx';
+
+import * as GlobalActions from 'action_creators/global_actions.jsx';
+import AppDispatcher from '../dispatcher/app_dispatcher.jsx';
+import * as TextFormatting from 'utils/text_formatting.jsx';
+import * as Utils from 'utils/utils.jsx';
 import Constants from 'utils/constants.jsx';
+const ActionTypes = Constants.ActionTypes;
 
 import {FormattedMessage, FormattedDate} from 'react-intl';
-
 import React from 'react';
+import {browserHistory} from 'react-router';
 
 export default class SearchResultsItem extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
         this.handleFocusRHSClick = this.handleFocusRHSClick.bind(this);
     }
 
-    handleClick(e) {
-        e.preventDefault();
-
-        GlobalActions.emitPostFocusEvent(this.props.post.id);
-
-        if ($(window).width() < 768) {
-            $('.sidebar--right').removeClass('move--left');
-            $('.inner-wrap').removeClass('move--left');
-        }
+    hideSidebar() {
+        $('.inner-wrap, .sidebar--right').removeClass('move--left');
     }
 
     handleFocusRHSClick(e) {
@@ -42,6 +38,7 @@ export default class SearchResultsItem extends React.Component {
         const channel = this.props.channel;
         const timestamp = UserStore.getCurrentUser().update_at;
         const user = this.props.user || {};
+        const post = this.props.post;
 
         if (channel) {
             channelName = channel.display_name;
@@ -60,13 +57,23 @@ export default class SearchResultsItem extends React.Component {
             mentionHighlight: this.props.isMentionSearch
         };
 
+        let overrideUsername;
+        let disableProfilePopover = false;
+        if (post.props &&
+                post.props.from_webhook &&
+                post.props.override_username &&
+                global.window.mm_config.EnablePostUsernameOverride === 'true') {
+            overrideUsername = post.props.override_username;
+            disableProfilePopover = true;
+        }
+
         return (
             <div className='search-item__container'>
                 <div className='date-separator'>
                     <hr className='separator__hr'/>
                     <div className='separator__text'>
                         <FormattedDate
-                            value={this.props.post.create_at}
+                            value={post.create_at}
                             day='numeric'
                             month='long'
                             year='numeric'
@@ -80,19 +87,25 @@ export default class SearchResultsItem extends React.Component {
                     <div className='post__content'>
                         <div className='post__img'>
                             <img
-                                src={'/api/v1/users/' + this.props.post.user_id + '/image?time=' + timestamp}
+                                src={Utils.getProfilePicSrcForPost(post, timestamp)}
                                 height='36'
                                 width='36'
                             />
                         </div>
                         <div>
                             <ul className='post__header'>
-                                <li className='col__name'><strong><UserProfile user={user}/></strong></li>
+                                <li className='col__name'><strong>
+                                    <UserProfile
+                                        user={user}
+                                        overwriteName={overrideUsername}
+                                        disablePopover={disableProfilePopover}
+                                    />
+                                </strong></li>
                                 <li className='col'>
                                     <time className='search-item-time'>
                                         <FormattedDate
-                                            value={this.props.post.create_at}
-                                            hour12={true}
+                                            value={post.create_at}
+                                            hour12={!Utils.isMilitaryTime()}
                                             hour='2-digit'
                                             minute='2-digit'
                                         />
@@ -100,9 +113,32 @@ export default class SearchResultsItem extends React.Component {
                                 </li>
                                 <li>
                                     <a
-                                        href='#'
+                                        onClick={
+                                            () => {
+                                                if (Utils.isMobile()) {
+                                                    AppDispatcher.handleServerAction({
+                                                        type: ActionTypes.RECEIVED_SEARCH,
+                                                        results: null
+                                                    });
+
+                                                    AppDispatcher.handleServerAction({
+                                                        type: ActionTypes.RECEIVED_SEARCH_TERM,
+                                                        term: null,
+                                                        do_search: false,
+                                                        is_mention_search: false
+                                                    });
+
+                                                    AppDispatcher.handleServerAction({
+                                                        type: ActionTypes.RECEIVED_POST_SELECTED,
+                                                        postId: null
+                                                    });
+
+                                                    this.hideSidebar();
+                                                }
+                                                browserHistory.push('/' + window.location.pathname.split('/')[1] + '/pl/' + post.id);
+                                            }
+                                        }
                                         className='search-item__jump'
-                                        onClick={this.handleClick}
                                     >
                                         <FormattedMessage
                                             id='search_item.jump'
@@ -126,7 +162,7 @@ export default class SearchResultsItem extends React.Component {
                             <div className='search-item-snippet'>
                                 <span
                                     onClick={TextFormatting.handleClick}
-                                    dangerouslySetInnerHTML={{__html: TextFormatting.formatText(this.props.post.message, formattingOptions)}}
+                                    dangerouslySetInnerHTML={{__html: TextFormatting.formatText(post.message, formattingOptions)}}
                                 />
                             </div>
                         </div>

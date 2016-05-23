@@ -5,10 +5,8 @@ import BrowserStore from 'stores/browser_store.jsx';
 
 import {FormattedMessage} from 'react-intl';
 
-import {browserHistory} from 'react-router';
-
 import React from 'react';
-import Link from 'react-router';
+import {Link, browserHistory} from 'react-router';
 
 export default class SignupTeamComplete extends React.Component {
     constructor(props) {
@@ -55,7 +53,7 @@ export default class SignupTeamComplete extends React.Component {
             <div>
                 <div className='signup-header'>
                     <Link to='/'>
-                        <span classNameName='fa fa-chevron-left'/>
+                        <span className='fa fa-chevron-left'/>
                         <FormattedMessage id='web.header.back'/>
                     </Link>
                 </div>
@@ -76,6 +74,7 @@ export default class SignupTeamComplete extends React.Component {
 
 SignupTeamComplete.defaultProps = {
 };
+
 SignupTeamComplete.propTypes = {
     location: React.PropTypes.object,
     children: React.PropTypes.node

@@ -2,7 +2,6 @@
 // See License.txt for license information.
 
 import $ from 'jquery';
-import velocity from 'velocity-animate';
 
 import SearchResults from './search_results.jsx';
 import RhsThread from './rhs_thread.jsx';
@@ -29,7 +28,7 @@ export default class SidebarRight extends React.Component {
         this.doStrangeThings = this.doStrangeThings.bind(this);
 
         this.state = {
-            searchVisible: !!SearchStore.getSearchResults(),
+            searchVisible: SearchStore.getSearchResults() !== null,
             isMentionSearch: SearchStore.getIsMentionSearch(),
             postRightVisible: !!PostStore.getSelectedPost(),
             fromSearch: false,
@@ -63,31 +62,15 @@ export default class SidebarRight extends React.Component {
     doStrangeThings() {
         // We should have a better way to do this stuff
         // Hence the function name.
-        var windowWidth = $(window).outerWidth();
-        var sidebarRightWidth = $('.sidebar--right').outerWidth();
-
-        $('.inner-wrap').removeClass('.move--right');
-        $('.inner-wrap').addClass('move--left');
-        $('.sidebar--left').removeClass('move--right');
-        $('.sidebar--right').addClass('move--left');
+        $('.app__body .inner-wrap').removeClass('.move--right');
+        $('.app__body .inner-wrap').addClass('move--left');
+        $('.app__body .sidebar--left').removeClass('move--right');
+        $('.app__body .sidebar--right').addClass('move--left');
 
         //$('.sidebar--right').prepend('<div class="sidebar__overlay"></div>');
-        if (this.state.searchVisible || this.state.postRightVisible) {
-            if (windowWidth > 960) {
-                velocity($('.inner-wrap'), {marginRight: sidebarRightWidth}, {duration: 500, easing: 'easeOutSine'});
-                velocity($('.sidebar--right'), {translateX: 0}, {duration: 500, easing: 'easeOutSine'});
-            } else {
-                $('.inner-wrap, .sidebar--right').attr('style', '');
-            }
-        } else {
-            if (windowWidth > 960) {
-                velocity($('.inner-wrap'), {marginRight: 0}, {duration: 500, easing: 'easeOutSine'});
-                velocity($('.sidebar--right'), {translateX: sidebarRightWidth}, {duration: 500, easing: 'easeOutSine'});
-            } else {
-                $('.inner-wrap, .sidebar--right').attr('style', '');
-            }
-            $('.inner-wrap').removeClass('move--left').removeClass('move--right');
-            $('.sidebar--right').removeClass('move--left');
+        if (!this.state.searchVisible && !this.state.postRightVisible) {
+            $('.app__body .inner-wrap').removeClass('move--left').removeClass('move--right');
+            $('.app__body .sidebar--right').removeClass('move--left');
             return (
                 <div></div>
             );
@@ -111,7 +94,7 @@ export default class SidebarRight extends React.Component {
     }
     onSearchChange() {
         this.setState({
-            searchVisible: !!SearchStore.getSearchResults(),
+            searchVisible: SearchStore.getSearchResults() !== null,
             isMentionSearch: SearchStore.getIsMentionSearch()
         });
     }

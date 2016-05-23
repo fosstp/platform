@@ -96,7 +96,7 @@ class PostStoreClass extends EventEmitter {
         let post = null;
 
         if (posts.posts.hasOwnProperty(postId)) {
-            post = Object.assign({}, posts.posts[postId]);
+            post = posts.posts[postId];
         }
 
         return post;
@@ -104,7 +104,7 @@ class PostStoreClass extends EventEmitter {
 
     getAllPosts(id) {
         if (this.postsInfo.hasOwnProperty(id)) {
-            return Object.assign({}, this.postsInfo[id].postList);
+            return this.postsInfo[id].postList;
         }
 
         return null;
@@ -406,7 +406,7 @@ class PostStoreClass extends EventEmitter {
         let posts;
         let pendingPosts;
         for (const k in this.postsInfo) {
-            if (this.postsInfo[k].postList.posts.hasOwnProperty(this.selectedPostId)) {
+            if (this.postsInfo[k].postList && this.postsInfo[k].postList.posts.hasOwnProperty(this.selectedPostId)) {
                 posts = this.postsInfo[k].postList.posts;
                 if (this.postsInfo[k].pendingPosts != null) {
                     pendingPosts = this.postsInfo[k].pendingPosts.posts;
@@ -445,23 +445,31 @@ class PostStoreClass extends EventEmitter {
 
     getCurrentUsersLatestPost(channelId, rootId) {
         const userId = UserStore.getCurrentId();
-        var postList = makePostListNonNull(this.getAllPosts(channelId));
-        var i = 0;
-        var len = postList.order.length;
-        var lastPost = null;
 
-        for (i; i < len; i++) {
+        const postList = makePostListNonNull(this.getAllPosts(channelId));
+        const len = postList.order.length;
+
+        let lastPost = null;
+
+        for (let i = 0; i < len; i++) {
             const post = postList.posts[postList.order[i]];
-            if (post.user_id === userId && (post.props && !post.props.from_webhook || !post.props)) {
-                if (rootId) {
-                    if (post.root_id === rootId || post.id === rootId) {
-                        lastPost = post;
-                        break;
-                    }
-                } else {
+
+            // don't edit webhook posts, deleted posts, or system messages
+            if (post.user_id !== userId ||
+                (post.props && post.props.from_webhook) ||
+                post.state === Constants.POST_DELETED ||
+                (post.type && post.type.startsWith(Constants.SYSTEM_MESSAGE_PREFIX))) {
+                continue;
+            }
+
+            if (rootId) {
+                if (post.root_id === rootId || post.id === rootId) {
                     lastPost = post;
                     break;
                 }
+            } else {
+                lastPost = post;
+                break;
             }
         }
 
@@ -471,42 +479,51 @@ class PostStoreClass extends EventEmitter {
     getEmptyDraft() {
         return {message: '', uploadsInProgress: [], previews: []};
     }
+
     storeCurrentDraft(draft) {
         var channelId = ChannelStore.getCurrentId();
         BrowserStore.setGlobalItem('draft_' + channelId, draft);
     }
+
     getCurrentDraft() {
         var channelId = ChannelStore.getCurrentId();
         return this.getDraft(channelId);
     }
+
     storeDraft(channelId, draft) {
         BrowserStore.setGlobalItem('draft_' + channelId, draft);
     }
+
     getDraft(channelId) {
         return BrowserStore.getGlobalItem('draft_' + channelId, this.getEmptyDraft());
     }
+
     storeCommentDraft(parentPostId, draft) {
         BrowserStore.setGlobalItem('comment_draft_' + parentPostId, draft);
     }
+
     getCommentDraft(parentPostId) {
         return BrowserStore.getGlobalItem('comment_draft_' + parentPostId, this.getEmptyDraft());
     }
+
     clearDraftUploads() {
         BrowserStore.actionOnGlobalItemsWithPrefix('draft_', (key, value) => {
             if (value) {
                 value.uploadsInProgress = [];
-                BrowserStore.setItem(key, value);
+                BrowserStore.setGlobalItem(key, value);
             }
         });
     }
+
     clearCommentDraftUploads() {
         BrowserStore.actionOnGlobalItemsWithPrefix('comment_draft_', (key, value) => {
             if (value) {
                 value.uploadsInProgress = [];
-                BrowserStore.setItem(key, value);
+                BrowserStore.setGlobalItem(key, value);
             }
         });
     }
+
     getCommentCount(post) {
         const posts = this.getAllPosts(post.channel_id).posts;
 
@@ -531,8 +548,8 @@ PostStore.dispatchToken = AppDispatcher.register((payload) => {
     switch (action.type) {
     case ActionTypes.RECEIVED_POSTS: {
         const id = PostStore.currentFocusedPostId == null ? action.id : PostStore.currentFocusedPostId;
-        PostStore.checkBounds(id, action.numRequested, makePostListNonNull(action.post_list), action.before);
         PostStore.storePosts(id, makePostListNonNull(action.post_list));
+        PostStore.checkBounds(id, action.numRequested, makePostListNonNull(action.post_list), action.before);
         PostStore.emitChange();
         break;
     }

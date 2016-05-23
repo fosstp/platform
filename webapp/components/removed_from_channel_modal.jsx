@@ -6,9 +6,10 @@ import ReactDOM from 'react-dom';
 import ChannelStore from 'stores/channel_store.jsx';
 import UserStore from 'stores/user_store.jsx';
 import BrowserStore from 'stores/browser_store.jsx';
-import * as utils from 'utils/utils.jsx';
 
+import * as Utils from 'utils/utils.jsx';
 import {FormattedMessage} from 'react-intl';
+import {browserHistory} from 'react-router';
 
 import React from 'react';
 
@@ -33,7 +34,11 @@ export default class RemovedFromChannelModal extends React.Component {
         }
 
         var townSquare = ChannelStore.getByName('town-square');
-        setTimeout(() => utils.switchChannel(townSquare), 1);
+        setTimeout(
+            () => {
+                browserHistory.push(Utils.getTeamURLNoOriginFromAddressBar() + '/channels/' + townSquare.name);
+            },
+        1);
 
         this.setState(newState);
     }
@@ -93,7 +98,11 @@ export default class RemovedFromChannelModal extends React.Component {
                                     className='close'
                                     data-dismiss='modal'
                                     aria-label='Close'
-                                ><span aria-hidden='true'>&times;</span></button>
+                                >
+                                    <span aria-hidden='true'>
+                                        {'×'}
+                                    </span>
+                                </button>
                                 <h4 className='modal-title'>
                                     <FormattedMessage
                                         id='removed_channel.from'
@@ -102,16 +111,16 @@ export default class RemovedFromChannelModal extends React.Component {
                                     <span className='name'>{channelName}</span></h4>
                             </div>
                             <div className='modal-body'>
-                                  <p>
-                                      <FormattedMessage
-                                          id='removed_channel.remover'
-                                          defaultMessage='{remover} removed you from {channel}'
-                                          values={{
-                                              remover: (remover),
-                                              channel: (channelName)
-                                          }}
-                                      />
-                                  </p>
+                                <p>
+                                    <FormattedMessage
+                                        id='removed_channel.remover'
+                                        defaultMessage='{remover} removed you from {channel}'
+                                        values={{
+                                            remover: (remover),
+                                            channel: (channelName)
+                                        }}
+                                    />
+                                </p>
                             </div>
                             <div className='modal-footer'>
                                 <button

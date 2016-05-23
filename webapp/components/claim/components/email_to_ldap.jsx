@@ -2,12 +2,11 @@
 // See License.txt for license information.
 
 import * as Utils from 'utils/utils.jsx';
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {FormattedMessage} from 'react-intl';
-import {browserHistory} from 'react-router';
 
 export default class EmailToLDAP extends React.Component {
     constructor(props) {
@@ -21,7 +20,7 @@ export default class EmailToLDAP extends React.Component {
         e.preventDefault();
         var state = {};
 
-        const password = ReactDOM.findDOMNode(this.refs.password).value.trim();
+        const password = ReactDOM.findDOMNode(this.refs.emailpassword).value.trim();
         if (!password) {
             state.error = Utils.localizeMessage('claim.email_to_ldap.pwdError', 'Please enter your password.');
             this.setState(state);
@@ -45,17 +44,14 @@ export default class EmailToLDAP extends React.Component {
         state.error = null;
         this.setState(state);
 
-        var postData = {};
-        postData.email_password = password;
-        postData.ldap_id = ldapId;
-        postData.ldap_password = ldapPassword;
-        postData.email = this.props.email;
-        postData.team_name = this.props.teamName;
-
-        Client.emailToLDAP(postData,
+        Client.emailToLdap(
+            this.props.email,
+            password,
+            ldapId,
+            ldapPassword,
             (data) => {
                 if (data.follow_link) {
-                    browserHistory.push(data.follow_link);
+                    window.location.href = data.follow_link;
                 }
             },
             (error) => {
@@ -72,6 +68,20 @@ export default class EmailToLDAP extends React.Component {
         var formClass = 'form-group';
         if (error) {
             formClass += ' has-error';
+        }
+
+        let loginPlaceholder;
+        if (global.window.mm_config.LdapLoginFieldName) {
+            loginPlaceholder = global.window.mm_config.LdapLoginFieldName;
+        } else {
+            loginPlaceholder = Utils.localizeMessage('claim.email_to_ldap.ldapId', 'LDAP ID');
+        }
+
+        let passwordPlaceholder;
+        if (global.window.mm_config.LdapPasswordFieldName) {
+            passwordPlaceholder = global.window.mm_config.LdapPasswordFieldName;
+        } else {
+            passwordPlaceholder = Utils.localizeMessage('claim.email_to_ldap.ldapPwd', 'LDAP Password');
         }
 
         return (
@@ -98,19 +108,24 @@ export default class EmailToLDAP extends React.Component {
                     <p>
                         <FormattedMessage
                             id='claim.email_to_ldap.enterPwd'
-                            defaultMessage='Enter the password for your {team} {site} email account'
+                            defaultMessage='Enter the password for your {site} email account'
                             values={{
-                                team: this.props.teamDisplayName,
                                 site: global.window.mm_config.SiteName
                             }}
                         />
                     </p>
+                    <input
+                        type='text'
+                        style={{display: 'none'}}
+                        name='fakeusernameremembered'
+                    />
                     <div className={formClass}>
                         <input
                             type='password'
                             className='form-control'
-                            name='password'
-                            ref='password'
+                            name='emailPassword'
+                            ref='emailpassword'
+                            autoComplete='off'
                             placeholder={Utils.localizeMessage('claim.email_to_ldap.pwd', 'Password')}
                             spellCheck='false'
                         />
@@ -119,10 +134,6 @@ export default class EmailToLDAP extends React.Component {
                         <FormattedMessage
                             id='claim.email_to_ldap.enterLdapPwd'
                             defaultMessage='Enter the ID and password for your LDAP account'
-                            values={{
-                                team: this.props.teamDisplayName,
-                                site: global.window.mm_config.SiteName
-                            }}
                         />
                     </p>
                     <div className={formClass}>
@@ -131,7 +142,8 @@ export default class EmailToLDAP extends React.Component {
                             className='form-control'
                             name='ldapId'
                             ref='ldapid'
-                            placeholder={Utils.localizeMessage('claim.email_to_ldap.ldapId', 'LDAP ID')}
+                            autoComplete='off'
+                            placeholder={loginPlaceholder}
                             spellCheck='false'
                         />
                     </div>
@@ -141,7 +153,8 @@ export default class EmailToLDAP extends React.Component {
                             className='form-control'
                             name='ldapPassword'
                             ref='ldappassword'
-                            placeholder={Utils.localizeMessage('claim.email_to_ldap.ldapPwd', 'LDAP Password')}
+                            autoComplete='off'
+                            placeholder={passwordPlaceholder}
                             spellCheck='false'
                         />
                     </div>
@@ -164,7 +177,5 @@ export default class EmailToLDAP extends React.Component {
 EmailToLDAP.defaultProps = {
 };
 EmailToLDAP.propTypes = {
-    email: React.PropTypes.string,
-    teamName: React.PropTypes.string,
-    teamDisplayName: React.PropTypes.string
+    email: React.PropTypes.string
 };

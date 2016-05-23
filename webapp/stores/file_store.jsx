@@ -13,10 +13,6 @@ class FileStore extends EventEmitter {
     constructor() {
         super();
 
-        this.addChangeListener = this.addChangeListener.bind(this);
-        this.removeChangeListener = this.removeChangeListener.bind(this);
-        this.emitChange = this.emitChange.bind(this);
-
         this.handleEventPayload = this.handleEventPayload.bind(this);
         this.dispatchToken = AppDispatcher.register(this.handleEventPayload);
 

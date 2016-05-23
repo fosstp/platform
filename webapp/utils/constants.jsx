@@ -14,6 +14,7 @@ import patchIcon from 'images/icons/patch.png';
 import genericIcon from 'images/icons/generic.png';
 
 import logoImage from 'images/logo_compact.png';
+import logoWebhook from 'images/webhook_icon.jpg';
 
 import solarizedDarkCSS from '!!file?name=files/code_themes/[hash].[ext]!highlight.js/styles/solarized-dark.css';
 import solarizedDarkIcon from 'images/themes/code_themes/solarized-dark.png';
@@ -59,7 +60,9 @@ export default {
         RECEIVED_MENTION_DATA: null,
         RECEIVED_ADD_MENTION: null,
 
+        RECEIVED_PROFILES_FOR_DM_LIST: null,
         RECEIVED_PROFILES: null,
+        RECEIVED_DIRECT_PROFILES: null,
         RECEIVED_ME: null,
         RECEIVED_SESSIONS: null,
         RECEIVED_AUDITS: null,
@@ -68,6 +71,19 @@ export default {
         RECEIVED_PREFERENCE: null,
         RECEIVED_PREFERENCES: null,
         RECEIVED_FILE_INFO: null,
+        RECEIVED_ANALYTICS: null,
+
+        RECEIVED_INCOMING_WEBHOOKS: null,
+        RECEIVED_INCOMING_WEBHOOK: null,
+        REMOVED_INCOMING_WEBHOOK: null,
+        RECEIVED_OUTGOING_WEBHOOKS: null,
+        RECEIVED_OUTGOING_WEBHOOK: null,
+        UPDATED_OUTGOING_WEBHOOK: null,
+        REMOVED_OUTGOING_WEBHOOK: null,
+        RECEIVED_COMMANDS: null,
+        RECEIVED_COMMAND: null,
+        UPDATED_COMMAND: null,
+        REMOVED_COMMAND: null,
 
         RECEIVED_MSG: null,
 
@@ -78,6 +94,9 @@ export default {
         RECEIVED_SERVER_AUDITS: null,
         RECEIVED_SERVER_COMPLIANCE_REPORTS: null,
         RECEIVED_ALL_TEAMS: null,
+        RECEIVED_ALL_TEAM_LISTINGS: null,
+        RECEIVED_TEAM_MEMBERS: null,
+        RECEIVED_MEMBERS_FOR_TEAM: null,
 
         RECEIVED_LOCALE: null,
 
@@ -91,6 +110,7 @@ export default {
         TOGGLE_GET_POST_LINK_MODAL: null,
         TOGGLE_GET_TEAM_INVITE_LINK_MODAL: null,
         TOGGLE_REGISTER_APP_MODAL: null,
+        TOGGLE_GET_PUBLIC_LINK_MODAL: null,
 
         SUGGESTION_PRETEXT_CHANGED: null,
         SUGGESTION_RECEIVED_SUGGESTIONS: null,
@@ -129,7 +149,9 @@ export default {
         POSTED: 'posted',
         POST_EDITED: 'post_edited',
         POST_DELETED: 'post_deleted',
+        CHANNEL_DELETED: 'channel_deleted',
         CHANNEL_VIEWED: 'channel_viewed',
+        DIRECT_ADDED: 'direct_added',
         NEW_USER: 'new_user',
         USER_ADDED: 'user_added',
         USER_REMOVED: 'user_removed',
@@ -182,12 +204,16 @@ export default {
     MOBILE_VIDEO_WIDTH: 480,
     MOBILE_VIDEO_HEIGHT: 360,
     DEFAULT_CHANNEL: 'town-square',
+    DEFAULT_CHANNEL_UI_NAME: 'Town Square',
     OFFTOPIC_CHANNEL: 'off-topic',
+    OFFTOPIC_CHANNEL_UI_NAME: 'Off-Topic',
     GITLAB_SERVICE: 'gitlab',
     GOOGLE_SERVICE: 'google',
-    LDAP_SERVICE: 'ldap',
     EMAIL_SERVICE: 'email',
+    LDAP_SERVICE: 'ldap',
+    USERNAME_SERVICE: 'username',
     SIGNIN_CHANGE: 'signin_change',
+    PASSWORD_CHANGE: 'password_change',
     SIGNIN_VERIFIED: 'verified',
     SESSION_EXPIRED: 'expired',
     POST_CHUNK_SIZE: 60,
@@ -223,7 +249,8 @@ export default {
     RESERVED_USERNAMES: [
         'valet',
         'all',
-        'channel'
+        'channel',
+        'here'
     ],
     MONTHS: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     MAX_DMS: 20,
@@ -235,6 +262,7 @@ export default {
     OPEN_TEAM: 'O',
     MAX_POST_LEN: 4000,
     EMOJI_SIZE: 16,
+    MATTERMOST_ICON_SVG: "<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px'viewBox='0 0 500 500' style='enable-background:new 0 0 500 500;' xml:space='preserve'> <style type='text/css'> .st0{fill-rule:evenodd;clip-rule:evenodd;fill:#222222;} </style> <g id='XMLID_1_'> <g id='XMLID_3_'> <path id='XMLID_4_' class='st0' d='M396.9,47.7l2.6,53.1c43,47.5,60,114.8,38.6,178.1c-32,94.4-137.4,144.1-235.4,110.9 S51.1,253.1,83,158.7C104.5,95.2,159.2,52,222.5,40.5l34.2-40.4C150-2.8,49.3,63.4,13.3,169.9C-31,300.6,39.1,442.5,169.9,486.7 s272.6-25.8,316.9-156.6C522.7,223.9,483.1,110.3,396.9,47.7z'/> </g> <path id='XMLID_2_' class='st0' d='M335.6,204.3l-1.8-74.2l-1.5-42.7l-1-37c0,0,0.2-17.8-0.4-22c-0.1-0.9-0.4-1.6-0.7-2.2 c0-0.1-0.1-0.2-0.1-0.3c0-0.1-0.1-0.2-0.1-0.2c-0.7-1.2-1.8-2.1-3.1-2.6c-1.4-0.5-2.9-0.4-4.2,0.2c0,0-0.1,0-0.1,0 c-0.2,0.1-0.3,0.1-0.4,0.2c-0.6,0.3-1.2,0.7-1.8,1.3c-3,3-13.7,17.2-13.7,17.2l-23.2,28.8l-27.1,33l-46.5,57.8 c0,0-21.3,26.6-16.6,59.4s29.1,48.7,48,55.1c18.9,6.4,48,8.5,71.6-14.7C336.4,238.4,335.6,204.3,335.6,204.3z'/> </g> </svg>",
     ONLINE_ICON_SVG: "<svg version='1.1'id='Layer_1' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:cc='http://creativecommons.org/ns#' inkscape:version='0.48.4 r9939' sodipodi:docname='TRASH_1_4.svg'xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='-243 245 12 12'style='enable-background:new -243 245 12 12;' xml:space='preserve'> <sodipodi:namedview  inkscape:cx='26.358185' inkscape:zoom='1.18' bordercolor='#666666' pagecolor='#ffffff' borderopacity='1' objecttolerance='10' inkscape:cy='139.7898' gridtolerance='10' guidetolerance='10' showgrid='false' showguides='true' id='namedview6' inkscape:pageopacity='0' inkscape:pageshadow='2' inkscape:guide-bbox='true' inkscape:window-width='1366' inkscape:current-layer='Layer_1' inkscape:window-height='705' inkscape:window-y='-8' inkscape:window-maximized='1' inkscape:window-x='-8'> <sodipodi:guide  position='50.036793,85.991376' orientation='1,0' id='guide2986'></sodipodi:guide> <sodipodi:guide  position='58.426196,66.216355' orientation='0,1' id='guide3047'></sodipodi:guide> </sodipodi:namedview> <g> <path class='online--icon' d='M-236,250.5C-236,250.5-236,250.5-236,250.5C-236,250.5-236,250.5-236,250.5C-236,250.5-236,250.5-236,250.5z'/> <ellipse class='online--icon' cx='-238.5' cy='248' rx='2.5' ry='2.5'/> </g> <path class='online--icon' d='M-238.9,253.8c0-0.4,0.1-0.9,0.2-1.3c-2.2-0.2-2.2-2-2.2-2s-1,0.1-1.2,0.5c-0.4,0.6-0.6,1.7-0.7,2.5c0,0.1-0.1,0.5,0,0.6 c0.2,1.3,2.2,2.3,4.4,2.4c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1,0C-238.7,255.7-238.9,254.8-238.9,253.8z'/> <g> <g> <path class='online--icon' d='M-232.3,250.1l1.3,1.3c0,0,0,0.1,0,0.1l-4.1,4.1c0,0,0,0-0.1,0c0,0,0,0,0,0l-2.7-2.7c0,0,0-0.1,0-0.1l1.2-1.2 c0,0,0.1,0,0.1,0l1.4,1.4l2.9-2.9C-232.4,250.1-232.3,250.1-232.3,250.1z'/> </g> </g> </svg>",
     AWAY_ICON_SVG: "<svg version='1.1'id='Layer_1' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:cc='http://creativecommons.org/ns#' inkscape:version='0.48.4 r9939' sodipodi:docname='TRASH_1_4.svg'xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='-299 391 12 12'style='enable-background:new -299 391 12 12;' xml:space='preserve'> <sodipodi:namedview  inkscape:cx='26.358185' inkscape:zoom='1.18' bordercolor='#666666' pagecolor='#ffffff' borderopacity='1' objecttolerance='10' inkscape:cy='139.7898' gridtolerance='10' guidetolerance='10' showgrid='false' showguides='true' id='namedview6' inkscape:pageopacity='0' inkscape:pageshadow='2' inkscape:guide-bbox='true' inkscape:window-width='1366' inkscape:current-layer='Layer_1' inkscape:window-height='705' inkscape:window-y='-8' inkscape:window-maximized='1' inkscape:window-x='-8'> <sodipodi:guide  position='50.036793,85.991376' orientation='1,0' id='guide2986'></sodipodi:guide> <sodipodi:guide  position='58.426196,66.216355' orientation='0,1' id='guide3047'></sodipodi:guide> </sodipodi:namedview> <g> <ellipse class='away--icon' cx='-294.6' cy='394' rx='2.5' ry='2.5'/> <path class='away--icon' d='M-293.8,399.4c0-0.4,0.1-0.7,0.2-1c-0.3,0.1-0.6,0.2-1,0.2c-2.5,0-2.5-2-2.5-2s-1,0.1-1.2,0.5c-0.4,0.6-0.6,1.7-0.7,2.5 c0,0.1-0.1,0.5,0,0.6c0.2,1.3,2.2,2.3,4.4,2.4c0,0,0.1,0,0.1,0c0,0,0.1,0,0.1,0c0.7,0,1.4-0.1,2-0.3 C-293.3,401.5-293.8,400.5-293.8,399.4z'/> </g> <path class='away--icon' d='M-287,400c0,0.1-0.1,0.1-0.1,0.1l-4.9,0c-0.1,0-0.1-0.1-0.1-0.1v-1.6c0-0.1,0.1-0.1,0.1-0.1l4.9,0c0.1,0,0.1,0.1,0.1,0.1 V400z'/> </svg>",
     OFFLINE_ICON_SVG: "<svg version='1.1'id='Layer_1' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:cc='http://creativecommons.org/ns#' inkscape:version='0.48.4 r9939' sodipodi:docname='TRASH_1_4.svg'xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='-299 391 12 12'style='enable-background:new -299 391 12 12;' xml:space='preserve'> <sodipodi:namedview  inkscape:cx='26.358185' inkscape:zoom='1.18' bordercolor='#666666' pagecolor='#ffffff' borderopacity='1' objecttolerance='10' inkscape:cy='139.7898' gridtolerance='10' guidetolerance='10' showgrid='false' showguides='true' id='namedview6' inkscape:pageopacity='0' inkscape:pageshadow='2' inkscape:guide-bbox='true' inkscape:window-width='1366' inkscape:current-layer='Layer_1' inkscape:window-height='705' inkscape:window-y='-8' inkscape:window-maximized='1' inkscape:window-x='-8'> <sodipodi:guide  position='50.036793,85.991376' orientation='1,0' id='guide2986'></sodipodi:guide> <sodipodi:guide  position='58.426196,66.216355' orientation='0,1' id='guide3047'></sodipodi:guide> </sodipodi:namedview> <g> <g> <ellipse class='offline--icon' cx='-294.5' cy='394' rx='2.5' ry='2.5'/> <path class='offline--icon' d='M-294.3,399.7c0-0.4,0.1-0.8,0.2-1.2c-0.1,0-0.2,0-0.4,0c-2.5,0-2.5-2-2.5-2s-1,0.1-1.2,0.5c-0.4,0.6-0.6,1.7-0.7,2.5 c0,0.1-0.1,0.5,0,0.6c0.2,1.3,2.2,2.3,4.4,2.4h0.1h0.1c0.3,0,0.7,0,1-0.1C-293.9,401.6-294.3,400.7-294.3,399.7z'/> </g> </g> <g> <path class='offline--icon' d='M-288.9,399.4l1.8-1.8c0.1-0.1,0.1-0.3,0-0.3l-0.7-0.7c-0.1-0.1-0.3-0.1-0.3,0l-1.8,1.8l-1.8-1.8c-0.1-0.1-0.3-0.1-0.3,0 l-0.7,0.7c-0.1,0.1-0.1,0.3,0,0.3l1.8,1.8l-1.8,1.8c-0.1,0.1-0.1,0.3,0,0.3l0.7,0.7c0.1,0.1,0.3,0.1,0.3,0l1.8-1.8l1.8,1.8 c0.1,0.1,0.3,0.1,0.3,0l0.7-0.7c0.1-0.1,0.1-0.3,0-0.3L-288.9,399.4z'/> </g> </svg>",
@@ -277,7 +305,7 @@ export default {
             sidebarTextHoverBg: '#e6f2fa',
             sidebarTextActiveBorder: '#378FD2',
             sidebarTextActiveColor: '#111111',
-            sidebarHeaderBg: '#2389d7',
+            sidebarHeaderBg: '#3481B9',
             sidebarHeaderTextColor: '#ffffff',
             onlineIndicator: '#7DBE00',
             awayIndicator: '#DCBD4E',
@@ -287,7 +315,7 @@ export default {
             centerChannelColor: '#333333',
             newMessageSeparator: '#FF8800',
             linkColor: '#2389d7',
-            buttonBg: '#2389d7',
+            buttonBg: '#23A2FF',
             buttonColor: '#FFFFFF',
             mentionHighlightBg: '#fff2bb',
             mentionHighlightLink: '#2f81b7',
@@ -300,7 +328,7 @@ export default {
             sidebarText: '#fff',
             sidebarUnreadText: '#fff',
             sidebarTextHoverBg: '#4A5664',
-            sidebarTextActiveBorder: '#39769C',
+            sidebarTextActiveBorder: '#66B9A7',
             sidebarTextActiveColor: '#FFFFFF',
             sidebarHeaderBg: '#1B2C3E',
             sidebarHeaderTextColor: '#FFFFFF',
@@ -499,7 +527,15 @@ export default {
         DISPLAY_PREFER_NICKNAME: 'nickname_full_name',
         DISPLAY_PREFER_FULL_NAME: 'full_name',
         CATEGORY_ADVANCED_SETTINGS: 'advanced_settings',
-        TUTORIAL_STEP: 'tutorial_step'
+        TUTORIAL_STEP: 'tutorial_step',
+        CHANNEL_DISPLAY_MODE: 'channel_display_mode',
+        CHANNEL_DISPLAY_MODE_CENTERED: 'centered',
+        CHANNEL_DISPLAY_MODE_FULL_SCREEN: 'full',
+        CHANNEL_DISPLAY_MODE_DEFAULT: 'centered',
+        MESSAGE_DISPLAY: 'message_display',
+        MESSAGE_DISPLAY_CLEAN: 'clean',
+        MESSAGE_DISPLAY_COMPACT: 'compact',
+        MESSAGE_DISPLAY_DEFAULT: 'clean'
     },
     TutorialSteps: {
         INTRO_SCREENS: 0,
@@ -516,7 +552,10 @@ export default {
         ENTER: 13,
         ESCAPE: 27,
         SPACE: 32,
-        TAB: 9
+        TAB: 9,
+        U: 85,
+        A: 65,
+        M: 77
     },
     CODE_PREVIEW_MAX_FILE_SIZE: 500000, // 500 KB
     HighlightedLanguages: {
@@ -602,10 +641,15 @@ export default {
     },
     OVERLAY_TIME_DELAY: 400,
     MIN_USERNAME_LENGTH: 3,
-    MAX_USERNAME_LENGTH: 64,
+    MAX_USERNAME_LENGTH: 22,
     MIN_PASSWORD_LENGTH: 5,
     MAX_PASSWORD_LENGTH: 50,
+    MIN_TRIGGER_LENGTH: 1,
+    MAX_TRIGGER_LENGTH: 128,
     TIME_SINCE_UPDATE_INTERVAL: 30000,
     MIN_HASHTAG_LINK_LENGTH: 3,
-    EMOJI_PATH: '/static/emoji'
+    EMOJI_PATH: '/static/emoji',
+    DEFAULT_WEBHOOK_LOGO: logoWebhook,
+    MHPNS: 'https://push.mattermost.com',
+    MTPNS: 'http://push-test.mattermost.com'
 };

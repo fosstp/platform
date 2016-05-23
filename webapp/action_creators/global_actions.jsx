@@ -4,45 +4,174 @@
 import AppDispatcher from '../dispatcher/app_dispatcher.jsx';
 import ChannelStore from 'stores/channel_store.jsx';
 import PostStore from 'stores/post_store.jsx';
+import UserStore from 'stores/user_store.jsx';
+import BrowserStore from 'stores/browser_store.jsx';
+import ErrorStore from 'stores/error_store.jsx';
+import TeamStore from 'stores/team_store.jsx';
+import PreferenceStore from 'stores/preference_store.jsx';
 import SearchStore from 'stores/search_store.jsx';
 import Constants from 'utils/constants.jsx';
 const ActionTypes = Constants.ActionTypes;
 import * as AsyncClient from 'utils/async_client.jsx';
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 import * as Utils from 'utils/utils.jsx';
 import * as Websockets from './websocket_actions.jsx';
 import * as I18n from 'i18n/i18n.jsx';
 
+import {browserHistory} from 'react-router';
+
 import en from 'i18n/en.json';
 
 export function emitChannelClickEvent(channel) {
-    AsyncClient.getChannels(true);
-    AsyncClient.getChannelExtraInfo(channel.id);
-    AsyncClient.updateLastViewedAt(channel.id);
-    AsyncClient.getPosts(channel.id);
+    function userVisitedFakeChannel(chan, success, fail) {
+        const otherUserId = Utils.getUserIdFromChannelName(chan);
+        Client.createDirectChannel(
+            otherUserId,
+            (data) => {
+                success(data);
+            },
+            () => {
+                fail();
+            }
+        );
+    }
+    function switchToChannel(chan) {
+        AsyncClient.getChannels(true);
+        AsyncClient.getChannelExtraInfo(chan.id);
+        AsyncClient.updateLastViewedAt(chan.id);
+        AsyncClient.getPosts(chan.id);
+        Client.trackPage();
 
-    AppDispatcher.handleViewAction({
-        type: ActionTypes.CLICK_CHANNEL,
-        name: channel.name,
-        id: channel.id,
-        prev: ChannelStore.getCurrentId()
+        AppDispatcher.handleViewAction({
+            type: ActionTypes.CLICK_CHANNEL,
+            name: chan.name,
+            id: chan.id,
+            prev: ChannelStore.getCurrentId()
+        });
+    }
+
+    if (channel.fake) {
+        userVisitedFakeChannel(
+            channel,
+            (data) => {
+                switchToChannel(data);
+            },
+            () => {
+                browserHistory.push('/' + this.state.currentTeam.name);
+            }
+        );
+    } else {
+        switchToChannel(channel);
+    }
+}
+
+export function emitInitialLoad(callback) {
+    Client.getInitialLoad(
+            (data) => {
+                global.window.mm_config = data.client_cfg;
+                global.window.mm_license = data.license_cfg;
+
+                UserStore.setNoAccounts(data.no_accounts);
+
+                if (data.user && data.user.id) {
+                    global.window.mm_user = data.user;
+                    AppDispatcher.handleServerAction({
+                        type: ActionTypes.RECEIVED_ME,
+                        me: data.user
+                    });
+                }
+
+                if (data.preferences) {
+                    AppDispatcher.handleServerAction({
+                        type: ActionTypes.RECEIVED_PREFERENCES,
+                        preferences: data.preferences
+                    });
+                }
+
+                if (data.teams) {
+                    var teams = {};
+                    data.teams.forEach((team) => {
+                        teams[team.id] = team;
+                    });
+
+                    AppDispatcher.handleServerAction({
+                        type: ActionTypes.RECEIVED_ALL_TEAMS,
+                        teams
+                    });
+                }
+
+                if (data.team_members) {
+                    AppDispatcher.handleServerAction({
+                        type: ActionTypes.RECEIVED_TEAM_MEMBERS,
+                        team_members: data.team_members
+                    });
+                }
+
+                if (data.direct_profiles) {
+                    AppDispatcher.handleServerAction({
+                        type: ActionTypes.RECEIVED_DIRECT_PROFILES,
+                        profiles: data.direct_profiles
+                    });
+                }
+
+                if (callback) {
+                    callback();
+                }
+            },
+            (err) => {
+                AsyncClient.dispatchError(err, 'getInitialLoad');
+
+                if (callback) {
+                    callback();
+                }
+            }
+        );
+}
+
+export function doFocusPost(channelId, postId, data) {
+    AppDispatcher.handleServerAction({
+        type: ActionTypes.RECEIVED_FOCUSED_POST,
+        postId,
+        post_list: data
     });
+    AsyncClient.getChannels(true);
+    AsyncClient.getChannelExtraInfo(channelId);
+    AsyncClient.getPostsBefore(postId, 0, Constants.POST_FOCUS_CONTEXT_RADIUS);
+    AsyncClient.getPostsAfter(postId, 0, Constants.POST_FOCUS_CONTEXT_RADIUS);
 }
 
 export function emitPostFocusEvent(postId) {
-    Client.getPostById(
+    AsyncClient.getChannels(true);
+    Client.getPermalinkTmp(
         postId,
         (data) => {
-            AppDispatcher.handleServerAction({
-                type: ActionTypes.RECEIVED_FOCUSED_POST,
-                postId,
-                post_list: data
-            });
-
-            AsyncClient.getPostsBefore(postId, 0, Constants.POST_FOCUS_CONTEXT_RADIUS);
-            AsyncClient.getPostsAfter(postId, 0, Constants.POST_FOCUS_CONTEXT_RADIUS);
+            if (!data) {
+                return;
+            }
+            const channelId = data.posts[data.order[0]].channel_id;
+            doFocusPost(channelId, postId, data);
+        },
+        () => {
+            browserHistory.push('/error?message=' + encodeURIComponent(Utils.localizeMessage('permalink.error.access', 'Permalink belongs to a channel you do not have access to')));
         }
     );
+}
+
+export function emitProfilesForDmList() {
+    AsyncClient.getProfilesForDirectMessageList();
+    AsyncClient.getTeamMembers(TeamStore.getCurrentId());
+}
+
+export function emitCloseRightHandSide() {
+    AppDispatcher.handleServerAction({
+        type: ActionTypes.RECEIVED_SEARCH,
+        results: null
+    });
+
+    AppDispatcher.handleServerAction({
+        type: ActionTypes.RECEIVED_POST_SELECTED,
+        postId: null
+    });
 }
 
 export function emitPostFocusRightHandSideFromSearch(post, isMentionSearch) {
@@ -98,15 +227,20 @@ export function emitLoadMorePostsFocusedBottomEvent() {
     AsyncClient.getPostsAfter(latestPostId, 0, Constants.POST_CHUNK_SIZE);
 }
 
-export function emitPostRecievedEvent(post, websocketMessageProps) {
+export function emitPostRecievedEvent(post, msg) {
     if (ChannelStore.getCurrentId() === post.channel_id) {
         if (window.isActive) {
             AsyncClient.updateLastViewedAt();
         } else {
             AsyncClient.getChannel(post.channel_id);
         }
-    } else {
+    } else if (msg && (TeamStore.getCurrentId() === msg.team_id || msg.props.channel_type === Constants.DM_CHANNEL)) {
         AsyncClient.getChannel(post.channel_id);
+    }
+
+    var websocketMessageProps = null;
+    if (msg) {
+        websocketMessageProps = msg.props;
     }
 
     AppDispatcher.handleServerAction({
@@ -144,6 +278,14 @@ export function showGetPostLinkModal(post) {
         type: ActionTypes.TOGGLE_GET_POST_LINK_MODAL,
         value: true,
         post
+    });
+}
+
+export function showGetPublicLinkModal(filename) {
+    AppDispatcher.handleViewAction({
+        type: ActionTypes.TOGGLE_GET_PUBLIC_LINK_MODAL,
+        value: true,
+        filename
     });
 }
 
@@ -206,6 +348,10 @@ export function emitClearSuggestions(suggestionId) {
 }
 
 export function emitPreferenceChangedEvent(preference) {
+    if (preference.category === Constants.Preferences.CATEGORY_DIRECT_CHANNEL_SHOW) {
+        AsyncClient.getDirectProfiles();
+    }
+
     AppDispatcher.handleServerAction({
         type: Constants.ActionTypes.RECEIVED_PREFERENCE,
         preference
@@ -236,10 +382,6 @@ export function sendEphemeralPost(message, channelId) {
     emitPostRecievedEvent(post);
 }
 
-export function loadTeamRequiredPage() {
-    AsyncClient.getAllTeams();
-}
-
 export function newLocalizationSelected(locale) {
     if (locale === 'en') {
         AppDispatcher.handleServerAction({
@@ -265,7 +407,8 @@ export function newLocalizationSelected(locale) {
 }
 
 export function loadBrowserLocale() {
-    let locale = (navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage)).split('-')[0];
+    let locale = (navigator.languages && navigator.languages.length > 0 ? navigator.languages[0] :
+        (navigator.language || navigator.userLanguage)).split('-')[0];
     if (!I18n.getLanguages()[locale]) {
         locale = 'en';
     }
@@ -275,8 +418,6 @@ export function loadBrowserLocale() {
 export function viewLoggedIn() {
     AsyncClient.getChannels();
     AsyncClient.getChannelExtraInfo();
-    AsyncClient.getMyTeam();
-    AsyncClient.getMe();
 
     // Clear pending posts (shouldn't have pending posts if we are loading)
     PostStore.clearPendingPosts();
@@ -298,4 +439,30 @@ export function emitRemoteUserTypingEvent(channelId, userId, postParentId) {
         userId,
         postParentId
     });
+}
+
+export function emitUserLoggedOutEvent(redirectTo) {
+    const rURL = (redirectTo && typeof redirectTo === 'string') ? redirectTo : '/';
+    Client.logout(
+        () => {
+            BrowserStore.signalLogout();
+            BrowserStore.clear();
+            ErrorStore.clearLastError();
+            PreferenceStore.clear();
+            UserStore.clear();
+            TeamStore.clear();
+            browserHistory.push(rURL);
+        },
+        () => {
+            browserHistory.push(rURL);
+        }
+    );
+}
+
+export function emitJoinChannelEvent(channel, success, failure) {
+    Client.joinChannel(
+        channel.id,
+        success,
+        failure,
+    );
 }

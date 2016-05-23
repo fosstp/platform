@@ -10,7 +10,7 @@ import ChannelStore from 'stores/channel_store.jsx';
 import Constants from 'utils/constants.jsx';
 const ActionTypes = Constants.ActionTypes;
 
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 import * as AsyncClient from 'utils/async_client.jsx';
 import * as Utils from 'utils/utils.jsx';
 import AppDispatcher from '../dispatcher/app_dispatcher.jsx';
@@ -48,7 +48,7 @@ export default class Post extends React.Component {
         e.preventDefault();
 
         var post = this.props.post;
-        Client.createPost(post, post.channel_id,
+        Client.createPost(post,
             (data) => {
                 AsyncClient.getPosts();
 
@@ -99,6 +99,14 @@ export default class Post extends React.Component {
             return true;
         }
 
+        if (nextProps.center !== this.props.center) {
+            return true;
+        }
+
+        if (nextProps.compactDisplay !== this.props.compactDisplay) {
+            return true;
+        }
+
         if (!Utils.areObjectsEqual(nextProps.user, this.props.user)) {
             return true;
         }
@@ -129,6 +137,7 @@ export default class Post extends React.Component {
         const post = this.props.post;
         const parentPost = this.props.parentPost;
         const posts = this.props.posts;
+        const mattermostLogo = Constants.MATTERMOST_ICON_SVG;
 
         if (!post.props) {
             post.props = {};
@@ -182,33 +191,40 @@ export default class Post extends React.Component {
             systemMessageClass = 'post--system';
         }
 
-        let profilePic = null;
-        if (!this.props.hideProfilePic) {
-            let src = '/api/v1/users/' + post.user_id + '/image?time=' + timestamp;
-            if (post.props && post.props.from_webhook && global.window.mm_config.EnablePostIconOverride === 'true') {
-                if (post.props.override_icon_url) {
-                    src = post.props.override_icon_url;
-                }
-            } else if (Utils.isSystemMessage(post)) {
-                src = Constants.SYSTEM_MESSAGE_PROFILE_IMAGE;
-            }
+        let profilePic = (
+            <img
+                src={Utils.getProfilePicSrcForPost(post, timestamp)}
+                height='36'
+                width='36'
+            />
+        );
 
+        if (Utils.isSystemMessage(post)) {
             profilePic = (
-                <img
-                    src={src}
-                    height='36'
-                    width='36'
+                <span
+                    className='icon'
+                    dangerouslySetInnerHTML={{__html: mattermostLogo}}
                 />
             );
+        }
+
+        let centerClass = '';
+        if (this.props.center) {
+            centerClass = 'center';
+        }
+
+        let compactClass = '';
+        if (this.props.compactDisplay) {
+            compactClass = 'post--compact';
         }
 
         return (
             <div>
                 <div
                     id={'post_' + post.id}
-                    className={'post ' + sameUserClass + ' ' + rootUser + ' ' + postType + ' ' + currentUserCss + ' ' + shouldHighlightClass + ' ' + systemMessageClass}
+                    className={'post ' + sameUserClass + ' ' + compactClass + ' ' + rootUser + ' ' + postType + ' ' + currentUserCss + ' ' + shouldHighlightClass + ' ' + systemMessageClass}
                 >
-                    <div className='post__content'>
+                    <div className={'post__content ' + centerClass}>
                         <div className='post__img'>{profilePic}</div>
                         <div>
                             <PostHeader
@@ -221,6 +237,7 @@ export default class Post extends React.Component {
                                 sameUser={this.props.sameUser}
                                 user={this.props.user}
                                 currentUser={this.props.currentUser}
+                                compactDisplay={this.props.compactDisplay}
                             />
                             <PostBody
                                 post={post}
@@ -229,6 +246,7 @@ export default class Post extends React.Component {
                                 posts={posts}
                                 handleCommentClick={this.handleCommentClick}
                                 retryPost={this.retryPost}
+                                compactDisplay={this.props.compactDisplay}
                             />
                         </div>
                     </div>
@@ -250,5 +268,7 @@ Post.propTypes = {
     shouldHighlight: React.PropTypes.bool,
     displayNameType: React.PropTypes.string,
     hasProfiles: React.PropTypes.bool,
-    currentUser: React.PropTypes.object.isRequired
+    currentUser: React.PropTypes.object.isRequired,
+    center: React.PropTypes.bool,
+    compactDisplay: React.PropTypes.bool
 };

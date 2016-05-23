@@ -4,7 +4,7 @@
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import * as Utils from 'utils/utils.jsx';
-import * as client from 'utils/client.jsx';
+import client from 'utils/web_client.jsx';
 
 import {FormattedMessage, FormattedHTMLMessage} from 'react-intl';
 
@@ -43,10 +43,8 @@ class PasswordResetSendLink extends React.Component {
             error: ''
         });
 
-        var data = {};
-        data.email = email;
-        data.name = this.props.params.team;
-        client.sendPasswordReset(data,
+        client.sendPasswordReset(
+            email,
             () => {
                 this.setState({
                     error: null,
@@ -55,7 +53,9 @@ class PasswordResetSendLink extends React.Component {
                             <FormattedHTMLMessage
                                 id='password_send.link'
                                 defaultMessage='<p>A password reset link has been sent to <b>{email}</b></p>'
-                                email={email}
+                                values={{
+                                    email
+                                }}
                             />
                             <FormattedMessage
                                 id={'password_send.checkInbox'}

@@ -7,13 +7,16 @@ import * as AsyncClient from 'utils/async_client.jsx';
 
 import Constants from 'utils/constants.jsx';
 
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage, FormattedHTMLMessage} from 'react-intl';
 
 const Preferences = Constants.Preferences;
 
 import {Overlay} from 'react-bootstrap';
 
 import React from 'react';
+
+import tutorialGif from 'images/tutorialTip.gif';
+import tutorialGifWhite from 'images/tutorialTipWhite.gif';
 
 export default class TutorialTip extends React.Component {
     constructor(props) {
@@ -90,16 +93,16 @@ export default class TutorialTip extends React.Component {
             }
         }
 
-        var tipColor = '';
+        var tutorialGifImage = tutorialGif;
         if (this.props.overlayClass === 'tip-overlay--header' || this.props.overlayClass === 'tip-overlay--sidebar') {
-            tipColor = 'White';
+            tutorialGifImage = tutorialGifWhite;
         }
 
         return (
             <div className={'tip-div ' + this.props.overlayClass}>
                 <img
                     className='tip-button'
-                    src={'/static/images/tutorialTip' + tipColor + '.gif'}
+                    src={tutorialGifImage}
                     width='35'
                     onClick={this.toggle}
                     ref='target'
@@ -163,3 +166,38 @@ TutorialTip.propTypes = {
     placement: React.PropTypes.string.isRequired,
     overlayClass: React.PropTypes.string
 };
+
+export function createMenuTip(toggleFunc, onBottom) {
+    const screens = [];
+
+    screens.push(
+        <div>
+            <FormattedHTMLMessage
+                id='sidebar_header.tutorial'
+                defaultMessage='<h4>Main Menu</h4>
+                <p>The <strong>Main Menu</strong> is where you can <strong>Invite New Members</strong>, access your <strong>Account Settings</strong> and set your <strong>Theme Color</strong>.</p>
+                <p>Team administrators can also access their <strong>Team Settings</strong> from this menu.</p><p>System administrators will find a <strong>System Console</strong> option to administrate the entire system.</p>'
+            />
+        </div>
+    );
+
+    let placement = 'right';
+    let arrow = 'left';
+    if (onBottom) {
+        placement = 'bottom';
+        arrow = 'up';
+    }
+
+    return (
+        <div
+            onClick={toggleFunc}
+        >
+            <TutorialTip
+                ref='tip'
+                placement={placement}
+                screens={screens}
+                overlayClass={'tip-overlay--header--' + arrow}
+            />
+        </div>
+    );
+}

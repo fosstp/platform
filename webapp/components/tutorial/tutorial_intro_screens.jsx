@@ -2,15 +2,16 @@
 // See License.txt for license information.
 
 import UserStore from 'stores/user_store.jsx';
-import ChannelStore from 'stores/channel_store.jsx';
 import TeamStore from 'stores/team_store.jsx';
 import PreferenceStore from 'stores/preference_store.jsx';
 import * as Utils from 'utils/utils.jsx';
 import * as AsyncClient from 'utils/async_client.jsx';
+import * as GlobalActions from 'action_creators/global_actions.jsx';
 
 import Constants from 'utils/constants.jsx';
 
 import {FormattedMessage, FormattedHTMLMessage} from 'react-intl';
+import {browserHistory} from 'react-router';
 
 const Preferences = Constants.Preferences;
 
@@ -19,6 +20,12 @@ const NUM_SCREENS = 3;
 import React from 'react';
 
 export default class TutorialIntroScreens extends React.Component {
+    static get propTypes() {
+        return {
+            townSquare: React.PropTypes.object,
+            offTopic: React.PropTypes.object
+        };
+    }
     constructor(props) {
         super(props);
 
@@ -34,7 +41,7 @@ export default class TutorialIntroScreens extends React.Component {
             return;
         }
 
-        Utils.switchChannel(ChannelStore.getByName(Constants.DEFAULT_CHANNEL));
+        browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/town-square');
 
         const step = PreferenceStore.getInt(Preferences.TUTORIAL_STEP, UserStore.getCurrentId(), 0);
 
@@ -52,6 +59,8 @@ export default class TutorialIntroScreens extends React.Component {
             UserStore.getCurrentId(),
             '999'
         );
+
+        browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/town-square');
     }
     createScreen() {
         switch (this.state.currentScreen) {
@@ -98,13 +107,13 @@ export default class TutorialIntroScreens extends React.Component {
     createScreenThree() {
         const team = TeamStore.getCurrent();
         let inviteModalLink;
+
         if (team.type === Constants.INVITE_TEAM) {
             inviteModalLink = (
                 <a
                     className='intro-links'
                     href='#'
-                    data-toggle='modal'
-                    data-target='#invite_member'
+                    onClick={GlobalActions.showInviteMemberModal}
                 >
                     <FormattedMessage
                         id='tutorial_intro.invite'
@@ -117,14 +126,11 @@ export default class TutorialIntroScreens extends React.Component {
                 <a
                     className='intro-links'
                     href='#'
-                    data-toggle='modal'
-                    data-target='#get_link'
-                    data-title='Team Invite'
-                    data-value={Utils.getWindowLocationOrigin() + '/signup_user_complete/?id=' + team.id}
+                    onClick={GlobalActions.showGetTeamInviteLinkModal}
                 >
                     <FormattedMessage
                         id='tutorial_intro.teamInvite'
-                        defaultMessage='Team Invite'
+                        defaultMessage='Invite teammates'
                     />
                 </a>
             );
@@ -143,12 +149,18 @@ export default class TutorialIntroScreens extends React.Component {
                     <a
                         href={'mailto:' + global.window.mm_config.SupportEmail}
                         target='_blank'
+                        rel='noopener noreferrer'
                     >
                         {global.window.mm_config.SupportEmail}
                     </a>
                     {'.'}
                 </p>
             );
+        }
+
+        let townSquareDisplayName = Constants.DEFAULT_CHANNEL_UI_NAME;
+        if (this.props.townSquare) {
+            townSquareDisplayName = this.props.townSquare.display_name;
         }
 
         return (
@@ -169,7 +181,10 @@ export default class TutorialIntroScreens extends React.Component {
                 {supportInfo}
                 <FormattedMessage
                     id='tutorial_intro.end'
-                    defaultMessage='Click “Next” to enter Town Square. This is the first channel teammates see when they sign up. Use it for posting updates everyone needs to know.'
+                    defaultMessage='Click “Next” to enter {channel}. This is the first channel teammates see when they sign up. Use it for posting updates everyone needs to know.'
+                    values={{
+                        channel: townSquareDisplayName
+                    }}
                 />
                 {circles}
             </div>

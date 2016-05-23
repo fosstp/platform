@@ -4,7 +4,7 @@
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import * as Utils from 'utils/utils.jsx';
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 
 import {injectIntl, intlShape, defineMessages, FormattedMessage, FormattedHTMLMessage} from 'react-intl';
 
@@ -54,10 +54,7 @@ class LicenseSettings extends React.Component {
 
         $('#upload-button').button('loading');
 
-        const formData = new FormData();
-        formData.append('license', file, file.name);
-
-        Client.uploadLicenseFile(formData,
+        Client.uploadLicenseFile(file,
             () => {
                 Utils.clearFileInput(element[0]);
                 $('#upload-button').button('reset');
@@ -131,7 +128,6 @@ class LicenseSettings extends React.Component {
             licenseKey = (
                 <div className='col-sm-8'>
                     <button
-                        disabled={this.props.config.LdapSettings.Enable}
                         className='btn btn-danger'
                         onClick={this.handleRemove}
                         id='remove-button'
@@ -145,10 +141,7 @@ class LicenseSettings extends React.Component {
                     <br/>
                     <br/>
                     <p className='help-text'>
-                        <FormattedHTMLMessage
-                            id='admin.licence.keyMigration'
-                            defaultMessage='If you’re migrating servers you may need to remove your license key from this server in order to install it on a new server. To start, <a href="http://mattermost.com" target="_blank">disable all Enterprise Edition features on this server</a>. This will enable the ability to remove the license key and downgrade this server from Enterprise Edition to Team Edition.'
-                        />
+                        {'If you migrate servers you may need to remove your license key to install it elsewhere. You can remove the key here, which will revert functionality to that of Team Edition.'}
                     </p>
                 </div>
             );
@@ -157,7 +150,13 @@ class LicenseSettings extends React.Component {
             edition = (
                 <p>
                     {'Mattermost Enterprise Edition. Unlock enterprise features in this software through the purchase of a subscription from '}
-                    <a href='https://mattermost.com/'>{'https://mattermost.com/'}</a>
+                    <a
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href='https://mattermost.com/'
+                    >
+                        {'https://mattermost.com/'}
+                    </a>
                 </p>
             );
 
@@ -178,7 +177,7 @@ class LicenseSettings extends React.Component {
             licenseKey = (
                 <div className='col-sm-8'>
                     <div className='file__upload'>
-                        <button className='btn btn-default'>
+                        <button className='btn btn-primary'>
                             <FormattedMessage
                                 id='admin.license.choose'
                                 defaultMessage='Choose File'

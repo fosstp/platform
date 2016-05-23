@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import * as utils from 'utils/utils.jsx';
 import Constants from 'utils/constants.jsx';
 const ActionTypes = Constants.ActionTypes;
-import * as Client from 'utils/client.jsx';
+import Client from 'utils/web_client.jsx';
 import * as GlobalActions from 'action_creators/global_actions.jsx';
 import ModalStore from 'stores/modal_store.jsx';
 import UserStore from 'stores/user_store.jsx';
@@ -50,6 +50,7 @@ class InviteMemberModal extends React.Component {
     constructor(props) {
         super(props);
 
+        this.teamChange = this.teamChange.bind(this);
         this.handleToggle = this.handleToggle.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleHide = this.handleHide.bind(this);
@@ -57,6 +58,8 @@ class InviteMemberModal extends React.Component {
         this.clearFields = this.clearFields.bind(this);
         this.removeInviteFields = this.removeInviteFields.bind(this);
         this.showGetTeamInviteLinkModal = this.showGetTeamInviteLinkModal.bind(this);
+
+        const team = TeamStore.getCurrent();
 
         this.state = {
             show: false,
@@ -68,16 +71,27 @@ class InviteMemberModal extends React.Component {
             emailEnabled: global.window.mm_config.SendEmailNotifications === 'true',
             userCreationEnabled: global.window.mm_config.EnableUserCreation === 'true',
             showConfirmModal: false,
-            isSendingEmails: false
+            isSendingEmails: false,
+            teamType: team ? team.type : null
         };
+    }
+
+    teamChange() {
+        const team = TeamStore.getCurrent();
+        const teamType = team ? team.type : null;
+        this.setState({
+            teamType
+        });
     }
 
     componentDidMount() {
         ModalStore.addModalListener(ActionTypes.TOGGLE_INVITE_MEMBER_MODAL, this.handleToggle);
+        TeamStore.addChangeListener(this.teamChange);
     }
 
     componentWillUnmount() {
         ModalStore.removeModalListener(ActionTypes.TOGGLE_INVITE_MEMBER_MODAL, this.handleToggle);
+        TeamStore.removeChangeListener(this.teamChange);
     }
 
     handleToggle(value) {
@@ -224,7 +238,7 @@ class InviteMemberModal extends React.Component {
         var currentUser = UserStore.getCurrentUser();
         const {formatMessage} = this.props.intl;
 
-        if (currentUser != null) {
+        if (currentUser != null && this.state.teamType != null) {
             var inviteSections = [];
             var inviteIds = this.state.inviteIds;
             for (var i = 0; i < inviteIds.length; i++) {
@@ -244,15 +258,17 @@ class InviteMemberModal extends React.Component {
 
                 var removeButton = null;
                 if (index) {
-                    removeButton = (<div>
-                                        <button
-                                            type='button'
-                                            className='btn btn-link remove__member'
-                                            onClick={this.removeInviteFields.bind(this, index)}
-                                        >
-                                            <span className='fa fa-trash'></span>
-                                        </button>
-                                    </div>);
+                    removeButton = (
+                        <div>
+                            <button
+                                type='button'
+                                className='btn btn-link remove__member'
+                                onClick={this.removeInviteFields.bind(this, index)}
+                            >
+                                <span className='fa fa-trash'></span>
+                            </button>
+                        </div>
+                    );
                 }
                 var emailClass = 'form-group invite';
                 if (emailError) {
@@ -269,54 +285,56 @@ class InviteMemberModal extends React.Component {
                 if (lastNameError) {
                     lastNameClass += ' has-error';
                 }
-                nameFields = (<div className='row--invite'>
-                                <div className='col-sm-6'>
-                                    <div className={firstNameClass}>
-                                        <input
-                                            type='text'
-                                            className='form-control'
-                                            ref={'first_name' + index}
-                                            placeholder={formatMessage(holders.firstname)}
-                                            maxLength='64'
-                                            disabled={!this.state.emailEnabled || !this.state.userCreationEnabled}
-                                            spellCheck='false'
-                                        />
-                                        {firstNameError}
-                                    </div>
-                                </div>
-                                <div className='col-sm-6'>
-                                    <div className={lastNameClass}>
-                                        <input
-                                            type='text'
-                                            className='form-control'
-                                            ref={'last_name' + index}
-                                            placeholder={formatMessage(holders.lastname)}
-                                            maxLength='64'
-                                            disabled={!this.state.emailEnabled || !this.state.userCreationEnabled}
-                                            spellCheck='false'
-                                        />
-                                        {lastNameError}
-                                    </div>
-                                </div>
-                            </div>);
+                nameFields = (
+                    <div className='row--invite'>
+                        <div className='col-sm-6'>
+                            <div className={firstNameClass}>
+                                <input
+                                    type='text'
+                                    className='form-control'
+                                    ref={'first_name' + index}
+                                    placeholder={formatMessage(holders.firstname)}
+                                    maxLength='64'
+                                    disabled={!this.state.emailEnabled || !this.state.userCreationEnabled}
+                                    spellCheck='false'
+                                />
+                                {firstNameError}
+                            </div>
+                        </div>
+                        <div className='col-sm-6'>
+                            <div className={lastNameClass}>
+                                <input
+                                    type='text'
+                                    className='form-control'
+                                    ref={'last_name' + index}
+                                    placeholder={formatMessage(holders.lastname)}
+                                    maxLength='64'
+                                    disabled={!this.state.emailEnabled || !this.state.userCreationEnabled}
+                                    spellCheck='false'
+                                />
+                                {lastNameError}
+                            </div>
+                        </div>
+                    </div>
+                );
 
                 inviteSections[index] = (
                     <div key={'key' + index}>
-                    {removeButton}
-                    <div className={emailClass}>
-                        <input
-                            onKeyUp={this.displayNameKeyUp}
-                            type='text'
-                            ref={'email' + index}
-                            className='form-control'
-                            placeholder='email@domain.com'
-                            maxLength='64'
-                            disabled={!this.state.emailEnabled || !this.state.userCreationEnabled}
-                            spellCheck='false'
-                        />
-                        {emailError}
-                    </div>
-                    {nameFields}
+                        {removeButton}
+                        <div className={emailClass}>
+                            <input
+                                onKeyUp={this.displayNameKeyUp}
+                                type='text'
+                                ref={'email' + index}
+                                className='form-control'
+                                placeholder='email@domain.com'
+                                maxLength='64'
+                                disabled={!this.state.emailEnabled || !this.state.userCreationEnabled}
+                                spellCheck='false'
+                            />
+                            {emailError}
+                        </div>
+                        {nameFields}
                     </div>
                 );
             }
@@ -398,7 +416,7 @@ class InviteMemberModal extends React.Component {
                 );
             } else if (this.state.userCreationEnabled) {
                 var teamInviteLink = null;
-                if (currentUser && TeamStore.getCurrent().type === 'O') {
+                if (currentUser && this.state.teamType === 'O') {
                     var link = (
                         <a
                             href='#'

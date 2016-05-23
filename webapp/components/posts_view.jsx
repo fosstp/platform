@@ -2,19 +2,27 @@
 // See License.txt for license information.
 
 import $ from 'jquery';
-import ReactDOM from 'react-dom';
-import PreferenceStore from 'stores/preference_store.jsx';
-import * as GlobalActions from 'action_creators/global_actions.jsx';
-import * as Utils from 'utils/utils.jsx';
+
 import Post from './post.jsx';
-import Constants from 'utils/constants.jsx';
+import FloatingTimestamp from './floating_timestamp.jsx';
+
+import * as GlobalActions from 'action_creators/global_actions.jsx';
+
+import PreferenceStore from 'stores/preference_store.jsx';
+import UserStore from 'stores/user_store.jsx';
+
+import {createChannelIntroMessage} from 'utils/channel_intro_messages.jsx';
+
+import * as Utils from 'utils/utils.jsx';
 import DelayedAction from 'utils/delayed_action.jsx';
+
+import Constants from 'utils/constants.jsx';
+const Preferences = Constants.Preferences;
 
 import {FormattedDate, FormattedMessage} from 'react-intl';
 
-const Preferences = Constants.Preferences;
-
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 export default class PostsView extends React.Component {
     constructor(props) {
@@ -31,6 +39,7 @@ export default class PostsView extends React.Component {
         this.handleResize = this.handleResize.bind(this);
         this.scrollToBottom = this.scrollToBottom.bind(this);
         this.scrollToBottomAnimated = this.scrollToBottomAnimated.bind(this);
+        this.onUserChange = this.onUserChange.bind(this);
 
         this.jumpToPostNode = null;
         this.wasAtBottom = true;
@@ -38,10 +47,19 @@ export default class PostsView extends React.Component {
 
         this.scrollStopAction = new DelayedAction(this.handleScrollStop);
 
+        let profiles = UserStore.getProfiles();
+        if (props.channel && props.channel.type === Constants.DM_CHANNEL) {
+            profiles = Object.assign({}, profiles, UserStore.getDirectProfiles());
+        }
+
         this.state = {
             displayNameType: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, 'name_format', 'false'),
+            centerPosts: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, Preferences.CHANNEL_DISPLAY_MODE, Preferences.CHANNEL_DISPLAY_MODE_DEFAULT) === Preferences.CHANNEL_DISPLAY_MODE_CENTERED,
+            compactPosts: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, Preferences.MESSAGE_DISPLAY, Preferences.MESSAGE_DISPLAY_DEFAULT) === Preferences.MESSAGE_DISPLAY_COMPACT,
             isScrolling: false,
-            topPostId: null
+            topPostId: null,
+            currentUser: UserStore.getCurrentUser(),
+            profiles
         };
     }
     static get SCROLL_TYPE_FREE() {
@@ -60,7 +78,18 @@ export default class PostsView extends React.Component {
         return 5;
     }
     updateState() {
-        this.setState({displayNameType: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, 'name_format', 'false')});
+        this.setState({
+            displayNameType: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, 'name_format', 'false'),
+            centerPosts: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, Preferences.CHANNEL_DISPLAY_MODE, Preferences.CHANNEL_DISPLAY_MODE_DEFAULT) === Preferences.CHANNEL_DISPLAY_MODE_CENTERED,
+            compactPosts: PreferenceStore.get(Preferences.CATEGORY_DISPLAY_SETTINGS, Preferences.MESSAGE_DISPLAY, Preferences.MESSAGE_DISPLAY_DEFAULT) === Preferences.MESSAGE_DISPLAY_COMPACT
+        });
+    }
+    onUserChange() {
+        let profiles = UserStore.getProfiles();
+        if (this.props.channel && this.props.channel.type === Constants.DM_CHANNEL) {
+            profiles = Object.assign({}, profiles, UserStore.getDirectProfiles());
+        }
+        this.setState({currentUser: UserStore.getCurrentUser(), profiles: JSON.parse(JSON.stringify(profiles))});
     }
     isAtBottom() {
         // consider the view to be at the bottom if it's within this many pixels of the bottom
@@ -147,8 +176,8 @@ export default class PostsView extends React.Component {
     createPosts(posts, order) {
         const postCtls = [];
         let previousPostDay = new Date(0);
-        const userId = this.props.currentUser.id;
-        const profiles = this.props.profiles || {};
+        const userId = this.state.currentUser.id;
+        const profiles = this.state.profiles || {};
 
         let renderedLastViewed = false;
 
@@ -173,24 +202,15 @@ export default class PostsView extends React.Component {
                 const postFromWebhook = Boolean(post.props && post.props.from_webhook);
                 const prevPostFromWebhook = Boolean(prevPost.props && prevPost.props.from_webhook);
                 const prevPostUserId = Utils.isSystemMessage(prevPost) ? '' : prevPost.user_id;
-                let prevWebhookName = '';
-                if (prevPost.props && prevPost.props.override_username) {
-                    prevWebhookName = prevPost.props.override_username;
-                }
-                let curWebhookName = '';
-                if (post.props && post.props.override_username) {
-                    curWebhookName = post.props.override_username;
-                }
 
                 // consider posts from the same user if:
                 //     the previous post was made by the same user as the current post,
                 //     the previous post was made within 5 minutes of the current post,
-                //     the previous post and current post are both from webhooks or both not,
-                //     the previous post and current post have the same webhook usernames
+                //     the current post is not from a webhook
+                //     the previous post is not from a webhook
                 if (prevPostUserId === postUserId &&
                         post.create_at - prevPost.create_at <= 1000 * 60 * 5 &&
-                        postFromWebhook === prevPostFromWebhook &&
-                        prevWebhookName === curWebhookName) {
+                        !postFromWebhook && !prevPostFromWebhook) {
                     sameUser = true;
                 }
 
@@ -213,13 +233,13 @@ export default class PostsView extends React.Component {
                 //     the previous post was made by the same user as the current post,
                 //     the previous post is not a comment,
                 //     the current post is not a comment,
-                //     the previous post and current post are both from webhooks or both not,
-                //     the previous post and current post have the same webhook usernames
+                //     the previous post is not from a webhook
+                //     the current post is not from a webhook
                 if (prevPostUserId === postUserId &&
                         !prevPostIsComment &&
                         !postIsComment &&
-                        postFromWebhook === prevPostFromWebhook &&
-                        prevWebhookName === curWebhookName) {
+                        !prevPostFromWebhook &&
+                        !postFromWebhook) {
                     hideProfilePic = true;
                 }
             }
@@ -233,8 +253,8 @@ export default class PostsView extends React.Component {
             const shouldHighlight = this.props.postsToHighlight && this.props.postsToHighlight.hasOwnProperty(post.id);
 
             let profile;
-            if (this.props.currentUser.id === post.user_id) {
-                profile = this.props.currentUser;
+            if (userId === post.user_id) {
+                profile = this.state.currentUser;
             } else {
                 profile = profiles[post.user_id];
             }
@@ -254,7 +274,9 @@ export default class PostsView extends React.Component {
                     onClick={() => GlobalActions.emitPostFocusEvent(post.id)} //eslint-disable-line no-loop-func
                     displayNameType={this.state.displayNameType}
                     user={profile}
-                    currentUser={this.props.currentUser}
+                    currentUser={this.state.currentUser}
+                    center={this.state.centerPosts}
+                    compactDisplay={this.state.compactPosts}
                 />
             );
 
@@ -319,7 +341,7 @@ export default class PostsView extends React.Component {
         if (this.props.scrollType === PostsView.SCROLL_TYPE_BOTTOM) {
             this.scrollToBottom();
         } else if (this.props.scrollType === PostsView.SCROLL_TYPE_NEW_MESSAGE) {
-            window.requestAnimationFrame(() => {
+            window.setTimeout(window.requestAnimationFrame(() => {
                 // If separator exists scroll to it. Otherwise scroll to bottom.
                 if (this.refs.newMessageSeparator) {
                     var objDiv = this.refs.postlist;
@@ -327,7 +349,7 @@ export default class PostsView extends React.Component {
                 } else if (this.refs.postlist) {
                     this.refs.postlist.scrollTop = this.refs.postlist.scrollHeight;
                 }
-            });
+            }), 0);
         } else if (this.props.scrollType === PostsView.SCROLL_TYPE_POST && this.props.scrollPostId) {
             window.requestAnimationFrame(() => {
                 const postNode = ReactDOM.findDOMNode(this.refs[this.props.scrollPostId]);
@@ -376,14 +398,43 @@ export default class PostsView extends React.Component {
         var postList = $(this.refs.postlist);
         postList.animate({scrollTop: this.refs.postlist.scrollHeight}, '500');
     }
+
+    getArchivesIntroMessage() {
+        return (
+            <div className='channel-intro'>
+                <h4 className='channel-intro__title'>
+                    <FormattedMessage
+                        id='post_focus_view.beginning'
+                        defaultMessage='Beginning of Channel Archives'
+                    />
+                </h4>
+            </div>
+        );
+    }
+
     componentDidMount() {
         if (this.props.postList != null) {
             this.updateScrolling();
         }
+
+        if (this.props.isActive) {
+            PreferenceStore.addChangeListener(this.updateState);
+            UserStore.addChangeListener(this.onUserChange);
+        }
+
+        if (this.props.channel) {
+            this.introText = createChannelIntroMessage(this.props.channel);
+        } else {
+            this.introText = this.getArchivesIntroMessage();
+        }
+
         window.addEventListener('resize', this.handleResize);
     }
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
+        this.scrollStopAction.cancel();
+        PreferenceStore.removeChangeListener(this.updateState);
+        UserStore.removeChangeListener(this.onUserChange);
     }
     componentDidUpdate() {
         if (this.props.postList != null) {
@@ -394,8 +445,10 @@ export default class PostsView extends React.Component {
         if (!this.props.isActive && nextProps.isActive) {
             this.updateState();
             PreferenceStore.addChangeListener(this.updateState);
+            UserStore.addChangeListener(this.onUserChange);
         } else if (this.props.isActive && !nextProps.isActive) {
             PreferenceStore.removeChangeListener(this.updateState);
+            UserStore.removeChangeListener(this.onUserChange);
         }
     }
     shouldComponentUpdate(nextProps, nextState) {
@@ -426,7 +479,13 @@ export default class PostsView extends React.Component {
         if (this.state.isScrolling !== nextState.isScrolling) {
             return true;
         }
-        if (!Utils.areObjectsEqual(this.props.profiles, nextProps.profiles)) {
+        if (this.state.centerPosts !== nextState.centerPosts) {
+            return true;
+        }
+        if (this.state.compactPosts !== nextState.compactPosts) {
+            return true;
+        }
+        if (!Utils.areObjectsEqual(this.state.profiles, nextState.profiles)) {
             return true;
         }
 
@@ -459,7 +518,7 @@ export default class PostsView extends React.Component {
                     </a>
                 );
             } else {
-                moreMessagesTop = this.props.introText;
+                moreMessagesTop = this.introText;
             }
 
             // Give option to load more posts at bottom if nessisary
@@ -487,16 +546,17 @@ export default class PostsView extends React.Component {
             }
         }
 
-        let topPost = null;
-        if (this.state.topPostId) {
-            topPost = this.props.postList.posts[this.state.topPostId];
+        let topPostCreateAt = 0;
+        if (this.state.topPostId && this.props.postList.posts[this.state.topPostId]) {
+            topPostCreateAt = this.props.postList.posts[this.state.topPostId].create_at;
         }
 
         return (
             <div className={activeClass}>
                 <FloatingTimestamp
                     isScrolling={this.state.isScrolling}
-                    post={topPost}
+                    isMobile={$(window).width() > 768}
+                    createAt={topPostCreateAt}
                 />
                 <ScrollToBottomArrows
                     isScrolling={this.state.isScrolling}
@@ -529,7 +589,6 @@ PostsView.defaultProps = {
 PostsView.propTypes = {
     isActive: React.PropTypes.bool,
     postList: React.PropTypes.object,
-    profiles: React.PropTypes.object.isRequired,
     scrollPostId: React.PropTypes.string,
     scrollType: React.PropTypes.number,
     postViewScrolled: React.PropTypes.func.isRequired,
@@ -537,47 +596,10 @@ PostsView.propTypes = {
     loadMorePostsBottomClicked: React.PropTypes.func.isRequired,
     showMoreMessagesTop: React.PropTypes.bool,
     showMoreMessagesBottom: React.PropTypes.bool,
-    introText: React.PropTypes.element,
+    channel: React.PropTypes.object,
     messageSeparatorTime: React.PropTypes.number,
     postsToHighlight: React.PropTypes.object,
-    currentUser: React.PropTypes.object.isRequired
-};
-
-function FloatingTimestamp({isScrolling, post}) {
-    // only show on mobile
-    if ($(window).width() > 768) {
-        return <noscript/>;
-    }
-
-    if (!post) {
-        return <noscript/>;
-    }
-
-    const dateString = (
-        <FormattedDate
-            value={post.create_at}
-            weekday='short'
-            day='2-digit'
-            month='short'
-            year='numeric'
-        />
-    );
-
-    let className = 'post-list__timestamp';
-    if (isScrolling) {
-        className += ' scrolling';
-    }
-
-    return (
-        <div className={className}>
-            <span>{dateString}</span>
-        </div>
-    );
-}
-
-FloatingTimestamp.propTypes = {
-    isScrolling: React.PropTypes.bool.isRequired,
-    post: React.PropTypes.object
+    compactDisplay: React.PropTypes.bool
 };
 
 function ScrollToBottomArrows({isScrolling, atBottom, onClick}) {

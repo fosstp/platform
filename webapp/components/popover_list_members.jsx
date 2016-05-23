@@ -7,10 +7,10 @@ import UserStore from 'stores/user_store.jsx';
 import {Popover, Overlay} from 'react-bootstrap';
 import * as Utils from 'utils/utils.jsx';
 import Constants from 'utils/constants.jsx';
-
-import ChannelStore from 'stores/channel_store.jsx';
+import Client from 'utils/web_client.jsx';
 
 import {FormattedMessage} from 'react-intl';
+import {browserHistory} from 'react-router';
 
 import React from 'react';
 
@@ -36,7 +36,7 @@ export default class PopoverListMembers extends React.Component {
         Utils.openDirectChannelToUser(
             teammate,
             (channel, channelAlreadyExisted) => {
-                Utils.switchChannel(channel);
+                browserHistory.push(Utils.getTeamURLNoOriginFromAddressBar() + '/channels/' + channel.name);
                 if (channelAlreadyExisted) {
                     this.closePopover();
                 }
@@ -56,7 +56,6 @@ export default class PopoverListMembers extends React.Component {
         const members = this.props.members;
         const teamMembers = UserStore.getProfilesUsernameMap();
         const currentUserId = UserStore.getCurrentId();
-        const ch = ChannelStore.getCurrent();
 
         if (members && teamMembers) {
             members.sort((a, b) => {
@@ -68,7 +67,7 @@ export default class PopoverListMembers extends React.Component {
 
             members.forEach((m, i) => {
                 let button = '';
-                if (currentUserId !== m.id && ch.type !== 'D') {
+                if (currentUserId !== m.id && this.props.channel.type !== 'D') {
                     button = (
                         <a
                             href='#'
@@ -99,7 +98,7 @@ export default class PopoverListMembers extends React.Component {
                                 className='more-modal__image'
                                 width='26px'
                                 height='26px'
-                                src={`/api/v1/users/${m.id}/image?time=${m.update_at}`}
+                                src={`${Client.getUsersRoute()}/${m.id}/image?time=${m.update_at}`}
                             />
                             <div className='more-modal__details'>
                                 <div
@@ -176,7 +175,7 @@ export default class PopoverListMembers extends React.Component {
 }
 
 PopoverListMembers.propTypes = {
+    channel: React.PropTypes.object.isRequired,
     members: React.PropTypes.array.isRequired,
-    memberCount: React.PropTypes.number,
-    channelId: React.PropTypes.string.isRequired
+    memberCount: React.PropTypes.number
 };

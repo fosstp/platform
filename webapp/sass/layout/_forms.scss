@@ -12,7 +12,7 @@
         text-align: left;
 
         &.light {
-            color: $dark-gray;
+            @include opacity(.6);
             font-size: 1.05em;
             font-style: italic;
             font-weight: normal;
@@ -60,3 +60,34 @@
     }
 }
 
+.padding-top {
+    padding-top: 7px;
+
+    &.x2 {
+        padding-top: 14px;
+    }
+
+    &.x3 {
+        padding-top: 21px;
+    }
+}
+
+.padding-bottom {
+    padding-bottom: 7px;
+
+    &.x2 {
+        padding-bottom: 14px;
+    }
+
+    &.x3 {
+        padding-bottom: 21px;
+    }
+
+    .control-label {
+        font-weight: 600;
+
+        &.text-left {
+            text-align: left;
+        }
+    }
+}

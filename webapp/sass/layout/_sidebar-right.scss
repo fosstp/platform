@@ -16,6 +16,10 @@
     }
 
     .post {
+        .post__content {
+            padding: 0;
+        }
+
         .post__header {
             .col__name {
                 .user-popover {
@@ -23,6 +27,16 @@
                 }
             }
         }
+    }
+
+    .post-create__container {
+        form {
+            padding: .5em 15px 0;
+        }
+    }
+
+    .help__format-text {
+        display: none;
     }
 
     .sidebar--right__content {
