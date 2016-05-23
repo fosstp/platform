@@ -241,57 +241,46 @@
   },
   {
     "id": "api.channel.update_channel.tried.app_error",
-    #"translation": "Tried to perform an invalid update of the default channel {{.Channel}}"
     "translation": "已對預設頻道 {{.Channel}} 嘗試執行不合法的更新"
   },
   {
     "id": "api.command.admin_only.app_error",
-    #"translation": "Integrations have been limited to admins only."
     "translation": "只有管理員可以使用整合設定."
   },
   {
     "id": "api.command.delete.app_error",
-    #"translation": "Inappropriate permissions to delete command"
     "translation": "沒有適當的權限可以執行刪除"
   },
   {
     "id": "api.command.disabled.app_error",
-    #"translation": "Commands have been disabled by the system admin."
     "translation": "命令已被系統管理員停用."
   },
   {
     "id": "api.command.execute_command.debug",
-    #"translation": "Executing cmd=%v userId=%v"
     "translation": "正在執行 cmd=%v userId=%v"
   },
   {
     "id": "api.command.execute_command.failed.app_error",
-    #"translation": "Command with a trigger of '{{.Trigger}}' failed"
     "translation": "附帶觸發器 '{{.Trigger}}' 的命令執行失敗"
   },
   {
     "id": "api.command.execute_command.failed_empty.app_error",
-    #"translation": "Command with a trigger of '{{.Trigger}}' returned an empty response"
     "translation": "附帶觸發器 '{{.Trigger}}' 的命令回傳了空回應"
   },
   {
     "id": "api.command.execute_command.failed_resp.app_error",
-    #"translation": "Command with a trigger of '{{.Trigger}}' returned response {{.Status}}"
     "translation": "附帶觸發器 '{{.Trigger}}' 的命令回傳了 {{.Status}} 回應"
   },
   {
     "id": "api.command.execute_command.not_found.app_error",
-    #"translation": "Command with a trigger of '{{.Trigger}}' not found"
     "translation": "找不到附帶觸發器 '{{.Trigger}}' 的命令"
   },
   {
     "id": "api.command.execute_command.save.app_error",
-    #"translation": "An error while saving the command response to the channel"
     "translation": "儲存命令回傳值至頻道時有一個錯誤"
   },
   {
     "id": "api.command.execute_command.start.app_error",
-    #"translation": "No command trigger found"
     "translation": "找不到附帶觸發器的命令"
   },
   {
@@ -301,27 +290,22 @@
   },
   {
     "id": "api.command.regen.app_error",
-    #"translation": "Inappropriate permissions to regenerate command token"
     "translation": "沒有適當的權限可重新產生命令 token"
   },
   {
     "id": "api.command_echo.create.app_error",
-    #"translation": "Unable to create /echo post, err=%v"
     "translation": "無法建立 /顯示訊息, err=%v"
   },
   {
     "id": "api.command_echo.delay.app_error",
-    #"translation": "Delays must be under 10000 seconds"
     "translation": "延遲必須在 10000 秒以下"
   },
   {
     "id": "api.command_echo.desc",
-    #"translation": "Echo back text from your account"
     "translation": "從您的帳號回響文字"
   },
   {
     "id": "api.command_echo.high_volume.app_error",
-    #"translation": "High volume of echo request, cannot process request"
     "translation": "過高的回響要求, 無法處理"
   },
   {
@@ -330,12 +314,10 @@
   },
   {
     "id": "api.command_echo.name",
-    #"translation": "echo"
     "translation": "回響"
   },
   {
     "id": "api.command_join.desc",
-    #"translation": "Join the open channel"
     "translation": "加入公開頻道"
   },
   {
@@ -396,7 +378,6 @@
   },
   {
     "id": "api.command_shrug.name",
-    #"translation": "shrug"
     "translation": "聳肩"
   },
   {
@@ -409,22 +390,18 @@
   },
   {
     "id": "api.context.invalid_team_url.debug",
-    #"translation": "TeamURL accessed when not valid. Team URL should not be used in api functions or those that are team independent"
     "translation": "TeamURL 存取失敗. 團隊網址不應於非特定團隊用途的 api 函式或是設定中被使用"
   },
   {
     "id": "api.context.invalid_token.error",
-    #"translation": "Invalid session token=%v, err=%v"
     "translation": "不合法的 session token=%v, err=%v"
   },
   {
     "id": "api.context.last_activity_at.error",
-    #"translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
     "translation": "更新 user_id=%v 與 session_id=%v 的 LastActivityAt 失敗, err=%v"
   },
   {
     "id": "api.context.log.error",
-    #"translation": "%v:%v code=%v rid=%v uid=%v ip=%v %v [details: %v]"
     "translation": "%v:%v code=%v rid=%v uid=%v ip=%v %v [細節: %v]"
   },
   {
@@ -433,7 +410,6 @@
   },
   {
     "id": "api.context.session_expired.app_error",
-    #"translation": "Invalid or expired session, please login again."
     "translation": "非法或逾期的 session, 請重新登入."
   },
   {
@@ -442,12 +418,10 @@
   },
   {
     "id": "api.context.token_provided.app_error",
-    #"translation": "Session is not OAuth but token was provided in the query string"
     "translation": "Session 不是 OAuth 協定用, 但 token 卻於 query string 中出現了"
   },
   {
     "id": "api.context.unknown.app_error",
-    #"translation": "An unknown error has occurred. Please contact support."
     "translation": "未知的錯誤發生. 請聯繫支援單位."
   },
   {
@@ -468,342 +442,274 @@
   },
   {
     "id": "api.export.options.create.app_error",
-    #"translation": "Unable to create options file"
     "translation": "無法建立設定檔"
   },
   {
     "id": "api.export.options.write.app_error",
-    #"translation": "Unable to write to options file"
     "translation": "無法寫入設定檔"
   },
   {
     "id": "api.export.read_dir.app_error",
-    #"translation": "Unable to read directory"
     "translation": "無法讀取目錄"
   },
   {
     "id": "api.export.s3.app_error",
-    #"translation": "S3 is not supported for local storage export."
     "translation": "本地儲存匯出不支援 S3"
   },
   {
     "id": "api.export.write_file.app_error",
-    #"translation": "Unable to write to export file"
     "translation": "無法寫入匯出檔案"
   },
   {
     "id": "api.file.file_upload.exceeds",
-    #"translation": "File exceeds max image size."
     "translation": "檔案已達最大影像大小上限."
   },
   {
     "id": "api.file.get_export.retrieve.app_error",
-    #"translation": "Unable to retrieve exported file. Please re-export"
     "translation": "無法取得匯出檔案. 請重新匯出"
   },
   {
     "id": "api.file.get_export.team_admin.app_error",
-    #"translation": "Only a team admin can retrieve exported data."
     "translation": "只有團隊管理者可以取得匯出的資料."
   },
   {
     "id": "api.file.get_file.not_found.app_error",
-    #"translation": "Could not find file."
     "translation": "找不到檔案."
   },
   {
     "id": "api.file.get_file.public_invalid.app_error",
-    #"translation": "The public link does not appear to be valid"
     "translation": "此公開連結不合法"
   },
   {
     "id": "api.file.get_public_link.disabled.app_error",
-    #"translation": "Public links have been disabled"
     "translation": "公開連結已被停用"
   },
   {
     "id": "api.file.handle_images_forget.decode.error",
-    #"translation": "Unable to decode image channelId=%v userId=%v filename=%v err=%v"
     "translation": "無法解碼影像 channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.encode_jpeg.error",
-    #"translation": "Unable to encode image as jpeg channelId=%v userId=%v filename=%v err=%v"
     "translation": "無法編碼影像為 jpeg channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.encode_preview.error",
-    #"translation": "Unable to encode image as preview jpg channelId=%v userId=%v filename=%v err=%v"
     "translation": "無法編碼影像為預覽 jpg channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.upload_preview.error",
-    #"translation": "Unable to upload preview channelId=%v userId=%v filename=%v err=%v"
     "translation": "無法上傳預覽 channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.handle_images_forget.upload_thumb.error",
-    #"translation": "Unable to upload thumbnail channelId=%v userId=%v filename=%v err=%v"
     "translation": "無法上傳縮圖 channelId=%v userId=%v filename=%v err=%v"
   },
   {
     "id": "api.file.init.debug",
-    #"translation": "Initializing file api routes"
     "translation": "正在初始化檔案 api 路徑"
   },
   {
     "id": "api.file.open_file_write_stream.configured.app_error",
-    #"translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
     "translation": "檔案儲存沒有正確設定. 請設定為 S3 或是本地儲存."
   },
   {
     "id": "api.file.open_file_write_stream.creating_dir.app_error",
-    #"translation": "Encountered an error creating the directory for the new file"
     "translation": "建立新檔案的目錄時遇到錯誤"
   },
   {
     "id": "api.file.open_file_write_stream.local_server.app_error",
-    #"translation": "Encountered an error writing to local server storage"
     "translation": "寫入本地儲存時遇到錯誤"
   },
   {
     "id": "api.file.open_file_write_stream.s3.app_error",
-    #"translation": "S3 is not supported."
     "translation": "不支援 S3."
   },
   {
     "id": "api.file.read_file.configured.app_error",
-    #"translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
     "translation": "檔案儲存沒有正確設定. 請設定為 S3 或是本地儲存."
   },
   {
     "id": "api.file.read_file.get.app_error",
-    #"translation": "Unable to get file from S3"
     "translation": "無法從 S3 取得檔案"
   },
   {
     "id": "api.file.read_file.reading_local.app_error",
-    #"translation": "Encountered an error reading from local server storage"
     "translation": "從本地儲存讀取時遇到錯誤"
   },
   {
     "id": "api.file.upload_file.image.app_error",
-    #"translation": "Unable to upload image file."
     "translation": "無法上傳影像檔案."
   },
   {
     "id": "api.file.upload_file.large_image.app_error",
-    #"translation": "Unable to upload image file. File is too large."
     "translation": "無法上傳影像檔案. 檔案太大."
   },
   {
     "id": "api.file.upload_file.storage.app_error",
-    #"translation": "Unable to upload file. Image storage is not configured."
     "translation": "無法上傳檔案. 影像儲存尚未設定."
   },
   {
     "id": "api.file.upload_file.too_large.app_error",
-    #"translation": "Unable to upload file. File is too large."
     "translation": "無法上傳檔案. 檔案太大."
   },
   {
     "id": "api.file.write_file.configured.app_error",
-    #"translation": "File storage not configured properly. Please configure for either S3 or local server file storage."
     "translation": "檔案儲存沒有正確設定. 請設定為 S3 或是本地儲存."
   },
   {
     "id": "api.file.write_file.s3.app_error",
-    #"translation": "Encountered an error writing to S3"
     "translation": "寫入 S3 時遇到錯誤"
   },
   {
     "id": "api.file.write_file_locally.create_dir.app_error",
-    #"translation": "Encountered an error creating the directory for the new file"
     "translation": "建立新檔案的目錄時遇到錯誤"
   },
   {
     "id": "api.file.write_file_locally.writing.app_error",
-    #"translation": "Encountered an error writing to local server storage"
     "translation": "寫入本地儲存時遇到錯誤"
   },
   {
     "id": "api.import.import_post.saving.debug",
-    #"translation": "Error saving post. user=%v, message=%v"
     "translation": "儲存訊息時發生錯誤. user=%v, message=%v"
   },
   {
     "id": "api.import.import_user.joining_default.error",
-    #"translation": "Encountered an issue joining default channels user_id=%s, team_id=%s, err=%v"
     "translation": "加入預設頻道時事件發生 user_id=%s, team_id=%s, err=%v"
   },
   {
     "id": "api.import.import_user.saving.error",
-    #"translation": "Error saving user. err=%v"
     "translation": "儲存使用者時發生錯誤. err=%v"
   },
   {
     "id": "api.import.import_user.set_email.error",
-    #"translation": "Failed to set email verified err=%v"
     "translation": "設定 email 驗證錯誤 err=%v"
   },
   {
     "id": "api.license.add_license.array.app_error",
-    #"translation": "Empty array under 'license' in request"
     "translation": "request 中 license 欄位為空陣列"
   },
   {
     "id": "api.license.add_license.expired.app_error",
-    #"translation": "License is either expired or has not yet started."
     "translation": "授權不是已過期就是還沒啟用."
   },
   {
     "id": "api.license.add_license.invalid.app_error",
-    #"translation": "Invalid license file."
     "translation": "錯誤的授權檔案."
   },
   {
     "id": "api.license.add_license.invalid_count.app_error",
-    #"translation": "Unable to count total unique users."
     "translation": "無法計算使用者總人數."
   },
   {
     "id": "api.license.add_license.no_file.app_error",
-    #"translation": "No file under 'license' in request"
     "translation": "request 中 license 欄位沒有上傳檔案"
   },
   {
     "id": "api.license.add_license.open.app_error",
-    #"translation": "Could not open license file"
     "translation": "無法開啟授權檔案"
   },
   {
     "id": "api.license.add_license.save.app_error",
-    #"translation": "License did not save properly."
     "translation": "授權無法正確儲存."
   },
   {
     "id": "api.license.add_license.save_active.app_error",
-    #"translation": "Active license ID did not save properly."
     "translation": "啟用授權 ID 無法正確儲存."
   },
   {
     "id": "api.license.add_license.unique_users.app_error",
-    #"translation": "This license only supports {{.Users}} users, when your system has {{.Count}} unique users. Unique users are counted distinctly by email address. You can see total user count under Site Reports -> View Statistics."
     "translation": "此授權只支援 {{.Users}} 位使用者, 而您的系統有 {{.Count}} 位使用者. 使用者人數是根據 email 位址計算. 您可從 Site Reports -> View Statistics 看到使用者總數量."
   },
   {
     "id": "api.license.init.debug",
-    #"translation": "Initializing license api routes"
     "translation": "正在初始化授權 api 路徑"
   },
   {
     "id": "api.license.remove_license.remove.app_error",
-    #"translation": "License did not remove properly."
     "translation": "授權沒有正確的移除."
   },
   {
     "id": "api.oauth.allow_oauth.bad_client.app_error",
-    #"translation": "invalid_request: Bad client_id"
     "translation": "invalid_request: 錯誤的 client_id"
   },
   {
     "id": "api.oauth.allow_oauth.bad_redirect.app_error",
-    #"translation": "invalid_request: Missing or bad redirect_uri"
     "translation": "invalid_request: 遺漏或錯誤的 redirect_uri"
   },
   {
     "id": "api.oauth.allow_oauth.bad_response.app_error",
-    #"translation": "invalid_request: Bad response_type"
     "translation": "invalid_request: 錯誤的 response_type"
   },
   {
     "id": "api.oauth.allow_oauth.database.app_error",
-    #"translation": "server_error: Error accessing the database"
     "translation": "server_error: 存取資料庫時發生錯誤"
   },
   {
     "id": "api.oauth.allow_oauth.redirect_callback.app_error",
-    #"translation": "invalid_request: Supplied redirect_uri did not match registered callback_url"
     "translation": "invalid_request: 提供的 redirect_uri 沒有配對已註冊的 callback_url"
   },
   {
     "id": "api.oauth.allow_oauth.turn_off.app_error",
-    #"translation": "The system admin has turned off OAuth service providing."
     "translation": "系統管理員已關閉 OAuth service providing."
   },
   {
     "id": "api.oauth.get_auth_data.find.error",
-    #"translation": "Couldn't find auth code for code=%s"
     "translation": "找不到 code=%s 的 auth code"
   },
   {
     "id": "api.oauth.init.debug",
-    #"translation": "Initializing oauth api routes"
     "translation": "正在初始化 oauth api 路徑"
   },
   {
     "id": "api.oauth.register_oauth_app.turn_off.app_error",
-    #"translation": "The system admin has turned off OAuth service providing."
     "translation": "系統管理員已關閉 OAuth service providing."
   },
   {
     "id": "api.oauth.revoke_access_token.del_code.app_error",
-    #"translation": "Error deleting authorization code from DB"
     "translation": "從資料庫刪除 authorization code 時發生錯誤"
   },
   {
     "id": "api.oauth.revoke_access_token.del_session.app_error",
-    #"translation": "Error deleting session from DB"
     "translation": "從資料庫刪除 session 時發生錯誤"
   },
   {
     "id": "api.oauth.revoke_access_token.del_token.app_error",
-    #"translation": "Error deleting access token from DB"
     "translation": "從資料庫刪除 access token 時發生錯誤"
   },
   {
     "id": "api.oauth.revoke_access_token.get.app_error",
-    #"translation": "Error getting access token from DB before deletion"
     "translation": "刪除前從資料庫取得 access token 時發生錯誤"
   },
   {
     "id": "api.post.check_for_out_of_channel_mentions.message.multiple",
-    #"translation": "{{.Usernames}} and {{.LastUsername}} were mentioned, but they do not belong to this channel."
     "translation": "{{.Usernames}} 與 {{.LastUsername}} 已被提及, 但他們並未加入此頻道."
   },
   {
     "id": "api.post.check_for_out_of_channel_mentions.message.one",
-    #"translation": "{{.Username}} was mentioned, but does not belong to this channel."
     "translation": "{{.Username}} 已被提及, 但並未加入此頻道."
   },
   {
     "id": "api.post.create_post.bad_filename.error",
-    #"translation": "Bad filename discarded, filename=%v"
     "translation": "非法的檔名已被丟棄, filename=%v"
   },
   {
     "id": "api.post.create_post.channel_root_id.app_error",
-    #"translation": "Invalid ChannelId for RootId parameter"
     "translation": "RootId 參數的 ChannelId 非法"
   },
   {
     "id": "api.post.create_post.last_viewed.error",
-    #"translation": "Encountered error updating last viewed, channel_id=%s, user_id=%s, err=%v"
     "translation": "更新最新的訊息檢視遇到錯誤, channel_id=%s, user_id=%s, err=%v"
   },
   {
     "id": "api.post.create_post.parent_id.app_error",
-    #"translation": "Invalid ParentId parameter"
     "translation": "非法的 ParentId 參數"
   },
   {
     "id": "api.post.create_post.root_id.app_error",
-    #"translation": "Invalid RootId parameter"
     "translation": "非法的 RootId 參數"
   },
   {
     "id": "api.post.create_webhook_post.creating.app_error",
-    #"translation": "Error creating post"
     "translation": "建立訊息時發生錯誤"
   },
   {
@@ -812,7 +718,6 @@
   },
   {
     "id": "api.post.get_out_of_channel_mentions.regex.error",
-    #"translation": "Failed to compile @mention regex user_id=%v, err=%v"
     "translation": "無法編譯 @mention 正規表示式 user_id=%v, err=%v"
   },
   {
@@ -821,137 +726,110 @@
   },
   {
     "id": "api.post.handle_post_events_and_forget.channel.error",
-    #"translation": "Encountered error getting channel, channel_id=%s, err=%v"
     "translation": "取得頻道時遇到錯誤, channel_id=%s, err=%v"
   },
   {
     "id": "api.post.handle_post_events_and_forget.members.error",
-    #"translation": "Failed to get channel members channel_id=%v err=%v"
     "translation": "取得頻道成員失敗 channel_id=%v err=%v"
   },
   {
     "id": "api.post.handle_post_events_and_forget.profiles.error",
-    #"translation": "Failed to retrieve user profiles team_id=%v, err=%v"
     "translation": "取得使用者資訊失敗 team_id=%v, err=%v"
   },
   {
     "id": "api.post.handle_post_events_and_forget.team.error",
-    #"translation": "Encountered error getting team, team_id=%s, err=%v"
     "translation": "取得團隊時遇到錯誤, team_id=%s, err=%v"
   },
   {
     "id": "api.post.handle_post_events_and_forget.user.error",
-    #"translation": "Encountered error getting user, user_id=%s, err=%v"
     "translation": "取得使用者時遇到錯誤"
   },
   {
     "id": "api.post.handle_webhook_events_and_forget.create_post.error",
-    #"translation": "Failed to create response post, err=%v"
     "translation": "建立 response post 失敗, err=%v"
   },
   {
     "id": "api.post.handle_webhook_events_and_forget.event_post.error",
-    #"translation": "Event POST failed, err=%s"
     "translation": "POST 事件失敗, err=%s"
   },
   {
     "id": "api.post.handle_webhook_events_and_forget.getting.error",
-    #"translation": "Encountered error getting webhooks by team, err=%v"
     "translation": "依據團隊取得 webhooks 時遇到錯誤, err=%v"
   },
   {
     "id": "api.post.init.debug",
-    #"translation": "Initializing post api routes"
     "translation": "正在初始化 post api 路徑"
   },
   {
     "id": "api.post.make_direct_channel_visible.get_2_members.error",
-    #"translation": "Failed to get 2 members for a direct channel channel_id=%v"
     "translation": "無法取得直接傳訊頻道的 2 位使用者"
   },
   {
     "id": "api.post.make_direct_channel_visible.get_members.error",
-    #"translation": "Failed to get channel members channel_id=%v err=%v"
     "translation": "無法取得頻道使用者 channel_id=%v err=%v"
   },
   {
     "id": "api.post.make_direct_channel_visible.save_pref.error",
-    #"translation": "Failed to save direct channel preference user_id=%v other_user_id=%v err=%v"
     "translation": "無法儲存直接傳訊頻道的偏好設定 user_id=%v other_user_id=%v err=%v"
   },
   {
     "id": "api.post.make_direct_channel_visible.update_pref.error",
-    #"translation": "Failed to update direct channel preference user_id=%v other_user_id=%v err=%v"
     "translation": "無法更新直接傳訊頻道的偏好設定 user_id=%v other_user_id=%v err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.mention_body",
-    #"translation": "You have one new mention."
     "translation": "您有被提及一次."
   },
   {
     "id": "api.post.send_notifications_and_forget.mention_subject",
-    #"translation": "New Mention"
     "translation": "新的提及"
   },
   {
     "id": "api.post.send_notifications_and_forget.message_body",
-    #"translation": "You have one new message."
     "translation": "您有一筆新的訊息."
   },
   {
     "id": "api.post.send_notifications_and_forget.message_subject",
-    #"translation": "New Direct Message"
     "translation": "新的直接傳訊"
   },
   {
     "id": "api.post.send_notifications_and_forget.push_mention",
-    #"translation": " mentioned you in "
     "translation": " 提及您於 "
   },
   {
     "id": "api.post.send_notifications_and_forget.push_message",
-    #"translation": " sent you a direct message"
     "translation": " 已送直接傳訊給您"
   },
   {
     "id": "api.post.send_notifications_and_forget.push_notification.debug",
-    #"translation": "Sending push notification to %v wi msg of '%v'"
     "translation": "正在傳送 push 通知至 %v wi msg 源於 '%v'"
   },
   {
     "id": "api.post.send_notifications_and_forget.push_notification.error",
-    #"translation": "Failed to send push notificationid=%v, err=%v"
     "translation": "送出 push 失敗 notificationid=%v, err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.send.error",
-    #"translation": "Failed to send mention email successfully email=%v err=%v"
     "translation": "經由 email 傳送提及通知失敗 email=%v err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.sent",
-    #"translation": "{{.Prefix}} {{.Filenames}} sent"
     "translation": "{{.Prefix}} {{.Filenames}} 已送出"
   },
   {
     "id": "api.post.send_notifications_and_forget.sessions.error",
-    #"translation": "Failed to retrieve sessions in notifications id=%v, err=%v"
     "translation": "於通知中取得 sessions 失敗 id=%v, err=%v"
   },
   {
     "id": "api.post.send_notifications_and_forget.user_id.error",
-    #"translation": "Post user_id not returned by GetProfiles user_id=%v"
     "translation": "GetProfiles 沒有於 post 中回傳 user_id user_id=%v"
   },
   {
     "id": "api.post.update_mention_count_and_forget.update_error",
-    #"translation": "Failed to update mention count for user_id=%v on channel_id=%v err=%v"
     "translation": "更新提及的計數失敗 user_id=%v 於 channel_id=%v err=%v"
   },
   {
     "id": "api.post.update_post.find.app_error",
-    #"translation": "We couldn't find the existing post or comment to update."
     "translation": "找不到已存在的訊息或回應可更新."
   },
   {
@@ -960,147 +838,118 @@
   },
   {
     "id": "api.post.update_post.permissions_details.app_error",
-    #"translation": "Already deleted id={{.PostId}}"
     "translation": "已刪除 id={{.PostId}}"
   },
   {
     "id": "api.post_get_post_by_id.get.app_error",
-    #"translation": "Unable to get post"
     "translation": "無法取得訊息"
   },
   {
     "id": "api.preference.init.debug",
-    #"translation": "Initializing preference api routes"
     "translation": "正在初始化偏好設定 api 路徑"
   },
   {
     "id": "api.preference.save_preferences.decode.app_error",
-    #"translation": "Unable to decode preferences from request"
     "translation": "無法從 request 解碼出偏好設定"
   },
   {
     "id": "api.preference.save_preferences.set.app_error",
-    #"translation": "Unable to set preferences for other user"
     "translation": "無法為其他使用調整偏好設定"
   },
   {
     "id": "api.preference.save_preferences.set_details.app_error",
-    #"translation": "session.user_id={{.SessionUserId}}, preference.user_id={{.PreferenceUserId}}"
     "translation": "session.user_id={{.SessionUserId}}, preference.user_id={{.PreferenceUserId}}"
   },
   {
     "id": "api.server.new_server.init.info",
-    #"translation": "Server is initializing..."
     "translation": "伺服器正在初始化..."
   },
   {
     "id": "api.server.start_server.listening.info",
-    #"translation": "Server is listening on %v"
     "translation": "伺服器正在監聽於 %v"
   },
   {
     "id": "api.server.start_server.rate.info",
-    #"translation": "RateLimiter is enabled"
     "translation": "RateLimiter 已啟用"
   },
   {
     "id": "api.server.start_server.rate.warn",
-    #"translation": "RateLimitSettings not configured properly using VaryByHeader and disabling VaryByRemoteAddr"
     "translation": "RateLimitSettings 沒有藉由使用 VaryByHeader 以及停用 VaryByRemoteAddr 來正確設定"
   },
   {
     "id": "api.server.start_server.starting.critical",
-    #"translation": "Error starting server, err:%v"
     "translation": "啟動伺服器時發生錯誤, err:%v"
   },
   {
     "id": "api.server.start_server.starting.info",
-    #"translation": "Starting Server..."
     "translation": "正在啟動伺服器..."
   },
   {
     "id": "api.server.start_server.starting.panic",
-    #"translation": "Error starting server "
     "translation": "啟動伺服器時發生錯誤 "
   },
   {
     "id": "api.server.stop_server.stopped.info",
-    #"translation": "Server stopped"
     "translation": "伺服器已停止"
   },
   {
     "id": "api.server.stop_server.stopping.info",
-    #"translation": "Stopping Server..."
     "translation": "正在停止伺服器..."
   },
   {
     "id": "api.slackimport.slack_add_channels.added",
-    #"translation": "\r\n Channels Added \r\n"
     "translation": "\r\n 頻道已加入 \r\n"
   },
   {
     "id": "api.slackimport.slack_add_channels.import_failed",
-    #"translation": "Failed to import: {{.DisplayName}}\r\n"
     "translation": "匯入失敗: {{.DisplayName}}\r\n"
   },
   {
     "id": "api.slackimport.slack_add_channels.import_failed.debug",
-    #"translation": "Failed to import: %s"
     "translation": "匯入失敗: %s"
   },
   {
     "id": "api.slackimport.slack_add_channels.merge",
-    #"translation": "Merged with existing channel: {{.DisplayName}}\r\n"
     "translation": "與已存在的頻道合併: {{.DisplayName}}\r\n"
   },
   {
     "id": "api.slackimport.slack_add_posts.bot.warn",
-    #"translation": "Slack bot posts are not imported yet"
     "translation": "Slack 機器人的訊息還未被匯入"
   },
   {
     "id": "api.slackimport.slack_add_posts.msg_no_usr.debug",
-    #"translation": "Message without user"
     "translation": "訊息沒有使用者"
   },
   {
     "id": "api.slackimport.slack_add_posts.unsupported.warn",
-    #"translation": "Unsupported post type: %v, %v"
     "translation": "不支援的 post 類型: %v, %v"
   },
   {
     "id": "api.slackimport.slack_add_posts.user_no_exists.debug",
-    #"translation": "User: %v does not exist!"
     "translation": "使用者: %v 不存在!"
   },
   {
     "id": "api.slackimport.slack_add_posts.without_user.debug",
-    #"translation": "Message without user"
     "translation": "訊息沒有使用者"
   },
   {
     "id": "api.slackimport.slack_add_users.created",
-    #"translation": "\r\n Users Created\r\n"
     "translation": "\r\n 使用者已建立\r\n"
   },
   {
     "id": "api.slackimport.slack_add_users.email_pwd",
-    #"translation": "Email, Password: {{.Email}}, {{.Password}}\r\n"
     "translation": "Email, 密碼: {{.Email}}, {{.Password}}\r\n"
   },
   {
     "id": "api.slackimport.slack_add_users.unable_import",
-    #"translation": "Unable to import user: {{.Username}}\r\n"
     "translation": "無法匯入使用者: {{.Username}}\r\n"
   },
   {
     "id": "api.slackimport.slack_convert_timestamp.bad.warn",
-    #"translation": "Bad timestamp detected"
     "translation": "偵測到錯誤的 timestamp"
   },
   {
     "id": "api.slackimport.slack_import.log",
-    #"translation": "Mattermost Slack Import Log\r\n"
     "translation": "Mattermost Slack 匯入 Log\r\n"
   },
   {
@@ -1561,148 +1410,119 @@
   },
   {
     "id": "api.user.login.inactive.app_error",
-    #"translation": "Login failed because your account has been set to inactive.  Please contact an administrator."
 	"translation": "登入失敗,您的帳號已被設定為停用.  請向系統管理員聯繫."
   },
   {
     "id": "api.user.login.not_provided.app_error",
-    #"translation": "Either user id or team name and user email must be provided"
 	"translation": "必須提供使用者 id ,團隊名稱以及使用者電子郵件"
   },
   {
     "id": "api.user.login.not_verified.app_error",
-    #"translation": "Login failed because email address has not been verified"
 	"translation": "登入失敗,電子郵件地址尚未通過認證"
   },
   {
     "id": "api.user.login.revoking.app_error",
-    #"translation": "Revoking sessionId=%v for userId=%v re-login with same device Id"
 	"translation": "取消 userId=%v sessionId=%v  同樣設備 Id 再次登入"
   },
   {
     "id": "api.user.login_by_email.sign_in.app_error",
-    #"translation": "Please sign in using {{.AuthService}}"
 	"translation": "請使用 {{.AuthService}} 登入"
   },
   {
     "id": "api.user.login_by_oauth.not_available.app_error",
-    #"translation": "{{.Service}} oauth not avlailable on this server"
 	"translation": "無法取用此伺服器上的 {{.Service}} oauth "
   },
   {
     "id": "api.user.login_by_oauth.parse.app_error",
-    #"translation": "Could not parse auth data out of {{.Service}} user object"
 	"translation": "無法解析 {{.Service}} 使用者物件的認證資料"
   },
   {
     "id": "api.user.login_ldap.blank_pwd.app_error",
-    #"translation": "Password field must not be blank"
 	"translation": "密碼欄位不得空白"
   },
   {
     "id": "api.user.login_ldap.disabled.app_error",
-    #"translation": "LDAP not enabled on this server"
 	"translation": "此伺服器上的 LDAP 無法啟用"
   },
   {
     "id": "api.user.login_ldap.need_id.app_error",
-    #"translation": "Need an ID"
 	"translation": "需要一個 ID"
   },
   {
     "id": "api.user.login_ldap.not_available.app_error",
-    #"translation": "LDAP not available on this server"
 	"translation": "伺服器上的 LDAP 無法取用"
   },
   {
     "id": "api.user.permanent_delete_user.attempting.warn",
-    #"translation": "Attempting to permanently delete account %v id=%v"
 	"translation": "試圖將 %v id=%v 帳號永久刪除"
   },
   {
     "id": "api.user.permanent_delete_user.deleted.warn",
-    #"translation": "Permanently deleted account %v id=%v"
 	"translation": "將 %v id=%v 帳號永久刪除"
   },
   {
     "id": "api.user.permanent_delete_user.system_admin.warn",
-    #"translation": "You are deleting %v that is a system administrator.  You may need to set another account as the system administrator using the command line tools."
 	"translation": "您正在刪除系統管理員 %v .  您需要將另一個帳號設定為系統系統管理員來使用命列工具使用命列工具."
   },
   {
     "id": "api.user.reset_password.invalid_link.app_error",
-    #"translation": "The reset password link does not appear to be valid"
 	"translation": "密碼重設連結無效"
   },
   {
     "id": "api.user.reset_password.link_expired.app_error",
-    #"translation": "The password reset link has expired"
 	"translation": "密碼重設連結已經逾期"
   },
   {
     "id": "api.user.reset_password.method",
-    #"translation": "using a reset password link"
 	"translation": "正在使用一個重設密碼連結"
   },
   {
     "id": "api.user.reset_password.sso.app_error",
-    #"translation": "Cannot reset password for SSO accounts"
 	"translation": "無法針對 SSO 帳號重設密碼"
   },
   {
     "id": "api.user.reset_password.wrong_team.app_error",
-    #"translation": "Trying to reset password for user on wrong team."
 	"translation": "正在嘗試將錯誤團隊中的使用者重設密碼."
   },
   {
     "id": "api.user.send_email_change_email_and_forget.error",
-    #"translation": "Failed to send email change notification email successfully err=%v"
 	"translation": "更改通知電子郵件傳送失敗 err=%v"
   },
   {
     "id": "api.user.send_email_change_verify_email_and_forget.error",
-    #"translation": "Failed to send email change verification email successfully err=%v"
 	"translation": "更改驗證電子郵件傳送失敗 err=%v"
   },
   {
     "id": "api.user.send_password_change_email_and_forget.error",
-    #"translation": "Failed to send update password email successfully err=%v"
 	"translation": "更新密碼電子郵件傳送失敗 err=%v"
   },
   {
     "id": "api.user.send_password_reset.find.app_error",
-    #"translation": "We couldn’t find an account with that address."
 	"translation": "無法找到該電子郵件地址相對應的帳號"
   },
   {
     "id": "api.user.send_password_reset.send.app_error",
-    #"translation": "Failed to send password reset email successfully"
 	"translation": "傳送密碼重設電子郵件失敗"
   },
   {
     "id": "api.user.send_password_reset.sso.app_error",
-    #"translation": "Cannot reset password for SSO accounts"
 	"translation": "無法重設 SSO 帳號的密碼"
   },
   {
     "id": "api.user.send_sign_in_change_email_and_forget.error",
-    #"translation": "Failed to send update password email successfully err=%v"
 	"translation": "傳送更新密碼電子郵件失敗 err=%v"
 
   },
   {
     "id": "api.user.send_verify_email_and_forget.failed.error",
-    #"translation": "Failed to send verification email successfully err=%v"
 	"translation": "傳送認證電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.send_welcome_email_and_forget.failed.error",
-    #"translation": "Failed to send welcome email successfully err=%v"
 	"translation": "傳送歡迎電子郵件失敗 err=%v"
   },
   {
     "id": "api.user.switch_to_email.context.app_error",
-    #"translation": "Update password failed because context user_id did not match provided user's id"
 	"translation": "更新密碼失敗, 目前使用者 id 與您提供的使用者 id 不符"
   },
   {
@@ -1711,37 +1531,30 @@
   },
   {
     "id": "api.user.update_password.context.app_error",
-    #"translation": "Update password failed because context user_id did not match props user_id"
 	"translation": "更新密碼失敗, 目前使用者 id 與 props 使用者 id 不符"
   },
   {
     "id": "api.user.update_password.failed.app_error",
-    #"translation": "Update password failed"
 	"translation": "更新密碼失敗"
   },
   {
     "id": "api.user.update_password.incorrect.app_error",
-    #"translation": "The \"Current Password\" you entered is incorrect. Please check that Caps Lock is off and try again."
 	"translation": "您 \"目前輸入的密碼\" 不正確. 請檢查 Caps Lock 是關的並再試一次."
   },
   {
     "id": "api.user.update_password.menu",
-    #"translation": "using the settings menu"
 	"translation": "使用設定選單"
   },
   {
     "id": "api.user.update_password.oauth.app_error",
-    #"translation": "Update password failed because the user is logged in through an OAuth service"
 	"translation": "更新密碼失敗. 使用者已透過 OAuth 服務登入"
   },
   {
     "id": "api.user.update_password.valid_account.app_error",
-    #"translation": "Update password failed because we couldn't find a valid account"
 	"translation": "更新密碼失敗, 無法找到有效的帳號"
   },
   {
     "id": "api.user.update_roles.one_admin.app_error",
-    #"translation": "There must be at least one active admin"
 	"translation": "至少要有一個啟用的管理員"
   },
   {
@@ -1750,631 +1563,506 @@
   },
   {
     "id": "api.user.update_roles.system_admin_mod.app_error",
-    #"translation": "The system admin role can only by modified by another system admin"
       "translation": "僅有系統管理員才能修改另一位系統管理員的角色"
   },
   {
     "id": "api.user.update_roles.system_admin_set.app_error",
-    #"translation": "The system admin role can only be set by another system admin"
 	"translation": "僅有系統管理員才能設定另一位系統管理員的角色"
   },
   {
     "id": "api.user.upload_profile_user.array.app_error",
-    #"translation": "Empty array under 'image' in request"
     "translation": "要求的 'image' 陣列為空"
   },
   {
     "id": "api.user.upload_profile_user.decode.app_error",
-    #"translation": "Could not decode profile image"
     "translation": "無法解碼個人資訊圖片"
   },
   {
     "id": "api.user.upload_profile_user.decode_config.app_error",
-    #"translation": "Could not decode profile image config."
      "translation": "無法解碼個人資訊圖片設定"
   },
   {
     "id": "api.user.upload_profile_user.encode.app_error",
-    #"translation": "Could not encode profile image"
      "translation": "無法編碼個人資訊圖片"
 
   },
   {
     "id": "api.user.upload_profile_user.no_file.app_error",
-    #"translation": "No file under 'image' in request"
      "translation": "要求的 'image' 檔案不存在"
   },
   {
     "id": "api.user.upload_profile_user.open.app_error",
-    #"translation": "Could not open image file"
      "translation": "無法開啟圖片檔案"
   },
   {
     "id": "api.user.upload_profile_user.parse.app_error",
-    #"translation": "Could not parse multipart form"
     "translation": "無法解析 multipart form"
   },
   {
     "id": "api.user.upload_profile_user.storage.app_error",
-    #"translation": "Unable to upload file. Image storage is not configured."
     "translation": "無法上傳檔案. 尚未設定圖片儲存位置."
   },
   {
     "id": "api.user.upload_profile_user.too_large.app_error",
-    #"translation": "Unable to upload profile image. File is too large."
      "translation": "無法上傳個人資訊圖片. 檔案過大."
   },
   {
     "id": "api.user.upload_profile_user.upload_profile.app_error",
-    #"translation": "Couldn't upload profile image"
 	"translation": "無法上傳個人資訊圖片"
   },
   {
     "id": "api.web_conn.new_web_conn.last_activity.error",
-    #"translation": "Failed to update LastActivityAt for user_id=%v and session_id=%v, err=%v"
 	"translation": "無法更新 user_id=%v, session_id=%v 的 LastActivityAt, err=%v"
   },
   {
     "id": "api.web_conn.new_web_conn.last_ping.error",
-    #"translation": "Failed to update LastPingAt for user_id=%v, err=%v"
 	"translation": "無法更新最後傳訊時間, user_id=%v, err=%v"
   },
   {
     "id": "api.web_hub.start.stopping.debug",
-    #"translation": "stopping %v connections"
 	"translation": "正在停止 %v 的連線"
   },
   {
     "id": "api.web_socket.connect.error",
-    #"translation": "websocket connect err: %v"
 	"translation": "websocket 連接錯誤: %v"
   },
   {
     "id": "api.web_socket.connect.upgrade.app_error",
-    #"translation": "Failed to upgrade websocket connection"
 	"translation": "更新 websocket 連線失敗"
   },
   {
     "id": "api.web_socket.init.debug",
-    #"translation": "Initializing web socket api routes"
 	"translation": "正在初始化 web socket api 路徑"
   },
   {
     "id": "api.web_team_hun.start.debug",
-    #"translation": "team hub stopping for teamId=%v"
 	"translation": "正在停止團隊群組 teamId=%v"
   },
   {
     "id": "api.webhook.create_incoming.disabled.app_errror",
-    #"translation": "Incoming webhooks have been disabled by the system admin."
 	"translation": "Incoming webhooks 已被系統管理員停用."
   },
   {
     "id": "api.webhook.create_outgoing.disabled.app_error",
-    #"translation": "Outgoing webhooks have been disabled by the system admin."
 	"translation": "Outgoing webhooks 已被系統管理員停用."
   },
   {
     "id": "api.webhook.create_outgoing.triggers.app_error",
-    #"translation": "Either trigger_words or channel_id must be set"
 	"translation": "必須設定觸發詞或者頻道 id"
   },
   {
     "id": "api.webhook.delete_incoming.disabled.app_errror",
-    #"translation": "Incoming webhooks have been disabled by the system admin."
 	"translation": "Incoming webhooks 已被系統管理員停用"
   },
   
   {
     "id": "api.webhook.delete_incoming.permissions.app_errror",
-    #"translation": "Inappropriate permissions to delete incoming webhook"
 	"translation": "權限不正確,無法刪除 Incoming webhooks"
   },
   {
     "id": "api.webhook.delete_outgoing.disabled.app_error",
-    #"translation": "Outgoing webhooks have been disabled by the system admin."
 	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.delete_outgoing.permissions.app_error",
-    #"translation": "Inappropriate permissions to delete outcoming webhook"
 	"translation": "權限不正確,無法刪除 outcoming webhooks"
   },
   {
     "id": "api.webhook.get_incoming.disabled.app_error",
-    #"translation": "Incoming webhooks have been disabled by the system admin."
 	"translation": "Incoming webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.get_outgoing.disabled.app_error",
-    #"translation": "Outgoing webhooks have been disabled by the system admin."
 	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.init.debug",
-    #"translation": "Initializing webhook api routes"
 	"translation": "初始化 webhook api routes"
   },
   {
     "id": "api.webhook.regen_outgoing_token.disabled.app_error",
-    #"translation": "Outgoing webhooks have been disabled by the system admin."
 	"translation": "Outgoing webhooks 已被系統管理員停用"
   },
   {
     "id": "api.webhook.regen_outgoing_token.permissions.app_error",
-    #"translation": "Inappropriate permissions to regenerate outcoming webhook token"
 	"translation": "權限不正確,無法重新產生 outcoming webhook token"
   },
   {
     "id": "ent.ldap.do_login.bind_admin_user.app_error",
-    #"translation": "Unable to bind to LDAP server. Check BindUsername and BindPassword."
 	"translation": "無法綁定LDAP伺服器, 請檢查綁定使用者帳號與綁定密碼"
   },
   {
     "id": "ent.ldap.do_login.invalid_password.app_error",
-    #"translation": "Invalid Password"
 	"translation": "無效的密碼"
   },
   {
     "id": "ent.ldap.do_login.licence_disable.app_error",
-    #"translation": "LDAP functionality disabled by current license. Please contact your system administrator about upgrading your enterprise license."
 	"translation": "目前的授權無法使用 LDAP 功能.請聯繫系統管理員升級為企業授權"
   },
   {
     "id": "ent.ldap.do_login.matched_to_many_users.app_error",
-    #"translation": "Username given matches multiple users"
 	"translation": "提供的 LDAP 使用者名稱比對到多重使用者"
   },
   {
     "id": "ent.ldap.do_login.search_ldap_server.app_error",
-    #"translation": "Failed to search LDAP server"
 	"translation": "搜尋 LDAP 伺服器失敗"
   },
   {
     "id": "ent.ldap.do_login.unable_to_connect.app_error",
-    #"translation": "Unable to connect to LDAP server"
 	"translation": "無法連線到 LDAP 伺服器"
 
   },
   {
     "id": "ent.ldap.do_login.unable_to_create_user.app_error",
-    #"translation": "Credentials valid but unable to create user."
 	"translation": " LDAP 認證有效,但無法建立使用者"
   },
   {
     "id": "ent.ldap.do_login.user_not_registered.app_error",
-    #"translation": "User not registered on LDAP server"
 	"translation": "使用者尚未註冊 LDAP 伺服器"
   },
   {
     "id": "manaultesting.get_channel_id.no_found.debug",
-    #"translation": "Could not find channel: %v, %v possibilites searched"
 	"translation": "找不到: %v 頻道, 已搜尋 %v 的可能性"
   },
   {
     "id": "manaultesting.get_channel_id.unable.debug",
-    #"translation": "Unable to get channels"
 	"translation": "無法取得頻道"
   },
   {
     "id": "manaultesting.manual_test.create.info",
-    #"translation": "Creating user and team"
 	"translation": "建立使用者與團隊"
   },
   {
     "id": "manaultesting.manual_test.parse.app_error",
-    #"translation": "Unable to parse URL"
 	"translation": "無法解析網址"
   },
   {
     "id": "manaultesting.manual_test.setup.info",
-    #"translation": "Setting up for manual test..."
 	"translation": "正在進行手冊測試的設定..."
   },
   {
     "id": "manaultesting.manual_test.uid.debug",
-    #"translation": "No uid in url"
 	"translation": "網址中找不到 uid"
   },
   {
     "id": "manaultesting.test_autolink.info",
-    #"translation": "Manual Auto Link Test"
 	"translation": "手冊自動連結測試"
   },
   {
     "id": "manaultesting.test_autolink.unable.app_error",
-    #"translation": "Unable to get channels"
 	"translation": "無法取得頻道"
   },
   {
     "id": "mattermost.bulletin.subject",
-    #"translation": "Mattermost Security Bulletin"
 	"translation": "Mattermost 安全性公告"
   },
   {
     "id": "mattermost.config_file",
-    #"translation": "Loaded config file from %v"
 	"translation": "從 %v 讀取設定檔"
   },
   {
     "id": "mattermost.current_version",
-    #"translation": "Current version is %v (%v/%v/%v)"
 	"translation": "目前的版本為 %v (%v/%v/%v)"
   },
   {
     "id": "mattermost.entreprise_enabled",
-    #"translation": "Enterprise Enabled: %v"
 	"translation": "企業版啟用: %v"
   },
   {
     "id": "mattermost.load_license.find.warn",
-    #"translation": "Unable to find active license"
 	"translation": "找不到啟用授權"
   },
   {
     "id": "mattermost.security_bulletin.error",
-    #"translation": "Failed to get security bulletin details"
 	"translation": "抓取安全性公告詳情失敗"
   },
   {
     "id": "mattermost.security_bulletin_read.error",
-    #"translation": "Failed to read security bulletin details"
 	"translation": "讀取安全性公告詳情失敗"
   },
   {
     "id": "mattermost.security_checks.debug",
-    #"translation": "Checking for security update from Mattermost"
 	"translation": "正在檢查來自 Mattermost 的安全性更新"
   },
   {
     "id": "mattermost.security_info.error",
-    #"translation": "Failed to get security update information from Mattermost."
 	"translation": "從 Mattermost 抓取安全性更新資訊失敗"
   },
   {
     "id": "mattermost.send_bulletin.info",
-    #"translation": "Sending security bulletin for %v to %v"
 	"translation": "正在傳送 %v 至 %v 的安全性公告"
   },
   {
     "id": "mattermost.system_admins.error",
-    #"translation": "Failed to get system admins for security update information from Mattermost."
 	"translation": "使用系統管理員抓取 Mattermost 上的安全性更新資訊失敗"
   },
   {
     "id": "mattermost.working_dir",
-    #"translation": "Current working directory is %v"
 	"translation": "目前的工作目錄為 %v"
   },
   {
     "id": "model.access.is_valid.access_token.app_error",
-    #"translation": "Invalid access token"
 	"translation": "無效的存取 token "
   },
   {
     "id": "model.access.is_valid.auth_code.app_error",
-    #"translation": "Invalid auth code"
 	"translation": "無效的驗證碼"
   },
   {
     "id": "model.access.is_valid.redirect_uri.app_error",
-    #"translation": "Invalid redirect uri"
 	"translation": "無效的重新導向網址"
   },
   {
     "id": "model.access.is_valid.refresh_token.app_error",
-    #"translation": "Invalid refresh token"
 	"translation": "無效的重新整理 token"
   },
   {
     "id": "model.authorize.is_valid.auth_code.app_error",
-    #"translation": "Invalid authorization code"
 	"translation": "無效的授權碼"
   },
   {
     "id": "model.authorize.is_valid.client_id.app_error",
-    #"translation": "Invalid client id"
 	"translation": "無效的用戶 id"
   },
   {
     "id": "model.authorize.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
 	"translation": "必須建立在一個有效的時間上"
   },
   {
     "id": "model.authorize.is_valid.expires.app_error",
-    #"translation": "Expires in must be set"
 	"translation": "必須設定到期時間"
   },
   {
     "id": "model.authorize.is_valid.redirect_uri.app_error",
-    #"translation": "Invalid redirect uri"
 	"translation": "無效的重新導向網址"
   },
   {
     "id": "model.authorize.is_valid.scope.app_error",
-    #"translation": "Invalid scope"
 	"translation": "無效的範圍"
   },
   {
     "id": "model.authorize.is_valid.state.app_error",
-    #"translation": "Invalid state"
 	"translation": "無效的狀態"
   },
   {
     "id": "model.authorize.is_valid.user_id.app_error",
-    #"translation": "Invalid user id"
 	"translation": "無效的使用者 id"
   },
   {
     "id": "model.channel.is_valid.2_or_more.app_error",
-    #"translation": "Name must be 2 or more lowercase alphanumeric characters"
 	"translation": "名稱必須包含2個以上的小寫英數字元"
   },
   {
     "id": "model.channel.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
 	"translation": "必須建立在一個有效的時間上"
   },
   {
     "id": "model.channel.is_valid.creator_id.app_error",
-    #"translation": "Invalid creator id"
 	"translation": "無效的創造者 id"
   },
   {
     "id": "model.channel.is_valid.display_name.app_error",
-    #"translation": "Invalid display name"
 	"translation": "無效的顯示名稱"
   },
   {
     "id": "model.channel.is_valid.header.app_error",
-    #"translation": "Invalid header"
 	"translation": "無效標題"
   },
   {
     "id": "model.channel.is_valid.id.app_error",
-    #"translation": "Invalid Id"
 	"translation": "無效的 Id"
   },
   {
     "id": "model.channel.is_valid.name.app_error",
-    #"translation": "Invalid name"
 	"translation": "無效的名稱"
   },
   {
     "id": "model.channel.is_valid.purpose.app_error",
-    #"translation": "Invalid purpose"
 	"translation": "無效的目的"
   },
   {
     "id": "model.channel.is_valid.type.app_error",
-    #"translation": "Invalid type"
 	"translation": "無效的樣式"
   },
   {
     "id": "model.channel.is_valid.update_at.app_error",
-    #"translation": "Update at must be a valid time"
 	"translation": "必須在一個有效的時間上更新"
   },
   {
     "id": "model.channel_member.is_valid.channel_id.app_error",
-    #"translation": "Invalid channel id"
 	"translation": "無效的頻道 id"
   },
   {
     "id": "model.channel_member.is_valid.notify_level.app_error",
-    #"translation": "Invalid notify level"
 	"translation": "無效的通知等級"
   },
   {
     "id": "model.channel_member.is_valid.role.app_error",
-    #"translation": "Invalid role"
 	"translation": "無效的角色"
   },
   {
     "id": "model.channel_member.is_valid.unread_level.app_error",
-    #"translation": "Invalid mark unread level"
 	"translation": "無效的未讀標記等級"
   },
   {
     "id": "model.channel_member.is_valid.user_id.app_error",
-    #"translation": "Invalid user id"
 	"translation": "無效的使用者 id"
   },
   {
     "id": "model.client.connecting.app_error",
-    #"translation": "We encountered an error while connecting to the server"
 	"translation": "連接伺服器時遇到錯誤"
   },
   {
     "id": "model.client.login.app_error",
-    #"translation": "Authentication tokens didn't match"
 	"translation": "授權 tokens 不符合"
   },
   {
     "id": "model.command.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
 	"translation": "必須建立在一個有效的時間上"
   },
   {
     "id": "model.command.is_valid.id.app_error",
-    #"translation": "Invalid Id"
 	"translation": "無效的 Id"
   },
   {
     "id": "model.command.is_valid.method.app_error",
-    #"translation": "Invalid Method"
 	"translation": "無效的方法"
   },
   {
     "id": "model.command.is_valid.team_id.app_error",
-    #"translation": "Invalid team id"
 	"translation": "無效的團隊 id"
   },
   {
     "id": "model.command.is_valid.token.app_error",
-    #"translation": "Invalid token"
 	"translation": "無效的 token"
   },
   {
     "id": "model.command.is_valid.trigger.app_error",
-    #"translation": "Invalid trigger"
 	"translation": "無效的觸發指令"
   },
   {
     "id": "model.command.is_valid.update_at.app_error",
-    #"translation": "Update at must be a valid time"
 	"translation": "必須在一個有效的時間上更新"
   },
   {
     "id": "model.command.is_valid.url.app_error",
-    #"translation": "Invalid url"
 	"translation": "無效的網址"
   },
   {
     "id": "model.command.is_valid.url_http.app_error",
-    #"translation": "Invalid URL. Must be a valid URL and start with http:// or https://"
 	"translation": "無效的網址. 必須使用以 http:// 或 https:// 開頭的有效網址"
   },
   {
     "id": "model.command.is_valid.user_id.app_error",
-    #"translation": "Invalid user id"
 	"translation": "無效的使用者 id"
   },
   {
     "id": "model.config.is_valid.email_reset_salt.app_error",
-    #"translation": "Invalid password reset salt for email settings.  Must be 32 chars or more."
 	"translation": "電子郵件設定中的密碼重設 salt 無效.必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.email_salt.app_error",
-    #"translation": "Invalid invite salt for email settings.  Must be 32 chars or more."
 	"translation": "電子郵件設定中的邀請 salt 無效.必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.email_security.app_error",
-    #"translation": "Invalid connection security for email settings.  Must be '', 'TLS', or 'STARTTLS'"
 	"translation": "電子郵件設定中的連線安全性設定無效. 必須為 '', 'TLS', 或 'STARTTLS'"
   },
   {
     "id": "model.config.is_valid.encrypt_sql.app_error",
-    #"translation": "Invalid at rest encrypt key for SQL settings.  Must be 32 chars or more."
 	"translation": " SQL 設定中的加密金鑰無效.必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.file_driver.app_error",
-    #"translation": "Invalid driver name for file settings.  Must be 'local' or 'amazons3'"
 	"translation": "檔案設定中的驅動名稱無效. 必須為 'local' 或 'amazons3'"
   },
   {
     "id": "model.config.is_valid.file_preview_height.app_error",
-    #"translation": "Invalid preview height for file settings.  Must be a zero or positive number."
 	"translation": "檔案設定中的預覽高度無效.  必須為0或者正數."
   },
   {
     "id": "model.config.is_valid.file_preview_width.app_error",
-    #"translation": "Invalid preview width for file settings.  Must be a positive number."
 	"translation": "檔案設定中的預覽寬度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_height.app_error",
-    #"translation": "Invalid profile height for file settings.  Must be a positive number."
 	"translation": "檔案設定中的個人資訊高度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_profile_width.app_error",
-    #"translation": "Invalid profile width for file settings.  Must be a positive number."
 	"translation": "檔案設定中的個人資訊 寬度無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.file_salt.app_error",
-    #"translation": "Invalid public link salt for file settings.  Must be 32 chars or more."
 	"translation": "檔案設定中的公開連結 salt 無效.  必須在32個字元以上."
   },
   {
     "id": "model.config.is_valid.file_thumb_height.app_error",
-    #"translation": "Invalid thumbnail height for file settings.  Must be a positive number."
 	"translation": "檔案設定中縮圖高度無效.必須為正數."
   },
   {
     "id": "model.config.is_valid.file_thumb_width.app_error",
-    #"translation": "Invalid thumbnail width for file settings.  Must be a positive number."
 	"translation": "檔案設定中的縮圖寬度無效.必須為正數."
   },
   {
     "id": "model.config.is_valid.listen_address.app_error",
-    #"translation": "Invalid listen address for service settings Must be set."
 	"translation": "服務設定中的 listen address 無效,此項目必須設定."
   },
   {
     "id": "model.config.is_valid.login_attempts.app_error",
-    #"translation": "Invalid maximum login attempts for service settings.  Must be a positive number."
 	"translation": "服務設定中的最高登入嘗試次數無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.max_users.app_error",
-    #"translation": "Invalid maximum users per team for team settings.  Must be a positive number."
 	"translation": "團隊設定中的單一團隊最高使用者數無效. 必須為正數."
   },
   {
     "id": "model.config.is_valid.rate_mem.app_error",
-    #"translation": "Invalid memory store size for rate limit settings.  Must be a positive number"
 	"translation": "頻率限制設定中的記憶體儲存大小無效. 必須為正數."
   },
   {
     "id": "model.config.is_valid.rate_sec.app_error",
-    #"translation": "Invalid per sec for rate limit settings.  Must be a positive number"
 	"translation": "頻率限制設定中的每秒設定無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.sql_data_src.app_error",
-    #"translation": "Invalid data source for SQL settings.  Must be set."
 	"translation": " SQL 設定中的資料來源無效.  此項目必須設定."
 
   },
   {
     "id": "model.config.is_valid.sql_driver.app_error",
-    #"translation": "Invalid driver name for SQL settings.  Must be 'mysql' or 'postgres'"
 	"translation": " SQL 設定中的驅動名稱無效.  必須為 'mysql' 或 'postgres'"
   },
   {
     "id": "model.config.is_valid.sql_idle.app_error",
-    #"translation": "Invalid maximum idle connection for SQL settings.  Must be a positive number."
 	"translation": " SQL 設定中的最高閒置連線數無效.  必須為正數."
   },
   {
     "id": "model.config.is_valid.sql_max_conn.app_error",
-    #"translation": "Invalid maximum open connection for SQL settings.  Must be a positive number."
 	"translation": " SQL 設定中的最高開啟連線數無效.  必須為正數."
   },
   {
     "id": "model.file_info.get.gif.app_error",
-    #"translation": "Could not decode gif."
 	"translation": "無法將 gif 解碼."
   },
   {
     "id": "model.incoming_hook.channel_id.app_error",
-    #"translation": "Invalid channel id"
     "translation": "無效的 channel id"
   },
   {
     "id": "model.incoming_hook.create_at.app_error",
-    #"translation": "Create at must be a valid time"
     "translation": "Create at 必須是合法的時間"
   },
   {
     "id": "model.incoming_hook.id.app_error",
-    #"translation": "Invalid Id"
     "translation": "無效的 Id"
   },
   {
     "id": "model.incoming_hook.team_id.app_error",
-    #"translation": "Invalid team id"
     "translation": "無效的 team id"
   },
   {
     "id": "model.incoming_hook.update_at.app_error",
-    #"translation": "Update at must be a valid time"
     "translation": "Update at 必須是合法的時間"
   },
   {
@@ -2395,7 +2083,6 @@
   },
   {
     "id": "model.oauth.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
     "translation": "Create at 必須是合法的時間"
   },
   {
@@ -2444,12 +2131,10 @@
   },
   {
     "id": "model.outgoing_hook.is_valid.update_at.app_error",
-    #"translation": "Update at must be a valid time"
     "translation": "Update at 必須是合法的時間"
   },
   {
     "id": "model.outgoing_hook.is_valid.url.app_error",
-    #"translation": "Invalid callback URLs. Each must be a valid URL and start with http:// or https://"
     "translation": "無效的 callback URLs. 每一個都必須是有效的 URL 並以 http:// or https:// 開頭"
   },
   {
@@ -2466,7 +2151,6 @@
   },
   {
     "id": "model.post.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
     "translation": "Create at 必須是合法的時間"
   },
   {
@@ -2503,17 +2187,14 @@
   },
   {
     "id": "model.post.is_valid.root_parent.app_error",
-    #"translation": "Invalid root id must be set if parent id set"
     "translation": "若 parent id 已設定則 root id 也必須設定否則為非法"
   },
   {
     "id": "model.post.is_valid.type.app_error",
-    #"translation": "Invalid type"
     "translation": "非法的類型"
   },
   {
     "id": "model.post.is_valid.update_at.app_error",
-    #"translation": "Update at must be a valid time"
     "translation": "Update at 必須是合法的時間"
   },
   {
@@ -2546,12 +2227,10 @@
   },
   {
     "id": "model.team.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
     "translation": "Create at 必須是合法的時間"
   },
   {
     "id": "model.team.is_valid.domains.app_error",
-    #"translation": "Invalid allowed domains"
     "translation": "非法的核可網域"
   },
   {
@@ -2576,7 +2255,6 @@
   },
   {
     "id": "model.team.is_valid.update_at.app_error",
-    #"translation": "Update at must be a valid time"
     "translation": "Update at 必須是合法的時間"
   },
   {
@@ -2589,17 +2267,14 @@
   },
   {
     "id": "model.user.is_valid.auth_data_pwd.app_error",
-    #"translation": "Invalid user, password and auth data cannot both be set"
     "translation": "非法的使用者, 密碼與 auth data 不能同時被設定"
   },
   {
     "id": "model.user.is_valid.auth_data_type.app_error",
-    #"translation": "Invalid user, auth data must be set with auth type"
     "translation": "非法的使用者, auth data 必須與 auth type 一起被設定"
   },
   {
     "id": "model.user.is_valid.create_at.app_error",
-    #"translation": "Create at must be a valid time"
     "translation": "Create at 必須是合法的時間"
   },
   {
@@ -2636,7 +2311,6 @@
   },
   {
     "id": "model.user.is_valid.update_at.app_error",
-    #"translation": "Update at must be a valid time"
     "translation": "Update at 必須是合法的時間"
   },
   {
@@ -2645,52 +2319,42 @@
   },
   {
     "id": "model.utils.decode_json.app_error",
-    #"translation": "could not decode"
     "translation": "無法解碼"
   },
   {
     "id": "store.sql.alter_column_type.critical",
-    #"translation": "Failed to alter column type %v"
     "translation": "更動欄位類型 %v 失敗"
   },
   {
     "id": "store.sql.check_index.critical",
-    #"translation": "Failed to check index %v"
     "translation": "檢查索引 %v 失敗"
   },
   {
     "id": "store.sql.closing.info",
-    #"translation": "Closing SqlStore"
     "translation": "正在關閉 SqlStore"
   },
   {
     "id": "store.sql.column_exists.critical",
-    #"translation": "Failed to check if column exists %v"
     "translation": "檢查欄位是否存在失敗 %v"
   },
   {
     "id": "store.sql.column_exists_missing_driver.critical",
-    #"translation": "Failed to check if column exists because of missing driver"
     "translation": "檢查欄位是否存在失敗 因為找不到驅動"
   },
   {
     "id": "store.sql.convert_encrypt_string_map",
-    #"translation": "FromDb: Unable to convert EncryptStringMap to *string"
     "translation": "FromDb: 無法將 EncryptStringMap 轉換為 *string"
   },
   {
     "id": "store.sql.convert_string_array",
-    #"translation": "FromDb: Unable to convert StringArray to *string"
     "translation": "FromDb: 無法將 StringArray 轉換為 *string"
   },
   {
     "id": "store.sql.convert_string_interface",
-    #"translation": "FromDb: Unable to convert StringInterface to *string"
     "translation": "FromDb: 無法將 StringInterface 轉換為 *string"
   },
   {
     "id": "store.sql.convert_string_map",
-    #"translation": "FromDb: Unable to convert StringMap to *string"
     "translation": "FromDb: 無法將 StringMap 轉換為 *string"
   },
   {
@@ -2699,7 +2363,6 @@
   },
   {
     "id": "store.sql.create_column_missing_driver.critical",
-    #"translation": "Failed to create column because of missing driver"
     "translation": "無法建立 column 因為遺失了 driver"
   },
   {
@@ -2708,912 +2371,730 @@
   },
   {
     "id": "store.sql.create_index_missing_driver.critical",
-    #"translation": "Failed to create index because of missing driver"
     "translation": "無法建立索引 因為找不到驅動"
   },
   {
     "id": "store.sql.creating_tables.critical",
-    #"translation": "Error creating database tables: %v"
     "translation": "建立資料表失敗: %v"
   },
   {
     "id": "store.sql.dialect_driver.critical",
-    #"translation": "Failed to create dialect specific driver"
     "translation": "建立對應的驅動模組失敗"
   },
   {
     "id": "store.sql.dialect_driver.panic",
-    #"translation": "Failed to create dialect specific driver %v"
     "translation": "建立對應的驅動模組 %v 失敗"
   },
   {
     "id": "store.sql.drop_column.critical",
-    #"translation": "Failed to drop column %v"
     "translation": "刪除欄位 %v 失敗"
   },
   {
     "id": "store.sql.incorrect_mac",
-    #"translation": "Incorrect MAC for the given ciphertext"
     "translation": "不正確的 ciphertext MAC"
   },
   {
     "id": "store.sql.maxlength_column.critical",
-    #"translation": "Failed to get max length of column %v"
     "translation": "取得欄位 %v 最大長度失敗 "
   },
   {
     "id": "store.sql.open_conn.critical",
-    #"translation": "Failed to open sql connection to err:%v"
     "translation": "開啟 sql 連線失敗 err:%v"
   },
   {
     "id": "store.sql.open_conn.panic",
-    #"translation": "Failed to open sql connection %v"
     "translation": "開啟 sql 連線失敗 %v"
   },
   {
     "id": "store.sql.ping.critical",
-    #"translation": "Failed to ping db err:%v"
     "translation": "探測資料庫失敗 err:%v"
   },
   {
     "id": "store.sql.pinging.info",
-    #"translation": "Pinging sql %v database"
     "translation": "正在探測 sql %v 資料庫"
   },
   {
     "id": "store.sql.remove_index.critical",
-    #"translation": "Failed to remove index %v"
     "translation": "移除索引 %v 失敗"
   },
   {
     "id": "store.sql.rename_column.critical",
-    #"translation": "Failed to rename column %v"
     "translation": "更改欄位 %v 失敗"
   },
   {
     "id": "store.sql.schema_out_of_date.warn",
-    #"translation": "The database schema version of %v appears to be out of date"
     "translation": "%v 的資料庫 schema 版本似乎過期了"
   },
   {
     "id": "store.sql.schema_set.info",
-    #"translation": "The database schema has been set to version %v"
     "translation": "資料庫 schema 已被設定為版本 %v"
   },
   {
     "id": "store.sql.schema_upgrade_attempt.warn",
-    #"translation": "Attempting to upgrade the database schema version to %v"
     "translation": "正在嘗試將資料庫 schema 版本升級至 %v"
   },
   {
     "id": "store.sql.schema_version.critical",
-    #"translation": "The database schema version of %v cannot be upgraded.  You must not skip a version."
     "translation": "%v 的資料庫 schema 版本無法升級. 您不能略過版本."
   },
   {
     "id": "store.sql.short_ciphertext",
-    #"translation": "short ciphertext"
     "translation": "短的 ciphertext"
   },
   {
     "id": "store.sql.table_column_type.critical",
-    #"translation": "Failed to get data type for column %s from table %s: %v"
     "translation": "取得欄位 %s 資料類型來自資料表 %s 失敗: %v"
   },
   {
     "id": "store.sql.table_exists.critical",
-    #"translation": "Failed to check if table exists %v"
     "translation": "檢查資料表是否存在失敗%v"
   },
   {
     "id": "store.sql.too_short_ciphertext",
-    #"translation": "ciphertext too short"
     "translation": "ciphertext 太短"
   },
   {
     "id": "store.sql.upgraded.warn",
-    #"translation": "The database schema has been upgraded to version %v"
     "translation": "資料庫 schema 已被升級至版本 %v"
   },
   {
     "id": "store.sql_audit.get.finding.app_error",
-    #"translation": "We encountered an error finding the audits"
     "translation": "尋找稽核紀錄時遇到錯誤"
   },
   {
     "id": "store.sql_audit.get.limit.app_error",
-    #"translation": "Limit exceeded for paging"
     "translation": "分頁達到限制"
   },
   {
     "id": "store.sql_audit.permanent_delete_by_user.app_error",
-    #"translation": "We encountered an error deleting the audits"
     "translation": "刪除稽核紀錄時遇到錯誤"
   },
   {
     "id": "store.sql_audit.save.saving.app_error",
-    #"translation": "We encountered an error saving the audit"
     "translation": "儲存稽核紀錄時遇到錯誤"
   },
   {
     "id": "store.sql_channel.analytics_type_count.app_error",
-    #"translation": "We couldn't get channel type counts"
     "translation": "無法取得頻道類別數量"
   },
   {
     "id": "store.sql_channel.check_open_channel_permissions.app_error",
-    #"translation": "We couldn't check the permissions"
     "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.check_permissions.app_error",
-    #"translation": "We couldn't check the permissions"
     "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.check_permissions_by_name.app_error",
-    #"translation": "We couldn't check the permissions"
     "translation": "無法檢查權限"
   },
   {
     "id": "store.sql_channel.delete.channel.app_error",
-    #"translation": "We couldn't delete the channel"
     "translation": "無法刪除頻道"
   },
   {
     "id": "store.sql_channel.extra_updated.app_error",
-    #"translation": "Problem updating members last updated time"
     "translation": "更新使用者最後更新時間遇到問題"
   },
   {
     "id": "store.sql_channel.get.existing.app_error",
-    #"translation": "We couldn't find the existing channel"
     "translation": "無法找到現有的頻道"
   },
   {
     "id": "store.sql_channel.get.find.app_error",
-    #"translation": "We encountered an error finding the channel"
     "translation": "在尋找頻道時遇到錯誤"
   },
   {
     "id": "store.sql_channel.get_by_name.existing.app_error",
-    #"translation": "We couldn't find the existing channel"
     "translation": "無法找到現有的頻道"
   },
   {
     "id": "store.sql_channel.get_channel_counts.get.app_error",
-    #"translation": "We couldn't get the channel counts"
     "translation": "無法取得頻道數"
   },
   {
     "id": "store.sql_channel.get_channels.get.app_error",
-    #"translation": "We couldn't get the channels"
     "translation": "無法取得這些頻道"
   },
   {
     "id": "store.sql_channel.get_channels.not_found.app_error",
-    #"translation": "No channels were found"
     "translation": "找不到頻道"
   },
   {
     "id": "store.sql_channel.get_extra_members.app_error",
-    #"translation": "We couldn't get the extra info for channel members"
     "translation": "無法取得頻道成員的更多資訊"
   },
   {
     "id": "store.sql_channel.get_for_export.app_error",
-    #"translation": "We couldn't get all the channels"
     "translation": "無法取得所有的頻道"
   },
   {
     "id": "store.sql_channel.get_member.app_error",
-    #"translation": "We couldn't get the channel member"
     "translation": "無法取得頻道的成員"
   },
   {
     "id": "store.sql_channel.get_member_count.app_error",
-    #"translation": "We couldn't get the channel member count"
     "translation": "無法取得頻道成員數"
   },
   {
     "id": "store.sql_channel.get_members.app_error",
-    #"translation": "We couldn't get the channel members"
     "translation": "無法取得頻道成員"
   },
   {
     "id": "store.sql_channel.get_more_channels.get.app_error",
-    #"translation": "We couldn't get the channels"
     "translation": "無法取得這些頻道"
   },
   {
     "id": "store.sql_channel.increment_mention_count.app_error",
-    #"translation": "We couldn't increment the mention count"
     "translation": "無法遞增提及計數"
   },
   {
     "id": "store.sql_channel.permanent_delete_by_team.app_error",
-    #"translation": "We couldn't delete the channels"
     "translation": "無法刪除這些頻道"
   },
   {
     "id": "store.sql_channel.permanent_delete_members_by_user.app_error",
-    #"translation": "We couldn't remove the channel member"
     "translation": "無法移除頻道成員"
   },
   {
     "id": "store.sql_channel.remove_member.app_error",
-    #"translation": "We couldn't remove the channel member"
     "translation": "無法移除頻道成員"
   },
   {
     "id": "store.sql_channel.save.commit_transaction.app_error",
-    #"translation": "Unable to commit transaction"
     "translation": "無法提交交易"
   },
   {
     "id": "store.sql_channel.save.direct_channel.app_error",
-    #"translation": "Use SaveDirectChannel to create a direct channel"
     "translation": "使用 SaveDirectChannel 建立一個直接傳訊頻道"
   },
   {
     "id": "store.sql_channel.save.open_transaction.app_error",
-    #"translation": "Unable to open transaction"
     "translation": "無法開啟交易"
   },
   {
     "id": "store.sql_channel.save_channel.current_count.app_error",
-    #"translation": "Failed to get current channel count"
     "translation": "取得目前的頻道數量失敗"
   },
   {
     "id": "store.sql_channel.save_channel.existing.app_error",
-    #"translation": "Must call update for exisiting channel"
     "translation": "必須為已存在的頻道執行更新"
   },
   {
     "id": "store.sql_channel.save_channel.exists.app_error",
-    #"translation": "A channel with that URL already exists"
     "translation": "該 URL 已有頻道存在"
   },
   {
     "id": "store.sql_channel.save_channel.limit.app_error",
-    #"translation": "You've reached the limit of the number of allowed channels."
     "translation": "你已達允許加入的頻道總數量限制."
   },
   {
     "id": "store.sql_channel.save_channel.previously.app_error",
-    #"translation": "A channel with that URL was previously created"
     "translation": "該 URL 先前已有建立頻道"
   },
   {
     "id": "store.sql_channel.save_channel.save.app_error",
-    #"translation": "We couldn't save the channel"
     "translation": "無法儲存頻道"
   },
   {
     "id": "store.sql_channel.save_direct_channel.add_members.app_error",
-    #"translation": "Unable to add direct channel members"
     "translation": "無法新增直接傳訊頻道的成員"
   },
   {
     "id": "store.sql_channel.save_direct_channel.commit.app_error",
-    #"translation": "Unable to commit transaction"
     "translation": "無法提交交易"
   },
   {
     "id": "store.sql_channel.save_direct_channel.not_direct.app_error",
-    #"translation": "Not a direct channel attempted to be created with SaveDirectChannel"
     "translation": "嘗試使用 SaveDirectChannel 建立的不是直接傳訊頻道"
   },
   {
     "id": "store.sql_channel.save_direct_channel.open_transaction.app_error",
-    #"translation": "Unable to open transaction"
     "translation": "無法開啟交易"
   },
   {
     "id": "store.sql_channel.save_member.commit_transaction.app_error",
-    #"translation": "Unable to commit transaction"
     "translation": "無法提交交易"
   },
   {
     "id": "store.sql_channel.save_member.exists.app_error",
-    #"translation": "A channel member with that id already exists"
     "translation": "該 id 的頻道使用者已存在"
   },
   {
     "id": "store.sql_channel.save_member.open_transaction.app_error",
-    #"translation": "Unable to open transaction"
     "translation": "無法開啟交易"
   },
   {
     "id": "store.sql_channel.save_member.save.app_error",
-    #"translation": "We couldn't save the channel member"
     "translation": "無法儲存頻道成員"
   },
   {
     "id": "store.sql_channel.update.app_error",
-    #"translation": "We couldn't update the channel"
     "translation": "無法更新頻道"
   },
   {
     "id": "store.sql_channel.update.exists.app_error",
-    #"translation": "A channel with that handle already exists"
     "translation": "與該 handle 關聯的頻道已存在"
   },
   {
     "id": "store.sql_channel.update.previously.app_error",
-    #"translation": "A channel with that handle was previously created"
     "translation": "與該 handle 關聯的頻道已被建立"
   },
   {
     "id": "store.sql_channel.update.updating.app_error",
-    #"translation": "We encountered an error updating the channel"
     "translation": "更新頻道時遇到錯誤"
   },
   {
     "id": "store.sql_channel.update_last_viewed_at.app_error",
-    #"translation": "We couldn't update the last viewed at time"
     "translation": "無法更新最後瀏覽時間"
   },
   {
     "id": "store.sql_channel.update_member.app_error",
-    #"translation": "We encountered an error updating the channel member"
     "translation": "更新頻道成員時遇到錯誤"
   },
   {
     "id": "store.sql_command.save.delete.app_error",
-    #"translation": "We couldn't delete the command"
     "translation": "無法刪除命令"
   },
   {
     "id": "store.sql_command.save.delete_perm.app_error",
-    #"translation": "We couldn't delete the command"
     "translation": "無法刪除命令"
   },
   {
     "id": "store.sql_command.save.get.app_error",
-    #"translation": "We couldn't get the command"
     "translation": "無法取得命令"
   },
   {
     "id": "store.sql_command.save.get_team.app_error",
-    #"translation": "We couldn't get the commands"
     "translation": "無法取得命令"
   },
   {
     "id": "store.sql_command.save.saving.app_error",
-    #"translation": "We couldn't save the Command"
     "translation": "無法儲存命令"
   },
   {
     "id": "store.sql_command.save.saving_overwrite.app_error",
-    #"translation": "You cannot overwrite an existing Command"
     "translation": "無法覆寫已存在的命令"
   },
   {
     "id": "store.sql_command.save.update.app_error",
-    #"translation": "We couldn't update the command"
     "translation": "無法更新命令"
   },
   {
     "id": "store.sql_license.get.app_error",
-    #"translation": "We encountered an error getting the license"
     "translation": "取得授權時遇到錯誤"
   },
   {
     "id": "store.sql_license.get.missing.app_error",
-    #"translation": "A license with that ID was not found"
     "translation": "找不到該授權 ID"
   },
   {
     "id": "store.sql_license.save.app_error",
-    #"translation": "We encountered an error saving the license"
     "translation": "儲存授權時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.get_access_data.app_error",
-    #"translation": "We encountered an error finding the access token"
     "translation": "尋找 access token 時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.get_access_data_by_code.app_error",
-    #"translation": "We encountered an error finding the access token"
     "translation": "尋找 access token 時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.get_app.find.app_error",
-    #"translation": "We couldn't find the existing app"
     "translation": "找不到已存在的 app"
   },
   {
     "id": "store.sql_oauth.get_app.finding.app_error",
-    #"translation": "We encountered an error finding the app"
     "translation": "尋找 app 時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.get_app_by_user.find.app_error",
-    #"translation": "We couldn't find any existing apps"
     "translation": "找不到任何已存在的 apps"
   },
   {
     "id": "store.sql_oauth.get_auth_data.find.app_error",
-    #"translation": "We couldn't find the existing authorization code"
     "translation": "找不到 authorization code"
   },
   {
     "id": "store.sql_oauth.get_auth_data.finding.app_error",
-    #"translation": "We encountered an error finding the authorization code"
     "translation": "尋找 authorization code 時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.permanent_delete_auth_data_by_user.app_error",
-    #"translation": "We couldn't remove the authorization code"
     "translation": "無法移除 authorization code"
   },
   {
     "id": "store.sql_oauth.remove_access_data.app_error",
-    #"translation": "We couldn't remove the access token"
     "translation": "無法移除 access token"
   },
   {
     "id": "store.sql_oauth.remove_auth_data.app_error",
-    #"translation": "We couldn't remove the authorization code"
     "translation": "無法移除 authorization code"
   },
   {
     "id": "store.sql_oauth.save_access_data.app_error",
-    #"translation": "We couldn't save the access token."
     "translation": "無法儲存 access token."
   },
   {
     "id": "store.sql_oauth.save_app.existing.app_error",
-    #"translation": "Must call update for exisiting app"
     "translation": "必須為已存在的 app 執行更新"
   },
   {
     "id": "store.sql_oauth.save_app.save.app_error",
-    #"translation": "We couldn't save the app."
     "translation": "無法儲存 app."
   },
   {
     "id": "store.sql_oauth.save_auth_data.app_error",
-    #"translation": "We couldn't save the authorization code."
     "translation": "無法儲存 authorization code."
   },
   {
     "id": "store.sql_oauth.update_app.find.app_error",
-    #"translation": "We couldn't find the existing app to update"
     "translation": "無法找到已存在的 app 以更新"
   },
   {
     "id": "store.sql_oauth.update_app.finding.app_error",
-    #"translation": "We encountered an error finding the app"
     "translation": "尋找 app 時遇到錯誤"
   },
   {
     "id": "store.sql_oauth.update_app.update.app_error",
-    #"translation": "We couldn't update the app"
     "translation": "無法更新 app"
   },
   {
     "id": "store.sql_oauth.update_app.updating.app_error",
-    #"translation": "We encountered an error updating the app"
     "translation": "更新 app 時遇到錯誤"
   },
   {
     "id": "store.sql_post.analytics_posts_count.app_error",
-    #"translation": "We couldn't get post counts"
     "translation": "無法取得訊息數量"
   },
   {
     "id": "store.sql_post.analytics_posts_count_by_day.app_error",
-    #"translation": "We couldn't get post counts by day"
     "translation": "無法取得以日期為依據的訊息計數"
   },
   {
     "id": "store.sql_post.analytics_user_counts_posts_by_day.app_error",
-    #"translation": "We couldn't get user counts with posts"
     "translation": "無法取得訊息的使用者數量"
   },
   {
     "id": "store.sql_post.delete.app_error",
-    #"translation": "We couldn't delete the post"
     "translation": "無法刪除訊息"
   },
   {
     "id": "store.sql_post.get.app_error",
-    #"translation": "We couldn't get the post"
     "translation": "無法取得訊息"
   },
   {
     "id": "store.sql_post.get_for_export.app_error",
-    #"translation": "We couldn't get the posts for the channel"
     "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.get_parents_posts.app_error",
-    #"translation": "We couldn't get the parent post for the channel"
     "translation": "無法取得該頻道的上層訊息"
   },
   {
     "id": "store.sql_post.get_posts.app_error",
-    #"translation": "Limit exceeded for paging"
     "translation": "分頁已達限制"
   },
   {
     "id": "store.sql_post.get_posts_around.get.app_error",
-    #"translation": "We couldn't get the posts for the channel"
     "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.get_posts_around.get_parent.app_error",
-    #"translation": "We couldn't get the parent posts for the channel"
     "translation": "無法取得該頻道的上層訊息"
   },
   {
     "id": "store.sql_post.get_posts_since.app_error",
-    #"translation": "We couldn't get the posts for the channel"
     "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.get_root_posts.app_error",
-    #"translation": "We couldn't get the posts for the channel"
     "translation": "無法取得該頻道的訊息"
   },
   {
     "id": "store.sql_post.permanent_delete.app_error",
-    #"translation": "We couldn't delete the post"
     "translation": "無法刪除訊息"
   },
   {
     "id": "store.sql_post.permanent_delete_all_comments_by_user.app_error",
-    #"translation": "We couldn't delete the comments for user"
     "translation": "無法刪除使用者的回應"
   },
   {
     "id": "store.sql_post.permanent_delete_by_user.app_error",
-    #"translation": "We couldn't select the posts to delete for the user"
     "translation": "無法選擇該使用者的訊息以刪除"
   },
   {
     "id": "store.sql_post.permanent_delete_by_user.too_many.app_error",
-    #"translation": "We couldn't select the posts to delete for the user (too many), please re-run"
     "translation": "無法選擇該使用者的訊息以刪除 (數量太多), 請重新執行"
   },
   {
     "id": "store.sql_post.save.app_error",
-    #"translation": "We couldn't save the Post"
     "translation": "無法儲存訊息"
   },
   {
     "id": "store.sql_post.save.existing.app_error",
-    #"translation": "You cannot update an existing Post"
     "translation": "無法更新已存在的訊息"
   },
   {
     "id": "store.sql_post.search.app_error",
-    #"translation": "We encountered an error while searching for posts"
     "translation": "尋找訊息時遇到錯誤"
   },
   {
     "id": "store.sql_post.update.app_error",
-    #"translation": "We couldn't update the Post"
     "translation": "無法更新訊息"
   },
   {
     "id": "store.sql_preference.delete_unused_features.debug",
-    #"translation": "Deleting any unused pre-release features"
     "translation": "正在刪除所有的 pre-release 功能"
   },
   {
     "id": "store.sql_preference.get.app_error",
-    #"translation": "We encountered an error while finding preferences"
     "translation": "尋找偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.get_all.app_error",
-    #"translation": "We encountered an error while finding preferences"
     "translation": "尋找偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.get_category.app_error",
-    #"translation": "We encountered an error while finding preferences"
     "translation": "尋找偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.insert.exists.app_error",
-    #"translation": "A preference with that user id, category, and name already exists"
     "translation": "包含該 user id, category, 以及 name 的偏好設定已存在"
   },
   {
     "id": "store.sql_preference.insert.save.app_error",
-    #"translation": "We couldn't save the preference"
     "translation": "無法儲存偏好設定"
   },
   {
     "id": "store.sql_preference.is_feature_enabled.app_error",
-    #"translation": "We encountered an error while finding a pre release feature preference"
     "translation": "尋找 pre release 的偏好設定功能時遇到錯誤"
   },
   {
     "id": "store.sql_preference.permanent_delete_by_user.app_error",
-    #"translation": "We encountered an error while deleteing preferences"
     "translation": "刪除偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.save.commit_transaction.app_error",
-    #"translation": "Unable to commit transaction to save preferences"
     "translation": "無法提交交易去儲存偏好設定"
   },
   {
     "id": "store.sql_preference.save.missing_driver.app_error",
-    #"translation": "We encountered an error while updating preferences"
     "translation": "更新偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.save.open_transaction.app_error",
-    #"translation": "Unable to open transaction to save preferences"
     "translation": "無法開啟交易去儲存偏好設定"
   },
   {
     "id": "store.sql_preference.save.rollback_transaction.app_error",
-    #"translation": "Unable to rollback transaction to save preferences"
     "translation": "無法撤銷交易去儲存偏好設定"
   },
   {
     "id": "store.sql_preference.save.updating.app_error",
-    #"translation": "We encountered an error while updating preferences"
     "translation": "更新偏好設定時遇到錯誤"
   },
   {
     "id": "store.sql_preference.update.app_error",
-    #"translation": "We couldn't update the preference"
     "translation": "無法更新偏好設定"
   },
   {
     "id": "store.sql_session.cleanup_expired_sessions.app_error",
-    #"translation": "We encountered an error while deleting expired user sessions"
     "translation": "刪除過期的使用者 sessions 時遇到錯誤"
   },
   {
     "id": "store.sql_session.get.app_error",
-    #"translation": "We encountered an error finding the session"
     "translation": "尋找 session 時遇到錯誤"
   },
   {
     "id": "store.sql_session.get_sessions.app_error",
-    #"translation": "We encountered an error while finding user sessions"
     "translation": "尋找使用者 sessions 時遇到錯誤"
   },
   {
     "id": "store.sql_session.get_sessions.error",
-    #"translation": "Failed to cleanup sessions in getSessions err=%v"
     "translation": "於 getSessions 清除 sessions 失敗 err=%v"
   },
   {
     "id": "store.sql_session.permanent_delete_sessions_by_user.app_error",
-    #"translation": "We couldn't remove all the sessions for the user"
     "translation": "無法移除使用者所有的 sessions"
   },
   {
     "id": "store.sql_session.remove.app_error",
-    #"translation": "We couldn't remove the session"
     "translation": "無法移除 session"
   },
   {
     "id": "store.sql_session.remove_all_sessions_for_team.app_error",
-    #"translation": "We couldn't remove all the sessions for the team"
     "translation": "無法移除團隊所有的 sessions"
   },
   {
     "id": "store.sql_session.save.app_error",
-    #"translation": "We couldn't save the session"
     "translation": "無法儲存 session"
   },
   {
     "id": "store.sql_session.save.cleanup.error",
-    #"translation": "Failed to cleanup sessions in Save err=%v"
     "translation": "儲存過程中清理 sessions 失敗 err=%v"
   },
   {
     "id": "store.sql_session.save.existing.app_error",
-    #"translation": "Cannot update existing session"
     "translation": "無法更新已存在的 session"
   },
   {
     "id": "store.sql_session.update_device_id.app_error",
-    #"translation": "We couldn't update the device id"
     "translation": "無法更新設備 id"
   },
   {
     "id": "store.sql_session.update_last_activity.app_error",
-    #"translation": "We couldn't update the last_activity_at"
     "translation": "無法更新 last_activity_at"
   },
   {
     "id": "store.sql_session.update_roles.app_error",
-    #"translation": "We couldn't update the roles"
     "translation": "無法更新角色"
   },
   {
     "id": "store.sql_system.get.app_error",
-    #"translation": "We encountered an error finding the system properties"
     "translation": "尋找系統參數時遇到錯誤"
   },
   {
     "id": "store.sql_system.save.app_error",
-    #"translation": "We encountered an error saving the system property"
     "translation": "儲存系統參數時遇到錯誤"
   },
   {
     "id": "store.sql_system.update.app_error",
-    #"translation": "We encountered an error updating the system property"
     "translation": "更新系統參數時遇到錯誤"
   },
   {
     "id": "store.sql_team.get.find.app_error",
-    #"translation": "We couldn't find the existing team"
     "translation": "找不到已存在的團隊"
   },
   {
     "id": "store.sql_team.get.finding.app_error",
-    #"translation": "We encountered an error finding the team"
     "translation": "尋找團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.get_all.app_error",
-    #"translation": "We could not get all teams"
     "translation": "無法取得全部的團隊"
   },
   {
     "id": "store.sql_team.get_all_team_listing.app_error",
-    #"translation": "We could not get all teams"
     "translation": "無法取得全部的團隊"
   },
   {
     "id": "store.sql_team.get_by_invite_id.find.app_error",
-    #"translation": "We couldn't find the existing team"
     "translation": "無法找到已存在的團隊"
   },
   {
     "id": "store.sql_team.get_by_invite_id.finding.app_error",
-    #"translation": "We couldn't find the existing team"
     "translation": "無法找到已存在的團隊"
   },
   {
     "id": "store.sql_team.get_by_name.app_error",
-    #"translation": "We couldn't find the existing team"
     "translation": "無法找到已存在的團隊"
   },
   {
     "id": "store.sql_team.get_teams_for_email.app_error",
-    #"translation": "We encountered a problem when looking up teams"
     "translation": "查詢團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.permanent_delete.app_error",
-    #"translation": "We couldn't delete the existing team"
     "translation": "無法刪除已存在的團隊"
   },
   {
     "id": "store.sql_team.save.app_error",
-    #"translation": "We couldn't save the team"
     "translation": "無法儲存團隊"
   },
   {
     "id": "store.sql_team.save.domain_exists.app_error",
-    #"translation": "A team with that domain already exists"
     "translation": "該網域的團隊已存在"
   },
   {
     "id": "store.sql_team.save.existing.app_error",
-    #"translation": "Must call update for exisiting team"
     "translation": "必須為已存在的團隊執行更新"
   },
   {
     "id": "store.sql_team.update.app_error",
-    #"translation": "We couldn't update the team"
     "translation": "無法更新團隊"
   },
   {
     "id": "store.sql_team.update.find.app_error",
-    #"translation": "We couldn't find the existing team to update"
     "translation": "無法找到已存在的團隊來更新"
   },
   {
     "id": "store.sql_team.update.finding.app_error",
-    #"translation": "We encountered an error finding the team"
     "translation": "尋找團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.update.updating.app_error",
-    #"translation": "We encountered an error updating the team"
     "translation": "更新團隊時遇到錯誤"
   },
   {
     "id": "store.sql_team.update_display_name.app_error",
-    #"translation": "We couldn't update the team name"
     "translation": "無法更新團隊名稱"
   },
   {
     "id": "store.sql_user.analytics_unique_user_count.app_error",
-    #"translation": "We couldn't get the unique user count"
     "translation": "無法取得不重複的帳戶數量"
   },
   {
     "id": "store.sql_user.get.app_error",
-    #"translation": "We encountered an error finding the account"
     "translation": "尋找帳號時遇到錯誤"
   },
   {
     "id": "store.sql_user.get_by_auth.app_error",
-    #"translation": "We couldn't find an existing account matching your authentication type for this team. This team may require an invite from the team owner to join."
     "translation": "於此團隊中找不到對應您的認證類型帳戶. 此團隊需要團隊擁有者的邀請才能加入."
   },
   {
     "id": "store.sql_user.get_by_username.app_error",
-    #"translation": "We couldn't find an existing account matching your username for this team. This team may require an invite from the team owner to join."
     "translation": "於此團隊中找不到對應您的使用者名稱帳戶. 此團隊需要團隊擁有者的邀請才能加入."
   },
   {
     "id": "store.sql_user.get_for_export.app_error",
-    #"translation": "We encountered an error while finding user profiles"
     "translation": "尋找使用者"
   },
   {
     "id": "store.sql_user.get_profiles.app_error",
-    #"translation": "We encountered an error while finding user profiles"
     "translation": "尋找使用者資訊時遇到錯誤"
   },
   {
     "id": "store.sql_user.get_sysadmin_profiles.app_error",
-    #"translation": "We encountered an error while finding user profiles"
     "translation": "尋找使用者資訊時遇到錯誤"
   },
   {
     "id": "store.sql_user.get_total_active_users_count.app_error",
-    #"translation": "We could not count the users"
     "translation": "無法計算使用者數量"
   },
   {
     "id": "store.sql_user.get_total_users_count.app_error",
-    #"translation": "We could not count the users"
     "translation": "無法計算使用者數量"
   },
   {
     "id": "store.sql_user.missing_account.const",
-    #"translation": "We couldn't find an existing account matching your email address for this team. This team may require an invite from the team owner to join."
     "translation": "於此團隊中找不到對應您的 email 帳戶. 此團隊需要團隊擁有者的邀請才能加入."
   },
   {
     "id": "store.sql_user.permanent_delete.app_error",
-    #"translation": "We couldn't delete the existing account"
     "translation": "無法刪除該帳戶"
   },
   {
     "id": "store.sql_user.save.app_error",
-    #"translation": "We couldn't save the account."
     "translation": "無法儲存帳號."
   },
   {
     "id": "store.sql_user.save.email_exists.app_error",
-    #"translation": "An account with that email already exists."
     "translation": "該 email 帳戶已存在."
   },
   {
     "id": "store.sql_user.save.existing.app_error",
-    #"translation": "Must call update for exisiting user"
     "translation": "必須為已存在的使用者執行更新"
   },
   {
     "id": "store.sql_user.save.max_accounts.app_error",
-    #"translation": "This team has reached the maxmium number of allowed accounts. Contact your systems administrator to set a higher limit."
     "translation": "此團隊已達最大使用者數量上限. 請聯絡您的系統管理員調大數量限制."
   },
   {
     "id": "store.sql_user.save.member_count.app_error",
-    #"translation": "Failed to get current team member count"
     "translation": "取得目前團隊成員數量失敗"
   },
   {
@@ -3630,7 +3111,6 @@
   },
   {
     "id": "store.sql_user.update.find.app_error",
-    #"translation": "We couldn't find the existing account to update"
     "translation": "無法找到已存在的帳號可更新"
   },
   {
@@ -3647,27 +3127,22 @@
   },
   {
     "id": "store.sql_user.update_auth_data.app_error",
-    #"translation": "We couldn't update the auth data"
     "translation": "無法更新 auth data"
   },
   {
     "id": "store.sql_user.update_failed_pwd_attempts.app_error",
-    #"translation": "We couldn't update the failed_attempts"
     "translation": "無法更新 failed_attempts"
   },
   {
     "id": "store.sql_user.update_last_activity.app_error",
-    #"translation": "We couldn't update the last_activity_at"
     "translation": "無法更新 last_activity_at"
   },
   {
     "id": "store.sql_user.update_last_picture_update.app_error",
-    #"translation": "We couldn't update the update_at"
     "translation": "無法更新 update_at"
   },
   {
     "id": "store.sql_user.update_last_ping.app_error",
-    #"translation": "We couldn't update the last_ping_at"
     "translation": "無法更新 last_ping_at"
   },
   {
@@ -3676,7 +3151,6 @@
   },
   {
     "id": "store.sql_user.verify_email.app_error",
-    #"translation": "Unable to update verify email field"
     "translation": "無法更新驗證 email 欄位"
   },
   {
@@ -3749,22 +3223,18 @@
   },
   {
     "id": "utils.config.load_config.decoding.panic",
-    #"translation": "Error decoding config file={{.Filename}}, err={{.Error}}"
     "translation": "解碼設定發生錯誤 file={{.Filename}}, err={{.Error}}"
   },
   {
     "id": "utils.config.load_config.getting.panic",
-    #"translation": "Error getting config info file={{.Filename}}, err={{.Error}}"
     "translation": "取得設定資訊發生錯誤 file={{.Filename}}, err={{.Error}}"
   },
   {
     "id": "utils.config.load_config.opening.panic",
-    #"translation": "Error opening config file={{.Filename}}, err={{.Error}}"
     "translation": "開啟設定發生錯誤 file={{.Filename}}, err={{.Error}}"
   },
   {
     "id": "utils.config.load_config.validating.panic",
-    #"translation": "Error validating config file={{.Filename}}, err={{.Error}}"
     "translation": "驗證設定發生錯誤 file={{.Filename}}, err={{.Error}}"
   },
   {
@@ -3773,42 +3243,34 @@
   },
   {
     "id": "utils.i18n.loaded",
-    #"translation": "Loaded system translations for '%v' from '%v'"
     "translation": "已載入系統翻譯 '%v' 來自 '%v'"
   },
   {
     "id": "utils.iru.with_evict",
-    #"translation": "Must provide a positive size"
     "translation": "必須提供正數的大小"
   },
   {
     "id": "utils.license.load_license.invalid.warn",
-    #"translation": "No valid enterprise license found"
     "translation": "找不到合法的企業版授權"
   },
   {
     "id": "utils.license.remove_license.unable.error",
-    #"translation": "Unable to remove license file, err=%v"
     "translation": "無法移除授權檔案, err=%v"
   },
   {
     "id": "utils.license.validate_license.decode.error",
-    #"translation": "Encountered error decoding license, err=%v"
     "translation": "解碼授權時遇到錯誤, err=%v"
   },
   {
     "id": "utils.license.validate_license.invalid.error",
-    #"translation": "Invalid signature, err=%v"
     "translation": "非法的簽章, err=%v"
   },
   {
     "id": "utils.license.validate_license.not_long.error",
-    #"translation": "Signed license not long enough"
     "translation": "簽章授權長度不夠"
   },
   {
     "id": "utils.license.validate_license.signing.error",
-    #"translation": "Encountered error signing license, err=%v"
     "translation": "簽章授權時遇到錯誤, err=%v"
   },
   {
@@ -3833,17 +3295,14 @@
   },
   {
     "id": "utils.mail.send_mail.from_address.app_error",
-    #"translation": "Failed to add from email address"
     "translation": "從 email 位址新增失敗"
   },
   {
     "id": "utils.mail.send_mail.msg.app_error",
-    #"translation": "Failed to write email message"
     "translation": "撰寫 email 訊息失敗"
   },
   {
     "id": "utils.mail.send_mail.msg_data.app_error",
-    #"translation": "Failed to add email messsage data"
     "translation": "新增 email 訊息失敗"
   },
   {
@@ -3856,7 +3315,6 @@
   },
   {
     "id": "utils.mail.test.configured.error",
-    #"translation": "SMTP server settings do not appear to be configured properly err=%v details=%v"
     "translation": "SMTP 伺服器並未設定正確 err=%v details=%v"
   },
   {
@@ -3869,12 +3327,10 @@
   },
   {
     "id": "web.authorize_oauth.missing.app_error",
-    #"translation": "Missing one or more of response_type, client_id, or redirect_uri"
     "translation": "遺失一或多個 response_type, client_id, 或是 redirect_uri"
   },
   {
     "id": "web.authorize_oauth.title",
-    #"translation": "Authorize Application"
     "translation": "授權應用程式"
   },
   {
@@ -3883,12 +3339,10 @@
   },
   {
     "id": "web.claim_account.team.error",
-    #"translation": "Couldn't find team name=%v, err=%v"
     "translation": "找不到團隊 name=%v, err=%v"
   },
   {
     "id": "web.claim_account.title",
-    #"translation": "Claim Account"
     "translation": "宣告帳戶"
   },
   {
@@ -3897,17 +3351,14 @@
   },
   {
     "id": "web.create_dir.error",
-    #"translation": "Failed to create directory watcher %v"
     "translation": "建立目錄 watcher %v 失敗"
   },
   {
     "id": "web.dir_fail.error",
-    #"translation": "Failed in directory watcher %v"
     "translation": "建立目錄 watcher %v 失敗"
   },
   {
     "id": "web.do_load_channel.error",
-    #"translation": "Error in getting users profile for id=%v forcing logout"
     "translation": "取得使用者 id=%v 資訊失敗 強制登出"
   },
   {
@@ -3940,57 +3391,46 @@
   },
   {
     "id": "web.get_access_token.bad_client_id.app_error",
-    #"translation": "invalid_request: Bad client_id"
     "translation": "invalid_request: 錯誤的 client_id"
   },
   {
     "id": "web.get_access_token.bad_client_secret.app_error",
-    #"translation": "invalid_request: Missing client_secret"
     "translation": "invalid_request: 遺失的 client_secret"
   },
   {
     "id": "web.get_access_token.bad_grant.app_error",
-    #"translation": "invalid_request: Bad grant_type"
     "translation": "invalid_request: 錯誤的 grant_type"
   },
   {
     "id": "web.get_access_token.credentials.app_error",
-    #"translation": "invalid_client: Invalid client credentials"
     "translation": "invalid_client: 非法的用戶端憑證"
   },
   {
     "id": "web.get_access_token.disabled.app_error",
-    #"translation": "The system admin has turned off OAuth service providing."
     "translation": "系統管理者已關閉 OAuth service providing."
   },
   {
     "id": "web.get_access_token.exchanged.app_error",
-    #"translation": "invalid_grant: Authorization code already exchanged for an access token"
     "translation": "invalid_grant: Authorization code 已經為了 access token 而交換"
   },
   {
     "id": "web.get_access_token.expired_code.app_error",
-    #"translation": "invalid_grant: Invalid or expired authorization code"
     "translation": "invalid_grant: 非法或是過期的 authorization code"
   },
   {
     "id": "web.get_access_token.internal.app_error",
-    #"translation": "server_error: Encountered internal server error while accessing database"
     "translation": "server_error: 存取資料庫時遇到內部伺服器錯誤"
   },
   {
     "id": "web.get_access_token.internal_saving.app_error",
-    #"translation": "server_error: Encountered internal server error while saving access token to database"
     "translation": "server_error: 儲存 access token 至資料庫時遇到內部伺服器錯誤"
   },
   {
     "id": "web.get_access_token.internal_session.app_error",
-    #"translation": "server_error: Encountered internal server error while saving session to database"
     "translation": "server_error: 儲存 session 至資料庫時遇到內部伺服器錯誤"
   },
   {
     "id": "web.get_access_token.internal_user.app_error",
-    #"translation": "server_error: Encountered internal server error while pulling user from database"
     "translation": "server_error: 從資料庫提取使用者資料時遇到內部伺服器錯誤"
   },
   {
@@ -3999,17 +3439,14 @@
   },
   {
     "id": "web.get_access_token.redirect_uri.app_error",
-    #"translation": "invalid_request: Supplied redirect_uri does not match authorization code redirect_uri"
     "translation": "invalid_request: 提供的 redirect_uri 無法對應 authorization code redirect_uri"
   },
   {
     "id": "web.get_access_token.revoking.error",
-    #"translation": "Encountered an error revoking an access token, err="
     "translation": "撤銷 access token 時遇到錯誤, err="
   },
   {
     "id": "web.header.back",
-    #"translation": "Back"
     "translation": "回上一步"
   },
   {
@@ -4018,7 +3455,6 @@
   },
   {
     "id": "web.incoming_webhook.disabled.app_error",
-    #"translation": "Incoming webhooks have been disabled by the system admin."
     "translation": "系統管理員已停用 incoming webhooks."
   },
   {
@@ -4027,17 +3463,14 @@
   },
   {
     "id": "web.incoming_webhook.parse.app_error",
-    #"translation": "Unable to parse incoming data"
     "translation": "無法解析流入的資料"
   },
   {
     "id": "web.incoming_webhook.permissions.app_error",
-    #"translation": "Inappropriate channel permissions"
     "translation": "不適當的頻道權限"
   },
   {
     "id": "web.incoming_webhook.text.app_error",
-    #"translation": "No text specified"
     "translation": "沒有指定文字"
   },
   {
@@ -4046,7 +3479,6 @@
   },
   {
     "id": "web.init.debug",
-    #"translation": "Initializing web routes"
     "translation": "正在初始化網站路徑"
   },
   {
@@ -4063,22 +3495,18 @@
   },
   {
     "id": "web.parsing_templates.debug",
-    #"translation": "Parsing templates at %v"
     "translation": "於 %v 解析樣板"
   },
   {
     "id": "web.parsing_templates.error",
-    #"translation": "Failed to parse templates %v"
     "translation": "解析樣板 %v 失敗"
   },
   {
     "id": "web.post_permalink.app_error",
-    #"translation": "Invalid Post ID"
     "translation": "非法的 Post ID"
   },
   {
     "id": "web.reparse_templates.info",
-    #"translation": "Re-parsing templates because of modified file %v"
     "translation": "因檔案 %v 變動因此重新解析樣板"
   },
   {
@@ -4095,7 +3523,6 @@
   },
   {
     "id": "web.root.singup_info",
-    #"translation": "All team communication in one place, searchable and accessible anywhere"
     "translation": "所有團隊溝通都集中在此, 隨處皆可搜尋與存取"
   },
   {
@@ -4104,7 +3531,6 @@
   },
   {
     "id": "web.signup_team_complete.invalid_link.app_error",
-    #"translation": "The signup link does not appear to be valid"
     "translation": "此註冊連結不是有效連結"
   },
   {
@@ -4125,22 +3551,18 @@
   },
   {
     "id": "web.signup_user_complete.link_invalid.app_error",
-    #"translation": "The signup link does not appear to be valid"
     "translation": "此註冊連結不是有效連結"
   },
   {
     "id": "web.signup_user_complete.no_invites.app_error",
-    #"translation": "The team type doesn't allow open invites"
     "translation": "此團隊類型無法開啟邀請"
   },
   {
     "id": "web.signup_user_complete.title",
-    #"translation": "Complete User Sign Up"
     "translation": "完成使用者註冊"
   },
   {
     "id": "web.singup_with_oauth.disabled.app_error",
-    #"translation": "User sign-up is disabled."
     "translation": "使用者註冊已停用."
   },
   {
@@ -4149,7 +3571,6 @@
   },
   {
     "id": "web.singup_with_oauth.invalid_link.app_error",
-    #"translation": "The signup link does not appear to be valid"
     "translation": "此註冊連結不是有效連結"
   },
   {
@@ -4158,7 +3579,6 @@
   },
   {
     "id": "web.watcher_fail.error",
-    #"translation": "Failed to add directory to watcher %v"
     "translation": "新增目錄至 watcher %v 失敗"
   }
 ]
