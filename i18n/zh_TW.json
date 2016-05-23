@@ -53,11 +53,11 @@
   },
   {
     "id": "api.admin.get_brand_image.not_available.app_error",
-    "translation": "Custom branding is not configured or supported on this server"
+    "translation": "自訂品牌於此伺服器未設定或不支援"
   },
   {
     "id": "api.admin.get_brand_image.storage.app_error",
-    "translation": "Image storage is not configured."
+    "translation": "影像儲存位置尚未設定."
   },
   {
     "id": "api.admin.init.debug",
@@ -73,27 +73,27 @@
   },
   {
     "id": "api.admin.upload_brand_image.array.app_error",
-    "translation": "Empty array under 'image' in request"
+    "translation": "於 request 中 image 欄位為空陣列"
   },
   {
     "id": "api.admin.upload_brand_image.no_file.app_error",
-    "translation": "No file under 'image' in request"
+    "translation": "於 request 中 image 欄位沒有上傳的檔案"
   },
   {
     "id": "api.admin.upload_brand_image.not_available.app_error",
-    "translation": "Custom branding is not configured or supported on this server"
+    "translation": "自訂品牌於此伺服器未設定或不支援"
   },
   {
     "id": "api.admin.upload_brand_image.parse.app_error",
-    "translation": "Could not parse multipart form"
+    "translation": "無法解析 multipart form"
   },
   {
     "id": "api.admin.upload_brand_image.storage.app_error",
-    "translation": "Unable to upload image. Image storage is not configured."
+    "translation": "無法上傳影像. 影像儲存位置尚未設定."
   },
   {
     "id": "api.admin.upload_brand_image.too_large.app_error",
-    "translation": "Unable to upload file. File is too large."
+    "translation": "無法上傳檔案. 檔案太大."
   },
   {
     "id": "api.api.init.parsing_templates.debug",
@@ -225,7 +225,7 @@
   },
   {
     "id": "api.channel.leave.last_member.app_error",
-    "translation": "You're the only member left, try removing the Private Group instead of leaving."
+    "translation": "你是最後一位成員, 請移除私密群組取代離開."
   },
   {
     "id": "api.channel.leave.left",
@@ -385,7 +385,7 @@
   },
   {
     "id": "api.command_logout.fail_message",
-    "translation": "Failed to log out"
+    "translation": "登出失敗"
   },
   {
     "id": "api.command_logout.name",
@@ -409,35 +409,35 @@
   },
   {
     "id": "api.command_msg.desc",
-    "translation": "Send Direct Message to a user"
+    "translation": "直接傳訊給使用者"
   },
   {
     "id": "api.command_msg.dm_fail.app_error",
-    "translation": "An error occured while creating the direct message."
+    "translation": "建立直接傳訊時遇到錯誤."
   },
   {
     "id": "api.command_msg.fail.app_error",
-    "translation": "An error occured while messaging the user."
+    "translation": "與使用者傳訊時遇到錯誤."
   },
   {
     "id": "api.command_msg.hint",
-    "translation": "@[username] 'message'"
+    "translation": "@[使用者帳號] '訊息'"
   },
   {
     "id": "api.command_msg.list.app_error",
-    "translation": "An error occured while listing users."
+    "translation": "列表使用者時遇到錯誤."
   },
   {
     "id": "api.command_msg.missing.app_error",
-    "translation": "We couldn't find the user"
+    "translation": "找不到使用者"
   },
   {
     "id": "api.command_msg.name",
-    "translation": "message"
+    "translation": "訊息"
   },
   {
     "id": "api.command_msg.success",
-    "translation": "Messaged user."
+    "translation": "已傳訊給使用者."
   },
   {
     "id": "api.command_shrug.desc",
@@ -453,15 +453,15 @@
   },
   {
     "id": "api.command_shortcuts.desc",
-    "translation": "Displays a list of keyboard shortcuts"
+    "translation": "顯示鍵盤快捷鍵列表"
   },
   {
     "id": "api.command_shortcuts.name",
-    "translation": "shortcuts"
+    "translation": "快捷鍵"
   },
   {
     "id": "api.command_shortcuts.list",
-    "translation": "### Keyboard Shortcuts\n\n#### CTRL/CMD\n\n- CTRL/CMD+K - Open up channel switcher\n- CTRL/CMD+U - Open up file upload\n- CTRL/CMD+Up - Reprint last message or slash command entered\n- CTRL/CMD+SHIFT+A - Open account settings\n- CTRL/CMD+SHIFT+M - Open recent mentions\n\n#### ALT\n\n- ALT+Up - Go to previous channel\n- ALT+Down - Go to next channel\n- ALT+SHIFT+Up - Go to previous channel with unread messages\n- ALT+SHIFT+Down - Go to next channel with unread messages\n\n#### General\n\n- Up - Edit last message\n- /+Up/Down - See available slash commands\n"
+    "translation": "### 鍵盤快捷鍵\n\n#### CTRL/CMD\n\n- CTRL/CMD+K - 打開頻道切換器\n- CTRL/CMD+U - 打開檔案上傳\n- CTRL/CMD+Up - 重新顯示最後的訊息或是鍵入的 slash 指令\n- CTRL/CMD+SHIFT+A - 打開帳號設定\n- CTRL/CMD+SHIFT+M - 打開最近的提及帳號\n\n#### ALT\n\n- ALT+Up - 前往上一個頻道\n- ALT+Down - 前往下一個頻道\n- ALT+SHIFT+Up - 前往上一個有未讀取訊息的頻道\n- ALT+SHIFT+Down - 前往下一個有未讀取訊息的頻道\n\n#### 一般\n\n- Up - 編輯最後一個訊息\n- /+Up/Down - 檢視可使用的 slash 命令\n"
   },
   {
     "id": "api.context.404.app_error",
